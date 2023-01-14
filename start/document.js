@@ -31,7 +31,7 @@ const DocumentResult = ({children}) => {
             setHeader((prev)=>prev=result);
         }
         return () => {
-            return false;
+            setHeader((prev)=>prev=null);
         }
     },[router,isTabletOrMobile])
     useEffect(()=>{

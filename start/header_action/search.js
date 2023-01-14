@@ -32,13 +32,12 @@ const Search = (res) => {
       },[res.list]);
     return (
         <>
-            <input aria-autocomplete="both" 
-                aria-haspopup="false" 
-                autocapitalize="off" 
-                autocomplete="off" 
-                autocorrect="off" 
+            <input aria-haspopup="false" 
+                autoCapitalize="off" 
+                autoComplete="off" 
+                autoCorrect="off" 
                 role="combobox" 
-                spellcheck="false"  ref={focus} placeholder={res.text} title={res.text} className="header__search_input" onChange={(e)=>setSearch(e.target.value)}  type="text" />
+                spellCheck="false"  ref={focus} placeholder={res.text} title={res.text} className="header__search_input" onChange={(e)=>setSearch(e.target.value)}  type="text" />
         </>
     )
 };
