@@ -112,7 +112,7 @@ const secure = production?[
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-module.exports = withBundleAnalyzer({
+module.exports = withPWA({
   images: {
     domains: [images,'lh3.googleusercontent.com'],
     formats: ['image/avif', 'image/webp']
