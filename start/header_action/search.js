@@ -32,7 +32,13 @@ const Search = (res) => {
       },[res.list]);
     return (
         <>
-            <input ref={focus} placeholder={res.text} title={res.text} className="header__search_input" onChange={(e)=>setSearch(e.target.value)}  type="text" />
+            <input aria-autocomplete="both" 
+                aria-haspopup="false" 
+                autocapitalize="off" 
+                autocomplete="off" 
+                autocorrect="off" 
+                role="combobox" 
+                spellcheck="false"  ref={focus} placeholder={res.text} title={res.text} className="header__search_input" onChange={(e)=>setSearch(e.target.value)}  type="text" />
         </>
     )
 };
