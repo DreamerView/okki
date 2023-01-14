@@ -77,7 +77,7 @@
         "image":"/services/badge.webp",
         "image_background":"purple_background",
         "key":"бейджик/аккредитация құрастырушысы,конструктор бейджиков/аккредитации,badge/accreditation constructor",
-        "location":"/constructor/badge",
+        "location":"/construct/badge",
         "type":"services",
         "category":"constructor"
     },
