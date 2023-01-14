@@ -16,9 +16,12 @@ const Document = () => {
                 <meta name="msapplication-TileColor" content="#ffffff"/>
                 <meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
                 <meta name="ah-verification" content="3c09cf5c49c8" />
-                <link rel="preconnect" href={process.env.backend} crossOrigin="true" />
-                <link rel="prerender" href={process.env.backend} crossOrigin="true"/>
+                <meta httpEquiv="x-dns-prefetch-control" crossOrigin="true" content="on" />
                 <link rel="dns-prefetch" href={process.env.backend} crossOrigin="true"/>
+                <link rel="preconnect" href={process.env.backend} crossOrigin="true" />
+                <link rel="preload" href={process.env.backend} crossOrigin="true"/>
+                <link rel="prerender" href={process.env.backend} crossOrigin="true"/>
+                <link rel="subresource" href={process.env.backend} crossOrigin="true"/>
                 {/*  */}
                 <meta httpEquiv="cleartype" content="on"/>
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />
