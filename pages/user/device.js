@@ -25,7 +25,8 @@ export const getServerSideProps = async (context) => {
         server:context,
         auth:"yes"
     });
-    if(data.result==='redirect') {
+    // const data = start.json();
+    if(data!==undefined && data.result==='redirect') {
         return {
             redirect: {
                 permanent: false,
@@ -35,7 +36,7 @@ export const getServerSideProps = async (context) => {
         }; 
     } 
     return {
-        props: {data:data,locale:locale}
+        props: {data:data||null,locale:locale}
     }; 
     
 };

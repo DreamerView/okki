@@ -20,7 +20,7 @@ export const getServerSideProps = async (context) => {
         server:context,
         auth:"yes"
     });
-    if(data.result==='redirect') {
+    if(data!==undefined&&data.result==='redirect') {
         return {
             props: {lang:lang}
         }; 

@@ -51,7 +51,7 @@ export const getServerSideProps = async (context) => {
         }; 
     };
     if(session!==null) return SocialNetwork();
-    if(data.result==='redirect') return ReturnTo();
+    if(data!==undefined&&data.result==='redirect') return ReturnTo();
     return ReturnBack();
 };
 

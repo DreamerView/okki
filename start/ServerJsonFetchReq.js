@@ -4,6 +4,7 @@
 const AesEncryption = require('aes-encryption');
 
 const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
+    // try {
     if(cookie!==undefined) {
         const aes = new AesEncryption();
         aes.setSecretKey(process.env.aesKey);
@@ -28,8 +29,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                 requestOptions = {
                     method: 'POST',
                     headers: {
-                        "WWW-Authenticate": process.env.authHeader,
-                        "Origin":originReq,
+                        // "WWW-Authenticate": process.env.authHeader,
+                        // "Origin":originReq,
                         "Authorization": `Bearer ${accessToken} ${clientId}`,
                         "Accept":"application/json; charset=utf-8",
                         "Content-Type": "application/json; charset=utf-8",
@@ -88,8 +89,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                             sendReqOpt = {
                                 method: 'POST',
                                 headers: {
-                                    "WWW-Authenticate": process.env.authHeader,
-                                    "Origin":originReq,
+                                    // "WWW-Authenticate": process.env.authHeader,
+                                    // "Origin":originReq,
                                     "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
                                     "Content-Type": "application/json; charset=utf-8",
@@ -102,8 +103,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                             sendReqOpt = {
                                 method: 'GET',
                                 headers: {
-                                    "WWW-Authenticate": process.env.authHeader,
-                                    "Origin":originReq,
+                                    // "WWW-Authenticate": process.env.authHeader,
+                                    // "Origin":originReq,
                                     "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
                                     "Accept":"application/json; charset=utf-8",
                                     "Content-Type": "application/json; charset=utf-8",
@@ -113,7 +114,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                             };
                         }
                         const send = await fetch(process.env.backend+path, sendReqOpt);
-                        const res = await send.json();
+                        const res = send.json();
+                        // console.log(res);
                         return res;
                         // window.location.reload();
                     }
@@ -125,7 +127,8 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
                 return {result:'redirect',location:"/signin"};
             } 
             else {
-                const result = await login.json();
+                const result = login.json();
+                // console.log(result);
                 return result;
             }
         } else {
@@ -137,6 +140,9 @@ const ServerJsonFetchReq = async({method,body,path,cookie,server,auth}) =>{
         } else {
             return false;
         }
-    }
+    } 
+    // } catch(e) {
+    //     console.log(e);
+    // }
 };
 export default ServerJsonFetchReq;

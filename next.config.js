@@ -5,9 +5,12 @@ const key_pass = "4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=";
 
 const production = process.env.NODE_ENV === 'production';
 
+const authHeader = "ff0989d59ef16505f30f2da7dd36dc61be936a9a81df67bf4c035cf95c5fd21e46b40ce6ba7d88c86ae4f82539096b925e9f9dac7738db83b4e8bcee70cc5d94";
+
 const src = 'https://cdnjs.cloudflare.com';
 const backend = production?"https://app.okki.kz":"http://localhost:3001";
 const images = production?"app.okki.kz":"localhost";
+const host = production?"https://okki.vercel.app":"http://localhost:3000";
 const withPWA = require('next-pwa')({
   dest: 'public',
   disable: process.env.NODE_ENV === 'development',
@@ -44,6 +47,22 @@ const secure = production?[
         key: 'Link',
         value: `<${backend}>; rel=preconnect`
     },
+    {
+      key: 'Link',
+      value: `<${backend}>; rel=prerender`
+  },
+  {
+    key: 'Link',
+    value: `<${backend}>; rel=dns-prefetch`
+  },
+  {
+    key: 'WWW-Authenticate',
+    value: `${authHeader}`
+  },
+  {
+    key: 'Origin',
+    value: `${host}`
+  },
     {
       key: 'Cache-Control',
       value: 'public, max-age=31536000, immutable'
@@ -99,14 +118,30 @@ const secure = production?[
     ]:[{
       key: 'Link',
       value: `<${backend}>; rel=preconnect`
-  },{
+    },{
+      key: 'Link',
+      value: `<${backend}>; rel=prerender`
+    },
+    {
+      key: 'Link',
+      value: `<${backend}>; rel=dns-prefetch`
+    },
+    {
+      key: 'WWW-Authenticate',
+      value: `${authHeader}`
+    },
+    {
+      key: 'Origin',
+      value: `${host}`
+    },
+    {
       key: 'Permissions-Policy',
       value: 'microphone=(), geolocation=()'
-      },
-      {
+    },
+    {
         key: 'Cache-Control',
         value: 'no-cache, no-store, max-age=0, must-revalidate'
-      }
+    }
 ];
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -124,7 +159,8 @@ module.exports = withPWA({
     private: key_pass,
     backend:backend,
     aesKey:"fd9b84f326e766ea7676c239f48e31b14ea01e9b0124290834637d520818d815",
-    authHeader: "ff0989d59ef16505f30f2da7dd36dc61be936a9a81df67bf4c035cf95c5fd21e46b40ce6ba7d88c86ae4f82539096b925e9f9dac7738db83b4e8bcee70cc5d94"
+    authHeader: authHeader,
+    host:host
   },
   reactStrictMode: true,
   i18n: {
