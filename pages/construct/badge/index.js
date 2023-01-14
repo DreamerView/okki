@@ -32,13 +32,13 @@ const Acc = ({lang}) => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-        <NavbarApp lang={lang} to={[{key:'constructor',location:'/constructor'},{key:'acc_const',path:'last'}]}/>
+        <NavbarApp lang={lang} to={[{key:'constructor',location:'/construct'},{key:'acc_const',path:'last'}]}/>
         <div className={`main block_animation`}>
             <h1>{text['name'][lang]}</h1>
             <p className="sub_content">{text['content'][lang]}</p>
             <div className={`${style.main__block_menu_select} p-m`}>
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link title={text['title1'][lang]} href="/constructor/acc/logo" prefetch={false}>
+            <Link title={text['title1'][lang]} href="/construct/badge/logo" prefetch={false}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.green_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
                     <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Person icon from Okki.kz" src="/img/person.svg" alt="icon" priority />
@@ -57,7 +57,7 @@ const Acc = ({lang}) => {
             </div>
 
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link title={text['title2'][lang]} href="/constructor/acc/logo" prefetch={false}>
+            <Link title={text['title2'][lang]} href="/construct/badge/logo" prefetch={false}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.purple_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
                     <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Group icon from Okki.kz" src="/img/group.svg" alt="icon" priority/>
@@ -76,7 +76,7 @@ const Acc = ({lang}) => {
             </div>
 
             <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link href="/constructor/acc/logosd" prefetch={false}>
+            <Link href="/construct/badge/logosd" prefetch={false}>
             <div className={`${style.main__block_menu_select_block_icon} ${style.blue_temp}`}>
                 <div className={style.main__block_menu_select_block_i}>
                     <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Help icon from Okki.kz" src="/img/help.svg" alt="icon" priority/>

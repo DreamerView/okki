@@ -126,7 +126,7 @@ const SizeAcc = ({lang}) => {
             <Head>
                 <title>{text['name'][lang]}</title>
             </Head>
-            <NavbarApp lang={lang} to={[{key:'constructor',location:'/constructor'},{key:'acc_const',location:'/constructor/acc'},{text:translate['step2'][lang],location:'/constructor/acc/logo'},{text:translate['step3'][lang],path:'last'}]}/>
+            <NavbarApp lang={lang} to={[{key:'constructor',location:'/construct'},{key:'acc_const',location:'/construct/badge'},{text:translate['step2'][lang],location:'/construct/badge/logo'},{text:translate['step3'][lang],path:'last'}]}/>
             <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
@@ -208,8 +208,8 @@ const SizeAcc = ({lang}) => {
             </div>
             <div className={style.main__block_fixed_confirm}>
                 <div className={`${style.main__block_interface_menu_c_end} flex`}>
-                            <Link href="/constructor/acc/logo" prefetch={false} className={style.main__block_interface_btn_back}>{ux['back'][lang]}</Link>
-                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</button>: <Link href="/constructor/acc/info" prefetch={false} className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</Link>}    
+                            <Link href="/construct/badge/logo" prefetch={false} className={style.main__block_interface_btn_back}>{ux['back'][lang]}</Link>
+                            {!ready ? <button className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</button>: <Link href="/construct/badge/info" prefetch={false} className={style.main__block_interface_btn_forward}>{ux['continue'][lang]}</Link>}    
                 </div>
             </div>
     </>
