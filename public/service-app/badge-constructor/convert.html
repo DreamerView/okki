@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --green_back:hsl(129, 67%, 52%);
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --green_back: hsl(135, 59%, 49%);
+            }
+        }
+        body {
+            margin-top: 0;
+            font-family: Arial, sans-serif;
+        }
+        div.acc__ready {
+            width:297mm;
+            /* height:210mm; */
+            height:auto;
+            display: flex;
+            flex-wrap: wrap;
+            /* border: 1px solid black; */
+            background-color: white;
+            margin: 0 auto 20px auto;
+            border-radius: 13px;
+        }
+        div.acc {
+            border-radius:26px;
+            border:1px solid #F0F0F0;
+            margin:20px;
+            background-color: white;
+        }
+        div.acc_no_logo {
+            border-radius:26px;
+            margin:20px;
+            border:1px solid #F0F0F0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            background-color: white;
+        }
+        div.logo_w {
+            width:100%;
+            height:30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: #AAAAAA; */
+        }
+        div.logo_h {
+            width:100%;
+            height:30%;
+        }
+        img.logo_img_w {
+            margin:20px;
+            width: 120px;
+            height: auto;
+        }
+        img.logo_img_h {
+            margin:20px 0 0 20px;
+            width: 60px;
+            height: auto;
+        }
+        div.avatar {
+            width: 100%;
+            height:35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: antiquewhite; */
+        }
+        div.acc_info {
+            width:100%;
+        }
+        img.avatar_img {
+            width: 116px;
+            height:116px;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+        h1.book {
+            width:100%;
+            font-size: 100%;
+            line-height:25px;
+            font-weight: bold;
+            text-align: center;
+        }
+        p.book {
+            width:100%;
+            text-align: center;
+            margin: 0 auto;
+            font-size:14px;
+            line-height:22px;
+            color:#AAAAAA;
+        }
+        div.button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+        button {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 16px 27px;
+            width: auto;
+            height: auto;
+            background: var(--green_back);
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 17px;
+            color: white;
+            cursor: pointer;
+            border: 0 none;
+            margin: 0 auto;
+            position: fixed;
+        }
+        /* album */
+        div.avatar_album {
+            height:35%;
+        }
+        img.avatar_img_album {
+            width: 100px;
+            height:100px;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+        h1.album {
+            width:100%;
+            font-size: 100%;
+            line-height:25px;
+            font-weight: bold;
+        }
+        p.album {
+            width:100%;
+            margin: 0 auto;
+            font-size:14px;
+            line-height:22px;
+            color:#AAAAAA;
+        }
+        div.flex {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="button">
+        <button id="start">Скачать документ</button>
+    </div>
+    <div class="acc__ready" style="page-break-before:always">
+        <div class="show__result">
+
+        </div>
+        <!-- <div class="acc">
+            <div class="logo_h">
+                <img class="logo_img_h" src="img/logo.webp" alt="logo">
+            </div>
+            <div class="avatar">
+                <img class="avatar_img" src="img/avatar.jpg" alt="avatar">
+            </div>
+            <div class="acc_info">
+                <h1>Temirkhan Rustemov</h1>
+                <p>CEO</p>
+            </div>
+        </div> -->
+    </div>
+    <script nonce="4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=" src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script nonce="4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=">
+        let width = localStorage.getItem('width_acc'),height = localStorage.getItem('height_acc'),ss = localStorage.getItem('get_ss_acc'),ss_result_width,ss_result_height,orient = localStorage.getItem('orient_acc');
+        switch(ss) {
+            case "sm":
+                ss_result_width = width * 38;
+                ss_result_height = height *38;
+                break;
+            case "dm":
+                ss_result_width = (width/10)*38;
+                ss_result_height = (height/10)*38;
+                break;
+            case "pix":
+                ss_result_width = width;
+                ss_result_width = height;
+                break;
+            default:
+                ss_result_width = width;
+                ss_result_height = height;
+        }
+            if(localStorage.getItem('check_massive')) {
+                let logo = localStorage.getItem('logo_acc');
+                let a = JSON.parse(localStorage.getItem('check_massive'));
+                let b = document.querySelector('div.show__result');
+                let logo_class;
+                let logo_result;
+                if(logo===null) {
+                    if(orient==='book') {
+                        for(i=0;i<a.length;i++) {
+                            let avatars = a[i].avatar===undefined?'not_found_avatar.svg':a[i].avatar;
+                                b.insertAdjacentHTML("afterend",`
+                                    <div class="acc_no_logo" style="width:${ss_result_width}px; height:${ss_result_height}px;">
+                                        <div class="avatar">
+                                            <img class="avatar_img" style="width:${(ss_result_height*34)/100}px;height:${(ss_result_height*34)/100}px;" src="${avatars}" alt="avatar">
+                                        </div>
+                                        <div class="acc_info">
+                                            <h1 class="book" style="font-size:${(ss_result_height*5)/100}px;line-height:${(ss_result_height*7.3)/100}px;margin-top:${(ss_result_height*8)/100}px;">${a[i].name} ${a[i].surname}</h1>
+                                            <p class="book" style="font-size:${(ss_result_height*4.09)/100}px;line-height:${(ss_result_height*6.43)/100}px;margin-top:${(ss_result_height*2.92)/100}px;">${a[i].status}</p>
+                                        </div>
+                                    </div>`);
+                        }
+                    } else {
+                        for(i=0;i<a.length;i++) {
+                        let avatars = a[i].avatar===undefined?'not_found_avatar.svg':a[i].avatar;
+                        b.insertAdjacentHTML("afterend",`
+                                <div class="acc_no_logo" style="width:${ss_result_width}px; height:${ss_result_height}px;">
+                                    <div class="flex">
+                                        <div class="avatar_album" style="margin-left:${(ss_result_height*10)/100}px;">
+                                            <img class="avatar_img_album" style="width:${(ss_result_height*43)/100}px;height:${(ss_result_height*43)/100}px;" src="${avatars}" alt="avatar">
+                                        </div>
+                                        <div class="acc_info" style="margin-left:${(ss_result_height*10)/100}px;display:flex;flex-direction:column;justify-content:center;">
+                                            <h1 class="album" style="font-size:${(ss_result_height*8)/100}px;line-height:${(ss_result_height*10)/100}px;">${a[i].name} ${a[i].surname}</h1>
+                                            <p class="album" style="font-size:${(ss_result_height*7)/100}px;line-height:${(ss_result_height*9)/100}px;margin-top:${(ss_result_height*7)/100}px;">${a[i].status}</p>
+                                        </div>
+                                    </div>
+                                </div>`);
+                        }
+                    }
+                } else {
+                    const img =new Image();
+                    img.src=logo;
+                    img.onload = () => {
+                        // console.log('Width ', img.naturalWidth);
+                        // console.log('Height', img.naturalHeight);
+                        if(img.naturalWidth/img.naturalHeight>=3) {
+                            logo_class = {
+                                "div":"logo_w",
+                                "img":"logo_img_w",
+                                "style":`width:${(ss_result_height*35.1)/100}px;height:auto;`
+                            };
+                        } else {
+                            logo_class = {
+                                "div":"logo_h",
+                                "img":"logo_img_h",
+                                "style":`width:${(ss_result_height*14.6)/100}px;height:auto;margin:${(ss_result_height*5.85)/100}px 0 0 ${(ss_result_height*5.85)/100}px;`
+                            };
+                        }
+                        if(orient==='book') {
+                            for(i=0;i<a.length;i++) {
+                                let avatars = a[i].avatar===undefined?'not_found_avatar.svg':a[i].avatar;
+                                b.insertAdjacentHTML("afterend",`
+                                    <div class="acc" style="width:${ss_result_width}px; height:${ss_result_height}px;">
+                                        <div class="${logo_class.div}">
+                                            <img class="${logo_class.img}" style="${logo_class.style}" src="${logo}" alt="logo">
+                                        </div>
+                                        <div class="avatar">
+                                            <img class="avatar_img" style="width:${(ss_result_height*34)/100}px;height:${(ss_result_height*34)/100}px;" src="${avatars}" alt="avatar">
+                                        </div>
+                                        <div class="acc_info">
+                                            <h1 class="book" style="font-size:${(ss_result_height*5)/100}px;line-height:${(ss_result_height*7.3)/100}px;margin-top:${(ss_result_height*8)/100}px;">${a[i].name} ${a[i].surname}</h1>
+                                            <p class="book" style="font-size:${(ss_result_height*4.09)/100}px;line-height:${(ss_result_height*6.43)/100}px;margin-top:${(ss_result_height*2.92)/100}px;">${a[i].status}</p>
+                                        </div>
+                                    </div>`);
+                            }
+                        } else {
+                            for(i=0;i<a.length;i++) {
+                            let avatars = a[i].avatar===undefined?'not_found_avatar.svg':a[i].avatar;
+                            b.insertAdjacentHTML("afterend",`
+                                    <div class="acc" style="width:${ss_result_width}px; height:${ss_result_height}px;">
+                                        <div style="margin:${(ss_result_height*10)/100}px 0 ${(ss_result_height*10)/100}px ${(ss_result_height*10)/100}px;">
+                                            <img src="${logo}" alt="logo" style="width:auto; height:${(ss_result_height*21)/100}px;">
+                                        </div>
+                                        <div class="flex">
+                                            <div class="avatar_album" style="margin-left:${(ss_result_height*10)/100}px;">
+                                                <img class="avatar_img_album" style="width:${(ss_result_height*43)/100}px;height:${(ss_result_height*43)/100}px;" src="${avatars}" alt="avatar">
+                                            </div>
+                                            <div class="acc_info" style="margin-left:${(ss_result_height*10)/100}px;display:flex;flex-direction:column;justify-content:center;">
+                                                <h1 class="album" style="font-size:${(ss_result_height*8)/100}px;line-height:${(ss_result_height*10)/100}px;">${a[i].name} ${a[i].surname}</h1>
+                                                <p class="album" style="font-size:${(ss_result_height*7)/100}px;line-height:${(ss_result_height*9)/100}px;margin-top:${(ss_result_height*7)/100}px;">${a[i].status}</p>
+                                            </div>
+                                        </div>
+                                    </div>`);
+                            }
+                        }
+                    }
+                }
+            }
+        document.querySelector('button#start').addEventListener('click',()=>{
+            let el = document.querySelector('div.acc__ready');
+            let opt = {
+                margin:0,
+                filename: 'test.pdf',
+                image: {type:'jpeg',quality:0.98},
+                pagebreak: {mode: 'avoid-all'},
+                html2canvas: {scale: 2, logging: true, dpi: 192, letterRendering: true},
+                jsPDF: {unit:'mm',format:'a4',orientation:'landscape'}
+            }
+            html2pdf().set(opt).from(el).save();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+    "welcome_back":{
+        "kk":"Қайта оралумен!",
+        "ru":"С возвращением!",
+        "en":"Welcome back!"
+    },
+    "signin_text": {
+        "kk":"Төменде кіру мәліметтерін енгізіңіз",
+        "ru":"Пожалуйста, введите данные вашего входа в систему ниже",
+        "en":"Please enter your log in details below"
+    },
+    "continue": {
+        "kk":"Жалғастыру",
+        "ru":"Продолжить",
+        "en":"Continue"
+    },
+    "other_method":{
+        "kk":"Кірудің басқа жолдары",
+        "ru":"Другие способы входа",
+        "en":"Other ways to log in"
+    },
+    "signin_with":{
+        "kk":"Кіру арқылы",
+        "ru":"Войти через",
+        "en":"Sign in with"
+    },
+    "not_account": {
+        "kk":"Әлі тіркелгіңіз жоқ па?",
+        "ru":"У вас ещё нет аккаунта?",
+        "en":"Don't you have an account?"
+    },
+    "register": {
+        "kk":"Тіркелу",
+        "ru":"Зарегистрироваться",
+        "en":"Signup"
+    }
+}

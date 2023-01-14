@@ -1,0 +1,159 @@
+[
+    {
+        "title":"Конструктор",
+        "name":"constructor",
+        "image":"/icons/constructor.svg",
+        "image_background":"green_background",
+        "key":"конструктор,құрастырғыш,constructor",
+        "location":"/constructor",
+        "type":"category"
+    },
+    {
+        "title":"Калькулятор",
+        "name":"calculator",
+        "image":"/icons/calculate.svg",
+        "image_background":"red_background",
+        "key":"калькулятор,calculator,есептегіш",
+        "location":"/calculator",
+        "type":"category"
+    },
+    {
+        "title":"Бизнес",
+        "name":"business",
+        "image":"/icons/work.svg",
+        "image_background":"blue_background",
+        "key":"кәсіп,бизнес,business",
+        "location":"/business",
+        "type":"category"
+    },
+    {
+        "title":"Образование",
+        "name":"education",
+        "image":"/icons/education.svg",
+        "image_background":"purple_background",
+        "key":"білім,образование,education",
+        "location":"/education",
+        "type":"category"
+    },
+    {
+        "title":"Здоровье",
+        "name":"health",
+        "image":"/icons/health.svg",
+        "image_background":"red_background",
+        "key":"денсаулық,здоровье,health",
+        "location":"/health",
+        "type":"category"
+    },
+    {
+        "title":"Финансы",
+        "name":"finance",
+        "image":"/icons/finance.svg",
+        "image_background":"green_background",
+        "key":"қаржы,финансы,finance",
+        "location":"/finance",
+        "type":"category"
+    },
+    {
+        "title":"Технологии",
+        "name":"tech",
+        "image":"/icons/tech.svg",
+        "image_background":"brand_background",
+        "key":"технологиялар,технологии,technology",
+        "location":"/technology",
+        "type":"category"
+    },
+    {
+        "title":"Другие",
+        "name":"others",
+        "image":"/icons/other.svg",
+        "image_background":"orange_background",
+        "key":"басқа,другие,others",
+        "location":"/others",
+        "type":"category"
+    },
+    {
+        "title":"Конструктор аккредитации",
+        "name":"acc_const",
+        "image":"/services/badge.webp",
+        "image_background":"purple_background",
+        "key":"бейджик/аккредитация құрастырушысы,конструктор бейджиков/аккредитации,badge/accreditation constructor",
+        "location":"/constructor/acc",
+        "type":"services",
+        "category":"constructor"
+    },
+    {
+        "title":"ИМТ калькулятор",
+        "name":"bmi_calc",
+        "image":"/services/bmi.webp",
+        "image_background":"purple_background",
+        "key":"дси есептегіш,имт калькулятор (взрослый),bmi calculator (Adult)",
+        "location":"/health/bmi-calculator",
+        "type":"services",
+        "main":"calculator",
+        "category":"health"
+    },
+    {
+        "title":"Калькулятор идеального веса",
+        "name":"ideal_weight_calc",
+        "image":"/services/ideal-weight.webp",
+        "image_background":"purple_background",
+        "key":"мінсіз салмақ есептегіші,калькулятор идеального веса,ideal weight calculator",
+        "location":"/health/ideal-weight",
+        "type":"services",
+        "main":"calculator",
+        "category":"health"
+    },
+    {
+        "title":"Депозитный калькулятор",
+        "name":"deposit_calc",
+        "image":"/services/deposit.webp",
+        "image_background":"purple_background",
+        "key":"депозиттік есептегіш,депозитный калькулятор,deposit calculator",
+        "location":"/finance/deposit",
+        "type":"services",
+        "main":"calculator",
+        "category":"finance"
+    },
+    {
+        "title":"Калькулятор расчета маржи и наценки",
+        "name":"margin_markup_calc",
+        "image":"/services/margin-markup.webp",
+        "image_background":"purple_background",
+        "key":"маржа мен үстеме бағаны есептеу калькуляторы,калькулятор расчета маржи и наценки,margin and markup calculator",
+        "location":"/business/margin-markup-calculator",
+        "type":"services",
+        "main":"calculator",
+        "category":"business"
+    },
+    {
+        "title":"Календарь беременности",
+        "name":"pregnancy_calendar",
+        "image":"/services/pregnancy-calendar.webp",
+        "image_background":"purple_background",
+        "key":"жүктілік күнтізбесі,календарь беременности,pregnancy calendar",
+        "location":"/health/pregnancy-calendar",
+        "type":"services",
+        "category":"health"
+    },
+    {
+        "title":"Индекс курящего человека",
+        "name":"index_of_the_smoking_person",
+        "image":"/services/index-of-the-smoking-person.webp",
+        "image_background":"purple_background",
+        "key":"темекі шегетін адамның индексі,индекс курящего человека,index of the smoking person",
+        "location":"/health/ind-of-the-smoking-person",
+        "type":"services",
+        "main":"calculator",
+        "category":"health"
+    },
+    {
+        "title":"Резус фактор при планировании семьи",
+        "name":"rh_factor_in_family_planning",
+        "image":"/services/rh-factor-in-family-planning.webp",
+        "image_background":"purple_background",
+        "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
+        "location":"/health/rh-factor-in-family-planning",
+        "type":"services",
+        "category":"health"
+    }
+]

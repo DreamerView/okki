@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      
+	<url>
+		<loc>https://okki.kz/</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/constructor</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/constructor" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/constructor" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/constructor" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/constructor/acc</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/constructor/acc" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/constructor/acc" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/constructor/acc" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/health</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/health" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/health" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/health" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/health/bmi-calculator</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/health/bmi-calculator" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/health/bmi-calculator" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/health/bmi-calculator" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/health/ideal-weight</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/health/ideal-weight" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/health/ideal-weight" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/health/ideal-weight" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/finance</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/finance" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/finance" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/finance" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/business</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/business" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/business" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/business" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/business/margin-markup-calculator</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/business/margin-markup-calculator" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/business/margin-markup-calculator" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/business/margin-markup-calculator" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/business/margin-cost-calculator</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/business/margin-cost-calculator" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/business/margin-cost-calculator" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/business/margin-cost-calculator" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/business/markup-prime-calculator</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/business/markup-prime-calculator" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/business/markup-prime-calculator" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/business/markup-prime-calculator" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/health/pregnancy-calendar</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/health/pregnancy-calendar" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/health/pregnancy-calendar" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/health/pregnancy-calendar" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/health/ind-of-the-smoking-person</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/health/ind-of-the-smoking-person" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/health/ind-of-the-smoking-person" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/health/ind-of-the-smoking-person" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+
+	<url>
+		<loc>https://okki.kz/health/rh-factor-in-family-planning</loc>
+		<xhtml:link rel="alternate" hreflang="kk" href="https://okki.kz/kk/health/rh-factor-in-family-planning" /><xhtml:link rel="alternate" hreflang="ru" href="https://okki.kz/ru/health/rh-factor-in-family-planning" /><xhtml:link rel="alternate" hreflang="en" href="https://okki.kz/health/rh-factor-in-family-planning" />
+		<changefreq>daily</changefreq>
+		<lastmod>2022-10-13</lastmod>
+	</url>
+</urlset>

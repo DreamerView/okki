@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-UIKIT_18">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="UIKIT_18" data-name="UIKIT – 18" clip-path="url(#clip-UIKIT_18)">
+    <rect width="200" height="200" fill="#e7e7ff"/>
+    <g id="badge_black_48dp">
+      <g id="Сгруппировать_14" data-name="Сгруппировать 14">
+        <rect id="Прямоугольник_43" data-name="Прямоугольник 43" width="200" height="200" fill="none"/>
+      </g>
+      <g id="Сгруппировать_15" data-name="Сгруппировать 15" transform="translate(50 50)">
+        <path id="Контур_36" data-name="Контур 36" d="M95.857,24.429H67.286V10.143A7.164,7.164,0,0,0,60.143,3H45.857a7.164,7.164,0,0,0-7.143,7.143V24.429H10.143A7.164,7.164,0,0,0,3,31.571V95.857A7.164,7.164,0,0,0,10.143,103H95.857A7.164,7.164,0,0,0,103,95.857V31.571A7.164,7.164,0,0,0,95.857,24.429Zm-50-14.286H60.143V38.714H45.857ZM38.714,53a7.143,7.143,0,1,1-7.143,7.143A7.164,7.164,0,0,1,38.714,53ZM53,81.571H24.429V78c0-4.786,9.5-7.143,14.286-7.143S53,73.214,53,78Zm28.571-7.143H60.143V67.286H81.571Zm0-14.286H60.143V53H81.571Z" transform="translate(-3 -3)" fill="#7d7aff"/>
+      </g>
+    </g>
+  </g>
+</svg>
