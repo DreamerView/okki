@@ -10,10 +10,12 @@ const platform = require('platform');
 import { useDispatch } from "react-redux";
 
 export const getServerSideProps = async (context) => {
-    context.res.setHeader(
-        'Cache-Control',
-        'public, s-maxage=10, stale-while-revalidate=59'
-    );
+    if(process.env.production===true) {
+        context.res.setHeader(
+            'Cache-Control',
+            'public, s-maxage=10, stale-while-revalidate=59'
+        );
+    }
     const lang = context.locale;
     const ip = context.req.headers["x-real-ip"] || context.req.connection.remoteAddress;
     const data = await ServerJsonFetchReq({

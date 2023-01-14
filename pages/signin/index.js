@@ -14,10 +14,12 @@ const platform = require('platform');
 import text from "/translate/signin/index_translate.json";
 
 export const getServerSideProps = async (context) => {
-    // context.res.setHeader(
-    //     'Cache-Control',
-    //     'public, s-maxage=10, stale-while-revalidate=59'
-    // );
+    if(process.env.production===true) {
+        context.res.setHeader(
+            'Cache-Control',
+            'public, s-maxage=10, stale-while-revalidate=59'
+        );
+    }
     const lang = context.locale;
     const session = await getSession(context);
     const data = await ServerJsonFetchReq({
