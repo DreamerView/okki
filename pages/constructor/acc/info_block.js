@@ -37,7 +37,7 @@ const InfoBlock = (result) => {
     if(getcrop) {if(getcrop.id===result.item.id) CheckAvatar(getcrop.image);}
     useEffect(()=>{
         return info !==''&&result.change({info});
-    },[info]); // eslint-disable-line react-hooks/exhaustive-deps
+    },[info]);
     return(
         <div className={`${style.main__block_interface_menu} c-m ${result.action}`}>
                     <div className={style.main__block_menu_close}>
