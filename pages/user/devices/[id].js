@@ -14,12 +14,12 @@ import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
 
 export const getServerSideProps = async (context) => {
-    if(process.env.production===true) {
-        context.res.setHeader(
-            'Cache-Control',
-            'public, s-maxage=10, stale-while-revalidate=59'
-        );
-    }
+    // if(process.env.production===true) {
+    //     context.res.setHeader(
+    //         'Cache-Control',
+    //         'public, s-maxage=10, stale-while-revalidate=59'
+    //     );
+    // }
     const id = context.params.id;
     const locale = context.locale;
     const data = await ServerJsonFetchReq({
