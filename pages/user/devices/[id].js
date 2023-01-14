@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
+import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 import dynamic from 'next/dynamic';
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
@@ -8,16 +9,17 @@ import { useEffect,useState } from 'react';
 import Image from 'next/image';
 import ux from "/translate/user/index_translate";
 import Head from 'next/head';
-const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
+const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
-import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 
 export const getServerSideProps = async (context) => {
-    context.res.setHeader(
-        'Cache-Control',
-        'public, s-maxage=10, stale-while-revalidate=59'
-    );
+    if(process.env.production===true) {
+        context.res.setHeader(
+            'Cache-Control',
+            'public, s-maxage=10, stale-while-revalidate=59'
+        );
+    }
     const id = context.params.id;
     const locale = context.locale;
     const data = await ServerJsonFetchReq({

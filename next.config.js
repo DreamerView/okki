@@ -160,7 +160,8 @@ module.exports = withPWA({
     backend:backend,
     aesKey:"fd9b84f326e766ea7676c239f48e31b14ea01e9b0124290834637d520818d815",
     authHeader: authHeader,
-    host:host
+    host:host,
+    production:production
   },
   reactStrictMode: true,
   i18n: {

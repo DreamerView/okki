@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
+import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 import dynamic from 'next/dynamic';
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
@@ -8,61 +9,38 @@ import { useEffect,useState } from 'react';
 import Image from 'next/image';
 import ux from "/translate/user/index_translate";
 import Head from 'next/head';
-const HeaderUser = dynamic(()=>import('/pages/user/headerModule'),{ssr:false});
+const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 import { useRouter } from 'next/router';
-const AesEncryption = require('aes-encryption');
 
 export const getServerSideProps = async (context) => {
-    context.res.setHeader('Cache-Control','public, s-maxage=10, stale-while-revalidate=59');
-    const path = '/get-devices';
-    const locale = context.locale,cookie = context.req.headers.cookie;
-    const ReturnBack = () => {return {redirect: {permanent: false,destination: '/signin',}};};
-    const GetRequest = ({auth})=> {return{method:'GET',headers:{"Authorization": `Bearer ${auth}`,"Accept":"application/json; charset=utf-8","Content-Type": "application/json; charset=utf-8","Accept-Encoding":"gzip"},cache: "no-store"};};
-    if(cookie!==undefined) {
-            const aes = new AesEncryption();
-            aes.setSecretKey(process.env.aesKey);
-            const getCookie = (cookieName) => {let cookies = {};cookie.split(';').forEach(function(el) {let [key,value] = el.split('=');cookies[key.trim()] = value;});return cookies[cookieName];};
-            const userAccessToken = getCookie("accessToken"),userClientId = getCookie("clientId");
-            if(userAccessToken!==undefined&&userAccessToken!==null&&userClientId!==undefined&&userClientId!==null) {
-                const accessToken = aes.encrypt(userAccessToken),clientId = aes.encrypt(userClientId),requestOptions = GetRequest({auth:accessToken+" "+clientId}),login = await fetch(process.env.backend+path, requestOptions);
-                if (login.status === 406) {
-                    const tokenOptions = {
-                        method: 'POST',
-                        headers: {"Accept":"application/json; charset=utf-8","Content-Type": "application/json; charset=utf-8"},
-                        cache: "no-store",
-                        body: JSON.stringify({accessToken:accessToken,clientId:clientId})
-                    };
-                    const send = await fetch(process.env.backend+"/generate-token",tokenOptions);
-                    if(send.status === 409) {
-                        context.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/","accessToken=;Max-Age=0;path=/"]);
-                        return ReturnBack();
-                    } else {
-                        const result = await send.json();
-                        if(result.accessToken!==undefined) {
-                            const response = aes.decrypt(result.accessToken),getClientId = aes.decrypt(result.clientId),today = new Date(),expire = new Date();
-                            expire.setTime(today.getTime() + 3600000*24*14);
-                            context.res.setHeader('set-cookie', ["accessToken="+response+";path=/;secure;expires="+expire.toGMTString()+"","clientId="+getClientId+";path=/;secure;expires="+expire.toGMTString()+""]);
-                            console.log("token updated, new token is "+response);
-                            const sendReqOpt =  GetRequest({auth:aes.encrypt(response)+" "+clientId}),send = await fetch(process.env.backend+path, sendReqOpt);
-                            const result = send.json();
-                            return {props:{locale:locale,data:result}}
-                        }
-                    }
-                } else if(login.status === 409) {
-                    context.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/","accessToken=;Max-Age=0;path=/"]);
-                    return ReturnBack();
-                } 
-                else {
-                    console.log(login)
-                    // const send = login.json()
-                    return {props:{locale:locale,data:login}};
-                }
-            } else {
-                context.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/","accessToken=;Max-Age=0;path=/"]);
-                return ReturnBack();
-            }
+    if(process.env.production===true) {
+        context.res.setHeader(
+            'Cache-Control',
+            'public, s-maxage=10, stale-while-revalidate=59'
+        );
+    }
+    const locale = context.locale;
+    const data = await ServerJsonFetchReq({
+        method:"GET",
+        path:"/get-devices",
+        cookie:context.req.headers.cookie,
+        server:context,
+        auth:"yes"
+    });
+    // const data = start.json();
+    if(data.result==='redirect') {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/signin',
+            },
+            props: {}
+        }; 
     } 
-    return ReturnBack();
+    return {
+        props: {data:data||null,locale:locale}
+    }; 
+    
 };
 
 const UserInterface = ({data,locale}) => {
