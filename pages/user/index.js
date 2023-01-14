@@ -19,48 +19,50 @@ export const getServerSideProps = async (context) => {
     const path = '/get-data';
     const locale = context.locale;
     const cookie = context.req.headers.cookie;
-    // try {
+    const ReturnBack = () => {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/signin',
+            }
+        };
+    };
+    const GetRequest = ({auth}) => {
+        return  {
+            method: 'GET',
+            headers: {
+                "Authorization": `Bearer ${auth}`,
+                "Accept":"application/json; charset=utf-8",
+                "Content-Type": "application/json; charset=utf-8",
+                "Accept-Encoding":"gzip"
+            },
+            cache: "no-store"
+        };
+    };
     if(cookie!==undefined) {
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
             const getCookie = (cookieName) => {
                 let cookies = {};
                 cookie.split(';').forEach(function(el) {
-                let [key,value] = el.split('=');
-                cookies[key.trim()] = value;
+                    let [key,value] = el.split('=');
+                    cookies[key.trim()] = value;
                 });
                 return cookies[cookieName];
             };
-            const reqUrl = context.req.headers['host'];
-            const urlReq = reqUrl==='localhost:3000'?"http://":"https://";
-            const originReq = urlReq+reqUrl;
             const userAccessToken = getCookie("accessToken");
             const userClientId = getCookie("clientId");
             if(userAccessToken!==undefined&&userAccessToken!==null&&userClientId!==undefined&&userClientId!==null) {
                 const accessToken = aes.encrypt(userAccessToken);
                 const clientId = aes.encrypt(userClientId);
-                const requestOptions = {
-                        method: 'GET',
-                        headers: {
-                            "WWW-Authenticate": process.env.authHeader,
-                            "Origin":originReq,
-                            "Authorization": `Bearer ${accessToken} ${clientId}`,
-                            "Accept":"application/json; charset=utf-8",
-                            "Content-Type": "application/json; charset=utf-8",
-                            "Accept-Encoding":"gzip"
-                        },
-                        cache: "no-store"
-                    };
+                const requestOptions = GetRequest({auth:accessToken+" "+clientId})
                 const login = await fetch(process.env.backend+path, requestOptions);
                 if (login.status === 406) {
                     const tokenOptions = {
                         method: 'POST',
                         headers: {
-                            "WWW-Authenticate": process.env.authHeader,
-                            "Origin":originReq,
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8",
-                            "Accept-Encoding":"gzip"
                         },
                         cache: "no-store",
                         body: JSON.stringify({accessToken:accessToken,clientId:clientId})
@@ -68,14 +70,8 @@ export const getServerSideProps = async (context) => {
                     const send = await fetch(process.env.backend+"/generate-token",tokenOptions);
                     if(send.status === 409) {
                         console.log("It's conflict!");
-                        context.res.setHeader('set-cookie', ["accessToken=;Max-Age=0;path=/"]);
-                        context.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/"]);
-                        return {
-                            redirect: {
-                                permanent: false,
-                                destination: '/signin',
-                            }
-                        };
+                        context.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/","accessToken=;Max-Age=0;path=/"]);
+                        return ReturnBack();
                     } else {
                         const result = await send.json();
                         if(result.accessToken!==undefined) {
@@ -84,55 +80,27 @@ export const getServerSideProps = async (context) => {
                             const today = new Date();
                             const expire = new Date();
                             expire.setTime(today.getTime() + 3600000*24*14);
-                            context.res.setHeader('set-cookie', ["accessToken="+response+";path=/;secure;expires="+expire.toGMTString()+""]);
-                            context.res.setHeader('set-cookie', ["clientId="+getClientId+";path=/;secure;expires="+expire.toGMTString()+""]);
+                            context.res.setHeader('set-cookie', ["accessToken="+response+";path=/;secure;expires="+expire.toGMTString()+"","clientId="+getClientId+";path=/;secure;expires="+expire.toGMTString()+""]);
                             console.log("token updated, new token is "+response);
-                            const sendReqOpt =  {
-                                    method: 'GET',
-                                    headers: {
-                                        // "WWW-Authenticate": process.env.authHeader,
-                                        // "Origin":originReq,
-                                        "Authorization": `Bearer ${aes.encrypt(response)} ${clientId}`,
-                                        "Accept":"application/json; charset=utf-8",
-                                        "Content-Type": "application/json; charset=utf-8",
-                                        "Accept-Encoding":"gzip"
-                                    },
-                                    cache: "no-store"
-                                };
+                            const sendReqOpt =  GetRequest({auth:aes.encrypt(response)+" "+clientId})
                             const send = await fetch(process.env.backend+path, sendReqOpt);
-                            // const res = await send.json();
                             return {props:{locale:locale}}
                         }
                     }
                 } else if(login.status === 409) {
                     console.log("It's conflict!");
-                    context.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/"]);
-                    context.res.setHeader('set-cookie', ["accessToken=;Max-Age=0;path=/"]);
+                    context.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/","accessToken=;Max-Age=0;path=/"]);
                     return {result:'redirect',location:"/signin"};
                 } 
                 else {
-                    const result = await login.json();
-                    console.log(result);
                     return {props:{locale:locale}};
                 }
             } else {
-                return {
-                    redirect: {
-                        permanent: false,
-                        destination: '/signin',
-                    }
-                };
+                context.res.setHeader('set-cookie', ["clientId=;Max-Age=0;path=/","accessToken=;Max-Age=0;path=/"]);
+                return ReturnBack();
             }
-        } 
-        return {
-            redirect: {
-                permanent: false,
-                destination: '/signin',
-            }
-        };
-    // } catch(e) {
-    //         console.log(e);
-    //     }
+    } 
+    return ReturnBack();
 };
 
 

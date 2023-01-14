@@ -96,7 +96,6 @@ const LoginForm = ({providers,data,ip,lang}) => {
                         method: 'POST',
                         headers: {
                             "WWW-Authenticate": process.env.authHeader,
-                            "Proxy-Authenticate":"sdadasdsa",
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8"
                         },
@@ -158,7 +157,6 @@ const LoginForm = ({providers,data,ip,lang}) => {
                         method: 'POST',
                         headers: {
                             "WWW-Authenticate": process.env.authHeader,
-                            "Proxy-Authenticate":"sdadasdsa",
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8"
                         },
@@ -212,7 +210,6 @@ const LoginForm = ({providers,data,ip,lang}) => {
                         method: 'POST',
                         headers: {
                             "WWW-Authenticate": process.env.authHeader,
-                            "Proxy-Authenticate":"sdadasdsa",
                             "Accept":"application/json; charset=utf-8",
                             "Content-Type": "application/json; charset=utf-8"
                         },
