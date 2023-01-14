@@ -37,7 +37,6 @@ const ContentSecurityPolicy = `
     media-src 'self';
     frame-ancestors 'self';
     upgrade-insecure-requests;
-    report-uri https://okki.vercel.app/constructor;
 `;
 
 const secure = production?[
