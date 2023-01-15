@@ -15,7 +15,7 @@ import Head from 'next/head';
 const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 
 export const config = {
-    runtime: 'edge',
+    runtime: 'nodejs',
 };
 
 export const getServerSideProps = async (context) => {

@@ -14,7 +14,7 @@ import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
 
 export const config = {
-    runtime: 'edge',
+    runtime: 'nodejs',
 };
 
 export const getServerSideProps = async (context) => {

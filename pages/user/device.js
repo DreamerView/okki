@@ -13,7 +13,7 @@ const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 import { useRouter } from 'next/router';
 
 export const config = {
-    runtime: 'edge',
+    runtime: 'nodejs',
 };
 
 export const getServerSideProps = async (context) => {
