@@ -11,10 +11,10 @@ import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 import text from "/translate/signup/index_translate.json";
 
 export const getServerSideProps = async (context) => {
-    // context.res.setHeader(
-    //     'Cache-Control',
-    //     'public, s-maxage=10, stale-while-revalidate=59'
-    // );
+    context.res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59'
+    );
     const lang = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",

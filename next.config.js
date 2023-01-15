@@ -17,12 +17,12 @@ const withPWA = require('next-pwa')({
   register: true,
   runtimeCaching: [
     {
-      urlPattern: /.*/i,
-      handler: 'NetworkFirst', // ✅
+      urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
+      handler: 'NetworkFirst',
       options: {
         cacheName: 'others',
         expiration: {
-          maxEntries: 16,
+          maxEntries: 32,
           maxAgeSeconds: 24 * 60 * 60,
         },
       },

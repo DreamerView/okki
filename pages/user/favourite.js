@@ -15,12 +15,12 @@ import Head from 'next/head';
 const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 
 export const getServerSideProps = async (context) => {
-    // if(process.env.production===true) {
-    //     context.res.setHeader(
-    //         'Cache-Control',
-    //         'public, s-maxage=10, stale-while-revalidate=59'
-    //     );
-    // }
+    if(process.env.production===true) {
+        context.res.setHeader(
+            'Cache-Control',
+            'public, s-maxage=10, stale-while-revalidate=59'
+        );
+    }
     const locale = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",
