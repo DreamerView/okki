@@ -10,6 +10,10 @@ import { useEffect,useState } from 'react';
 const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 const HistoryUser =  dynamic(()=>import('/pages/user/historyModule'));
 
+export const config = {
+    runtime: 'edge',
+};
+
 export const getServerSideProps = async (context) => {
     if(process.env.production===true) {
         context.res.setHeader(

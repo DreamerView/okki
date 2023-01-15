@@ -12,6 +12,10 @@ import Head from 'next/head';
 const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 import { useRouter } from 'next/router';
 
+export const config = {
+    runtime: 'edge',
+};
+
 export const getServerSideProps = async (context) => {
     if(process.env.production===true) {
         context.res.setHeader(

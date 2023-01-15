@@ -13,6 +13,10 @@ const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
 
+export const config = {
+    runtime: 'edge',
+};
+
 export const getServerSideProps = async (context) => {
     if(process.env.production===true) {
         context.res.setHeader(

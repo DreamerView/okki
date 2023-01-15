@@ -14,6 +14,10 @@ import services from "/translate/services/all_translate";
 import Head from 'next/head';
 const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 
+export const config = {
+    runtime: 'edge',
+};
+
 export const getServerSideProps = async (context) => {
     if(process.env.production===true) {
         context.res.setHeader(

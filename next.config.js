@@ -20,9 +20,9 @@ const withPWA = require('next-pwa')({
       urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
       handler: 'NetworkFirst',
       options: {
-        cacheName: 'others',
+        cacheName: 'okki-network',
         expiration: {
-          maxEntries: 32,
+          maxEntries: 16,
           maxAgeSeconds: 24 * 60 * 60,
         },
       },
