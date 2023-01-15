@@ -30,7 +30,6 @@ const withPWA = require('next-pwa')({
   cacheStartUrl: false,
   dynamicStartUrl: false,
 });
-const cache = require('./cache')
 
 const ContentSecurityPolicy = `
     script-src 'report-sample' 'self' 'nonce-${key_pass}'; 
