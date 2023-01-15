@@ -15,8 +15,22 @@ const withPWA = require('next-pwa')({
   dest: 'public',
   disable: process.env.NODE_ENV === 'development',
   register: true,
-  skipWaiting: true
+  skipWaiting: true,
+  runtimeCaching: {
+    urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
+    handler: 'NetworkFirst',
+    options: {
+        cacheName: 'next-data',
+        expiration: {
+            maxEntries: 32,
+            maxAgeSeconds: 24 * 60 * 60
+        }
+    }
+  },
+  cacheStartUrl: false,
+  dynamicStartUrl: false,
 });
+const cache = require('./cache')
 
 const ContentSecurityPolicy = `
     script-src 'report-sample' 'self' 'nonce-${key_pass}'; 
@@ -146,7 +160,8 @@ const secure = production?[
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-module.exports = {
+module.exports = withPWA({
+  swcMinify: true,
   images: {
     domains: [images,'lh3.googleusercontent.com'],
     formats: ['image/avif', 'image/webp']
@@ -190,4 +205,4 @@ module.exports = {
   //     },
   //   ]
   // },
-};
+});
