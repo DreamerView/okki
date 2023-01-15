@@ -36,7 +36,7 @@ const HeaderUser = ({lang}) => {
                         </div>
                     </div>
                     <div className={`${style.main__block_user_row}`}>
-                        <Link href="/user/history" prefetch={false}>
+                        <Link href="/user/history">
                         <div className={`${style.main__block_user} anim_hover`}>
                             <div className={`${style.main__block_user_image} blue_background`}>
                                 <div className={style.main__block_user_image_row}>
@@ -46,7 +46,7 @@ const HeaderUser = ({lang}) => {
                             <p>{translate['recent'][lang]}</p>
                         </div>
                         </Link>
-                        <Link href="/user/favourite" prefetch={false}>
+                        <Link href="/user/favourite">
                         <div className={`${style.main__block_user} anim_hover`}>
                             <div className={`${style.main__block_user_image} red_background`}>
                                 <div className={style.main__block_user_image_row}>
@@ -56,7 +56,7 @@ const HeaderUser = ({lang}) => {
                             <p>{translate['favorites'][lang]}</p>
                         </div>
                         </Link>
-                        <Link href="/user/device" prefetch={false}>
+                        <Link href="/user/device">
                         <div className={`${style.main__block_user} anim_hover`}>
                             <div className={`${style.main__block_user_image} green_background`}>
                                 <div className={style.main__block_user_image_row}>
