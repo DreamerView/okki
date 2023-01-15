@@ -90,7 +90,7 @@ const UserInterface = ({getId,data,locale}) => {
     };
     const signoutDevice = async() => {
         const send = await ClientJsonFetchReq({method:"POST",path:'/signout-device',cookie:document.cookie,body:{clientId:getId}});
-        if(send.accept===true) return router.push("/user/device");
+        if(send.accept===true) return router.push("/user/device", undefined, { shallow: true });
     }
     const titleHead = `${ux['devices'][lang]} | Okki.kz`;
     return(
