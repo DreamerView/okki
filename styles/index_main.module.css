@@ -408,6 +408,7 @@ div.main__index_block_row_b {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    margin:0 auto;
 }
 div.main__index_block {
     width:160px;

@@ -861,8 +861,9 @@ header {
   padding:var(--m-1);
   background-color: var(--header-color);
   display: var(--display);
-  margin-bottom: 16px;
-  border-radius: 0 0 24px 24px
+  margin-bottom: 16px ;
+  border-radius: 0 0 24px 24px;
+  box-sizing: border-box;
 }
 
 
@@ -1378,7 +1379,14 @@ div.main {
   padding:var(--m-3);
   background-color: var(--header-color);
   border-radius: 24px;
-  margin: 16px 0
+  margin: 16px auto;
+  box-sizing: border-box;
+}
+div.main_block_row {
+  max-width:1400px;
+  width:100%;
+  min-width: 160px;
+  margin: 0 auto;
 }
 div.main_app {
   padding:var(--m-4);
