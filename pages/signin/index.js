@@ -18,7 +18,7 @@ export const getServerSideProps = async (context) => {
     const session = await getSession(context);
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/get-data",
+        path:"/verify-user",
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"

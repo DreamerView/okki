@@ -10,15 +10,15 @@ import { useEffect,useState } from 'react';
 const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
 const HistoryUser =  dynamic(()=>import('/pages/user/historyModule'));
 
-export const config = {
-    runtime: 'nodejs',
-};
+// export const config = {
+//     runtime: 'nodejs',
+// };
 
 export const getServerSideProps = async (context) => {
     const locale = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/get-data",
+        path:"/verify-user",
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"

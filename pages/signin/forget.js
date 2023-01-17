@@ -11,7 +11,7 @@ export const getServerSideProps = async (context) => {
     const lang = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/get-data",
+        path:"/verify-user",
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"
