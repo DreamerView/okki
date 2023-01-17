@@ -161,7 +161,7 @@ const secure = production?[
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-module.exports = {
+module.exports = withPWA({
   swcMinify: true,
   images: {
     domains: [images,'lh3.googleusercontent.com'],
@@ -206,4 +206,4 @@ module.exports = {
   //     },
   //   ]
   // },
-};
+});
