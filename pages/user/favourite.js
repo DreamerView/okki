@@ -12,11 +12,7 @@ import Image from 'next/image';
 import ux from "/translate/user/index_translate";
 import services from "/translate/services/all_translate";
 import Head from 'next/head';
-const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
-
-export const config = {
-    runtime: 'nodejs',
-};
+import HeaderUser from '/pages/user/headerModule';
 
 export const getServerSideProps = async (context) => {
     const locale = context.locale;
@@ -27,7 +23,6 @@ export const getServerSideProps = async (context) => {
         server:context,
         auth:"yes"
     });
-    console.log(data)
     if(data!==undefined && data.result==='redirect') {
         return {
             redirect: {

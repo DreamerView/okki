@@ -7,12 +7,9 @@ import { useMediaQuery } from 'react-responsive';
 import Head from 'next/head';
 import ux from "/translate/user/index_translate";
 import { useEffect,useState } from 'react';
-const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
-const HistoryUser =  dynamic(()=>import('/pages/user/historyModule'));
+import HeaderUser from '/pages/user/headerModule';
+import HistoryUser from '/pages/user/historyModule';
 
-export const config = {
-    runtime: 'nodejs',
-};
 
 export const getServerSideProps = async (context) => {
     const locale = context.locale;
@@ -23,7 +20,6 @@ export const getServerSideProps = async (context) => {
         server:context,
         auth:"yes"
     });
-    console.log(data)
     if(data!==undefined && data.result==='redirect') {
         return {
             redirect: {

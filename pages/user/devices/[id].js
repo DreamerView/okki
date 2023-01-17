@@ -9,13 +9,9 @@ import { useEffect,useState } from 'react';
 import Image from 'next/image';
 import ux from "/translate/user/index_translate";
 import Head from 'next/head';
-const HeaderUser = dynamic(()=>import('/pages/user/headerModule'));
+import HeaderUser from '/pages/user/headerModule';
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
-
-export const config = {
-    runtime: 'nodejs',
-};
 
 export const getServerSideProps = async (context) => {
     const id = context.params.id;
