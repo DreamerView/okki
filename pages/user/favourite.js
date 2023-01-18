@@ -15,14 +15,18 @@ import Head from 'next/head';
 import HeaderUser from '/pages/user/headerModule';
 
 export const getServerSideProps = async (context) => {
+    context.res.setHeader('Cache-Control', 'no-store');
     const locale = context.locale;
+    console.time("favourite");
+    const path = "/verify-user";
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/verify-user",
+        path:path,
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"
     });
+    console.timeEnd("favourite");
     if(data!==undefined && data.result==='redirect') {
         return {
             redirect: {

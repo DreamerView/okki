@@ -3,16 +3,14 @@ import React,{memo,useState,useEffect} from "react";
 import Link from "next/link";
 import nav_translate from "/translate/services/all_translate";
 import ux from "/translate/ux/action";
-import useTranslateText from "/start/translate";
 import { useSelector } from "react-redux";
 import Image from "next/image";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 
 const NavbarApp = ({to,choice,with_save,save_name,mode,lang}) => {
     const router = useRouter();
     const headerHeight= useSelector(state=>state.headerHeight);
-    // const lang = useTranslateText();
     const result = to!=='undefined'?to:[{}];
     const [scrollResult,setScrollResult] = useState('');
     useEffect(() => {

@@ -14,15 +14,19 @@ import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
 
 export const getServerSideProps = async (context) => {
+    context.res.setHeader('Cache-Control', 'no-store');
     const id = context.params.id;
     const locale = context.locale;
+    console.time("devices finished");
+    const path = "/get-devices";
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/get-devices",
+        path:path,
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"
     });
+    console.timeEnd("devices finished");
     if(data.result==='redirect') {
         return {
             redirect: {

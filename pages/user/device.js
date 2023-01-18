@@ -1,7 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
-import dynamic from 'next/dynamic';
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/user/index.module.css";
 import { useMediaQuery } from 'react-responsive';
@@ -10,17 +9,21 @@ import Image from 'next/image';
 import ux from "/translate/user/index_translate";
 import Head from 'next/head';
 import HeaderUser from '/pages/user/headerModule';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export const getServerSideProps = async (context) => {
+    context.res.setHeader('Cache-Control', 'no-store');
     const locale = context.locale;
+    console.time("device finished");
+    const path = "/get-devices";
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/get-devices",
+        path:path,
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"
     });
+    console.timeEnd("device finished");
     if(data.result==='redirect') {
         return {
             redirect: {
@@ -38,7 +41,6 @@ export const getServerSideProps = async (context) => {
 
 const UserInterface = ({data,locale}) => {
     const [lazy,setLazy] = useState(false);
-    const router = useRouter();
     const lang = locale;
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     useEffect(()=>{
@@ -109,8 +111,10 @@ const UserInterface = ({data,locale}) => {
                     <h1>{ux['devices'][lang]}</h1>
                     <p className='sub_content'>Текущий сеанс</p>
                     <div className={style.devices_row_main}>
-                            {data!==null&&data!==undefined&&data.result.filter(e=>e.clientId===data.clientId).map((e,index)=><div onClick={()=>router.push('/user/devices/'+e.clientId)} key={index} className={`${style.devices} anim_hover`}>
-                                <div onClick={()=>router.push('/user/devices/'+e.clientId, undefined, { shallow: true })} key={index} className={`${style.devices_row}`}>
+                            {data!==null&&data!==undefined&&data.result.filter(e=>e.clientId===data.clientId).map((e,index)=>
+                            <Link key={index} href={'/user/devices/'+e.clientId} shallow={true}>
+                            <div className={`${style.devices} anim_hover`}>
+                                <div className={`${style.devices_row}`}>
                                     <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?'blue_background':brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}><Image priority width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))} alt="device"/></div>
                                     <div className={style.devices_row_block}>
                                         <h4>{JSON.parse(e.clientInfo).name===null?"Неизвестно":JSON.parse(e.clientInfo).name} - {JSON.parse(e.clientInfo).product!==null&&JSON.parse(e.clientInfo).product}{JSON.parse(e.clientInfo).os!==null&&" "+JSON.parse(e.clientInfo).os.family+" "+JSON.parse(e.clientInfo).os.version}</h4>
@@ -119,12 +123,15 @@ const UserInterface = ({data,locale}) => {
                                         <p className={style.sub}>{ConvertTime(JSON.parse(e.getTime))}</p>
                                     </div>
                                 </div>
-                            </div>)}
+                            </div>
+                            </Link>
+                            )}
                     </div>
                     <p className={style.subber}>Активные сеансы</p>
                     <div className={style.devices_row_main}>
                             {data!==null&&data!==undefined&&data.result.filter(e=>e.clientId!==data.clientId).map((e,index)=>
-                                <div onClick={()=>router.push('/user/devices/'+e.clientId, undefined, { shallow: true })} key={index} className={`${style.devices} anim_hover`}>
+                                <Link key={index} href={'/user/devices/'+e.clientId} shallow={true}>
+                                <div className={`${style.devices} anim_hover`}>
                                     <div key={index} className={style.devices_row}>
                                         <div className={`${style.devices_row_image} ${JSON.parse(e.clientInfo).name===null?colorChanger(Math.floor(Math.random() * 6)):brandChanger(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}`}><Image priority alt="icon" width={30} height={30} src={JSON.parse(e.clientInfo).name===null?"/img/devices.svg":brandCheker(JSON.parse(e.clientInfo).name.toLowerCase().split(' ').join(''))}/></div>
                                         <div className={style.devices_row_block}>
@@ -135,6 +142,7 @@ const UserInterface = ({data,locale}) => {
                                         </div>
                                     </div>
                                 </div>
+                                </Link>
                             )}
                         
                     </div>

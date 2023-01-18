@@ -19,8 +19,8 @@ const Document = () => {
                 <meta httpEquiv="x-dns-prefetch-control" crossOrigin="true" content="on" />
                 <link rel="dns-prefetch" href={process.env.backend} crossOrigin="true"/>
                 <link rel="preconnect" href={process.env.backend} crossOrigin="true" />
-                <link rel="prerender" href={process.env.backend} crossOrigin="true"/>
-                <link rel="subresource" href={process.env.backend} crossOrigin="true"/>
+                {/* <link rel="prerender" href={process.env.backend} crossOrigin="true"/>
+                <link rel="subresource" href={process.env.backend} crossOrigin="true"/> */}
                 {/*  */}
                 <meta httpEquiv="cleartype" content="on"/>
                 <meta httpEquiv="Cache-Control" content="max-age=31536000" />

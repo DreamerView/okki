@@ -12,14 +12,18 @@ import HistoryUser from '/pages/user/historyModule';
 
 
 export const getServerSideProps = async (context) => {
+    context.res.setHeader('Cache-Control', 'no-store');
     const locale = context.locale;
+    console.time("history");
+    const path = "/verify-user";
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/verify-user",
+        path:path,
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"
     });
+    console.timeEnd("history");
     if(data!==undefined && data.result==='redirect') {
         return {
             redirect: {

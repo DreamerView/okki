@@ -1,7 +1,6 @@
 /*jshint esversion: 6 */
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 import NavbarApp from '/pages/navbar_app/nav';
-import dynamic from 'next/dynamic';
 import style from "/styles/user/index.module.css";
 import { useMediaQuery } from 'react-responsive';
 import Head from 'next/head';
@@ -15,14 +14,18 @@ import HistoryUser from '/pages/user/historyModule';
 // };
 
 export const getServerSideProps = async (context) => {
+    context.res.setHeader('Cache-Control', 'no-store');
     const locale = context.locale;
+    console.time("first");
+    const path = "/verify-user";
     const data = await ServerJsonFetchReq({
         method:"GET",
-        path:"/verify-user",
+        path:path,
         cookie:context.req.headers.cookie,
         server:context,
         auth:"yes"
     });
+    console.timeEnd("first");
     if(data!==undefined && data.result==='redirect') {
         return {
             redirect: {

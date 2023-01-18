@@ -67,7 +67,8 @@ const ServerJsonFetchReq = async({path,cookie,server,auth}) =>{
         } else {
             return false;
         }
-    } 
+    }
+    // console.timeEnd('samp'); 
     } catch(e) {
         console.log(e);
     }

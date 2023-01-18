@@ -1,3 +1,5 @@
+"use client"
+
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
 import { useSelector } from 'react-redux';
@@ -9,11 +11,12 @@ const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
 const NotificationModule = dynamic(()=>import('/start/notification'),{ssr:false});
 const AesEncryption = require('aes-encryption');
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
-    const router = useRouter();
+    const pathname = usePathname();
+    console.log(pathname);
     const [header,setHeader] = useState(null);
     const action = useSelector(state=>state.act);
     const frame = useSelector(state=>state.fullframe);
@@ -24,16 +27,16 @@ const DocumentResult = ({children}) => {
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     useEffect(()=>{
         if(typeof Window !== 'undefined') {
-            const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'];
+            const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/'];
             const desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish'];
             const headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader;
-            const result = !headerHide.includes(router.pathname);
+            const result = !headerHide.includes(pathname);
             setHeader((prev)=>prev=result);
         }
         return () => {
             setHeader((prev)=>prev=null);
         }
-    },[router,isTabletOrMobile])
+    },[pathname,isTabletOrMobile])
     useEffect(()=>{
         action||frame||image?document.querySelector('html,body').style.cssText = "overflow: hidden;":document.querySelector('html,body').style.cssText = "";
         return () =>{
