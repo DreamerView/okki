@@ -11,12 +11,12 @@ const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
 const NotificationModule = dynamic(()=>import('/start/notification'),{ssr:false});
 const AesEncryption = require('aes-encryption');
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
-import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
-    const pathname = usePathname();
-    console.log(pathname);
+    const router = useRouter();
+    console.log(router.pathname)
     const [header,setHeader] = useState(null);
     const action = useSelector(state=>state.act);
     const frame = useSelector(state=>state.fullframe);
@@ -27,16 +27,16 @@ const DocumentResult = ({children}) => {
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     useEffect(()=>{
         if(typeof Window !== 'undefined') {
-            const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/'];
+            const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'];
             const desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish'];
             const headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader;
-            const result = !headerHide.includes(pathname);
+            const result = !headerHide.includes(router.pathname);
             setHeader((prev)=>prev=result);
         }
         return () => {
             setHeader((prev)=>prev=null);
         }
-    },[pathname,isTabletOrMobile])
+    },[router,isTabletOrMobile])
     useEffect(()=>{
         action||frame||image?document.querySelector('html,body').style.cssText = "overflow: hidden;":document.querySelector('html,body').style.cssText = "";
         return () =>{
