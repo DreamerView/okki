@@ -7,7 +7,6 @@ import style from "/styles/signin/index.module.css";
 import { useDispatch } from "react-redux";
 const AesEncryption = require('aes-encryption');
 import Image from "next/image";
-import Link from "next/link";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 import {getSession,signOut } from "next-auth/react";
 const platform = require('platform');
@@ -42,7 +41,7 @@ export const getServerSideProps = async (context) => {
         return  {
             redirect: {
                 permanent: false,
-                destination: '/signin',
+                destination: '/'+lang+'/signin',
             }
         }; 
     };
@@ -70,13 +69,11 @@ const LoginForm = ({data,ip,lang}) => {
             }
         });
     },[send]);
-    // console.log(data);
     const handlerSocialNetwork = useCallback(async(session) =>{
         if(wait===false&&localStorage.getItem('signInClient')!==null&&session!==undefined) {
             const result = session;
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
-            console.log(result.id);
             const email = result.email!==undefined?result.email:"not";
             const socialId = aes.encrypt(String(result.id));
             const name = aes.encrypt(result.name);
@@ -133,7 +130,6 @@ const LoginForm = ({data,ip,lang}) => {
                             set:true
                         });
                         signOut({callbackUrl: '/'})
-                        console.log('yes');
                     }
                 }
             } catch(e) {
@@ -180,9 +176,8 @@ const LoginForm = ({data,ip,lang}) => {
                         setTimeout(()=>setLoading(false),[1000]);
                     }
                     const result = await login.json();
-                    console.log(result);
                     if(result.success===true) {
-                        setNotification({user:"admin",content:"User email busy, try another!"});
+                        setNotification({user:"admin",content:text.email_busy[lang]});
                         setLoading(false);
                     }
                 }
@@ -234,7 +229,6 @@ const LoginForm = ({data,ip,lang}) => {
                         setTimeout(()=>setLoading(false),[1000]);
                     }
                     const response = await login.json();
-                    console.log(result);
                     if(result) {
                         const accessToken = aes.decrypt(response.accessToken);
                         const nameUser = aes.decrypt(response.name);
@@ -261,7 +255,6 @@ const LoginForm = ({data,ip,lang}) => {
             }
         }
     }
-    console.log(data)
     return(
         <>
             <Head>
@@ -272,8 +265,8 @@ const LoginForm = ({data,ip,lang}) => {
             <NavbarApp lang={lang} to={{href:"/"}} choice="alone" mode="standalone"/>
             <div className="main_app block_animation">
             <div className={style.login_form}>
-                <h1 className={style.head_center}>{text['welcome_back'][lang]}</h1>
-                {params!==null&&params.auth===false?params.email===true?<p className={style.text_center}>Need Email</p>:<p className={style.text_center}>Enter password</p>:<p className={style.text_center}>{text['signin_text'][lang]}</p>}
+                {params!==null&&params.auth===false?<h1 className={style.head_center}>{text['register_social'][lang]}</h1>:<h1 className={style.head_center}>{text['welcome_back'][lang]}</h1>}
+                {params!==null&&params.auth===false?params.email===true?<p className={style.text_center}>{text['email'][lang]}</p>:<p className={style.text_center}>{text['password'][lang]}</p>:<p className={style.text_center}>{text['signin_text'][lang]}</p>}
                 {data!==undefined&&data!==null&&
                 <>
                 <div className={style.signin_auth_form}>
@@ -287,8 +280,11 @@ const LoginForm = ({data,ip,lang}) => {
                     </div>
                     {params!==null&&params.auth===false?
                     params!==null&&params.email===true?<form onSubmit={(e) => handlerEmail(e)}><div className={style.login_row}>
-                    <input type="email" name="email" className={`${style.login_input} ${style.email}`} placeholder="Email" required />
+                    <input type="email" name="email" className={`${style.login_input} ${style.email}`} placeholder={text['email_input'][lang]} required />
                             <button type="submit" className={`${style.login_button} brand_background anim_hover`}>{loading===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:text['continue'][lang]}</button>
+                        </div><div className={style.flex}>
+                            <p className={style.sub}>{text['back_to'][lang]}</p>
+                            <button type="button" onClick={()=>signOut({callbackUrl: '/signin'})} className={`${style.next_button} brand_background anim_hover`}>{text['back_button'][lang]}</button>
                         </div></form>:<form onSubmit={(e) => handlerRegisterSN(e)}><div className={style.login_row}>
                         <div className={style.password}>
                             <div className={style.password__show_row}>
@@ -296,18 +292,17 @@ const LoginForm = ({data,ip,lang}) => {
                                     <Image priority width={24} height={24} alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
                                 </div>
                             </div>
-                            <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder="Password" required/>
+                            <input type={passValue}  name="password" className={`${style.password_input} ${style.key}`} placeholder={text['password_input'][lang]} required/>
                             </div>
                             <button type="submit" className={`${style.login_button} brand_background anim_hover`}>{loading===true?<div className="button__preloader"><Image width={320} height={50} alt="preloader" src="/img/button-preloader.svg"/></div>:text['continue'][lang]}</button>
+                        </div><div className={style.flex}>
+                            <p className={style.sub}>{text['back_to'][lang]}</p>
+                            <button type="button" onClick={()=>signOut({callbackUrl: '/signin'})} className={`${style.next_button} brand_background anim_hover`}>{text['back_button'][lang]}</button>
                         </div></form>:<div className={style.login_row}>
                                 <div className="lds-ripple"><div></div><div></div></div>
                         </div>}
-                        <div className={style.flex}>
-                            <p className={style.sub}>{text['not_account'][lang]}</p>
-                            <button onClick={()=>signOut({callbackUrl: '/signin'})} className={`${style.next_button} brand_background anim_hover`}>{text['register'][lang]}</button>
-                        </div>
                     </>}
-                    {/* <p onClick={signOut({callbackUrl: '/'})}>Back</p> */}
+
             </div>
         </div>
       </>
