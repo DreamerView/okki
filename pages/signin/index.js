@@ -9,7 +9,7 @@ const AesEncryption = require('aes-encryption');
 import Image from "next/image";
 import Link from "next/link";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
-import { getProviders, signIn,getSession,signOut } from "next-auth/react";
+import { getProviders, signIn,getSession } from "next-auth/react";
 const platform = require('platform');
 import text from "/translate/signin/index_translate.json";
 
@@ -17,6 +17,7 @@ export const getServerSideProps = async (context) => {
     context.res.setHeader('Cache-Control', 'no-store');
     const lang = context.locale,
     session = await getSession(context),
+    provider = await getProviders(context),
     data = await ServerJsonFetchReq({
         method:"GET",
         path:"/verify-user",
@@ -28,7 +29,7 @@ export const getServerSideProps = async (context) => {
     const ReturnTo = async() => {
         return {
             props: {
-                providers: await getProviders(context),
+                providers: provider,
                 ip:ip,
                 lang:lang
             }
@@ -165,7 +166,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
     const SignInWithSN = (name,client) =>{
         localStorage.setItem('signInClient',client);
         signIn(name,{
-            callbackUrl: `//signin/social-nerwork`,
+            callbackUrl: `/signin/social-nerwork`,
         });
     };
     return(

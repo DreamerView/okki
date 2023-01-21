@@ -26,7 +26,7 @@ export const authOptions = {
      }
   },
   pages: {
-    signIn: "/signin/social-nerwork",
+    signIn: "/signin",
   },
   secret: process.env.JWT_SECRET
 }

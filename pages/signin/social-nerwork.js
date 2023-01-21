@@ -46,7 +46,7 @@ export const getServerSideProps = async (context) => {
         }; 
     };
     if(session!==null) return SocialNetwork();
-    // else if(session===null) return ReturnSignIn();
+    else if(session===null) return ReturnSignIn();
     return ReturnBack();
 };
 
