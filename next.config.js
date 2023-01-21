@@ -3,7 +3,7 @@
 
 const key_pass = "4piP7FKREnYA+S0CcxJe360Aph9zQN5AWr1xuxjSP+o=";
 
-const production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV !== 'production';
 
 const authHeader = "ff0989d59ef16505f30f2da7dd36dc61be936a9a81df67bf4c035cf95c5fd21e46b40ce6ba7d88c86ae4f82539096b925e9f9dac7738db83b4e8bcee70cc5d94";
 
@@ -186,7 +186,7 @@ const secure = production?[
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-module.exports = withPWA({
+module.exports = {
   swcMinify: true,
   images: {
     domains: [images,'lh3.googleusercontent.com','sun9-79.userapi.com'],
@@ -231,4 +231,4 @@ module.exports = withPWA({
   //     },
   //   ]
   // },
-});
+};
