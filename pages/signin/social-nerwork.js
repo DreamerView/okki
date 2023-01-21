@@ -261,6 +261,7 @@ const LoginForm = ({data,ip,lang}) => {
             }
         }
     }
+    console.log(data)
     return(
         <>
             <Head>
