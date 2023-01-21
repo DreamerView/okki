@@ -20,11 +20,11 @@ export const authOptions = {
     
     //   return { ...token, ...user }
     //  },
-      async session({ session, user, token }) {
-      // user param present in the session(function) does not recive all the data from DB call -> fetchUserInfo(credentials.opt)
+    //   async session({ session, user, token }) {
+    //   // user param present in the session(function) does not recive all the data from DB call -> fetchUserInfo(credentials.opt)
     
-      return session
-     },
+    //   return session
+    //  },
   },
   pages: {
     signIn: "/signin",
