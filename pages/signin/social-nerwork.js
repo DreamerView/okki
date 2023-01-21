@@ -51,6 +51,7 @@ export const getServerSideProps = async (context) => {
 };
 
 const LoginForm = ({data,ip,lang}) => {
+    console.log(data);
     const [sign,setSign] = useState(null);
     const [params,setParams] = useState(null),
     getIp = ip!==null||ip!==undefined?ip:"::1",

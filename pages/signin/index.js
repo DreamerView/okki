@@ -166,7 +166,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
     const SignInWithSN = (name,client) =>{
         localStorage.setItem('signInClient',client);
         signIn(name,{
-            callbackUrl: `/signin/social-nerwork`,
+            callbackUrl: `/${lang}/signin/social-nerwork`,
         });
     };
     return(
