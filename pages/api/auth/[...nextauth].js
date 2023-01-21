@@ -2,7 +2,6 @@ import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import VkProvider from "next-auth/providers/vk";
 
-const apiVersion = "5.131";
 export const authOptions = {
   providers: [
     GoogleProvider({
