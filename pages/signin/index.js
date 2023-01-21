@@ -46,7 +46,7 @@ export const getServerSideProps = async (context) => {
         return {
             redirect: {
                 permanent: false,
-                destination: '/signin/social-nerwork',
+                destination: '/'+lang+'/signin/social-nerwork',
             }
         }; 
     };
@@ -165,7 +165,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
     const SignInWithSN = (name,client) =>{
         localStorage.setItem('signInClient',client);
         signIn(name,{
-            callbackUrl: `/signin/social-nerwork`,
+            callbackUrl: `//signin/social-nerwork`,
         });
     };
     return(
@@ -195,7 +195,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
                         <div className={style.login_sn} key={provider.name}>
                             <button className={`${style.login_sn_row} anim_hover`} onClick={() => SignInWithSN(provider.id,provider.name)}>
                                 <div className={style.login_sn_row_img_row}>
-                                <Image priority className={style.login_sn_row_img} width={20} height={20} alt={provider.name} src={`/social-network/${provider.name}.webp`}/></div>{text['signin_with'][lang]} {provider.name}
+                                <Image priority className={style.login_sn_row_img} width={20} height={20} alt={provider.name} src={`/social-network/client-${provider.name.toLowerCase()}.webp`}/></div>{text['signin_with'][lang]} {provider.name}
                             </button>
                         </div>
                         );
