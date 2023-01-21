@@ -67,7 +67,7 @@
     }
     span.nav_header {
         margin-top:12px;
-        font-size: 13.5px;
+        font-size: 14px;
         text-align: center;
         font-weight: 500
     }
@@ -168,7 +168,7 @@
     }
     span.nav_header {
         margin-top:12px;
-        font-size: 13.5px;
+        font-size: 14px;
         text-align: center;
         font-weight: 500
     }
@@ -259,7 +259,7 @@
     }
     span.nav_header {
         margin-top:12px;
-        font-size: 13.5px;
+        font-size: 14px;
         text-align: center;
         font-weight: 500
     }
@@ -359,7 +359,7 @@
     }
     span.nav_header {
         margin-top:16px;
-        font-size: 12.5px;
+        font-size: 14px;
         line-height:16px;
         text-align: center;
         font-weight: 500
@@ -399,11 +399,11 @@ div.main__index_block_row {
     margin-top:16px;
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap:16px
 }
 div.main__index_block_row_b {
-    width:160px;
+    width:140px;
     cursor: pointer;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -411,8 +411,8 @@ div.main__index_block_row_b {
     margin:0 auto;
 }
 div.main__index_block {
-    width:160px;
-    height:160px;
+    width:140px;
+    height:140px;
     background-color: var(--nav_menu_c);
     -webkit-border-radius: 24px;
        -moz-border-radius: 24px;
@@ -420,16 +420,16 @@ div.main__index_block {
     margin:16px 0 8px 0
 }
 div.main__index_block_pic {
-    width:160px;
-    height:160px;
+    width:140px;
+    height:140px;
     position: relative;
     -webkit-border-radius: 24px;
        -moz-border-radius: 24px;
             border-radius: 24px
 }
 img.main__index_block_img {
-    width:160px;
-    height:160px;
+    width:140px;
+    height:140px;
     -webkit-border-radius: 24px;
        -moz-border-radius: 24px;
             border-radius: 24px

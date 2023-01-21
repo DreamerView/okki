@@ -16,7 +16,6 @@ import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
     const router = useRouter();
-    console.log(router.pathname)
     const [header,setHeader] = useState(null);
     const action = useSelector(state=>state.act);
     const frame = useSelector(state=>state.fullframe);
@@ -28,7 +27,7 @@ const DocumentResult = ({children}) => {
     useEffect(()=>{
         if(typeof Window !== 'undefined') {
             const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'];
-            const desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish'];
+            const desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish','/signin/social-nerwork'];
             const headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader;
             const result = !headerHide.includes(router.pathname);
             setHeader((prev)=>prev=result);

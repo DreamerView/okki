@@ -8,6 +8,7 @@ const AesEncryption = require('aes-encryption');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 
 export const getServerSideProps = async (context) => {
+    context.res.setHeader('Cache-Control', 'no-store');
     const lang = context.locale;
     const data = await ServerJsonFetchReq({
         method:"GET",

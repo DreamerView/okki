@@ -164,7 +164,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withPWA({
   swcMinify: true,
   images: {
-    domains: [images,'lh3.googleusercontent.com'],
+    domains: [images,'lh3.googleusercontent.com','sun9-79.userapi.com'],
     formats: ['image/avif', 'image/webp']
   },
   poweredByHeader: false,
