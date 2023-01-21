@@ -46,7 +46,7 @@ export const getServerSideProps = async (context) => {
         return {
             redirect: {
                 permanent: false,
-                destination: '/'+lang+'/signin/social-nerwork',
+                destination: '/signin/social-nerwork',
             }
         }; 
     };
@@ -165,7 +165,7 @@ const LoginForm = ({providers,data,ip,lang}) => {
     const SignInWithSN = (name,client) =>{
         localStorage.setItem('signInClient',client);
         signIn(name,{
-            callbackUrl: `/${lang}/signin/social-nerwork`,
+            callbackUrl: `/signin/social-nerwork`,
         });
     };
     return(
