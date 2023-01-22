@@ -14,14 +14,13 @@ export const authOptions = {
     })
   ],
   callbacks: {
-    async jwt({ token, user }) {
-      // the user present here gets the same data as received from DB call  made above -> fetchUserInfo(credentials.opt)
-    
-      return { ...token, ...user }
+    async signIn({account}) {
+      return account;
+    },
+    async jwt({ token, user,account }) {
+      return { ...token, ...user,...account }
      },
-      async session({ session, user, token }) {
-      // user param present in the session(function) does not recive all the data from DB call -> fetchUserInfo(credentials.opt)
-    
+    async session({ session, user, token }) {
       return token
      }
   },

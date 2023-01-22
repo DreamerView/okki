@@ -51,7 +51,6 @@ export const getServerSideProps = async (context) => {
 };
 
 const LoginForm = ({data,ip,lang}) => {
-    console.log(data);
     const [sign,setSign] = useState(null);
     const [params,setParams] = useState(null),
     getIp = ip!==null||ip!==undefined?ip:"::1",
@@ -71,7 +70,7 @@ const LoginForm = ({data,ip,lang}) => {
         });
     },[send]);
     const handlerSocialNetwork = useCallback(async(session) =>{
-        if(wait===false&&localStorage.getItem('signInClient')!==null&&session!==undefined) {
+        if(wait===false&&session!==undefined) {
             const result = session;
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
@@ -79,7 +78,7 @@ const LoginForm = ({data,ip,lang}) => {
             const socialId = aes.encrypt(String(result.id));
             const name = aes.encrypt(result.name);
             const image = aes.encrypt(result.image);
-            const client = aes.encrypt(localStorage.getItem('signInClient'));
+            const client = aes.encrypt(result.provider);
             const ipSend = aes.encrypt(getIp);
             const sendEmail = aes.encrypt(email);
             const checkVar = (result) =>{
@@ -198,7 +197,7 @@ const LoginForm = ({data,ip,lang}) => {
             const name = aes.encrypt(result.name);
             const image = aes.encrypt(result.image);
             const password = aes.encrypt(e.target[0].value)
-            const client = aes.encrypt(localStorage.getItem('signInClient'));
+            const client = aes.encrypt(result.provider);
             const ipSend = aes.encrypt(getIp);
             const email = result.email!==undefined?aes.encrypt(result.email):aes.encrypt(sign);
             const checkVar = (result) =>{
