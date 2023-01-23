@@ -191,7 +191,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 module.exports = withPWA({
-  swcMinify: true,
   images: {
     domains: [images,'lh3.googleusercontent.com','sun9-79.userapi.com'],
     formats: ['image/avif', 'image/webp']
@@ -219,6 +218,15 @@ module.exports = withPWA({
         source: '/:path*',
         headers: secure
       },
+      {
+        source: '/api/auth/:slug',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, max-age=0',
+          },
+        ],
+      }
     ];
   },
   // async headers() {
