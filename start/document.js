@@ -1,10 +1,8 @@
-"use client"
-
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
 import { useSelector } from 'react-redux';
-import { useEffect,useState } from 'react';
-const Header = dynamic(()=>import("/start/header"),{ssr:false});
+import { useEffect,useState,useRef } from 'react';
+const Header = dynamic(()=>import("/start/header"));
 const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
 const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
 const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
@@ -15,6 +13,7 @@ import { useRouter } from 'next/router';
 import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
+    const lazy = useRef(false);
     const router = useRouter();
     const [header,setHeader] = useState(null);
     const action = useSelector(state=>state.act);
@@ -43,7 +42,8 @@ const DocumentResult = ({children}) => {
         };
     },[action,frame,image]);
     useEffect(()=>{
-        let lazy = true;
+        if (typeof window !== "undefined"&&lazy.current) return;
+        lazy.current = true;
         const result = async() => {
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
@@ -53,9 +53,9 @@ const DocumentResult = ({children}) => {
                 return localStorage.setItem('loginParams',JSON.stringify(response));
             } else return localStorage.setItem('loginParams',null);
         };
-        lazy===true&&typeof Window !== 'undefined'&&result();
+        result();
         return () =>{
-            lazy=false;
+            
         };
     },[]);
     return(
