@@ -207,7 +207,7 @@ module.exports = withPWA({
     host:host,
     production:production
   },
-  reactStrictMode: true,
+  reactStrictMode: production?false:true,
   i18n: {
     locales: ['en', 'ru', 'kk'],
     defaultLocale: 'en'

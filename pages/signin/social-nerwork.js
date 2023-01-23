@@ -135,8 +135,8 @@ const LoginForm = ({data,ip,lang}) => {
     },[send,setNotification,wait,getIp]);
     let lazy = true;
     useEffect(()=>{
+        if(typeof window !== "undefined"&&data!==undefined&&lazy===true) setTimeout(()=>handlerSocialNetwork(data),[1000]);
         return () => {
-            if(typeof window !== "undefined"&&data!==undefined&&lazy===true) setTimeout(()=>handlerSocialNetwork(data),[200]);
             lazy=false;
         };
     },[data,handlerSocialNetwork]);
