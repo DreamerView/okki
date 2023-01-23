@@ -18,6 +18,48 @@ const withPWA = require('next-pwa')({
   skipWaiting: true,
   // cacheStartUrl: false,
   // dynamicStartUrl: false,
+  runtimeCaching: [
+    {
+      urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'okki-network',
+        expiration: {
+          maxEntries: 16,
+          maxAgeSeconds: 24 * 60 * 60,
+        },
+      },
+    },
+    // {
+    //   urlPattern: /\/api\/.*/g,
+    //   handler: "NetworkOnly"
+    // }
+    // { 
+    //   urlPattern: /\/api\/.*/g, 
+    //   handler: 'NetworkOnly', 
+    //   options: { 
+    //     cacheName: 'apis', 
+    //     expiration: { 
+    //       maxEntries: 64, 
+    //       maxAgeSeconds: 24 * 60 * 60 // 24 hours 
+    //     }, 
+    //     // networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds 
+    //   } 
+    // }, 
+    // { 
+    //   urlPattern: /\/api\/.*/g, 
+    //   handler: 'NetworkOnly', 
+    //   method: 'POST', 
+    //   options: { 
+    //     cacheName: 'apis', 
+    //     expiration: { 
+    //       maxEntries: 16, 
+    //       maxAgeSeconds: 24 * 60 * 60 // 24 hours 
+    //     }, 
+    //     // networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds 
+    //   } 
+    // }, 
+  ]
 });
 
 const ContentSecurityPolicy = `
@@ -171,7 +213,7 @@ module.exports = withPWA({
     host:host,
     production:production
   },
-  reactStrictMode: production?false:true,
+  reactStrictMode: true,
   i18n: {
     locales: ['en', 'ru', 'kk'],
     defaultLocale: 'en'
