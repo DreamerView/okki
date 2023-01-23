@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 8 */
-import {useState,useEffect, useCallback} from "react";
+import {useState,useEffect, useCallback,useRef} from "react";
 import Head from "next/head";
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/signin/index.module.css";
@@ -51,6 +51,7 @@ export const getServerSideProps = async (context) => {
 };
 
 const LoginForm = ({data,ip,lang}) => {
+    const lazy = useRef(false);
     const [sign,setSign] = useState(null);
     const [params,setParams] = useState(null),
     getIp = ip!==null||ip!==undefined?ip:"::1",
@@ -133,11 +134,12 @@ const LoginForm = ({data,ip,lang}) => {
             }
         }
     },[send,setNotification,wait,getIp]);
-    let lazy = true;
     useEffect(()=>{
-        if(typeof window !== "undefined"&&data!==undefined&&lazy===true) setTimeout(()=>handlerSocialNetwork(data),[1000]);
+        if (typeof window !== "undefined"&&lazy.current) return;
+        lazy.current = true;
+        if(data!==undefined) setTimeout(()=>handlerSocialNetwork(data),[1000]);
         return () => {
-            lazy=false;
+            
         };
     },[data,handlerSocialNetwork]);
     const handlerEmail = async(e) =>{
