@@ -21,7 +21,7 @@ export const authOptions = {
       return { ...token, ...user,...account }
      },
     async session({ session, user, token }) {
-      return token
+      return {token,auth:true}
      }
   },
   pages: {
