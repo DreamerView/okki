@@ -14,10 +14,7 @@ import HistoryUser from '/pages/user/historyModule';
 // };
 
 export const getServerSideProps = async (context) => {
-    context.res.setHeader(
-        'Cache-Control',
-        'public, s-maxage=10, stale-while-revalidate=59'
-      )
+    context.res.setHeader('Cache-Control', 'no-store');
     const locale = context.locale;
     console.time("first");
     const path = "/verify-user";
