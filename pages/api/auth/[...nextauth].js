@@ -6,13 +6,11 @@ export const authOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      state: false
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }),
     VkProvider({
       clientId: process.env.VK_CLIENT_ID,
-      clientSecret: process.env.VK_CLIENT_SECRET,
-      state: false
+      clientSecret: process.env.VK_CLIENT_SECRET
     })
   ],
   callbacks: {

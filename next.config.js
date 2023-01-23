@@ -15,6 +15,9 @@ const withPWA = require('next-pwa')({
   dest: 'public',
   disable: process.env.NODE_ENV === 'development',
   register: true,
+  skipWaiting: true,
+  // cacheStartUrl: false,
+  // dynamicStartUrl: false,
   runtimeCaching: [
     {
       urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
@@ -27,36 +30,36 @@ const withPWA = require('next-pwa')({
         },
       },
     },
-    { 
-      urlPattern: /\/api\/.*$/i, 
-      handler: 'NetworkFirst', 
-      method: 'GET', 
-      options: { 
-        cacheName: 'apis', 
-        expiration: { 
-          maxEntries: 16, 
-          maxAgeSeconds: 24 * 60 * 60 // 24 hours 
-        }, 
-        networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds 
-      } 
-    }, 
-    { 
-      urlPattern: /\/api\/.*$/i, 
-      handler: 'NetworkFirst', 
-      method: 'POST', 
-      options: { 
-        cacheName: 'apis', 
-        expiration: { 
-          maxEntries: 16, 
-          maxAgeSeconds: 24 * 60 * 60 // 24 hours 
-        }, 
-        networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds 
-      } 
-    }, 
-  ],
-  skipWaiting: true,
-  cacheStartUrl: false,
-  dynamicStartUrl: false,
+    // {
+    //   urlPattern: /\/api\/.*/g,
+    //   handler: "NetworkOnly"
+    // }
+    // { 
+    //   urlPattern: /\/api\/.*/g, 
+    //   handler: 'NetworkOnly', 
+    //   options: { 
+    //     cacheName: 'apis', 
+    //     expiration: { 
+    //       maxEntries: 64, 
+    //       maxAgeSeconds: 24 * 60 * 60 // 24 hours 
+    //     }, 
+    //     // networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds 
+    //   } 
+    // }, 
+    // { 
+    //   urlPattern: /\/api\/.*/g, 
+    //   handler: 'NetworkOnly', 
+    //   method: 'POST', 
+    //   options: { 
+    //     cacheName: 'apis', 
+    //     expiration: { 
+    //       maxEntries: 16, 
+    //       maxAgeSeconds: 24 * 60 * 60 // 24 hours 
+    //     }, 
+    //     // networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds 
+    //   } 
+    // }, 
+  ]
 });
 
 const ContentSecurityPolicy = `
