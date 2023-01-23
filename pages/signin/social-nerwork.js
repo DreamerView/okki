@@ -70,15 +70,16 @@ const LoginForm = ({data,ip,lang}) => {
         });
     },[send]);
     const handlerSocialNetwork = useCallback(async(session) =>{
+        console.log(Date.now());
         if(wait===false&&session!==undefined) {
             const result = session;
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
-            const email = result.email!==undefined?result.email:"not";
-            const socialId = aes.encrypt(String(result.id));
-            const name = aes.encrypt(result.name);
-            const image = aes.encrypt(result.image);
-            const client = aes.encrypt(result.provider);
+            const email = result.token.email!==undefined?result.token.email:"not";
+            const socialId = aes.encrypt(String(result.token.id));
+            const name = aes.encrypt(result.token.name);
+            const image = aes.encrypt(result.token.image);
+            const client = aes.encrypt(result.token.provider);
             const ipSend = aes.encrypt(getIp);
             const sendEmail = aes.encrypt(email);
             const checkVar = (result) =>{
@@ -90,7 +91,6 @@ const LoginForm = ({data,ip,lang}) => {
             setWait(true);
             try {
                 if (typeof window !== 'undefined') {
-                    const hostname = window.location.hostname;
                     const requestOptions = {
                         method: 'POST',
                         headers: {
@@ -109,27 +109,23 @@ const LoginForm = ({data,ip,lang}) => {
                         setNotification({user:"admin",content:"Something going wrong"});
                         setTimeout(()=>setWait(false),[1000]);
                     }
-                    const result = await login.json();
-                    if(result!==undefined&&result.auth===false) {
-                        setParams(result);
-                    } else if(result.auth===true) {
-                        const accessToken = aes.decrypt(result.accessToken);
-                        const nameUser = aes.decrypt(result.name);
-                        const surnameUser = aes.decrypt(result.surname);
-                        const avatarUser = aes.decrypt(result.avatar);
-                        const clientId = aes.decrypt(result.clientId);
+                    const response = await login.json();
+                    if(response.auth===false) {
+                        setParams(response);
+                    } else if(response.auth===true) {
+                        const accessToken = aes.decrypt(response.accessToken);
+                        const clientId = aes.decrypt(response.clientId);
                         const today = new Date();
                         const expire = new Date();
                         expire.setTime(today.getTime() + 3600000*24*14);
                         document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
                         document.cookie=`clientId=${clientId};path=/;secure;expires=${expire.toGMTString()}`;
-                        setNotification({title:nameUser+" "+surnameUser,content:"Welcome to the system!",image:avatarUser});
-                        setWait(false);
+                        setTimeout(()=>setWait(false),[1000]);
                         send({
                             type:"setAuth",
                             set:true
                         });
-                        signOut({callbackUrl: '/'})
+                        setTimeout(()=>signOut({callbackUrl: '/'}),[1000]);
                     }
                 }
             } catch(e) {
@@ -137,17 +133,16 @@ const LoginForm = ({data,ip,lang}) => {
             }
         }
     },[send,setNotification,wait,getIp]);
+    let lazy = true;
     useEffect(()=>{
-        let lazy = true;
-        if(typeof window !== "undefined"&&data!==undefined&&lazy===true) setTimeout(()=>handlerSocialNetwork(data),[1000]);
         return () => {
+            if(typeof window !== "undefined"&&data!==undefined&&lazy===true) setTimeout(()=>handlerSocialNetwork(data),[1000]);
             lazy=false;
-            return false;
         };
     },[data,handlerSocialNetwork]);
     const handlerEmail = async(e) =>{
         e.preventDefault();
-        if(loading===false) {
+        if(loading===false&&data!==undefined) {
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
             const email = aes.encrypt(e.target[0].value);
@@ -155,7 +150,7 @@ const LoginForm = ({data,ip,lang}) => {
             setLoading(true);
             try {
                 if (typeof window !== 'undefined') {
-                    const hostname = window.location.hostname;
+                   
                     const requestOptions = {
                         method: 'POST',
                         headers: {
@@ -175,8 +170,8 @@ const LoginForm = ({data,ip,lang}) => {
                         setNotification({user:"admin",content:"Something going wrong"});
                         setTimeout(()=>setLoading(false),[1000]);
                     }
-                    const result = await login.json();
-                    if(result.success===true) {
+                    const response = await login.json();
+                    if(response.success===true) {
                         setNotification({user:"admin",content:text.email_busy[lang]});
                         setLoading(false);
                     }
@@ -188,18 +183,18 @@ const LoginForm = ({data,ip,lang}) => {
     };
     const handlerRegisterSN = async(e) => {
             e.preventDefault();
-            if(loading===false) {
+            if(loading===false&&data!==undefined) {
             const result = data;
             const aes = new AesEncryption();
             aes.setSecretKey(process.env.aesKey);
-            const signId = String(result.id);
+            const signId = String(result.token.id);
             const socialId = aes.encrypt(signId);
-            const name = aes.encrypt(result.name);
-            const image = aes.encrypt(result.image);
+            const name = aes.encrypt(result.token.name);
+            const image = aes.encrypt(result.token.image);
             const password = aes.encrypt(e.target[0].value)
-            const client = aes.encrypt(result.provider);
+            const client = aes.encrypt(result.token.provider);
             const ipSend = aes.encrypt(getIp);
-            const email = result.email!==undefined?aes.encrypt(result.email):aes.encrypt(sign);
+            const email = result.token.email!==undefined?aes.encrypt(result.token.email):aes.encrypt(sign);
             const checkVar = (result) =>{
                 if(result===null) return null;
                 else if(result===undefined) return null;
@@ -271,11 +266,11 @@ const LoginForm = ({data,ip,lang}) => {
                 <>
                 <div className={style.signin_auth_form}>
                         <div className={style.signin_auth_form_image}>
-                            <Image priority width={50} height={50} className={style.signin_auth_form_pic} src={data.image} alt="avatar" />
+                            <Image priority width={50} height={50} className={style.signin_auth_form_pic} src={data.token.image} alt="avatar" />
                         </div>
                         <div>
-                            <h3>{data.name}</h3>
-                            <p className={style.sub}>@{data.id}</p>
+                            <h3>{data.token.name}</h3>
+                            <p className={style.sub}>@{data.token.id}</p>
                         </div>
                     </div>
                     {params!==null&&params.auth===false?
