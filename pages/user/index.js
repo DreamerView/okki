@@ -14,7 +14,7 @@ import HistoryUser from '/pages/user/historyModule';
 // };
 
 export const getServerSideProps = async (context) => {
-    res.setHeader(
+    context.res.setHeader(
         'Cache-Control',
         'public, s-maxage=10, stale-while-revalidate=15'
       )
