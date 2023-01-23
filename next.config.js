@@ -150,7 +150,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 module.exports = withPWA({
   images: {
-    domains: [images,'lh3.googleusercontent.com','//.+\.userapi.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*'
+      },
+    ],
+    domains: [images],
     formats: ['image/avif', 'image/webp']
   },
   poweredByHeader: false,
