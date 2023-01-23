@@ -18,48 +18,6 @@ const withPWA = require('next-pwa')({
   skipWaiting: true,
   // cacheStartUrl: false,
   // dynamicStartUrl: false,
-  runtimeCaching: [
-    // {
-    //   urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
-    //   handler: 'NetworkFirst',
-    //   options: {
-    //     cacheName: 'okki-network',
-    //     expiration: {
-    //       maxEntries: 16,
-    //       maxAgeSeconds: 24 * 60 * 60,
-    //     },
-    //   },
-    // },
-    // {
-    //   urlPattern: /\/api\/.*/g,
-    //   handler: "NetworkOnly"
-    // }
-    // { 
-    //   urlPattern: /\/api\/.*/g, 
-    //   handler: 'NetworkOnly', 
-    //   options: { 
-    //     cacheName: 'apis', 
-    //     expiration: { 
-    //       maxEntries: 64, 
-    //       maxAgeSeconds: 24 * 60 * 60 // 24 hours 
-    //     }, 
-    //     // networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds 
-    //   } 
-    // }, 
-    // { 
-    //   urlPattern: /\/api\/.*/g, 
-    //   handler: 'NetworkOnly', 
-    //   method: 'POST', 
-    //   options: { 
-    //     cacheName: 'apis', 
-    //     expiration: { 
-    //       maxEntries: 16, 
-    //       maxAgeSeconds: 24 * 60 * 60 // 24 hours 
-    //     }, 
-    //     // networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds 
-    //   } 
-    // }, 
-  ]
 });
 
 const ContentSecurityPolicy = `
@@ -192,7 +150,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 module.exports = withPWA({
   images: {
-    domains: [images,'lh3.googleusercontent.com','sun9-79.userapi.com'],
+    domains: [images,'lh3.googleusercontent.com','userapi.com'],
     formats: ['image/avif', 'image/webp']
   },
   poweredByHeader: false,
