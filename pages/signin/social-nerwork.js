@@ -71,7 +71,6 @@ const LoginForm = ({data,ip,lang}) => {
         });
     },[send]);
     const handlerSocialNetwork = useCallback(async(session) =>{
-        console.log(Date.now());
         if(wait===false&&session!==undefined) {
             const result = session;
             const aes = new AesEncryption();
@@ -113,6 +112,7 @@ const LoginForm = ({data,ip,lang}) => {
                     const response = await login.json();
                     if(response.auth===false) {
                         setParams(response);
+                        if(response.email===false) setSign(result.token.email);
                     } else if(response.auth===true) {
                         const accessToken = aes.decrypt(response.accessToken);
                         const clientId = aes.decrypt(response.clientId);
@@ -165,7 +165,7 @@ const LoginForm = ({data,ip,lang}) => {
                     };
                     const login = await fetch(process.env.backend+"/verify-email", requestOptions);
                     if (login.status ===404) {
-                        setSign(e.target[0].value);
+                        setSign(prev=>prev=e.target[0].value);
                         setParams({auth:false,email:false});
                         setTimeout(()=>setLoading(false),[1000]);
                     } else if(login.status ===500) {
@@ -196,7 +196,7 @@ const LoginForm = ({data,ip,lang}) => {
             const password = aes.encrypt(e.target[0].value)
             const client = aes.encrypt(result.token.provider);
             const ipSend = aes.encrypt(getIp);
-            const email = result.token.email!==undefined?aes.encrypt(result.token.email):aes.encrypt(sign);
+            const email = aes.encrypt(sign);
             const checkVar = (result) =>{
                 if(result===null) return null;
                 else if(result===undefined) return null;
