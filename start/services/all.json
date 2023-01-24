@@ -12,7 +12,7 @@
         "title":"Калькулятор",
         "name":"calculator",
         "image":"/icons/calculate.svg",
-        "image_background":"grey_background",
+        "image_background":"red_background",
         "key":"калькулятор,calculator,есептегіш",
         "location":"/calculator",
         "type":"category"

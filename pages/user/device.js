@@ -109,7 +109,7 @@ const UserInterface = ({data,locale}) => {
                 {lazy===true&&isTabletOrMobile?"":<HeaderUser lang={lang}/>}
                 <div className={style.main__user_action}>
                     <h1>{ux['devices'][lang]}</h1>
-                    <p className='sub_content'>Текущий сеанс</p>
+                    <p className='sub_content'>{ux['current_session'][lang]}</p>
                     <div className={style.devices_row_main}>
                             {data!==null&&data!==undefined&&data.result.filter(e=>e.clientId===data.clientId).map((e,index)=>
                             <Link key={index} href={'/user/devices/'+e.clientId} shallow={true}>
@@ -127,7 +127,7 @@ const UserInterface = ({data,locale}) => {
                             </Link>
                             )}
                     </div>
-                    <p className={style.subber}>Активные сеансы</p>
+                    <p className={style.subber}>{ux['active_sessions'][lang]}</p>
                     <div className={style.devices_row_main}>
                             {data!==null&&data!==undefined&&data.result.filter(e=>e.clientId!==data.clientId).map((e,index)=>
                                 <Link key={index} href={'/user/devices/'+e.clientId} shallow={true}>

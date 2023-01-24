@@ -104,7 +104,7 @@ const UserInterface = ({getId,data,locale}) => {
                 {lazy===true&&isTabletOrMobile?"":<HeaderUser lang={lang}/>}
                 <div className={style.main__user_action}>
                     <h1>{ux['devices'][lang]}</h1>
-                    <p className='sub_content'>Выбран клиент</p>
+                    <p className='sub_content'>{ux['client_selected'][lang]}</p>
                     {data!==null&&data!==undefined&&getId!==undefined&&getId!==null&&data.result.filter((e)=>e.clientId===getId).map((e,index)=>
                     <div key={index} className={style.standalone_device}>
                         <div className={style.standalone_device_block_1}>
@@ -114,27 +114,27 @@ const UserInterface = ({getId,data,locale}) => {
                         </div>
                         <div className={style.standalone_device_block_2}>
                             <div className={style.standalone_device_block_row}>
-                            <p className={style.subber}>Клиент</p>
+                            <p className={style.subber}>{ux['client'][lang]}</p>
                             <h4>{JSON.parse(e.clientInfo).name+" v."+JSON.parse(e.clientInfo).version}</h4>
                             </div>
                             <div className={style.standalone_device_block_row}>
-                            <p className={style.subber}>IP-адрес</p>
+                            <p className={style.subber}>{ux['ip_address'][lang]}</p>
                             <h4>{JSON.parse(e.ipInfo).ip!==null&&JSON.parse(e.ipInfo).ip!==undefined&&JSON.parse(e.ipInfo).ip}</h4>
                             </div>
                             <div className={style.standalone_device_block_row}>
-                            <p className={style.subber}>Геопозиция</p>
+                            <p className={style.subber}>{ux['geoposition'][lang]}</p>
                             <h4>{JSON.parse(e.ipInfo).cityName!==null&&JSON.parse(e.ipInfo).cityName!==undefined&&JSON.parse(e.ipInfo).cityName}, {JSON.parse(e.ipInfo).countryName!==null&&JSON.parse(e.ipInfo).countryName!==undefined&&JSON.parse(e.ipInfo).countryName}</h4>
                             </div>
                             <div className={style.standalone_device_block_row}>
                             <p className={style.subber}>{ux['devices'][lang]}</p>
-                            <h4>{JSON.parse(e.clientInfo).product!==null?JSON.parse(e.clientInfo).product:"Неизвестно"}</h4>
+                            <h4>{JSON.parse(e.clientInfo).product!==null?JSON.parse(e.clientInfo).product:ux['unknown'][lang]}</h4>
                             </div>
                             <div className={style.standalone_device_block_row}>
-                            <p className={style.subber}>Операционная система</p>
+                            <p className={style.subber}>{ux['operating_system'][lang]}</p>
                             <h4>{JSON.parse(e.clientInfo).os!==null&&" "+JSON.parse(e.clientInfo).os.family+" "+JSON.parse(e.clientInfo).os.version}</h4>
                             </div>
                             <div className={style.standalone_device_block_row}>
-                            <p className={style.subber}>Активность</p>
+                            <p className={style.subber}>{ux['activity'][lang]}</p>
                             <h4>{ConvertTime(JSON.parse(e.getTime))}</h4>
                             </div>
                         </div>

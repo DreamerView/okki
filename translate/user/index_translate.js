@@ -58,5 +58,50 @@ export default {
         kk:"Барлығы",
         ru:"Все",
         en:"All"
+    },
+    current_session: {
+        kk:"Қазіргі сеанс",
+        ru:"Текущий сеанс",
+        en:"Current session"
+    },
+    active_sessions: {
+        kk:"Белсенді сеанстар",
+        ru:"Активные сеансы",
+        en:"Active sessions"
+    },
+    client_selected: {
+        kk:"Клиент таңдалды",
+        ru:"Выбран клиент",
+        en:"Client selected"
+    },
+    client: {
+        kk:"Клиент",
+        ru:"Клиент",
+        en:"Client"
+    },
+    geoposition: {
+        kk:"Геопозициясы",
+        ru:"Геопозиция",
+        en:"Geoposition"
+    },
+    ip_address: {
+        kk:"IP мекенжайы",
+        ru:"IP-адрес",
+        en:"IP address"
+    },
+    operating_system: {
+        kk:"Операциялық жүйе",
+        ru:"Операционная система",
+        en:"Operating system"
+    },
+    activity: {
+        kk:"Белсенділік",
+        ru:"Активность",
+        en:"Activity"
+    },
+    unknown: {
+        kk:"Белгісіз",
+        ru:"Неизвестно",
+        en:"Unknown"
     }
 }
