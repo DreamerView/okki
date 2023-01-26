@@ -120,6 +120,7 @@ const IdealWeight = ({lang}) => {
                                         </div>
                                     </div>
                                     <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={n1} placeholder={text['enter'][lang]} className={`${style.main__calculator_module_input}`} disabled={male==='other'?true:false}/>
+                                    <div className={style.show}>sd</div>
                                     {n1!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setN1('')}}>
                                         <div className={style.main__calculator_module_close_img}>

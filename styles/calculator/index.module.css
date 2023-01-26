@@ -285,6 +285,11 @@ input.main__calculator_module_input::placeholder {
     color:var(--sub_content);
     font-weight:normal;
 }
+.main__calculator_module_input:empty + .show {
+    opacity: 0;
+    pointer-events: none;
+    touch-action: none;
+}
 p.click_event {
     margin-top:16px;
     text-decoration: underline;
