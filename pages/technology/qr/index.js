@@ -4,36 +4,8 @@ import NavbarApp from "/pages/navbar_app/nav";
 import style from "/styles/technology/qr/index.module.css";
 import dynamic from "next/dynamic";
 const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
-import jsonFetchReq from "/start/ServerJsonFetchReq";
 
-export async function getServerSideProps(context) {
-    const data = await jsonFetchReq({
-        method:"GET",
-        path:"/get-data",
-        cookie:context.req.headers.cookie,
-        server:context
-    });
-    if(data.result==='redirect') {
-        return {
-            redirect: {
-                permanent: false,
-                destination: data.location,
-            },
-            props: {}
-        }; 
-    } else {
-        return {
-            props: {data}
-        };
-    }
-};
-
-const QR = ({data}) => {
-    console.log(data);
-    // if(typeof document !== "undefined") {
-    //     const result_1 = jsonFetchReq({method:"GET",path:"/database-select",cookie:document.cookie})
-    //     console.log(result_1);
-    // }
+const QR = ({lang}) => {
     const [hide,setHide] = useState(false);
     const [html5QrCode,setHtml5QrCode] = useState(null);
     const [width,setWidth] = useState(null)
@@ -131,9 +103,8 @@ const QR = ({data}) => {
       }
     return(
         <>
-        <NavbarApp onClick={()=>html5QrCode.stop()} to={{href:"/technology"}} choice="alone"/>
+        <NavbarApp lang={lang} onClick={()=>html5QrCode.stop()} choice="alone"/>
         <div className="main_app block_animation">
-            {data!==undefined?<h1>{data.name} {data.surname}</h1>:""}
             <h1 className="flex_text">Okki QR</h1>
             <p className="sub_content">Welcome to Okki QR</p>
             {hide===true?"":
@@ -180,4 +151,8 @@ const QR = ({data}) => {
         </>
     )
 }
+
+QR.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+  };
 export default QR;
