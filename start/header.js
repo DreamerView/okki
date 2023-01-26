@@ -111,7 +111,7 @@ const Header = () => {
             }
             <>
             <Search accept={RefRes} text={translate['search'][locale]} list={list} change={GetResult}/>
-            {timeOut?
+            {!timeOut?
             <div className='header__search_blocks'>
               {search.length===0?
                 <p>{translate['search_not'][locale]}</p>:
