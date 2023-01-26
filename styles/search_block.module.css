@@ -1,16 +1,66 @@
-div.search__block {
-    height:58px;
-    background-color: var(--search-block);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: flex;
-    margin:4px 8px 4px 0;
-    -webkit-border-radius: 24px;
-       -moz-border-radius: 24px;
-            border-radius: 24px;
-    cursor: pointer;
+@media screen and (min-width:1900px) {
+    div.search__block {
+        height:58px;
+        background-color: var(--search-block);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: flex;
+        margin:4px 8px 4px 0;
+        -webkit-border-radius: 24px;
+           -moz-border-radius: 24px;
+                border-radius: 24px;
+        cursor: pointer;
+    }
+}
+@media screen and (min-width:1161px) and (max-width:1899px) {
+    div.search__block {
+        height:58px;
+        background-color: var(--search-block);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: flex;
+        margin:4px 8px 4px 0;
+        -webkit-border-radius: 24px;
+           -moz-border-radius: 24px;
+                border-radius: 24px;
+        cursor: pointer;
+    }
+}
+@media (min-width:601px) and (max-width:1160px) {
+    div.search__block {
+        height:58px;
+        background-color: var(--search-block);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: flex;
+        margin:4px 8px 4px 0;
+        -webkit-border-radius: 24px;
+           -moz-border-radius: 24px;
+                border-radius: 24px;
+        cursor: pointer;
+    }
+}
+@media (min-width:1px) and (max-width:600px) {
+    div.search__block {
+        height:58px;
+        background-color: var(--block-color);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: flex;
+        -webkit-border-radius: 24px;
+           -moz-border-radius: 24px;
+                border-radius: 24px;
+        cursor: pointer;
+        margin:8px 0;
+    }
 }
 div.search__block_image {
     margin:10px;
