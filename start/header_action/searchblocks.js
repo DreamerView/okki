@@ -26,7 +26,7 @@ const SearchBlocks = (res) => {
                     </div></div>
                 }
                 <div className={style.search__block_content}>
-                    <h5>{translate[res.item.name][locale]}</h5>
+                    <h5 class={style.search}>{translate[res.item.name][locale]}</h5>
                     <p className={style.smaller}>{type_translate[res.item.type][locale]}</p>
                 </div>
             </div>
