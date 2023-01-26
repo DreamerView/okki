@@ -207,7 +207,10 @@
         width:100%;
     }
     div.main__block_user_row {
+        max-width:350px;
         width:100%;
+        min-width: 50px;
+        margin:0 auto;
     }
     div.main__user_action {
         width:100%;

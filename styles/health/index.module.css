@@ -26,16 +26,15 @@
     }
 }
 h1.header {
-    font-size: 30px;
-    line-height: 46px;
     text-align: center;
-    margin-bottom:40px
+    margin: 32px 0;
 }
 .head {
     text-align: center;
     margin:64px 0;
 }
 .headers {
+    font-size:14px;
     text-align: center
 }
 div.date_block {
@@ -57,21 +56,28 @@ input.date {
        -moz-border-radius: 24px;
             border-radius: 24px;
     font-size:20px;
-    width:300px;
+    max-width:350px;
+    width:100%;
+    min-width: 50px;
     padding:16px 32px;
     background-color: var(--input_back);
     text-align: center;
+    box-sizing: border-box;
 }
 div.calendar_row {
-    display: grid;
+    max-width: 1700px;
+    width: 100%;
+    min-width: 50px;
     display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap:24px 16px;
-    margin:64px 0;
+    margin:64px auto;
 }
 div.calendar_block {
+    /* max-width: 350px; */
     width:100%;
+    /* min-width: 50px; */
     height:80px;
     background-color: var(--block-color);
     -webkit-border-radius: 24px;
@@ -87,7 +93,8 @@ div.calendar_block {
        -moz-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin:0 auto
+    margin:0 auto;
+    box-sizing: border-box;
 }
 div.calendar_block_l {
     z-index:1;

@@ -20,6 +20,7 @@
         background-color: var(--nav_block);
         margin:0 25px;
         padding: 22px 0;
+        box-sizing: border-box;
         width:1880px;
         -webkit-border-radius: 24px;
            -moz-border-radius: 24px;
@@ -118,6 +119,7 @@
         background-color: var(--nav_block);
         margin:0 25px;
         padding: 22px 0;
+        box-sizing: border-box;
         width:-webkit-calc(100%-100px);
         width:-moz-calc(100%-100px);
         width:calc(100%-100px);
@@ -209,6 +211,7 @@
         background-color: var(--nav_block);
         margin:0 12px;
         padding: 22px 0;
+        box-sizing: border-box;
         width:-webkit-calc(100%-22px);
         width:-moz-calc(100%-22px);
         width:calc(100%-22px);
@@ -301,6 +304,7 @@
         width:-moz-calc(100%-22px);
         width:calc(100%-22px); */
         padding:16px 0;
+        box-sizing: border-box;
         overflow-x: auto;
         overflow-y: hidden;
         background-color: var(--nav_block);
@@ -399,11 +403,11 @@ div.main__index_block_row {
     margin-top:16px;
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap:16px
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap:18px
 }
 div.main__index_block_row_b {
-    width:140px;
+    width:150px;
     cursor: pointer;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -411,8 +415,8 @@ div.main__index_block_row_b {
     margin:0 auto;
 }
 div.main__index_block {
-    width:140px;
-    height:140px;
+    width:150px;
+    height:150px;
     background-color: var(--nav_menu_c);
     -webkit-border-radius: 24px;
        -moz-border-radius: 24px;
@@ -420,17 +424,17 @@ div.main__index_block {
     margin:16px 0 8px 0
 }
 div.main__index_block_pic {
-    width:140px;
-    height:140px;
+    width:150px;
+    height:150px;
     position: relative;
-    -webkit-border-radius: 24px;
-       -moz-border-radius: 24px;
-            border-radius: 24px
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px
 }
 img.main__index_block_img {
-    width:140px;
-    height:140px;
-    -webkit-border-radius: 24px;
-       -moz-border-radius: 24px;
-            border-radius: 24px
+    width:150px;
+    height:150px;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px
 }

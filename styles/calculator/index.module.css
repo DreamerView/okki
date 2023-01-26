@@ -278,11 +278,12 @@ input.main__calculator_module_input {
     padding-right:32px;
     box-sizing: border-box;
 }
-input.main__calculator_module_input:placeholder-shown {
+input.main__calculator_module_input::placeholder {
     text-overflow: ellipsis;
     white-space:nowrap;
     overflow: hidden;
-    color:var(--sub_content)
+    color:var(--sub_content);
+    font-weight:normal;
 }
 p.click_event {
     margin-top:16px;
