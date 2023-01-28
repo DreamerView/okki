@@ -78,8 +78,8 @@ const secure = production?[
   },
     {
       key: 'Cache-Control',
-      value:"private, no-cache, no-store, max-age=0, must-revalidate"
-      // value: 'public, max-age=31536000, immutable'
+      // value:"private, no-cache, no-store, max-age=0, must-revalidate"
+      value: 'public, max-age=31536000, immutable'
   },
     {
       key: 'X-DNS-Prefetch-Control',
