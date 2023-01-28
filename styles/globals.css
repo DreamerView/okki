@@ -738,7 +738,7 @@ select:-webkit-autofill:focus {
   input.header__search_input:focus {
       border-radius: 24px
   }
-  input.header__search_input:focus+header {
+  input.header__search_input:focus ~ header {
       height: 100vh;
   }
   input.main__block_interface_menu_c_s_i:focus+header{

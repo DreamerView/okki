@@ -85,6 +85,8 @@ const Header = () => {
           <meta name="robots" content="index,follow"/>
         </Head>
         <header>
+          {res?"":
+          <>
           <div className="header__logo">
             <Link title={text['title'][locale]} href='/' prefetch={false}>
                 <div className='header__logo_p'>
@@ -98,7 +100,7 @@ const Header = () => {
             <span className="header__action_block_text">{locale}</span>
             <div className="header__search_menu_pic"></div>
           </div>
-          </div>
+          </div></>}
           <div className="header__search">
           {res?"":
             // <Link title={text['title'][locale]} href="/" prefetch={false}>
