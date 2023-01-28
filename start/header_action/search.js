@@ -13,7 +13,7 @@ const Search = (res) => {
     const [list,setList] = useState();
     const [search,setSearch] = useState('');
     const [cancel,setCancel] = useState(false);
-    const [result,setResult] = useState(false);
+    const [result,setResult] = useState([]);
     const [accept,setAccept] = useState(false);
     useEffect(()=>{
         setResult(prev=>prev=SearchResult.filter((e)=>{
@@ -36,7 +36,7 @@ const Search = (res) => {
             focus.current.removeEventListener('focus',handler);
           };
       },[focus,list]);
-      const RemoveBlur = () => {setAccept(prev=>prev=false);setCancel(prev=>prev=false);};
+      const RemoveBlur = () => {setAccept(prev=>prev=false);setCancel(prev=>prev=false);setResult(prev=>prev=[]);focus.current.value=""};
       const getList = (e) => {
         console.log('rendered')
         setList(prev=>prev=e);
@@ -57,7 +57,7 @@ const Search = (res) => {
                 <p>{translate['search_not'][locale]}</p>:
               <>
                 <p>{translate['search_found'][locale]}</p>
-                <div>{result!==false&&result.slice(0,5).map((v,i)=><SearchBlocks item={v} key={i+1} send={getList}/>)}</div>
+                <div>{result.slice(0,5).map((v,i)=><SearchBlocks item={v} key={i+1} send={getList}/>)}</div>
               </>}
             </div>}
       </>
