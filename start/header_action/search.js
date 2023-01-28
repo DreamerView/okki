@@ -25,7 +25,6 @@ const Search = (res) => {
         };
       },[search,focus]);
       useEffect(()=>{
-        console.log(list)
           const handler = () =>{
             setSearch(prev=>prev=list);
             setCancel(prev=>prev=true);
@@ -33,12 +32,11 @@ const Search = (res) => {
           };
           focus.current.addEventListener('focus',handler);
           return () => {
-            focus.current.removeEventListener('focus',handler);
+            focus.current!==null&&focus.current.removeEventListener('focus',handler);
           };
       },[focus,list]);
       const RemoveBlur = () => {setAccept(prev=>prev=false);setCancel(prev=>prev=false);setResult(prev=>prev=[]);focus.current.value=""};
       const getList = (e) => {
-        console.log('rendered')
         setList(prev=>prev=e);
         focus.current.value = e;
         setAccept(prev=>prev=false);

@@ -59,7 +59,8 @@ const withPWA = require('next-pwa')({
     //     // networkTimeoutSeconds: 10 // fall back to cache if api does not response within 10 seconds 
     //   } 
     // }, 
-  ]
+  ],
+  output:"standalone"
 });
 
 const ContentSecurityPolicy = `
