@@ -1038,7 +1038,7 @@ input.header__search_input {
   border:1.5px solid var(--input_border);
   border-radius: 24px;
   color:var(--font-color);
-  background: var(--search_icon) no-repeat scroll 11px 11px var(--block-color);
+  background: var(--search_icon) no-repeat scroll 16px 10px var(--block-color);
   box-sizing: border-box;
 }
 input.header__search_input::-webkit-input-placeholder {
