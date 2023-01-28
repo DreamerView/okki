@@ -85,7 +85,7 @@ const Header = () => {
           <meta name="robots" content="index,follow"/>
         </Head>
         <header>
-          {res?"":
+          {/* {res?"": */}
           <>
           <div className="header__logo">
             <Link title={text['title'][locale]} href='/' prefetch={false}>
@@ -100,7 +100,8 @@ const Header = () => {
             <span className="header__action_block_text">{locale}</span>
             <div className="header__search_menu_pic"></div>
           </div>
-          </div></>}
+          </div></>
+          {/* } */}
           <div className="header__search">
           {res?"":
             // <Link title={text['title'][locale]} href="/" prefetch={false}>
@@ -113,7 +114,7 @@ const Header = () => {
             }
             <>
             <Search accept={RefRes} text={translate['search'][locale]} list={list} change={GetResult}/>
-            {timeOut?
+            {/* {res?
             <div className='header__search_blocks'>
               {search.length===0?
                 <p>{translate['search_not'][locale]}</p>:
@@ -122,7 +123,7 @@ const Header = () => {
                 <div>{search.slice(0,5).map((v,i)=><SearchBlocks item={v} key={i+1} send={GetList}/>)}</div>
               </>}
             </div>
-            :""}
+            :""} */}
             </>
             
           </div>
