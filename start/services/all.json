@@ -29,7 +29,7 @@
     {
         "title":"Образование",
         "name":"education",
-        "image":"/icons/education.svg",
+        "image":"/emoji/graduation_cap.png",
         "image_background":"purple_background",
         "key":"білім,образование,education",
         "location":"/education",
