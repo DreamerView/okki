@@ -16,7 +16,7 @@ const IndexMenu = ({lang,service}) => {
                 <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" key={index+1}>
                 <Link title={nav_translate[e.name][locale]} itemID={e.location} itemType="https://schema.org/Thing"  itemScope itemProp="item" href={e.location} prefetch={false}>
                     <div className={`${styles.main__menu_nav_block} anim_hover`}>
-                    <div className={`${styles.main__menu_nav_block_image} block_background`}>
+                    <div className={`${styles.main__menu_nav_block_image} ${e.image_background}`}>
                         <div className={`${styles.main__menu_nav_block_image_pic}`}>
                         <Image priority title={translate[e.name][locale]} width={34} height={34} src={e.image} alt="icon"/>
                         </div>
