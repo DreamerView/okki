@@ -326,9 +326,9 @@
                 -webkit-justify-content: center;
                    -moz-box-pack: center;
                 justify-content: center;
-        /* -ms-grid-columns: 24.5vw 0px 24.5vw 0px 24.5vw 0px 24.5vw; */
-        grid-template-columns: repeat(4,25vw);
-        gap: 24px 0px;
+        -ms-grid-columns: 24.5vw 0px 24.5vw 0px 24.5vw 0px 24.5vw;
+        grid-template-columns: repeat(4,23vw);
+        gap: 24px 8px;
         margin:4px 0
     }
     div.main__menu_nav_block {
@@ -362,11 +362,16 @@
                 justify-content: center;
     }
     span.nav_header {
+        width:70px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         margin-top:16px;
         font-size: 13px;
         line-height:16px;
         text-align: center;
-        /* font-weight: 500 */
+        font-weight: 500;
+        /* background-color: aqua; */
     }
     div.main__menu_nav_block_image {
         width:58px;

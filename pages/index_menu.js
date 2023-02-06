@@ -11,6 +11,7 @@ const IndexMenu = ({lang,service}) => {
     return(
         <>
             <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>
+            {/* <h1>Category</h1> */}
             <div className={styles.main__menu_nav_blocks}>
             {serv&&serv.filter(e=>{return e.type === 'category'}).map((e,index)=>
                 <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" key={index+1}>
