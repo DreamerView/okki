@@ -369,7 +369,7 @@
         font-size: 13px;
         line-height:15px;
         text-align: center;
-        font-weight: 700;
+        /* font-weight: 700; */
         /* background-color: aqua; */
     }
     div.main__menu_nav_block_image {
