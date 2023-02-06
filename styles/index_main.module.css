@@ -391,9 +391,9 @@
                 -webkit-justify-content: center;
                    -moz-box-pack: center;
                 justify-content: center;
-        -webkit-border-radius: 24px;
-           -moz-border-radius: 24px;
-                border-radius: 24px
+        -webkit-border-radius: 22px;
+           -moz-border-radius: 22px;
+                border-radius: 22px
     }
     div.main__menu_nav_block_image_pic>img {
         width:32px;
