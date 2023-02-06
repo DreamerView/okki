@@ -362,7 +362,7 @@
                 justify-content: center;
     }
     span.nav_header {
-        width:70px;
+        width:100%;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
