@@ -390,9 +390,9 @@
            -moz-border-radius: 22px;
                 border-radius: 22px
     }
-    div.main__menu_nav_block_image_pic {
-        width:36px;
-        height:36px;
+    div.main__menu_nav_block_image_pic>img {
+        width:30px;
+        height:30px;
         position: relative;
         display: flex;
         align-items: center;
