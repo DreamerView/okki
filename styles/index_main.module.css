@@ -366,16 +366,16 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        margin-top:16px;
-        font-size: 13px;
-        line-height:16px;
+        margin-top:4px;
+        font-size: 11px;
+        line-height:13px;
         text-align: center;
         font-weight: 500;
         /* background-color: aqua; */
     }
     div.main__menu_nav_block_image {
-        width:58px;
-        height:58px;
+        width:60px;
+        height:60px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -391,9 +391,9 @@
                 -webkit-justify-content: center;
                    -moz-box-pack: center;
                 justify-content: center;
-        -webkit-border-radius: 24px;
-           -moz-border-radius: 24px;
-                border-radius: 24px
+        -webkit-border-radius: 13px;
+           -moz-border-radius: 13px;
+                border-radius: 13px
     }
     div.main__menu_nav_block_image_pic>img {
         width:30px;
