@@ -328,7 +328,7 @@
                 justify-content: center;
         -ms-grid-columns: 24.5vw 0px 24.5vw 0px 24.5vw 0px 24.5vw;
         grid-template-columns: repeat(4,23vw);
-        gap: 40px 8px;
+        gap: 32px 8px;
     }
     div.main__menu_nav_block {
         width:100%;
@@ -369,7 +369,7 @@
         font-size: 13px;
         line-height:15px;
         text-align: center;
-        /* font-weight: 700; */
+        font-weight: 500;
         /* background-color: aqua; */
     }
     div.main__menu_nav_block_image {
