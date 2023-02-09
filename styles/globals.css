@@ -1032,11 +1032,12 @@ span.header__search_menu_text {
 input.header__search_input {
   padding:var(--i-s);
   height:46px;
-  font-size:16px;
+  font-size:18px;
   border:1.5px solid var(--input_border);
   border-radius: 24px;
   color:var(--font-color);
-  background: var(--search_icon) no-repeat scroll 16px 10px var(--block-color);
+  background: var(--search_icon) no-repeat scroll 16px 12px var(--block-color);
+  background-size:22px 22px;
   box-sizing: border-box
 }
 input.header__search_input::-webkit-input-placeholder {
