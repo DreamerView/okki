@@ -89,7 +89,7 @@ const BMICalc = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{translate['male_text'][lang]}</p>
-                                    <h3>{show.maleText}</h3>
+                                    <h4>{show.maleText}</h4>
                                 </div>
                             </div>
                             <div className={age===0?style.module_result_block:anim===true && show.age!==0?style.module_result_block_loader:style.module_result_block}>
@@ -98,7 +98,7 @@ const BMICalc = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{translate['age'][lang]}</p>
-                                    <h3>{show.age}</h3>
+                                    <h4>{show.age}</h4>
                                 </div>
                             </div>
                             <div className={show.res_status!=='res'?style.module_result_block:anim===true && show.age!==0?style.module_result_block_loader:style.module_result_block}>
@@ -107,7 +107,7 @@ const BMICalc = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{translate['bmi_result'][lang]}</p>
-                                    <h3>{show.res}</h3>
+                                    <h4>{show.res}</h4>
                                 </div>
                             </div>
                             <div className={show.check_status!=='check'?style.module_result_block:anim===true && show.age!==0?style.module_result_block_loader:style.module_result_block}>
@@ -116,7 +116,7 @@ const BMICalc = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{translate['result'][lang]}</p>
-                                    <h3 className={`${show.color}_font`}>{show.check}</h3>
+                                    <h4 className={`${show.color}_font`}>{show.check}</h4>
                                 </div>
                             </div>
                         </div>

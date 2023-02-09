@@ -66,7 +66,7 @@ const Deposit = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['result1'][lang]}</p>
-                                    <h3>{exp===''?0:exp}</h3>
+                                    <h4>{exp===''?0:exp}</h4>
                                 </div>
                             </div>
                             <div className={anim2==='result'?style.module_result_block_loader:style.module_result_block}>
@@ -75,7 +75,7 @@ const Deposit = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['result2'][lang]}</p>
-                                    <h3>{result}</h3>
+                                    <h4>{result}</h4>
                                 </div>
                             </div>
                             <div className={anim3==='alert'?style.module_result_block_loader:style.module_result_block}>
@@ -84,7 +84,7 @@ const Deposit = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['res'][lang]}</p>
-                                    <h3 className={alert?alert.color:''}>{alert?alert.text:''}</h3>
+                                    <h4 className={alert?alert.color:''}>{alert?alert.text:''}</h4>
                                 </div>
                             </div>
                         </div>

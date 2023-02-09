@@ -69,7 +69,7 @@ const IdealWeight = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['male_selected'][lang]}</p>
-                                    <h3>{maleText}</h3>
+                                    <h4>{maleText}</h4>
                                 </div>
                             </div>
                             <div className={anim2==='n1'?style.module_result_block_loader:style.module_result_block}>
@@ -78,7 +78,7 @@ const IdealWeight = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['h_selected'][lang]}</p>
-                                    <h3>{n1text}</h3>
+                                    <h4>{n1text}</h4>
                                 </div>
                             </div>
                             <div className={anim3==='result'?style.module_result_block_loader:style.module_result_block}>
@@ -87,7 +87,7 @@ const IdealWeight = ({lang}) => {
                                 </div>
                                 <div className={style.module_result_block_d}>
                                     <p className={style.module_result_block_desc}>{text['result'][lang]}</p>
-                                    <h3>{result}</h3>
+                                    <h4>{result}</h4>
                                 </div>
                             </div>
                         </div>

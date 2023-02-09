@@ -74,7 +74,7 @@ const MarginMarkup = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['prime_cost'][lang]}</p>
-                                    <h3>{n1Total} ₸</h3>
+                                    <h4>{n1Total} ₸</h4>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
@@ -83,7 +83,7 @@ const MarginMarkup = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['cost'][lang]}</p>
-                                    <h3>{n2}₸</h3>
+                                    <h4>{n2}₸</h4>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
@@ -92,7 +92,7 @@ const MarginMarkup = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['net_profit'][lang]}</p>
-                                    <h3 className={`${total===0?"":total>0?"green_font":"red_font"}`}>{total}₸</h3>
+                                    <h4 className={`${total===0?"":total>0?"green_font":"red_font"}`}>{total}₸</h4>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
@@ -101,7 +101,7 @@ const MarginMarkup = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['margin'][lang]}</p>
-                                    <h3 className={`${marginPrice===0?"":marginPrice>0?"green_font":"red_font"}`}>{marginPrice}%</h3>
+                                    <h4 className={`${marginPrice===0?"":marginPrice>0?"green_font":"red_font"}`}>{marginPrice}%</h4>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
@@ -110,7 +110,7 @@ const MarginMarkup = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['markup'][lang]}</p>
-                                    <h3 className={`${markUp===0?"":markUp>0?"green_font":"red_font"}`}>{markUp}%</h3>
+                                    <h4 className={`${markUp===0?"":markUp>0?"green_font":"red_font"}`}>{markUp}%</h4>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +122,7 @@ const MarginMarkup = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['with_nds'][lang]}</p>
-                                    <h3>{nds_total} <span className='sup'>({nds}%)</span> ₸</h3>
+                                    <h4>{nds_total} <span className='sup'>({nds}%)</span> ₸</h4>
                                 </div>
                             </div>
                             <div style={delivery==='not'?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
@@ -131,7 +131,7 @@ const MarginMarkup = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['delivery'][lang]}</p>
-                                    <h3>{delivery}₸</h3>
+                                    <h4>{delivery}₸</h4>
                                 </div>
                             </div>
                             <div style={marketing==='not'?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
@@ -140,7 +140,7 @@ const MarginMarkup = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['ads'][lang]}</p>
-                                    <h3>{marketing}₸</h3>
+                                    <h4>{marketing}₸</h4>
                                 </div>
                             </div>
                             <div style={other==='not'?{display:'none'}:{display:'flex'}} className={`${style.module_result_block} block_animation`}>
@@ -149,7 +149,7 @@ const MarginMarkup = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{translate['other'][lang]}</p>
-                                    <h3>{other}₸</h3>
+                                    <h4>{other}₸</h4>
                                 </div>
                             </div>
                         </div>

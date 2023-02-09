@@ -120,7 +120,7 @@ const Deposit = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{text['saveup'][lang]}</p>
-                                    <h3>{total}</h3>
+                                    <h4>{total}</h4>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
@@ -129,7 +129,7 @@ const Deposit = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{text['own'][lang]}</p>
-                                    <h3>{own}</h3>
+                                    <h4>{own}</h4>
                                 </div>
                             </div>
                             <div className={style.module_result_block}>
@@ -138,7 +138,7 @@ const Deposit = ({lang}) => {
                                 </div>
                                 <div>
                                     <p className={style.module_result_block_desc}>{text['accrued'][lang]}</p>
-                                    <h3>{percent}</h3>
+                                    <h4>{percent}</h4>
                                 </div>
                             </div>
                         </div>
