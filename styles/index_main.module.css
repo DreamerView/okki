@@ -328,7 +328,7 @@
                 justify-content: center;
         -ms-grid-columns: 24.5vw 0px 24.5vw 0px 24.5vw 0px 24.5vw;
         grid-template-columns: repeat(4,23vw);
-        gap: 24px 8px;
+        gap: 16px 8px;
     }
     div.main__menu_nav_block {
         width:100%;
