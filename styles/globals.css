@@ -710,7 +710,7 @@ select:-webkit-autofill:focus {
 }
 @media (min-width:1px) and (max-width:600px) {
   :root {
-      --m-1: 30px 16px;
+      --m-1: 32px 16px 24px 16px;
       --m-2: 38px 16px;
       --m-3: 32px 16px;
       --m-4: 16px 16px 48px 16px;
