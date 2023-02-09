@@ -303,7 +303,7 @@
         /* width:-webkit-calc(100%-22px);
         width:-moz-calc(100%-22px);
         width:calc(100%-22px); */
-        padding:24px 0;
+        padding:24px 0 8px 0;
         box-sizing: border-box;
         overflow-x: auto;
         overflow-y: hidden;
@@ -328,7 +328,7 @@
                 justify-content: center;
         -ms-grid-columns: 24.5vw 0px 24.5vw 0px 24.5vw 0px 24.5vw;
         grid-template-columns: repeat(4,23vw);
-        gap: 32px 8px;
+        gap: 16px 8px;
     }
     div.main__menu_nav_block {
         width:100%;
@@ -365,7 +365,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        margin-top:14px;
+        margin:16px 0;
         font-size: 13px;
         line-height:15px;
         text-align: center;
