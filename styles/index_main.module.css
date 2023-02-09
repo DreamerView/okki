@@ -303,7 +303,7 @@
         /* width:-webkit-calc(100%-22px);
         width:-moz-calc(100%-22px);
         width:calc(100%-22px); */
-        padding:32px 0;
+        padding:24px 0;
         box-sizing: border-box;
         overflow-x: auto;
         overflow-y: hidden;
