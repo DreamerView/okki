@@ -373,8 +373,8 @@
         /* background-color: aqua; */
     }
     div.main__menu_nav_block_image {
-        width:56px;
-        height:56px;
+        width:60px;
+        height:60px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: -webkit-flex;
