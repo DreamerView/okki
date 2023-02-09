@@ -46,16 +46,16 @@ const MyApp = ({ Component, pageProps, session }) => {
     const locale = useTranslateText();
     const [result,setResult] = useState(false);
     useEffect(()=>{
-        const ResultChange = (result) => {
-            return setResult((prev)=>prev=result);
-        };
+        const ResultChange = (result) => setResult((prev)=>prev=result);
         Router.events.on('routeChangeStart', () => ResultChange(true));
         Router.events.on('routeChangeComplete', () => ResultChange(false));
+        Router.events.on('routeChangeError', () => ResultChange(false));
         return()=>{
             Router.events.off('routeChangeStart', () => ResultChange(true));
             Router.events.off('routeChangeComplete', () => ResultChange(false));
+            Router.events.off('routeChangeError', () => ResultChange(false));
         };
-    },[]);
+    },[Router.events]);
     useEffect(() => {
         if (typeof Window !== 'undefined') {
             let timer;
@@ -110,7 +110,7 @@ const MyApp = ({ Component, pageProps, session }) => {
             <SessionProvider session={session}>
                 <Provider store={store}>
                     <DocumentResult>
-                    {result===true ? <Preloader/>:<Component {...pageProps} />}
+                    {(result)? <Preloader/>:<Component {...pageProps} />}
                     </DocumentResult>
                 </Provider>
             </SessionProvider>
