@@ -55,7 +55,7 @@ const MyApp = ({ Component, pageProps, session }) => {
             Router.events.off('routeChangeComplete', () => ResultChange(false));
             Router.events.off('routeChangeError', () => ResultChange(false));
         };
-    },[Router.events]);
+    },[]);
     useEffect(() => {
         if (typeof Window !== 'undefined') {
             let timer;
