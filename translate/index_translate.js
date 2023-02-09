@@ -55,8 +55,8 @@ export default {
         en:"Popular services"
     },
     popular_subtext: {
-        kk:"Пайдаланушылардың таңдауы бойынша ең жақсы 5 қызметтер",
-        ru:"Топ 5 лучших сервисов по выбору пользователей",
-        en:"Top 5 best services of users' choice"
+        kk:"Пайдаланушылардың таңдауы бойынша ең жақсы 10 қызметтер",
+        ru:"Топ 10 лучших сервисов по выбору пользователей",
+        en:"Top 10 best services of users' choice"
     }
 };

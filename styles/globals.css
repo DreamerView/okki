@@ -316,7 +316,7 @@ p.nav > a {
       --blue_back:hsl(210, 100%, 52%);
       --red_back:hsl(349, 100%, 59%);
       --orange_back:hsl(35, 100%, 50%);
-      --input_back_text:hsla(240, 33%, 94%,.5);
+      --input_back_text:hsla(240, 33%, 94%,.6);
       --input_border:transparent;
       --border-color:hsl(240, 1%, 30%);
       --search_icon: url(../public/img/search_night.svg);
@@ -357,8 +357,8 @@ p.nav > a {
       --blue_back: hsl(211, 100%, 50%);
       --red_back:hsl(349, 100%, 59%);
       --orange_back:hsl(36, 100%, 52%);
-      --input_back_text:#606060;
-      --input_border:#E6E8EC;
+      --input_back_text:hsl(0, 0%, 40%);
+      --input_border:hsl(220, 14%, 91%);
       --border-color:hsl(216, 10%, 90%);
       --search_icon: url(../public/img/search.svg);
       --nav_menu_c:hsl(240, 24%, 98%);
@@ -1041,7 +1041,7 @@ input.header__search_input {
 }
 input.header__search_input::-webkit-input-placeholder {
   color: var(--input_back_text)
-}
+}b
 input.header__search_input::-moz-placeholder {
   color: var(--input_back_text)
 }
