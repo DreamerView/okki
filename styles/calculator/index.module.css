@@ -14,9 +14,9 @@
         display: flex;
     }
     div.main__calculator {
-        margin-top:64px;
+        margin-top:48px;
         width: 50%;
-        padding:40px 20px;
+        padding:64px 20px;
         box-sizing: border-box;
         margin-right:32px;
         -webkit-box-ordinal-group:2;
@@ -26,9 +26,9 @@
                 order:1;
     }
     div.main__result {
-        margin-top:64px;
+        margin-top:48px;
         width: 50%;
-        padding:40px 20px;
+        padding:64px 20px;
         box-sizing: border-box;
         -webkit-box-ordinal-group:3;
             -ms-flex-order:2;
@@ -47,9 +47,9 @@
         display: flex;
     }
     div.main__calculator {
-        margin-top:64px;
+        margin-top:48px;
         width: 50%;
-        padding:40px 20px;
+        padding:64px 18px;
         box-sizing: border-box;
         margin-right:32px;
         -webkit-box-ordinal-group:2;
@@ -59,9 +59,9 @@
                 order:1;
     }
     div.main__result {
-        margin-top:64px;
+        margin-top:48px;
         width: 50%;
-        padding:40px 20px;
+        padding:64px 20px;
         box-sizing: border-box;
         -webkit-box-ordinal-group:3;
             -ms-flex-order:2;
@@ -81,9 +81,9 @@
         display: flex;
     }
     div.main__calculator {
-        margin-top:40px;
+        margin-top:48px;
         width: 50%;
-        padding:40px 20px;
+        padding:64px 16px;
         margin-right:32px;
         box-sizing: border-box;
         -webkit-box-ordinal-group:2;
@@ -93,8 +93,8 @@
                 order:1;
     }
     div.main__result {
-        margin-top:40px;
-        padding:40px 20px;
+        margin-top:48px;
+        padding:64px 16px;
         box-sizing: border-box;
         width: 50%;
         -webkit-box-ordinal-group:3;
@@ -102,10 +102,9 @@
                 -webkit-order:2;
                    -moz-box-ordinal-group:3;
                 order:2;
-                border: 0.5px solid var(--border-color);
     }
     div.main__calculator_m {
-        width:75%;
+        width:100%;
         margin: 8px auto;
     }
 }
