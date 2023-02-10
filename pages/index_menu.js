@@ -3,9 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import translate from "/translate/index_translate";
 import nav_translate from "/translate/services/all_translate";
-import styles from '/styles/index_main.module.css';
 
-const IndexMenu = ({lang,service}) => {
+const IndexMenu = ({lang,service,styles}) => {
     const locale =lang;
     const serv = service!==undefined?service:[{}];
     return(
@@ -13,7 +12,7 @@ const IndexMenu = ({lang,service}) => {
             <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>
             {/* <h1>Category</h1> */}
             <div className={styles.main__menu_nav_blocks}>
-            {serv&&serv.filter(e=>{return e.type === 'category'}).map((e,index)=>
+            {(serv)&&serv.filter(e=>e.type === 'category').map((e,index)=>
                 <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" key={index+1}>
                 <Link title={nav_translate[e.name][locale]} itemID={e.location} itemType="https://schema.org/Thing"  itemScope itemProp="item" href={e.location} prefetch={false}>
                     <div className={`${styles.main__menu_nav_block} anim_hover`}>

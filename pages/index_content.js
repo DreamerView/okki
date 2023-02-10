@@ -3,10 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import translate from "/translate/index_translate";
 import nav_translate from "/translate/services/all_translate";
-import styles from '/styles/index_main.module.css';
-  
 
-const IndexContent = ({lang,service}) => {
+const IndexContent = ({lang,service,styles}) => {
   const locale = lang;
   const serv = service!==undefined?service:[{}];
   const historyAction = (service) => {

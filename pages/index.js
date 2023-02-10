@@ -5,6 +5,7 @@ import seo from "/translate/seo_index";
 import AllService from '/start/services/all.json';
 const IndexMenu = dynamic(()=>import('/pages/index_menu'));
 const IndexContent = dynamic(()=>import('/pages/index_content'));
+import styles from '/styles/index_main.module.css';
 
 
 const Home = ({locale}) => {
@@ -27,8 +28,8 @@ const Home = ({locale}) => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-      <IndexMenu lang={locale} service={AllService}/>
-      <IndexContent lang={locale} service={AllService}/>
+      <IndexMenu lang={locale} service={AllService} styles={styles}/>
+      <IndexContent lang={locale} service={AllService} styles={styles}/>
     </>
   )
 };
