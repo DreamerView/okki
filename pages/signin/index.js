@@ -5,7 +5,7 @@ import Head from "next/head";
 import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/signin/index.module.css";
 import { useDispatch } from "react-redux";
-const AesEncryption = require('aes-encryption');
+import AesEncryption from "aes-encryption";
 import Image from "next/image";
 import Link from "next/link";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";

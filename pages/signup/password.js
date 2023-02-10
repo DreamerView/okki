@@ -5,7 +5,7 @@ import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
 import Image from "next/image";
-const AesEncryption = require('aes-encryption');
+import AesEncryption from "aes-encryption";
 const platform = require('platform');
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 import text from "/translate/signup/index_translate.json";

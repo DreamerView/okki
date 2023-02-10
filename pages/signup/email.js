@@ -5,7 +5,7 @@ import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
-const AesEncryption = require('aes-encryption');
+import AesEncryption from "aes-encryption";
 import { useDispatch } from "react-redux";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 import text from "/translate/signup/index_translate.json";

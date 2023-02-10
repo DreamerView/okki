@@ -4,7 +4,7 @@ import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/signin/index.module.css";
 import { useDispatch } from 'react-redux';
 import { useState,useEffect,useCallback } from 'react';
-const AesEncryption = require('aes-encryption');
+import AesEncryption from "aes-encryption";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 
 export const getServerSideProps = async (context) => {

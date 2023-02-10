@@ -4,7 +4,7 @@ import NavbarApp from '/pages/navbar_app/nav';
 import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
-const AesEncryption = require('aes-encryption');
+import AesEncryption from "aes-encryption";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 const platform = require('platform');
 import { useDispatch } from "react-redux";

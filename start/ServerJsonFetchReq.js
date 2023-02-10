@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 8 */
 
-const AesEncryption = require('aes-encryption');
+import AesEncryption from "aes-encryption";
 
 const ServerJsonFetchReq = async({path,cookie,server,auth}) =>{
     try {
