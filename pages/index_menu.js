@@ -1,12 +1,7 @@
 /*jshint esversion: 6 */
-import Image from "next/image";
-import Link from "next/link";
-import translate from "/translate/index_translate";
-import nav_translate from "/translate/services/all_translate";
 
-const IndexMenu = ({lang,service,styles}) => {
-    const locale =lang;
-    const serv = service!==undefined?service:[{}];
+const IndexMenu = ({lang,service,styles,translate,nav_translate,Link,Image}) => {
+    const locale =lang,serv = service!==undefined?service:[{}];
     return(
         <>
             <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>

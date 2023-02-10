@@ -6,7 +6,10 @@ import AllService from '/start/services/all.json';
 const IndexMenu = dynamic(()=>import('/pages/index_menu'));
 const IndexContent = dynamic(()=>import('/pages/index_content'));
 import styles from '/styles/index_main.module.css';
-
+import translate from "/translate/index_translate";
+import nav_translate from "/translate/services/all_translate";
+import Link from "next/link";
+import Image from "next/image";
 
 const Home = ({locale}) => {
   return(
@@ -28,8 +31,8 @@ const Home = ({locale}) => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-      <IndexMenu lang={locale} service={AllService} styles={styles}/>
-      <IndexContent lang={locale} service={AllService} styles={styles}/>
+      <IndexMenu lang={locale} service={AllService} styles={styles} translate={translate} nav_translate={nav_translate} Link={Link} Image={Image}/>
+      <IndexContent lang={locale} service={AllService} styles={styles} translate={translate} nav_translate={nav_translate} Link={Link} Image={Image}/>
     </>
   )
 };
