@@ -13,22 +13,22 @@ import { useRouter } from 'next/router';
 import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
-    const lazy = useRef(false);
-    const router = useRouter();
-    const [header,setHeader] = useState(null);
-    const action = useSelector(state=>state.act);
-    const frame = useSelector(state=>state.fullframe);
-    const url = useSelector(state=>state.urlframe);
-    const image = useSelector(state=>state.crop);
-    const main = useSelector(state=>state.main);
-    const notification = useSelector(state=>state.notification);
-    const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
+    const lazy = useRef(false),
+    router = useRouter(),
+    [header,setHeader] = useState(null),
+    action = useSelector(state=>state.act),
+    frame = useSelector(state=>state.fullframe),
+    url = useSelector(state=>state.urlframe),
+    image = useSelector(state=>state.crop),
+    main = useSelector(state=>state.main),
+    notification = useSelector(state=>state.notification),
+    isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     useEffect(()=>{
         if(typeof Window !== 'undefined') {
-            const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'];
-            const desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish','/signin/social-nerwork'];
-            const headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader;
-            const result = !headerHide.includes(router.pathname);
+            const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'],
+            desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish','/signin/social-nerwork'],
+            headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader,
+            result = !headerHide.includes(router.pathname);
             setHeader((prev)=>prev=result);
         }
         return () => {
@@ -50,12 +50,12 @@ const DocumentResult = ({children}) => {
             const res = await ClientJsonFetchReq({method:"GET",path:'/get-data',cookie:document.cookie});
             if(res!==undefined) {
                 const response = {avatar:aes.decrypt(res.avatar),name:aes.decrypt(res.name),surname:aes.decrypt(res.surname),login:aes.decrypt(res.login)};
-                return localStorage.setItem('loginParams',JSON.stringify(response));
-            } else return localStorage.setItem('loginParams',null);
+                return localStorage.loginParams=JSON.stringify(response);
+            } else return localStorage.loginParams=null;
         };
         result();
         return () =>{
-            
+            lazy.current = false;
         };
     },[]);
     return(

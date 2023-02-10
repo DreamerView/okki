@@ -14,10 +14,7 @@ const DocumentResult = dynamic(()=>import("/start/document"));
 
 
 const Preloader = () => {
-    const [color,setColor] = useState("#4634bc");
-    const [timer,setTimer] = useState(false);
-    const checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'});
-    const locale = useTranslateText();
+    const [color,setColor] = useState("#4634bc"),[timer,setTimer] = useState(false),checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'}),locale = useTranslateText();
     useEffect(()=>{
         return setColor(prev=>prev=checkMode?"#7d7aff":"#4634bc");
     },[checkMode]);
@@ -43,28 +40,25 @@ const Preloader = () => {
 };
 
 const MyApp = ({ Component, pageProps, session }) => {
-    const locale = useTranslateText();
-    const [result,setResult] = useState(false);
+    const locale = useTranslateText(),[result,setResult] = useState(false);
     useEffect(()=>{
-        Router.events.on('routeChangeStart', () => setResult((prev)=>prev=true));
-        Router.events.on('routeChangeComplete', () => setResult((prev)=>prev=false));
+        Router.events.on('routeChangeStart', () => setResult((prev)=>prev=true)),
+        Router.events.on('routeChangeComplete', () => setResult((prev)=>prev=false)),
         Router.events.on('routeChangeError', () => setResult((prev)=>prev=false));
         return()=>{
-            Router.events.off('routeChangeStart', () => setResult((prev)=>prev=true));
-            Router.events.off('routeChangeComplete', () => setResult((prev)=>prev=false));
+            Router.events.off('routeChangeStart', () => setResult((prev)=>prev=true)),
+            Router.events.off('routeChangeComplete', () => setResult((prev)=>prev=false)),
             Router.events.off('routeChangeError', () => setResult((prev)=>prev=false));
         };
     },[]);
     useEffect(() => {
         if (typeof Window !== 'undefined') {
-            let timer;
-            const loader = document.getElementById('globalLoader');
+            let timer,loader = document.getElementById('globalLoader');
             if (loader)
                 timer = setTimeout(()=>{
                     loader.style.cssText = "display:none;";
                 },[1500]);
             return ()=>clearTimeout(timer);
-        
         }
       }, []);
     const defaultState = {
