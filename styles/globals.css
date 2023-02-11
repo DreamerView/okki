@@ -339,7 +339,7 @@ p.nav > a {
       --menu-icon:url(../public/img/menu.svg);
       --logo:url(../public/img/logo.webp);
       --back:hsl(210, 10%, 96%);
-      --background-color:rgba(0, 0, 0, 0.035);
+      --background-color:rgba(0, 0, 0, 0.05);
       --header-color:hsl(0, 0%, 100%);
       --block-color:hsl(220, 14%, 95%);
       --block-color_transparent:hsla(0, 0%, 87.5%, 0.5);
@@ -461,7 +461,7 @@ select:-webkit-autofill:focus {
 
 @media screen and (min-width:1900px) {
   :root {
-      --m-1: 30px 150px;
+      --m-1: 32px 150px;
       --m-2: 64px 150px;
       --m-3: 64px 150px;
       --m-4: 16px 150px 48px 150px;
@@ -557,7 +557,7 @@ select:-webkit-autofill:focus {
 }
 @media screen and (min-width:1161px) and (max-width:1899px) {
   :root {
-      --m-1: 30px 64px;
+      --m-1: 32px 64px;
       --m-2: 64px 64px;
       --m-3: 64px 64px;
       --m-4: 16px 64px 48px 64px;
@@ -969,10 +969,10 @@ div.header__logo_p {
 
 div.header__logo_pic {
   position: relative;
-  width: 105px;
-  height: 30px;
+  width: 112px;
+  height: 32px;
   background-image:var(--logo);
-  background-size: 105px 30px
+  background-size: 112px 32px
 }
 
 img.header__logo_img {
@@ -1031,7 +1031,7 @@ span.header__search_menu_text {
 }
 input.header__search_input {
   padding:var(--i-s);
-  height:46px;
+  height:48px;
   font-size:16px;
   border:1.5px solid var(--input_border);
   border-radius: 24px;
@@ -1090,12 +1090,13 @@ div.header__action_login_button {
   display: flex;
   align-items: center;
   padding:0 24px;
-  height: 46px;
+  height: 48px;
   border-radius: 24px;
   background-color: var(--brand_back);
   cursor: pointer;
   position: relative;
-  color:#ffffff
+  color:hsl(0, 0%, 100%);
+  box-sizing: border-box;
 }
 img.header__action_avatar {   
   width: 46px;
@@ -1106,7 +1107,7 @@ img.header__action_avatar {
 }
 div.header__action_block {
   width:85px;
-  height:46px;
+  height:48px;
   margin-left:16px;
   border-radius: 24px;
   display: -webkit-box;
@@ -1121,7 +1122,8 @@ div.header__action_block {
   cursor: pointer;
   font-weight: 700;
   font-size:16px;
-  background-color: var(--block-color)
+  background-color: var(--block-color);
+  box-sizing: border-box;
 }
 span.header__action_block_text {
   text-transform: uppercase;
