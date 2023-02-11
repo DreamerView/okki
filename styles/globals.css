@@ -339,7 +339,7 @@ p.nav > a {
       --menu-icon:url(../public/img/menu.svg);
       --logo:url(../public/img/logo.webp);
       --back:hsl(210, 10%, 96%);
-      --background-color:rgba(0, 0, 0, 0.05);
+      --background-color:hsl(0, 0%, 94%);
       --header-color:hsl(0, 0%, 100%);
       --block-color:hsl(220, 14%, 95%);
       --block-color_transparent:hsla(0, 0%, 87.5%, 0.5);
@@ -357,7 +357,7 @@ p.nav > a {
       --blue_back: hsl(211, 100%, 50%);
       --red_back:hsl(349, 100%, 59%);
       --orange_back:hsl(36, 100%, 52%);
-      --input_back_text:hsl(0, 0%, 40%);
+      --input_back_text:hsl(0, 0%, 30%);
       --input_border:hsl(220, 14%, 91%);
       --border-color:hsl(216, 10%, 90%);
       --search_icon: url(../public/img/search.svg);
