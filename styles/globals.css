@@ -464,7 +464,7 @@ select:-webkit-autofill:focus {
       --m-1: 32px 150px;
       --m-2: 64px 150px;
       --m-3: 64px 150px;
-      --m-4: 16px 150px 48px 150px;
+      --m-4: 8px 150px 48px 150px;
       --s-1: 64px 150px 32px 150px;
       --s-2: 32px 150px;
       --n-1: 32px 150px;
@@ -560,7 +560,7 @@ select:-webkit-autofill:focus {
       --m-1: 32px 64px;
       --m-2: 64px 64px;
       --m-3: 64px 64px;
-      --m-4: 16px 64px 48px 64px;
+      --m-4: 8px 64px 48px 64px;
       --s-1: 32px 64px;
       --s-2: 16px 64px;
       --n-1: 24px 64px;
@@ -642,7 +642,7 @@ select:-webkit-autofill:focus {
       --m-1: 30px 32px;
       --m-2: 58px 32px;
       --m-3: 64px 32px;
-      --m-4: 16px 32px 48px 32px;
+      --m-4: 8px 32px 48px 32px;
       --s-1: 32px 32px;
       --s-2: 16px 32px;
       --n-1: 16px 32px;
@@ -713,7 +713,7 @@ select:-webkit-autofill:focus {
       --m-1: 32px 16px 24px 16px;
       --m-2: 38px 16px;
       --m-3: 32px 16px;
-      --m-4: 16px 16px 48px 16px;
+      --m-4: 8px 16px 48px 16px;
       --s-1: 16px 16px;
       --s-2: 16px 16px;
       --n-1: 16px 16px;
