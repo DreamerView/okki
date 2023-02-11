@@ -339,7 +339,7 @@ p.nav > a {
       --menu-icon:url(../public/img/menu.svg);
       --logo:url(../public/img/logo.webp);
       --back:hsl(210, 10%, 96%);
-      --background-color:rgba(0, 0, 0, 0.025);
+      --background-color:rgba(0, 0, 0, 0.035);
       --header-color:hsl(0, 0%, 100%);
       --block-color:hsl(220, 14%, 95%);
       --block-color_transparent:hsla(0, 0%, 87.5%, 0.5);
