@@ -14,6 +14,8 @@ import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
     const lazy = useRef(false),
+    lazy1 = useRef(false),
+    lazy2 = useRef(false),
     router = useRouter(),
     [header,setHeader] = useState(null),
     action = useSelector(state=>state.act),
@@ -24,30 +26,33 @@ const DocumentResult = ({children}) => {
     notification = useSelector(state=>state.notification),
     isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     useEffect(()=>{
-        if(typeof Window !== 'undefined') {
-            const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'],
-            desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish','/signin/social-nerwork'],
-            headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader,
-            result = !headerHide.includes(router.pathname);
-            setHeader((prev)=>prev=result);
-        }
+        if(typeof Window !== 'undefined'&&lazy2.current) return;
+        lazy2.current=true;
+        const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'],
+        desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish','/signin/social-nerwork'],
+        headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader,
+        result = !headerHide.includes(router.pathname);
+        setHeader((prev)=>prev=result);
         return () => {
+            lazy2.current=false;
             setHeader((prev)=>prev=null);
         }
     },[router,isTabletOrMobile])
     useEffect(()=>{
+        if (typeof window !== "undefined"&&lazy1.current) return;
+        lazy1.current = true;
         action||frame||image?document.querySelector('html,body').style.cssText = "overflow: hidden;":document.querySelector('html,body').style.cssText = "";
+        console.log("rendered 1")
         return () =>{
-            return false;
+            return lazy1.current=false;
         };
     },[action,frame,image]);
     useEffect(()=>{
         if (typeof window !== "undefined"&&lazy.current) return;
         lazy.current = true;
         const result = async() => {
-            const aes = new AesEncryption();
+            const aes = new AesEncryption(),res = await ClientJsonFetchReq({method:"GET",path:'/get-data',cookie:document.cookie});;
             aes.setSecretKey(process.env.aesKey);
-            const res = await ClientJsonFetchReq({method:"GET",path:'/get-data',cookie:document.cookie});
             if(res!==undefined) {
                 const response = {avatar:aes.decrypt(res.avatar),name:aes.decrypt(res.name),surname:aes.decrypt(res.surname),login:aes.decrypt(res.login)};
                 return localStorage.loginParams=JSON.stringify(response);
