@@ -10,8 +10,6 @@ import { Provider } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { SessionProvider } from "next-auth/react"
 import "/styles/globals.css";
-import "nprogress/nprogress.css";
-import NProgress from "nprogress";
 const DocumentResult = dynamic(()=>import("/start/document"));
 
 
@@ -44,13 +42,13 @@ const Preloader = () => {
 const MyApp = ({ Component, pageProps, session }) => {
     const locale = useTranslateText(),[result,setResult] = useState(false);
     useEffect(()=>{
-        Router.events.on('routeChangeStart', () => NProgress.start(),setResult((prev)=>prev=true)),
-        Router.events.on('routeChangeComplete', () => NProgress.done(),setResult((prev)=>prev=false)),
-        Router.events.on('routeChangeError', () => NProgress.done(),setResult((prev)=>prev=false));
+        Router.events.on('routeChangeStart', () => setResult((prev)=>prev=true)),
+        Router.events.on('routeChangeComplete', () => setResult((prev)=>prev=false)),
+        Router.events.on('routeChangeError', () => setResult((prev)=>prev=false));
         return()=>{
-            Router.events.off('routeChangeStart', () => NProgress.start(),setResult((prev)=>prev=true)),
-            Router.events.off('routeChangeComplete', () => NProgress.done(),setResult((prev)=>prev=false)),
-            Router.events.off('routeChangeError', () => NProgress.done(),setResult((prev)=>prev=false));
+            Router.events.off('routeChangeStart', () => setResult((prev)=>prev=true)),
+            Router.events.off('routeChangeComplete', () => setResult((prev)=>prev=false)),
+            Router.events.off('routeChangeError', () => setResult((prev)=>prev=false));
         };
     },[]);
     useEffect(() => {
