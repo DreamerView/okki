@@ -12,7 +12,6 @@ import { SessionProvider } from "next-auth/react"
 import "/styles/globals.css";
 const DocumentResult = dynamic(()=>import("/start/document"));
 
-
 const Preloader = () => {
     const [color,setColor] = useState("#4634bc"),[timer,setTimer] = useState(false),checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'}),locale = useTranslateText();
     useEffect(()=>{
