@@ -41,6 +41,7 @@ const HealthIndex = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
             <div className="main_app block_animation">
+            <div className="main_row">
             <h1 className="flex_text">{nav_translate["health"][lang]} <div className="emoji_h1"><Image title={'Microsoft red heart emoji (Used for informational purposes only)'} priority src={"/emoji-small/red_heart.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <div className={style.main__module_row}>
@@ -62,6 +63,7 @@ const HealthIndex = ({lang}) => {
                     </Link>
                     )}
                 {/*  */}
+            </div>
             </div>
         </div>
       </>

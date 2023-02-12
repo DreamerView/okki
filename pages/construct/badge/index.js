@@ -34,66 +34,68 @@ const Acc = ({lang}) => {
       </Head>
         <NavbarApp lang={lang} to={[{key:'constructor',location:'/construct'},{key:'acc_const',path:'last'}]}/>
         <div className={`main block_animation`}>
-            <h1>{text['name'][lang]}</h1>
-            <p className="sub_content">{text['content'][lang]}</p>
-            <div className={`${style.main__block_menu_select} p-m`}>
-            <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link title={text['title1'][lang]} href="/construct/badge/logo" prefetch={false}>
-            <div className={`${style.main__block_menu_select_block_icon} ${style.green_temp}`}>
-                <div className={style.main__block_menu_select_block_i}>
-                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Person icon from Okki.kz" src="/img/person.svg" alt="icon" priority />
+            <div className="main_row">
+                <h1>{text['name'][lang]}</h1>
+                <p className="sub_content">{text['content'][lang]}</p>
+                <div className={`${style.main__block_menu_select} p-m`}>
+                <div className={`${style.main__block_menu_select_block} anim_hover`}>
+                <Link title={text['title1'][lang]} href="/construct/badge/logo" prefetch={false}>
+                <div className={`${style.main__block_menu_select_block_icon} green_background`}>
+                    <div className={style.main__block_menu_select_block_i}>
+                        <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Person icon from Okki.kz" src="/img/person.svg" alt="icon" priority />
+                    </div>
                 </div>
-            </div>
-            <div className={style.main__block_menu_select_main}>
-                <h2>{text['title1'][lang]} </h2>
-            </div>
-            <div className={style.main__block_menu_select_main}>
-                <p className={style.main__block_menu_select_main_p}>{text['content1'][lang]}</p>
-            </div>
-            <div className={style.main__block_menu_select_main}>
-                <button className={`${style.main__block_menu_select_main_button} ${style.green_border}`}>{ux['start'][lang]}</button>
-            </div>
-            </Link>
-            </div>
-
-            <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link title={text['title2'][lang]} href="/construct/badge/logo" prefetch={false}>
-            <div className={`${style.main__block_menu_select_block_icon} ${style.purple_temp}`}>
-                <div className={style.main__block_menu_select_block_i}>
-                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Group icon from Okki.kz" src="/img/group.svg" alt="icon" priority/>
+                <div className={style.main__block_menu_select_main}>
+                    <h2>{text['title1'][lang]} </h2>
                 </div>
-            </div>
-            <div className={style.main__block_menu_select_main}>
-                <h2>{text['title2'][lang]}</h2>
-            </div>
-            <div className={style.main__block_menu_select_main}>
-                <p className={style.main__block_menu_select_main_p}>{text['content2'][lang]}</p>
-            </div>
-            <div className={style.main__block_menu_select_main}>
-                <button className={`${style.main__block_menu_select_main_button} ${style.purple_border}`}>{ux['start'][lang]}</button>
-            </div>
-            </Link>
-            </div>
-
-            <div className={`${style.main__block_menu_select_block} anim_hover`}>
-            <Link href="/construct/badge/logosd" prefetch={false}>
-            <div className={`${style.main__block_menu_select_block_icon} ${style.blue_temp}`}>
-                <div className={style.main__block_menu_select_block_i}>
-                    <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Help icon from Okki.kz" src="/img/help.svg" alt="icon" priority/>
+                <div className={style.main__block_menu_select_main}>
+                    <p className={style.main__block_menu_select_main_p}>{text['content1'][lang]}</p>
                 </div>
-            </div>
-            <div className={style.main__block_menu_select_main}>
-                <h2>{text['title3'][lang]}</h2>
-            </div>
-            <div className={style.main__block_menu_select_main}>
-                <p className={style.main__block_menu_select_main_p}>{text['content3'][lang]}</p>
-            </div>
-            <div className={style.main__block_menu_select_main}>
-                <button className={`${style.main__block_menu_select_main_button} ${style.blue_border}`}>{ux['start'][lang]}</button>
-            </div>
-            </Link>
-            </div>
+                <div className={style.main__block_menu_select_main}>
+                    <button className={`${style.main__block_menu_select_main_button} green_background`}>{ux['start'][lang]}</button>
+                </div>
+                </Link>
+                </div>
 
+                <div className={`${style.main__block_menu_select_block} anim_hover`}>
+                <Link title={text['title2'][lang]} href="/construct/badge/logo" prefetch={false}>
+                <div className={`${style.main__block_menu_select_block_icon} purple_background`}>
+                    <div className={style.main__block_menu_select_block_i}>
+                        <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Group icon from Okki.kz" src="/img/group.svg" alt="icon" priority/>
+                    </div>
+                </div>
+                <div className={style.main__block_menu_select_main}>
+                    <h2>{text['title2'][lang]}</h2>
+                </div>
+                <div className={style.main__block_menu_select_main}>
+                    <p className={style.main__block_menu_select_main_p}>{text['content2'][lang]}</p>
+                </div>
+                <div className={style.main__block_menu_select_main}>
+                    <button className={`${style.main__block_menu_select_main_button} purple_background`}>{ux['start'][lang]}</button>
+                </div>
+                </Link>
+                </div>
+
+                <div className={`${style.main__block_menu_select_block} anim_hover`}>
+                <Link href="/construct/badge/logosd" prefetch={false}>
+                <div className={`${style.main__block_menu_select_block_icon} blue_background`}>
+                    <div className={style.main__block_menu_select_block_i}>
+                        <Image width={30} height={30} className={style.main__block_menu_select_block_icon_img} title="Help icon from Okki.kz" src="/img/help.svg" alt="icon" priority/>
+                    </div>
+                </div>
+                <div className={style.main__block_menu_select_main}>
+                    <h2>{text['title3'][lang]}</h2>
+                </div>
+                <div className={style.main__block_menu_select_main}>
+                    <p className={style.main__block_menu_select_main_p}>{text['content3'][lang]}</p>
+                </div>
+                <div className={style.main__block_menu_select_main}>
+                    <button className={`${style.main__block_menu_select_main_button} blue_background`}>{ux['start'][lang]}</button>
+                </div>
+                </Link>
+                </div>
+
+                </div>
             </div>
         </div>
       </>  

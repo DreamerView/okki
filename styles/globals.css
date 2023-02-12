@@ -1447,6 +1447,12 @@ div.main {
   margin: 16px auto;
   box-sizing: border-box
 }
+div.main_row {
+  max-width: 1920px;
+  width:100%;
+  min-width: 50px;
+  margin: 0 auto;
+}
 div.main_block_row {
   max-width:1400px;
   width:100%;

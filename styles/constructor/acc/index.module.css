@@ -147,15 +147,6 @@ div.main__block_menu_select_block {
     cursor: pointer;
     border:1px solid transparent;
 }
-.green_temp {
-    background-color: var(--green_back);
-}
-.purple_temp {
-    background-color: var(--purple_back);
-}
-.blue_temp {
-    background-color: var(--blue_back);
-}
 
 div.main__block_menu_select_block_icon {
     display: -webkit-box;
@@ -192,13 +183,14 @@ div.main__block_menu_select_main {
     margin-top:30px;
 }
 button.main__block_menu_select_main_button {
-    -webkit-border-radius: 21px;
-       -moz-border-radius: 21px;
-            border-radius: 21px;
+    -webkit-border-radius: 24px;
+       -moz-border-radius: 24px;
+            border-radius: 24px;
     font-size:14px;
     font-weight: 700;
-    width: 124px;
-    height: 42px;
+    /* width: 124px;
+    height: 42px; */
+    padding:8px 24px;
     cursor: pointer;
     color:var(--font-color);
 }
