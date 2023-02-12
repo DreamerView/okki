@@ -457,6 +457,19 @@ p.nav > a {
   }
 }
 
+#nprogress .bar {
+  background: var(--brand_back) !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--brand_back), 0 0 5px var(--brand_back);
+}
+
+#nprogress .spinner-icon {
+  border-top-color: var(--brand_back) !important;
+  border-left-color: var(--brand_back) !important;
+}
+
 div.skeleton {
   opacity: .7;
   animation: skeleton-loading 1s linear infinite alternate
