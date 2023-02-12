@@ -45,12 +45,12 @@ const MyApp = ({ Component, pageProps, session }) => {
     const locale = useTranslateText(),[result,setResult] = useState(false);
     useEffect(()=>{
         Router.events.on('routeChangeStart', () => NProgress.start(),setResult((prev)=>prev=true)),
-        Router.events.on('routeChangeComplete', () => setResult((prev)=>prev=false),NProgress.done()),
-        Router.events.on('routeChangeError', () => setResult((prev)=>prev=false),NProgress.done());
+        Router.events.on('routeChangeComplete', () => NProgress.done(),setResult((prev)=>prev=false)),
+        Router.events.on('routeChangeError', () => NProgress.done(),setResult((prev)=>prev=false));
         return()=>{
             Router.events.off('routeChangeStart', () => NProgress.start(),setResult((prev)=>prev=true)),
-            Router.events.off('routeChangeComplete', () => setResult((prev)=>prev=false),NProgress.done()),
-            Router.events.off('routeChangeError', () => setResult((prev)=>prev=false),NProgress.done());
+            Router.events.off('routeChangeComplete', () => NProgress.done(),setResult((prev)=>prev=false)),
+            Router.events.off('routeChangeError', () => NProgress.done(),setResult((prev)=>prev=false));
         };
     },[]);
     useEffect(() => {
