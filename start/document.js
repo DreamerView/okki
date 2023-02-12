@@ -15,6 +15,7 @@ import { useMediaQuery } from 'react-responsive';
 const DocumentResult = ({children}) => {
     const lazy = useRef(false),
     lazy1 = useRef(false),
+    lazy2 = useRef(false),
     router = useRouter(),
     [header,setHeader] = useState(null),
     action = useSelector(state=>state.act),
@@ -25,14 +26,15 @@ const DocumentResult = ({children}) => {
     notification = useSelector(state=>state.notification),
     isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     useEffect(()=>{
-        if(typeof Window !== 'undefined') {
-            const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'],
-            desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish','/signin/social-nerwork'],
-            headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader,
-            result = !headerHide.includes(router.pathname);
-            setHeader((prev)=>prev=result);
-        }
+        if(typeof Window !== 'undefined'&&lazy2.current) return;
+        lazy2.current = true;
+        const mobileHeader = ['/user','/user/history','/user/favourite','/user/device','/user/devices/[id]'],
+        desktopHeader = ['/signin','/signup','/signup/surname','/signup/email','/signup/otp','/signup/password','/signup/finish','/signin/social-nerwork'],
+        headerHide = isTabletOrMobile?[...mobileHeader,...desktopHeader]:desktopHeader,
+        result = !headerHide.includes(router.pathname);
+        setHeader((prev)=>prev=result);
         return () => {
+            lazy2.current=false;
             setHeader((prev)=>prev=null);
         }
     },[router,isTabletOrMobile])
