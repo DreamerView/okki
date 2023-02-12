@@ -192,24 +192,92 @@ input[type=number] {
 @keyframes block_animation {
   from {
       -webkit-transform: translate(0%, 2%);
-              transform: translate(0%, 2%);
+      -moz-transform: translate(0%, 2%);
+      -ms-transform: translate(0%, 2%);
+      -o-transform: translate(0%, 2%);
+      transform: translate(0%, 2%);
       opacity: 0.7
   }
   to {
       -webkit-transform: translate(0%, 0%);
-              transform: translate(0%, 0%);
+      -moz-transform: translate(0%, 0%);
+      -ms-transform: translate(0%, 0%);
+      -o-transform: translate(0%, 0%);
+      transform: translate(0%, 0%);
       opacity: 1
   }
 }
 @-webkit-keyframes block_animation {
   from {
-      -webkit-transform: translate(0%, 2%);
-      opacity: 0.7
-  }
-  to {
-      -webkit-transform: translate(0%, 0%);
-      opacity: 1
-  }
+    -webkit-transform: translate(0%, 2%);
+    -moz-transform: translate(0%, 2%);
+    -ms-transform: translate(0%, 2%);
+    -o-transform: translate(0%, 2%);
+    transform: translate(0%, 2%);
+    opacity: 0.7
+}
+to {
+    -webkit-transform: translate(0%, 0%);
+    -moz-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    -o-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+    opacity: 1
+}
+}
+@-ms-keyframes block_animation {
+  from {
+    -webkit-transform: translate(0%, 2%);
+    -moz-transform: translate(0%, 2%);
+    -ms-transform: translate(0%, 2%);
+    -o-transform: translate(0%, 2%);
+    transform: translate(0%, 2%);
+    opacity: 0.7
+}
+to {
+    -webkit-transform: translate(0%, 0%);
+    -moz-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    -o-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+    opacity: 1
+}
+}
+@-moz-keyframes block_animation {
+  from {
+    -webkit-transform: translate(0%, 2%);
+    -moz-transform: translate(0%, 2%);
+    -ms-transform: translate(0%, 2%);
+    -o-transform: translate(0%, 2%);
+    transform: translate(0%, 2%);
+    opacity: 0.7
+}
+to {
+    -webkit-transform: translate(0%, 0%);
+    -moz-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    -o-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+    opacity: 1
+}
+}
+@-o-keyframes block_animation {
+  from {
+    -webkit-transform: translate(0%, 2%);
+    -moz-transform: translate(0%, 2%);
+    -ms-transform: translate(0%, 2%);
+    -o-transform: translate(0%, 2%);
+    transform: translate(0%, 2%);
+    opacity: 0.7
+}
+to {
+    -webkit-transform: translate(0%, 0%);
+    -moz-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    -o-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+    opacity: 1
+}
 }
 
 @keyframes remove_animation {
@@ -249,15 +317,30 @@ input[type=number] {
 }
 .block_animation {
     -webkit-animation-name: block_animation;
-            animation-name: block_animation;
+    -moz-animation-name: block_animation;
+    -ms-animation-name: block_animation;
+    -o-animation-name: block_animation;
+    animation-name: block_animation;
     -webkit-animation-duration: 0.4s;
-            animation-duration: 0.4s;
+    -ms-animation-duration: 0.4s;
+    -o-animation-duration: 0.4s;
+    -moz-animation-duration: 0.4s;
+    animation-duration: 0.4s;
     -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+    -o-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards
 }
 .basic_animation {
     -webkit-animation-name: basic_animation;
