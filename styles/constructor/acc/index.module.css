@@ -192,7 +192,7 @@ button.main__block_menu_select_main_button {
     height: 42px; */
     padding:8px 24px;
     cursor: pointer;
-    color:var(--font-color);
+    color:hsl(0, 0%, 100%);
 }
 p.main__block_menu_select_main_p {
     font-size: 14px;
