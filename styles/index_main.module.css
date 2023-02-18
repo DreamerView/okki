@@ -436,7 +436,6 @@ div.main__index_block_pic_info {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 img.main__index_block_pic_info_img {
     width:40px;
@@ -460,7 +459,6 @@ div.main__index_block_pic_info_block_action {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     color:hsl(0, 0%, 100%);
     font-size:14px;
