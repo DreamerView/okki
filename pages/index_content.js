@@ -11,10 +11,10 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
     return localStorage.historyAction=JSON.stringify(historyResult);
   };
   const toRightScroll = () => {
-    document.querySelector(".box-inner").scrollBy({left:300,behavior: 'smooth'});
+    document.querySelector(".box-inner").scrollBy({left:324,behavior: 'smooth'});
   }
   const toLeftScroll = () => {
-    document.querySelector(".box-inner").scrollBy({left:-300,behavior: 'smooth'});
+    document.querySelector(".box-inner").scrollBy({left:-324,behavior: 'smooth'});
   }
   return(
         <>
