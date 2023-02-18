@@ -58,6 +58,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
               </Link>)}
               </div>
             </div>
+            <h1>Просто попробуйте</h1>
             <div className={style.main__module_row}>
                 {/*  */}
                 {serv&&serv.filter(e=>e.type === 'services').map((e,index)=>
