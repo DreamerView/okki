@@ -472,7 +472,7 @@ div.main__index_block_pic_back {
     -webkit-border-radius: 16px;
        -moz-border-radius: 16px;
             border-radius: 16px;
-    backdrop-filter: contrast(70%);
+    backdrop-filter: brightness(90%) blur(4px);
     z-index:2;
 }
 div.main__index_block_pic {
