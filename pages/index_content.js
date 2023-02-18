@@ -1,7 +1,8 @@
 /*jshint esversion: 6 */
 import { useEffect,useState } from "react";
+import type_translate from "/translate/services/type_translate";
 
-const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) => {
+const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,style}) => {
   const [lazy,setLazy] = useState(false);
   const [offset, setOffset] = useState(0);
   const onScroll = () => setOffset(prev=>prev=document.querySelector(".box-inner").scrollLeft);
@@ -56,6 +57,25 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
                   </div>
               </Link>)}
               </div>
+            </div>
+            <div className={style.main__module_row}>
+                {/*  */}
+                {serv&&serv.filter(e=>e.type === 'services').map((e,index)=>
+                    <Link title={nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
+                    <div className={`${style.main__module_row_block} anim_hover`}>
+                        <div>
+                            <div className={`${style.main__module_row_block_img}`}>
+                                <Image loading='lazy' title={nav_translate[e.name][lang]} alt="service" width={60} height={60} className={style.main__module_row_block_pic} src={e.image} />
+                            </div>
+                        </div>
+                        <div className={style.main__module_row_block_f}>
+                            <span className="head_1">{nav_translate[e.name][lang]}</span>
+                            <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
+                        </div>
+                    </div>
+                    </Link>
+                    )}
+                {/*  */}
             </div>
           </div>
       </div>
