@@ -1,10 +1,6 @@
 /*jshint esversion: 6 */
-import { useRef } from "react";
 
 const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) => {
-  const content = useRef();
-  const ref1 = useRef();
-  const ref2 = useRef();
   const locale = lang,serv = service!==undefined?service:[{}];
   const historyAction = (service) => {
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
