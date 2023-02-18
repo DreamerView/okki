@@ -3,7 +3,7 @@ import { useEffect,useState } from "react";
 
 const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) => {
   const [lazy,setLazy] = useState(false);
-  const [scrollResult,setScrollResult] = useState(null)
+  const [scrollResult,setScrollResult] = useState(null);
   useEffect(()=>{
     if(typeof Window !== 'undefined') {
       setLazy(prev=>prev=true);
@@ -21,13 +21,11 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
   };
   const toRightScroll = () => {
     document.querySelector(".box-inner").scrollBy({left:324,behavior: 'smooth'});
-    console.log(document.querySelector(".box-inner").scrollLeft);
-    setScrollResult(prev=>prev=document.querySelector(".box-inner").scrollLeft);
+    setScrollResult(prev=>prev+324);
   };
   const toLeftScroll = () => {
     document.querySelector(".box-inner").scrollBy({left:-324,behavior: 'smooth'});
-    console.log(document.querySelector(".box-inner").scrollLeft);
-    setScrollResult(prev=>prev=document.querySelector(".box-inner").scrollLeft);
+    setScrollResult(prev=>prev=prev-324);
   };
   return(
         <>
