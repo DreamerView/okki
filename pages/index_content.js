@@ -6,12 +6,12 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
   const [scrollResult,setScrollResult] = useState(null)
   useEffect(()=>{
     if(typeof Window !== 'undefined') {
-      setLazy(true);
-      // setScrollResult(document.querySelector(".box-inner").scrollLeft);
+      setLazy(prev=>prev=true);
+      setScrollResult(prev=>prev=document.querySelector(".box-inner").scrollLeft);
     }
     return () =>{
-      setLazy(false);
-      setScrollResult(null);
+      setLazy(prev=>prev=false);
+      setScrollResult(prev=>prev=null);
     };
   },[]);
   const locale = lang,serv = service!==undefined?service:[{}];
