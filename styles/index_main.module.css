@@ -397,12 +397,13 @@ div.main__index_block_row {
     margin-top:32px;
     /* display: -ms-grid;
     display: grid; */
+    /* overflow-y:hidden; */
     overflow-y:hidden;
     display: flex;
     align-items: center;
     /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
     gap:24px;
-    height:250px;
+    height:240px;
 }
 div.main__index_block_row_b {
     width:300px;
