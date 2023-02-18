@@ -503,7 +503,7 @@ div.main__index_b {
 div.left {
     width:60px;
     height:60px;
-    background-color: var(--block-color);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -516,7 +516,7 @@ div.left {
 div.right {
     width:60px;
     height:60px;
-    background-color: var(--block-color);
+    background: rgba(0, 0, 0, 0.6);
     top:25%;
     position: absolute;
     z-index:5;
