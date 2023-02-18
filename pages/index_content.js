@@ -3,17 +3,21 @@ import { useEffect,useState } from "react";
 
 const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) => {
   const [lazy,setLazy] = useState(false);
-  const [scrollResult,setScrollResult] = useState(null);
+  const [offset, setOffset] = useState(0);
+  const onScroll = () => setOffset(prev=>prev=document.querySelector(".box-inner").scrollLeft);
   useEffect(()=>{
     if(typeof Window !== 'undefined') {
+      const result = document.querySelector(".box-inner");
       setLazy(prev=>prev=true);
-      setScrollResult(prev=>prev=document.querySelector(".box-inner").scrollLeft);
+      result!==null&&result.removeEventListener('scroll', onScroll);
+      result!==null&&result.addEventListener('scroll', onScroll, { passive: true });
     }
     return () =>{
       setLazy(prev=>prev=false);
-      setScrollResult(prev=>prev=null);
+      document.querySelector(".box-inner")!==null&&document.querySelector(".box-inner").removeEventListener('scroll', onScroll);
     };
   },[]);
+  console.log(offset); 
   const locale = lang,serv = service!==undefined?service:[{}];
   const historyAction = (service) => {
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
@@ -21,20 +25,18 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
   };
   const toRightScroll = () => {
     document.querySelector(".box-inner").scrollBy({left:324,behavior: 'smooth'});
-    setScrollResult(prev=>prev+324);
   };
   const toLeftScroll = () => {
     document.querySelector(".box-inner").scrollBy({left:-324,behavior: 'smooth'});
-    setScrollResult(prev=>prev=prev-324);
   };
   return(
         <>
         <div className="main block_animation">
           <div className="main_block_row">
             <h1 className="flex_text">{translate['popular'][locale]} <div className="emoji_h1"><Image title={`Microsoft fire emoji (Used for informational purposes only)`} priority src={"/emoji-small/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
-            <p className="sub_content">{translate['popular_subtext'][locale]} {scrollResult}</p>
+            <p className="sub_content">{translate['popular_subtext'][locale]}</p>
             <div className={styles.main__index_b}>
-              {lazy===true && scrollResult!==null && scrollResult<=300?"":
+              {lazy===true && offset<=10?"":
               <div className={`${styles.left} arrow-left arrow anim_hover`} onClick={toLeftScroll}><Image width={32} height={32} src="/img/arrow_left.svg" alt="arrow-left"/></div>}
               <div className={`${styles.right} arrow-right arrow anim_hover`} onClick={toRightScroll}><Image width={32} height={32} src="/img/arrow_right.svg" alt="arrow-right"/></div>
               <div className={`${styles.main__index_block_row} box-inner`}>
