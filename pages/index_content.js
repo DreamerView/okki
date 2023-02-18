@@ -5,19 +5,6 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
   const [lazy,setLazy] = useState(false);
   const [offset, setOffset] = useState(0);
   const onScroll = () => setOffset(prev=>prev=document.querySelector(".box-inner").scrollLeft);
-  useEffect(()=>{
-    if(typeof Window !== 'undefined') {
-      const result = document.querySelector(".box-inner");
-      setLazy(prev=>prev=true);
-      result!==null&&result.removeEventListener('scroll', onScroll);
-      result!==null&&result.addEventListener('scroll', onScroll, { passive: true });
-    }
-    return () =>{
-      setLazy(prev=>prev=false);
-      document.querySelector(".box-inner")!==null&&document.querySelector(".box-inner").removeEventListener('scroll', onScroll);
-    };
-  },[]);
-  console.log(offset); 
   const locale = lang,serv = service!==undefined?service:[{}];
   const historyAction = (service) => {
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
@@ -29,6 +16,17 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
   const toLeftScroll = () => {
     document.querySelector(".box-inner").scrollBy({left:-324,behavior: 'smooth'});
   };
+  useEffect(()=>{
+    if(typeof Window !== 'undefined') {
+      const result = document.querySelector(".box-inner");
+      setLazy(prev=>prev=true);
+      result!==null&&result.removeEventListener('scroll', onScroll),result.addEventListener('scroll', onScroll, { passive: true });
+    }
+    return () =>{
+      setLazy(prev=>prev=false);
+      document.querySelector(".box-inner")!==null&&document.querySelector(".box-inner").removeEventListener('scroll', onScroll);
+    };
+  },[]);
   return(
         <>
         <div className="main block_animation">
