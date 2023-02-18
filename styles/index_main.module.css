@@ -432,7 +432,7 @@ div.main__index_block_pic_info {
          border-radius: 16px;
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -470,7 +470,7 @@ div.main__index_block_pic_back {
     -webkit-border-radius: 16px;
        -moz-border-radius: 16px;
             border-radius: 16px;
-    backdrop-filter: brightness(90%) blur(4px);
+    backdrop-filter: brightness(90%) blur(8px);
     z-index:2;
 }
 div.main__index_block_pic {
