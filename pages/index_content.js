@@ -7,7 +7,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
   useEffect(()=>{
     if(typeof Window !== 'undefined') {
       setLazy(true);
-      setScrollResult(document.querySelector(".box-inner").scrollLeft);
+      // setScrollResult(document.querySelector(".box-inner").scrollLeft);
     }
     return () =>{
       setLazy(false);
