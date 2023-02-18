@@ -403,7 +403,7 @@ div.main__index_block_row {
     align-items: center;
     /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
     gap:24px;
-    height:240px;
+    /* height:240px; */
 }
 div.main__index_block_row_b {
     width:300px;

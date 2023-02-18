@@ -15,7 +15,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
             <div className={styles.main__index_block_row}>
               {serv&&serv.filter(e=>e.type === 'services').map((e,index)=>
               <Link onClick={()=>historyAction(e.name)} title={nav_translate[e.name][locale]} href={e.location} prefetch={false} key={index+1}>
-                <div className={`${styles.main__index_block_row_b} anim_hover`}>
+                <div className={`${styles.main__index_block_row_b}`}>
                   <div className={styles.main__index_block}>
                     <div class={styles.main__index_block_pic_info}>
                       <Image priority title={nav_translate[e.name][locale]} alt={`Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>`} width={60} className={styles.main__index_block_pic_info_img} height={60} src={e.image}/>
