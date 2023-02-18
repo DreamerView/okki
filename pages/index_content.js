@@ -1,6 +1,19 @@
 /*jshint esversion: 6 */
+import { useEffect,useState } from "react";
 
 const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) => {
+  const [lazy,setLazy] = useState(false);
+  const [scrollResult,setScrollResult] = useState(null)
+  useEffect(()=>{
+    if(typeof Window !== 'undefined') {
+      setLazy(true);
+      setScrollResult(document.querySelector(".box-inner").scrollLeft);
+    }
+    return () =>{
+      setLazy(false);
+      setScrollResult(null)
+    }
+  },[]);
   const locale = lang,serv = service!==undefined?service:[{}];
   const historyAction = (service) => {
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
@@ -8,9 +21,11 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
   };
   const toRightScroll = () => {
     document.querySelector(".box-inner").scrollBy({left:324,behavior: 'smooth'});
+    setScrollResult(document.querySelector(".box-inner").scrollLeft);
   }
   const toLeftScroll = () => {
     document.querySelector(".box-inner").scrollBy({left:-324,behavior: 'smooth'});
+    setScrollResult(document.querySelector(".box-inner").scrollLeft);
   }
   return(
         <>
@@ -19,9 +34,10 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image}) 
             <h1 className="flex_text">{translate['popular'][locale]} <div className="emoji_h1"><Image title={`Microsoft fire emoji (Used for informational purposes only)`} priority src={"/emoji-small/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate['popular_subtext'][locale]}</p>
             <div className={styles.main__index_b}>
-              <div className={`${styles.left} arrow-left arrow anim_hover`} onClick={toLeftScroll}><Image width={32} height={32} src="/img/arrow_left.svg" alt="arrow-left"/></div>
+              {lazy===true && scrollResult!==null && scrollResult===0?"":
+              <div className={`${styles.left} arrow-left arrow anim_hover`} onClick={toLeftScroll}><Image width={32} height={32} src="/img/arrow_left.svg" alt="arrow-left"/></div>}
               <div className={`${styles.right} arrow-right arrow anim_hover`} onClick={toRightScroll}><Image width={32} height={32} src="/img/arrow_right.svg" alt="arrow-right"/></div>
-              <div className={`${styles.main__index_block_row} box-inner`} ref={content}>
+              <div className={`${styles.main__index_block_row} box-inner`}>
                 {serv&&serv.filter(e=>e.type === 'services').map((e,index)=>
                 <Link onClick={()=>historyAction(e.name)} title={nav_translate[e.name][locale]} href={e.location} prefetch={false} key={index+1}>
                   <div className={`${styles.main__index_block_row_b}`}>
