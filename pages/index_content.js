@@ -11,7 +11,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
     return localStorage.historyAction=JSON.stringify(historyResult);
   };
-  const toRightScroll = () => document.querySelector(".box-inner").scrollBy({left:364,behavior: 'smooth'});
+  const toRightScroll = () => document.querySelector(".box-inner").scrollBy({left:3,behavior: 'smooth'});
   const toLeftScroll = () => document.querySelector(".box-inner").scrollBy({left:-364,behavior: 'smooth'});
   useEffect(()=>{
     if(typeof Window !== 'undefined') {
@@ -24,6 +24,11 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
       document.querySelector(".box-inner")!==null&&document.querySelector(".box-inner").removeEventListener('scroll', onScroll);
     };
   },[]);
+  const group = (items, n) => items.filter(e=>e.type === 'services').reduce((acc, x, i) => {
+    const idx = Math.floor(i / n);
+    acc[idx] = [...(acc[idx] || []), x];
+    return acc;
+  }, []);
   return(
         <>
         <div className="main block_animation">
@@ -61,21 +66,26 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
             <h1>Просто попробуйте</h1>
             <div className={style.main__module_row}>
                 {/*  */}
-                {serv&&serv.filter(e=>e.type === 'services').reverse().map((e,index)=>
-                    <Link title={nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
-                    <div className={`${style.main__module_row_block} anim_hover`}>
-                        <div>
-                            <div className={`${style.main__module_row_block_img}`}>
-                                <Image loading='lazy' title={nav_translate[e.name][lang]} alt="service" width={60} height={60} className={style.main__module_row_block_pic} src={e.image} />
-                            </div>
-                        </div>
-                        <div className={style.main__module_row_block_f}>
-                            <span className="head_1">{nav_translate[e.name][lang]}</span>
-                            <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                        </div>
-                    </div>
-                    </Link>
-                    )}
+                
+            {serv&&group(serv, 3).map((children,index)=>
+              <div key={index} className={style.main__module_row_panel}>
+                {children.map((e,index) =>
+                  <Link title={nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
+                  <div className={`${style.main__module_row_block} anim_hover`}>
+                      <div>
+                          <div className={`${style.main__module_row_block_img}`}>
+                              <Image loading='lazy' title={nav_translate[e.name][lang]} alt="service" width={60} height={60} className={style.main__module_row_block_pic} src={e.image} />
+                          </div>
+                      </div>
+                      <div className={style.main__module_row_block_f}>
+                          <span className="head_1">{nav_translate[e.name][lang]}</span>
+                          <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
+                      </div>
+                  </div>
+                  </Link>
+                )}
+              </div>
+            )}
                 {/*  */}
             </div>
           </div>

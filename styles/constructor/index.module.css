@@ -7,12 +7,21 @@
 
 div.main__module_row {
     margin:32px 0;
-    display: -ms-grid;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* display: -ms-grid; */
+    display: flex;
+    overflow-y: hidden;
+    overflow-x:scroll;
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    gap:32px;
+    padding:8px 0;
+}
+div.main__module_row_panel {
+    display: flex;
+    flex-direction: column;
     gap:32px;
 }
 div.main__module_row_block {
+    width:340px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
