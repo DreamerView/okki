@@ -11,8 +11,8 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
     return localStorage.historyAction=JSON.stringify(historyResult);
   };
-  const toRightScroll = () => document.querySelector(".box-inner").scrollBy({left:324,behavior: 'smooth'});
-  const toLeftScroll = () => document.querySelector(".box-inner").scrollBy({left:-324,behavior: 'smooth'});
+  const toRightScroll = () => document.querySelector(".box-inner").scrollBy({left:364,behavior: 'smooth'});
+  const toLeftScroll = () => document.querySelector(".box-inner").scrollBy({left:-364,behavior: 'smooth'});
   useEffect(()=>{
     if(typeof Window !== 'undefined') {
       const result = document.querySelector(".box-inner");
