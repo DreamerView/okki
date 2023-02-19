@@ -971,7 +971,7 @@ body {
   color:var(--font-color);
   font-display: optional
 }
-input,button,input:focus,textarea,textarea:focus,select {
+input,button,input:focus,textarea,textarea:focus,select,hr {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size:16px;
   line-height:26px;
@@ -985,6 +985,13 @@ input,button,input:focus,textarea,textarea:focus,select {
   color:var(--font-color);
   font-display: optional;
   caret-color: var(--brand-color)
+}
+
+hr {
+  height:1px;
+  background-color: var(--block-color);
+  margin:32px 0;
+  border-radius: 50px;
 }
 
 a {

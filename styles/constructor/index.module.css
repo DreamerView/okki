@@ -18,7 +18,7 @@
     }
     div.main__module_row:hover {
         overflow-y:hidden;
-        overflow-x:scroll;
+        /* overflow-x:scroll; */
     }
 }
 div.main__module {
@@ -26,9 +26,9 @@ div.main__module {
 }
 div.main__module_row {
     position: relative;
-    margin:24px 0;
+    margin:32px 0;
     display: flex;
-    gap:32px;
+    gap:24px;
     height:280px;
 }
 div.main__module_row_panel {

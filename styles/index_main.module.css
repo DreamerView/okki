@@ -407,15 +407,16 @@
     }
     div.main__index_block_row:hover {
         overflow-y:hidden;
-        overflow-x: scroll;
+        /* overflow-x: scroll; */
     }
 }
 div.main__index_block_row {
     position: relative;
-    margin-top:32px;
+    margin:32px 0;
     display: flex;
     gap:24px;
-    height:259px;
+    height: auto;
+    height:240px;
 }
 div.main__index_block_row_b {
     width:340px;
