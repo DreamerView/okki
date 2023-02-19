@@ -59,7 +59,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
               </Link>)}
               </div>
             </div>
-            <hr/>
+            {/* <hr/> */}
             <h1>Просто попробуйте</h1>
             <AppStore serv={serv} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
           </div>
