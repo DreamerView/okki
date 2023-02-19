@@ -1,28 +1,28 @@
 /*jshint esversion: 6 */
-import { useEffect,useState } from "react";
-import type_translate from "/translate/services/type_translate";
+import { useEffect,useState,useRef } from "react";
 import AppStore from "/pages/modules/apps";
 
 const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,style}) => {
+  const banner = useRef();
   const [lazy,setLazy] = useState(false);
   const [offset, setOffset] = useState(0);
-  const onScroll = () => setOffset(prev=>prev=document.querySelector(".box-inner").scrollLeft);
   const locale = lang,serv = service!==undefined?service:[{}];
   const historyAction = (service) => {
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
     return localStorage.historyAction=JSON.stringify(historyResult);
   };
-  const toRightScroll = () => document.querySelector(".box-inner").scrollBy({left:364,behavior: 'smooth'});
-  const toLeftScroll = () => document.querySelector(".box-inner").scrollBy({left:-364,behavior: 'smooth'});
+  const onScroll = () => setOffset(prev=>prev=banner.current.scrollLeft);
+  const toRightScroll = () => banner.current.scrollBy({left:364,behavior: 'smooth'});
+  const toLeftScroll = () => banner.current.scrollBy({left:-364,behavior: 'smooth'});
   useEffect(()=>{
     if(typeof Window !== 'undefined') {
-      const result = document.querySelector(".box-inner");
+      const result = banner.current;
       setLazy(prev=>prev=true);
-      result!==null&&result.removeEventListener('scroll', onScroll),result.addEventListener('scroll', onScroll, { passive: true });
+      result!==undefined&&result!==null&&result.removeEventListener('scroll', onScroll),result.addEventListener('scroll', onScroll, { passive: true });
     }
     return () =>{
       setLazy(prev=>prev=false);
-      document.querySelector(".box-inner")!==null&&document.querySelector(".box-inner").removeEventListener('scroll', onScroll);
+      banner.current!==undefined&&banner.current!==null&&banner.current.removeEventListener('scroll', onScroll);
     };
   },[]);
   return(
@@ -35,7 +35,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
               {lazy===true && offset<=10?"":
               <div className={`${styles.left} arrow-left arrow anim_hover`} onClick={toLeftScroll}><Image width={32} height={32} src="/img/arrow_left.svg" alt="arrow-left"/></div>}
               <div className={`${styles.right} arrow-right arrow anim_hover`} onClick={toRightScroll}><Image width={32} height={32} src="/img/arrow_right.svg" alt="arrow-right"/></div>
-              <div className={`${styles.main__index_block_row} box-inner`}>
+              <div className={`${styles.main__index_block_row} box-inner`} ref={banner}>
                 {serv&&serv.filter(e=>e.type === 'services').reverse().map((e,index)=>
                 <Link onClick={()=>historyAction(e.name)} title={nav_translate[e.name][locale]} href={e.location} prefetch={false} key={index+1}>
                   <div className={`${styles.main__index_block_row_b}`}>
