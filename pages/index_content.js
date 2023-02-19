@@ -35,7 +35,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
               <div className={`${styles.left} arrow-left arrow anim_hover`} onClick={toLeftScroll}><Image width={32} height={32} src="/img/arrow_left.svg" alt="arrow-left"/></div>}
               <div className={`${styles.right} arrow-right arrow anim_hover`} onClick={toRightScroll}><Image width={32} height={32} src="/img/arrow_right.svg" alt="arrow-right"/></div>
               <div className={`${styles.main__index_block_row} box-inner`}>
-                {serv&&serv.filter(e=>e.type === 'services').map((e,index)=>
+                {serv&&serv.filter(e=>e.type === 'services').reverse().map((e,index)=>
                 <Link onClick={()=>historyAction(e.name)} title={nav_translate[e.name][locale]} href={e.location} prefetch={false} key={index+1}>
                   <div className={`${styles.main__index_block_row_b}`}>
                     <div className={styles.main__index_block}>
@@ -61,7 +61,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
             <h1>Просто попробуйте</h1>
             <div className={style.main__module_row}>
                 {/*  */}
-                {serv&&serv.filter(e=>e.type === 'services').map((e,index)=>
+                {serv&&serv.filter(e=>e.type === 'services').reverse().map((e,index)=>
                     <Link title={nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
                     <div className={`${style.main__module_row_block} anim_hover`}>
                         <div>
