@@ -12,7 +12,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
     return localStorage.historyAction=JSON.stringify(historyResult);
   };
-  const toRightScroll = () => document.querySelector(".box-inner").scrollBy({left:3,behavior: 'smooth'});
+  const toRightScroll = () => document.querySelector(".box-inner").scrollBy({left:364,behavior: 'smooth'});
   const toLeftScroll = () => document.querySelector(".box-inner").scrollBy({left:-364,behavior: 'smooth'});
   useEffect(()=>{
     if(typeof Window !== 'undefined') {
@@ -25,11 +25,6 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
       document.querySelector(".box-inner")!==null&&document.querySelector(".box-inner").removeEventListener('scroll', onScroll);
     };
   },[]);
-  const group = (items, n) => items.filter(e=>e.type === 'services').reduce((acc, x, i) => {
-    const idx = Math.floor(i / n);
-    acc[idx] = [...(acc[idx] || []), x];
-    return acc;
-  }, []);
   return(
         <>
         <div className="main block_animation">

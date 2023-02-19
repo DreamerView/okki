@@ -4,7 +4,9 @@
 * Autoprefixer: v9.7.6
 * Browsers: last 100 version
 */
-
+div.main__module {
+    position: relative;
+}
 div.main__module_row {
     position: relative;
     margin:24px 0;
@@ -68,4 +70,31 @@ div.main__module_row_block_f  {
 p.main__module_row_block_f_p {
     font-size:12px;
     color:var(--sub_content);
+}
+div.left {
+    width:60px;
+    height:60px;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:30%;
+    position:absolute;
+    z-index:5;
+    border-radius: 100%;
+    cursor: pointer;
+}
+div.right {
+    width:60px;
+    height:60px;
+    background: rgba(0, 0, 0, 0.6);
+    top:30%;
+    position: absolute;
+    z-index:5;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    cursor: pointer;
 }
