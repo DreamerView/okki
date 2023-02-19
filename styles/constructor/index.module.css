@@ -78,7 +78,7 @@ div.left {
     display: flex;
     align-items: center;
     justify-content: center;
-    top:30%;
+    top:35%;
     position:absolute;
     z-index:5;
     border-radius: 100%;
@@ -88,7 +88,7 @@ div.right {
     width:60px;
     height:60px;
     background: rgba(0, 0, 0, 0.6);
-    top:30%;
+    top:35%;
     position: absolute;
     z-index:5;
     right:0;
