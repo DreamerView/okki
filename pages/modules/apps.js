@@ -43,7 +43,10 @@ const AppStore = ({serv,Link,nav_translate,lang,Image}) =>{
                 </div>
                 <div className={style.main__module_row_block_f}>
                     <span className="head_1">{nav_translate[e.name][lang]}</span>
-                    <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
+                    <p className={style.main__module_row_block_f_p}>5.0 ★</p>
+                </div>
+                <div className={style.main__module_row_block_action}>
+                    Open
                 </div>
             </div>
             </Link>
