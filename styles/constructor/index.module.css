@@ -6,7 +6,8 @@
 */
 
 div.main__module_row {
-    margin:32px 0;
+    position: relative;
+    margin:24px 0;
     /* display: -ms-grid; */
     display: flex;
     overflow-y: hidden;
