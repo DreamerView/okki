@@ -395,18 +395,24 @@
 }
 @media (hover: none) { 
     div.main__index_block_row {
-        background-color: aqua;
+        overflow-y:hidden;
+        /* background-color: aqua; */
     }
 }
 @media (hover: hover) { 
     div.main__index_block_row {
-        background-color: orange;
+        overflow-y:hidden;
+        overflow-x: hidden;
+        /* background-color: orange; */
+    }
+    div.main__index_block_row:hover {
+        overflow-y:hidden;
+        overflow-x: scroll;
     }
 }
 div.main__index_block_row {
     position: relative;
     margin-top:32px;
-    overflow-y:hidden;
     display: flex;
     gap:24px;
     height:259px;
