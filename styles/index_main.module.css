@@ -393,16 +393,21 @@
         justify-content: center;
     }
 }
+@media (hover: none) { 
+    div.main__index_block_row {
+        background-color: aqua;
+    }
+}
+@media (hover: hover) { 
+    div.main__index_block_row {
+        background-color: orange;
+    }
+}
 div.main__index_block_row {
     position: relative;
     margin-top:32px;
-    /* display: -ms-grid;
-    display: grid; */
-    /* overflow-y:hidden; */
     overflow-y:hidden;
     display: flex;
-    /* align-items: center; */
-    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
     gap:24px;
     height:259px;
 }
