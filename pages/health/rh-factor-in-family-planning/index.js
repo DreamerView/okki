@@ -56,7 +56,7 @@ const RhFactorInPregnancyPlanning = ({lang}) => {
                     <div className="main__app_info_block">
                         <h4>{nav_text['rh_factor_in_family_planning'][lang]}</h4>
                         <p className="smaller">Здоровье</p>
-                        <button className="main__app_info_action anim_hover">Save</button>
+                        <button className="main__app_info_action anim_hover">Сохранить</button>
                     </div>
                 </div>
                 {/* <h1>{nav_text['rh_factor_in_family_planning'][lang]}</h1>
