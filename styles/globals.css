@@ -1947,11 +1947,11 @@ div.button__preloader {
   height:50px
 }
 div.main__app_info {
-  max-width: 720px;
+  max-width: 600px;
   width: 100%;
   min-width: 50px;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   box-sizing: border-box;
   margin:0 auto;
   /*  */
@@ -1963,8 +1963,8 @@ div.main__app_info {
 }
 div.main__app_info > img {
   /* 136 */
-  width: 60px;
-  height: 60px;
+  width: 112px;
+  height: 112px;
   border-radius: 24px;
 }
 div.main__app_info_block {
@@ -1972,13 +1972,14 @@ div.main__app_info_block {
   box-sizing: border-box;
   width:100%;
 }
-div.main__app_info_block > h5 {
+div.main__app_info_block > h2 {
   margin-bottom:4px;
 }
 button.main__app_info_action {
   /* position: absolute; */
+  margin-top:16px;
   background-color: var(--red_back);
-  padding:4px 16px;
+  padding:6px 16px;
   border-radius: 24px;
   color:#fff;
   cursor: pointer;
