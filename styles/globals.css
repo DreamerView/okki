@@ -1947,13 +1947,13 @@ div.button__preloader {
   height:50px
 }
 div.main__app_info {
-  max-width: 500px;
+  max-width: 720px;
   width: 100%;
   min-width: 50px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  /* margin:0 auto; */
+  margin:0 auto;
   /*  */
   /* background-color: var(--block-color);
   padding:8px;
@@ -1978,8 +1978,7 @@ div.main__app_info_block > h5 {
 button.main__app_info_action {
   /* position: absolute; */
   background-color: var(--red_back);
-  padding:4px 16px;
-  box-sizing: border-box;
+  padding:8px 16px;
   border-radius: 24px;
   color:#fff;
   cursor: pointer;
