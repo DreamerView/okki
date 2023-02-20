@@ -1980,49 +1980,10 @@ div.main__app_info_block > div {
 }
 div.main__app_info_block > div > h2 {
   margin-bottom:8px;
-  white-space: nowrap;
-  text-align: right;
+  /* white-space: nowrap;
+  text-align: right; */
 
   /* animation properties */
-  -moz-transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  
-  -moz-animation: my-animation 15s linear infinite;
-  -webkit-animation: my-animation 15s linear infinite;
-  animation: my-animation 15s linear infinite;
-}
-
-/* for Firefox */
-@-moz-keyframes my-animation {
-  0% { -moz-transform: translateX(-100%); }
-  28%,75% { -moz-transform: translateX(0); }
-  100% { -moz-transform: translateX(100%); }
-}
-
-/* for Chrome */
-@-webkit-keyframes my-animation {
-  0% { -webkit-transform: translateX(-100%); }
-  28%,75% { -webkit-transform: translateX(0%); }
-  100% { -webkit-transform: translateX(0%); }
-}
-
-@keyframes my-animation {
-  0% {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  28%,75% {
-    -moz-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
 }
 button.main__app_info_action {
   /* position: absolute; */
