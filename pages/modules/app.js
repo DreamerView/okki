@@ -30,7 +30,7 @@ const AppShow = ({name,translate,Image,lang}) => {
             </div>
             <div className="main__app_info_banner_block">
                 <p className="small">Release</p>
-                <h1>☁</h1>
+                <h1>⊙</h1>
                 <p className="small">12.08.2022</p>
             </div>
         </div>
