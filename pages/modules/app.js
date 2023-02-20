@@ -24,7 +24,7 @@ const AppShow = ({name,translate,Image,lang}) => {
                 <p className="small">+ 2 More</p>
             </div>
             <div className="main__app_info_banner_block">
-                <p className="small">Developer</p>
+                <p className="smal">Developer</p>
                 <h1>✎</h1>
                 <p className="small">Okki.kz</p>
             </div>
