@@ -1953,6 +1953,7 @@ div.main__app_i {
   flex-wrap: wrap;
   margin:0 auto;
   gap:16px;
+  margin-bottom:32px;
 }
 div.main__app_info {
   max-width: 600px;

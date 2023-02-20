@@ -127,7 +127,7 @@ const PregnancyCalendar = ({lang})=>{
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
                 <AppShow lang={lang} Image={Image} name={"pregnancy_calendar"} translate={nav_text['pregnancy_calendar'][lang]}/>
-                <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1>
+                {/* <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1> */}
                 <p className={`${style.headers} sub_content`}>{text['content'][lang]}</p>
                 <div className={style.date_block}>
                     <input type="date" placeholder={text['enter_date'][lang]}  onChange={e=>setDate(e.target.value)} className={style.date} required/>
