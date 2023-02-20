@@ -2,11 +2,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import translate from "/translate/health/bmi_calculator/index_translate";
+import nav_text from "/translate/services/all_translate";
 import style from "/styles/calculator/index.module.css";
 import {useEffect,useState,useRef} from "react";
 import setBmiApi from '/pages/health/bmi-calculator/api';
 import NavbarApp from '/pages/navbar_app/nav';
-
+import AppShow from "/pages/modules/app";
 // export const getStaticProps = async ({locale}) => {
 //     return {props:{lang:locale}};
 // };
@@ -74,8 +75,9 @@ const BMICalc = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
-                <h1>{translate['step1'][lang]}</h1>
-                <p className="sub_content">{translate['desctiption'][lang]}</p>
+                <AppShow Image={Image} name={"bmi_calc"} translate={nav_text['bmi_calc'][lang]}/>
+                {/* <h1>{translate['step1'][lang]}</h1>
+                <p className="sub_content">{translate['desctiption'][lang]}</p> */}
                 {/* New added */}
                 {}
                 <div className={style.main__calc}>

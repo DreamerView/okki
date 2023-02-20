@@ -84,7 +84,7 @@
     {
         "title":"ИМТ калькулятор",
         "name":"bmi_calc",
-        "image":"/services/bmi.webp",
+        "image":"/services/bmi_calc.webp",
         "image_background":"purple_background",
         "key":"дси есептегіш,имт калькулятор (взрослый),bmi calculator (Adult)",
         "location":"/health/bmi-calculator",
