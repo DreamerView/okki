@@ -1954,13 +1954,12 @@ div.main__app_info {
   display: flex;
 }
 div.main__app_info > img {
-  width: 136px;
-  height: 136px;
+  /* 136 */
+  width: 108px;
+  height: 108px;
   border-radius: 24px;
 }
 div.main__app_info_block {
-  position:relative;
-  height: 136px;
   margin-left:16px; 
 }
 div.main__app_info_block > h3 {
