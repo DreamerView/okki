@@ -1967,7 +1967,7 @@ div.main__app_info_block > h3 {
 button.main__app_info_action {
   margin-top:8px;
   background-color: var(--red_back);
-  padding:4px 16px;
+  padding:2px 24px;
   border-radius: 16px;
   color:#fff;
   cursor: pointer;
