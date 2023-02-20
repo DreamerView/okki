@@ -1970,7 +1970,7 @@ button.main__app_info_action {
   position: absolute;
   margin-top:8px;
   background-color: var(--red_back);
-  padding:4px 24px;
+  padding:2px 16px;
   border-radius: 16px;
   color:#fff;
   cursor: pointer;
