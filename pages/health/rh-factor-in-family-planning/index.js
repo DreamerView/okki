@@ -6,6 +6,7 @@ import style from "/styles/health/rh-factor-in-pregnancy-planning/index.module.c
 import nav_text from "/translate/services/all_translate";
 import text from "/translate/health/rh-factor-in-family-planning/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
+import AppShow from "/pages/modules/app";
 
 const RhFactorInPregnancyPlanning = ({lang}) => {
     const [manRh,setManRh] = useState(`I`);
@@ -51,14 +52,7 @@ const RhFactorInPregnancyPlanning = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
-                <div className="main__app_info">
-                    <Image width={60} height={60} alt="icon" src="/services/rh-factor-in-family-planning.webp"/>
-                    <div className="main__app_info_block">
-                        <h3>{nav_text['rh_factor_in_family_planning'][lang]}</h3>
-                        <p className="smaller">Здоровье</p>
-                        <button className="main__app_info_action anim_hover">Сохранить</button>
-                    </div>
-                </div>
+                <AppShow Image={Image} name={"rh_factor_in_family_planning"} translate={nav_text['rh_factor_in_family_planning'][lang]}/>
                 {/* <h1>{nav_text['rh_factor_in_family_planning'][lang]}</h1> */}
                 {/* <p className="sub_content">{text['content'][lang]}</p> */}
                 <div>

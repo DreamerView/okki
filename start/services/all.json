@@ -128,7 +128,7 @@
     {
         "title":"Календарь беременности",
         "name":"pregnancy_calendar",
-        "image":"/services/pregnancy-calendar.webp",
+        "image":"/services/pregnancy_calendar.webp",
         "image_background":"purple_background",
         "key":"жүктілік күнтізбесі,календарь беременности,pregnancy calendar",
         "location":"/health/pregnancy-calendar",
@@ -149,7 +149,7 @@
     {
         "title":"Резус фактор при планировании семьи",
         "name":"rh_factor_in_family_planning",
-        "image":"/services/rh-factor-in-family-planning.webp",
+        "image":"/services/rh_factor_in_family_planning.webp",
         "image_background":"purple_background",
         "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
         "location":"/health/rh-factor-in-family-planning",

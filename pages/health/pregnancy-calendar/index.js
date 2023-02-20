@@ -6,6 +6,7 @@ import nav_text from "/translate/services/all_translate";
 import style from "/styles/health/index.module.css";
 import text from "/translate/health/pregnancy-calendar/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
+import AppShow from "/pages/modules/app";
 
 const PregnancyCalendar = ({lang})=>{
     const [date,setDate] = useState(0);
@@ -125,6 +126,7 @@ const PregnancyCalendar = ({lang})=>{
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
+                <AppShow Image={Image} name={"pregnancy_calendar"} translate={nav_text['pregnancy_calendar'][lang]}/>
                 <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1>
                 <p className={`${style.headers} sub_content`}>{text['content'][lang]}</p>
                 <div className={style.date_block}>
