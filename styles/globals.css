@@ -1950,8 +1950,12 @@ div.main__app_info {
   max-width: 500px;
   width: 100%;
   min-width: 50px;
-  /* background-color: aqua; */
   display: flex;
+  /*  */
+  background-color: var(--block-color);
+  padding:16px;
+  border-radius: 16px;
+  box-sizing: border-box;
 }
 div.main__app_info > img {
   /* 136 */
