@@ -1956,7 +1956,7 @@ div.main__app_i {
   margin-bottom:32px;
 }
 div.main__app_info {
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
   min-width: 50px;
   display: flex;
@@ -2007,12 +2007,14 @@ button.main__app_info_action {
   font-size:13px;
 }
 div.main__app_info_banner {
-  max-width: 300px;
+  max-width: 500px;
   width: 100%;
   min-width: 50px;
   display: flex;
+  justify-content: center;
   height:100px;
   gap:16px;
+  /* background-color: red */
 }
 div.main__app_info_banner_block {
   width:100px;
