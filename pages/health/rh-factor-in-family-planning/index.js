@@ -54,7 +54,7 @@ const RhFactorInPregnancyPlanning = ({lang}) => {
                 <div className="main__app_info">
                     <Image width={60} height={60} alt="icon" src="/services/rh-factor-in-family-planning.webp"/>
                     <div className="main__app_info_block">
-                        <h3>{nav_text['rh_factor_in_family_planning'][lang]}</h3>
+                        <h4>{nav_text['rh_factor_in_family_planning'][lang]}</h4>
                         <p className="smaller">Здоровье</p>
                         <button className="main__app_info_action anim_hover">Save</button>
                     </div>

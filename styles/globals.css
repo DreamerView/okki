@@ -1959,17 +1959,21 @@ div.main__app_info > img {
   border-radius: 24px;
 }
 div.main__app_info_block {
+  position:relative;
+  height: 112px;
   margin-left:16px; 
 }
-div.main__app_info_block > h3 {
+div.main__app_info_block > h4 {
   margin-bottom:4px;
 }
 button.main__app_info_action {
+  position: absolute;
   margin-top:8px;
   background-color: var(--red_back);
-  padding:2px 24px;
+  padding:4px 24px;
   border-radius: 16px;
   color:#fff;
   cursor: pointer;
+  bottom:0;
   font-weight: 600;
 }
