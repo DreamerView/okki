@@ -2003,8 +2003,7 @@ button.main__app_info_action {
   color:#fff;
   cursor: pointer;
   /* bottom:0; */
-  /* font-weight: 600; */
-  font-size:13px;
+  font-weight: 600;
 }
 div.main__app_info_banner {
   max-width: 500px;
@@ -2022,7 +2021,6 @@ div.main__app_info_banner_block {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: aqua; */
   color:var(--sub_content);
   text-align: center;
 }
