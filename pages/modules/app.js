@@ -4,8 +4,10 @@ const AppShow = ({name,translate,Image,lang}) => {
         <div className="main__app_info">
             <Image width={60} height={60} alt="icon" src={"/services/"+name+".webp"}/>
             <div className="main__app_info_block">
+                <div>
                 <h2>{translate}</h2>
-                <p className="smaller">Здоровье</p>
+                <p className="smaller">Рейтинг 5.0 ★</p>
+                </div>
                 <button className="main__app_info_action anim_hover">{ux['save'][lang]}</button>
             </div>
         </div>
