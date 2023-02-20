@@ -1,4 +1,5 @@
-const AppShow = ({name,translate,Image}) => {
+import ux from "/translate/ux/action"
+const AppShow = ({name,translate,Image,lang}) => {
     return(
         <div className="main__app_info">
             <Image width={60} height={60} alt="icon" src={"/services/"+name+".webp"}/>
@@ -6,7 +7,7 @@ const AppShow = ({name,translate,Image}) => {
                 <h5>{translate}</h5>
                 <p className="smaller">Здоровье</p>
             </div>
-            <button className="main__app_info_action anim_hover">Сохранить</button>
+            <button className="main__app_info_action anim_hover">{ux['save'][lang]}</button>
         </div>
     );
 };

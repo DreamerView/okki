@@ -75,7 +75,7 @@ const BMICalc = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
-                <AppShow Image={Image} name={"bmi_calc"} translate={nav_text['bmi_calc'][lang]}/>
+                <AppShow lang={lang} Image={Image} name={"bmi_calc"} translate={nav_text['bmi_calc'][lang]}/>
                 {/* <h1>{translate['step1'][lang]}</h1>
                 <p className="sub_content">{translate['desctiption'][lang]}</p> */}
                 {/* New added */}
