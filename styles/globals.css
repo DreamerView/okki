@@ -1978,7 +1978,7 @@ div.main__app_info_block > div {
   width:100%;
   overflow: hidden;
 }
-div.main__app_info_block > div > h2 {
+div.main__app_info_block > div > h1 {
   margin-bottom:8px;
   /* white-space: nowrap;
   text-align: right; */
