@@ -7,7 +7,7 @@ const AppShow = ({name,translate,Image,lang}) => {
             <div className="main__app_info_block">
                 <div>
                 <h3>{translate}</h3>
-                <p className="smaller">Рейтинг 5.0 ★</p>
+                <p className="smaller">Здоровье</p>
                 </div>
                 <button className="main__app_info_action anim_hover">{ux['save'][lang]}</button>
             </div>
@@ -24,9 +24,9 @@ const AppShow = ({name,translate,Image,lang}) => {
                 <p className="small">+ 2 More</p>
             </div>
             <div className="main__app_info_banner_block">
-                <p className="small">Rating</p>
-                <h1>4.8</h1>
-                <p className="small">★★★★★</p>
+                <p className="small">Developer</p>
+                <h1>✎</h1>
+                <p className="small">Okki.kz</p>
             </div>
         </div>
         </div>
