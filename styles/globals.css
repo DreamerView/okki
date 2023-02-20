@@ -1954,17 +1954,17 @@ div.main__app_info {
   display: flex;
 }
 div.main__app_info > img {
-  width: 128px;
-  height: 128px;
+  width: 136px;
+  height: 136px;
   border-radius: 24px;
 }
 div.main__app_info_block {
   position:relative;
-  height: 128px;
+  height: 136px;
   margin-left:16px; 
 }
-div.main__app_info_block > h4 {
-  margin-bottom:4px;
+div.main__app_info_block > h3 {
+  margin-bottom:8px;
 }
 button.main__app_info_action {
   /* position: absolute; */
@@ -1976,5 +1976,5 @@ button.main__app_info_action {
   cursor: pointer;
   /* bottom:0; */
   font-weight: 600;
-  font-size:13px;
+  /* font-size:13px; */
 }
