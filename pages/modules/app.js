@@ -20,7 +20,7 @@ const AppShow = ({name,translate,Image,lang}) => {
             </div>
             <div className="main__app_info_banner_block">
                 <p className="small">Language</p>
-                <h1>EN</h1>
+                <h1>{lang}</h1>
                 <p className="small">+ 2 More</p>
             </div>
             <div className="main__app_info_banner_block">

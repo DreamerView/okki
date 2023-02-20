@@ -2023,3 +2023,6 @@ div.main__app_info_banner_block {
   color:var(--sub_content);
   text-align: center;
 }
+div.main__app_info_banner_block > h1 {
+  text-transform: uppercase;
+}
