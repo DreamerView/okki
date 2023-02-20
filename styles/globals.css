@@ -1955,8 +1955,8 @@ div.main__app_info {
 }
 div.main__app_info > img {
   /* 136 */
-  width: 108px;
-  height: 108px;
+  width: 116px;
+  height: 116px;
   border-radius: 24px;
 }
 div.main__app_info_block {
@@ -1975,5 +1975,5 @@ button.main__app_info_action {
   cursor: pointer;
   /* bottom:0; */
   font-weight: 600;
-  font-size:14px;
+  font-size:13px;
 }
