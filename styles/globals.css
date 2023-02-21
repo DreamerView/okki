@@ -2004,6 +2004,7 @@ button.main__app_info_action {
   cursor: pointer;
   /* bottom:0; */
   font-weight: 600;
+  font-size:14px;
 }
 div.main__app_info_banner {
   max-width: 500px;
