@@ -32,9 +32,9 @@ const AppShow = ({name,translate,Image,lang}) => {
                 <button onClick={pushNotification} className="main__app_info_action anim_hover">{ux['save'][lang]}</button>
                 <RWebShare
                     data={{
-                    text: "Like humans, flamingos make friends for life",
-                    url: "https://on.natgeo.com/2zHaNup",
-                    title: "Flamingos",
+                    text: "Здоровье",
+                    url: typeof Window !== 'undefined'&&window.location.href,
+                    title: {translate},
                     }}
                     onClick={() => console.log("shared successfully!")}
                 >
