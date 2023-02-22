@@ -9,7 +9,7 @@ div.main__calc {
     -ms-flex-wrap: wrap;
         -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
-            gap:32px;
+            gap:64px;
 }
 div.main__calculator {
     padding:48px 16px;
