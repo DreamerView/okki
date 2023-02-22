@@ -1,4 +1,5 @@
-import ux from "/translate/ux/action"
+import ux from "/translate/ux/action";
+import { RWebShare } from "react-web-share";
 const AppShow = ({name,translate,Image,lang}) => {
     return(
         <div className="main__app_i">
@@ -10,6 +11,16 @@ const AppShow = ({name,translate,Image,lang}) => {
                 <p className="smaller">Здоровье</p>
                 </div>
                 <button className="main__app_info_action anim_hover">{ux['save'][lang]}</button>
+                <RWebShare
+                    data={{
+                    text: "Like humans, flamingos make friends for life",
+                    url: "https://on.natgeo.com/2zHaNup",
+                    title: "Flamingos",
+                    }}
+                    onClick={() => console.log("shared successfully!")}
+                >
+                    <button>Share 🔗</button>
+                </RWebShare>
             </div>
         </div>
         <div className="main__app_info_banner">
