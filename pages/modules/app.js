@@ -1,6 +1,24 @@
 import ux from "/translate/ux/action";
 import { RWebShare } from "react-web-share";
 const AppShow = ({name,translate,Image,lang}) => {
+    const pushNotification = async() => {
+        const img = "/img/support.webp";
+        const text = "Take a look at this brand new t-shirt!";
+        const title = "New Product Available";
+        const options = {
+            body: text,
+            icon: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
+            vibrate: [200, 100, 200],
+            tag: "new-product",
+            image: img,
+            badge: img,
+            actions: [{ action: "Detail", title: "View", icon: "https://via.placeholder.com/128/ff0000" }]
+        };
+
+        navigator!==undefined && navigator.serviceWorker.ready.then(function(serviceWorker) {
+        serviceWorker.showNotification(title, options);
+        });
+    };
     return(
         <div className="main__app_i">
         <div className="main__app_info">
@@ -11,7 +29,7 @@ const AppShow = ({name,translate,Image,lang}) => {
                 <p className="smaller">Здоровье</p>
                 </div>
                 <div className="block_2">
-                <button className="main__app_info_action anim_hover">{ux['save'][lang]}</button>
+                <button onClick={pushNotification} className="main__app_info_action anim_hover">{ux['save'][lang]}</button>
                 <RWebShare
                     data={{
                     text: "Like humans, flamingos make friends for life",
