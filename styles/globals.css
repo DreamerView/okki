@@ -2040,3 +2040,9 @@ svg.share {
   fill: var(--blue_back);
   cursor: pointer;
 }
+svg.banner {
+  margin:8px auto;
+  width:28px;
+  height:28px;
+  fill:var(--sub_content);
+}
