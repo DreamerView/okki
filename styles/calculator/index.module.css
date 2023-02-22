@@ -1,5 +1,5 @@
 div.main__calc {
-    margin-top:64px;
+    margin-top:40px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -9,7 +9,7 @@ div.main__calc {
     -ms-flex-wrap: wrap;
         -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
-            gap:64px;
+            gap:64px 0;
 }
 div.main__calculator {
     padding:48px 16px;
