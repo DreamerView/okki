@@ -2035,8 +2035,8 @@ div.main__app_info_banner_block > h1 {
 }
 svg.share {
   margin-left:16px;
-  width:28px;
-  height:28px;
+  width:24px;
+  height:24px;
   fill: var(--blue_back);
   cursor: pointer;
 }
