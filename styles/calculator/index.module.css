@@ -14,7 +14,7 @@ div.main__calc {
 div.main__calculator {
     padding:52px 24px;
     order:1;
-    max-width: 500px;
+    max-width: 520px;
     width:100%;
     min-width: 50px;
     display: -webkit-box;
@@ -48,7 +48,7 @@ div.main__calculator {
 div.main__result {
     /* background-color: var(--blue_back); */
     order:2;
-    max-width: 500px;
+    max-width: 520px;
     width: 100%;
     min-width: 50px;
     display: -webkit-box;

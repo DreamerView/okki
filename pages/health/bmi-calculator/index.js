@@ -75,6 +75,7 @@ const BMICalc = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
+            <div className="main_block_row">
                 <AppShow lang={lang} Image={Image} name={"bmi_calc"} translate={nav_text['bmi_calc'][lang]}/>
                 {/* <h1>{translate['step1'][lang]}</h1>
                 <p className="sub_content">{translate['desctiption'][lang]}</p> */}
@@ -129,7 +130,7 @@ const BMICalc = ({lang}) => {
                         <div className={style.module_result_row}>
                             <div className={style.main__calculator_m}>
                                 <p className={style.description}>{translate['male_choose'][lang]}</p>
-                                <div className={style.main__calculator_module}>
+                                <div className={`${male==="other"&&"glow"} ${style.main__calculator_module}`}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
                                             <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_raising_hand.webp":"/emoji/woman_raising_hand.webp"} width={40} height={40} alt="emoji"/>
@@ -144,7 +145,7 @@ const BMICalc = ({lang}) => {
                             </div>
                             <div className={style.main__calculator_m} style={male==='other'?{opacity:'0.5'}:{opacity:'1'}}>
                                 <p className={style.description}>{translate['age'][lang]}</p>
-                                <div className={style.main__calculator_module}>
+                                <div className={`${male!=='other'&&age===""&&"glow"} ${style.main__calculator_module}`}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
                                             <Image priority src={"/emoji/thought_balloon.webp"} width={40} height={40} alt="emoji"/>
@@ -161,7 +162,7 @@ const BMICalc = ({lang}) => {
                             </div>
                             <div className={style.main__calculator_m} style={male==='other'?{opacity:'0.5'}:{opacity:'1'}}>
                                 <p className={style.description}>{translate['h_text'][lang]}</p>
-                                <div className={style.main__calculator_module}>
+                                <div className={`${male!=='other'&&n2===""&&"glow"} ${style.main__calculator_module}`}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
                                             <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_standing.webp":"/emoji/woman_standing.webp"} width={40} height={40} alt="emoji"/>
@@ -178,7 +179,7 @@ const BMICalc = ({lang}) => {
                             </div>
                             <div className={style.main__calculator_m} style={male==='other'?{opacity:'0.5'}:{opacity:'1'}}>
                                 <p className={style.description}>{translate['m_text'][lang]}</p>
-                                <div className={style.main__calculator_module}>
+                                <div className={`${male!=='other'&&n1===""&&"glow"} ${style.main__calculator_module}`}>
                                     <div>
                                         <div className={style.main__calculator_module_pic}>
                                             <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_gesturing_ok.webp":"/emoji/woman_gesturing_ok.webp"} width={40} height={40} alt="emoji"/>
@@ -199,6 +200,7 @@ const BMICalc = ({lang}) => {
                 </div>
                 {/* <ins className="adsbygoogle" style={{display: 'block'}} data-ad-client="ca-pub-5806636427537486" data-ad-slot={7444555459} data-ad-format="auto" data-full-width-responsive="true" /> */}
                 {/* <AdsContent/> */}
+                </div>
             </div>
         </>
     );
