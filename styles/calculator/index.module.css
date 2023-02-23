@@ -149,7 +149,7 @@ select.main__calculator_module_select {
     box-sizing: border-box;
 }
 input.main__calculator_module_input {
-    width:95%;
+    width:100%;
     font-size:16px;
     font-weight: 500;
     text-overflow: ellipsis;
