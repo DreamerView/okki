@@ -2100,7 +2100,7 @@ svg.banner {
   }
   
   50% {
-    box-shadow: 0 0 24px 0 var(--brand_back);
+    box-shadow: 0 0 16px 0 var(--brand_back);
   }
 }
 .glow {
