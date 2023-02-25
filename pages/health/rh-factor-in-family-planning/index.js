@@ -55,7 +55,7 @@ const RhFactorInPregnancyPlanning = ({lang}) => {
                 <AppShow lang={lang} Image={Image} name={"rh_factor_in_family_planning"} translate={nav_text['rh_factor_in_family_planning'][lang]}/>
                 {/* <h1>{nav_text['rh_factor_in_family_planning'][lang]}</h1> */}
                 {/* <p className="sub_content">{text['content'][lang]}</p> */}
-                <div className='more_information_app'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text['content'][lang]}</p></div>
+                <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text['content'][lang]}</p></div>
                 <div>
                     <div className={style.comparitive__block}>
                         <div className={style.comparitive__block_row}>

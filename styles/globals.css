@@ -377,7 +377,22 @@ div.more_information_app {
   gap:0 16px;
   color:hsl(0, 0%, 100%);
 }
-div.more_information_app > p {
+div.more_information_app_small {
+  max-width: 450px;
+  width: 100%;
+  min-width: 50px;
+  padding:16px;
+  background-color: var(--blue_back);
+  border-radius: 24px;
+  text-align: center;
+  margin:40px auto;
+  box-sizing: border-box;
+  display:flex;
+  align-items: center;
+  gap:0 16px;
+  color:hsl(0, 0%, 100%);
+}
+div.more_information_app_small > p {
   margin: 0 auto;
 }
 p.nav {
