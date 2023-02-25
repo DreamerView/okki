@@ -309,24 +309,24 @@ i.show {
     text-align: center;
 }
 div.nav__block_menu {
+    margin:32px 0;
+    width:100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: -moz-box;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
+    overflow-x: scroll;
+    overflow-y:hidden;
+    gap:0 16px;
 }
 div.nav__block_menu > a {
-    margin:32px 16px 0 0;
     padding:12px 24px;
     font-size:16px;
     -webkit-border-radius: 200px;
        -moz-border-radius: 200px;
             border-radius: 200px;
     cursor: pointer;
-    display: block;
+    /* display: block; */
     text-align: center;
 }
 div.calc__table {
