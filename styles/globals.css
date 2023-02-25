@@ -366,7 +366,7 @@ div.more_information_app {
   max-width: 720px;
   width: 100%;
   min-width: 50px;
-  padding:16px 24px;
+  padding:16px;
   background-color: var(--blue_back);
   border-radius: 24px;
   text-align: center;
@@ -374,7 +374,7 @@ div.more_information_app {
   box-sizing: border-box;
   display:flex;
   align-items: center;
-  gap:0 8px;
+  gap:0 16px;
   color:hsl(0, 0%, 100%);
 }
 
