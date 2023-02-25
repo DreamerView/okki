@@ -117,7 +117,7 @@
     {
         "title":"Калькулятор расчета маржи и наценки",
         "name":"margin_markup_calc",
-        "image":"/services/margin-markup.webp",
+        "image":"/services/margin_markup_calc.webp",
         "image_background":"purple_background",
         "key":"маржа мен үстеме бағаны есептеу калькуляторы,калькулятор расчета маржи и наценки,margin and markup calculator",
         "location":"/business/margin-markup-calculator",

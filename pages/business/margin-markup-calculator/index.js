@@ -8,6 +8,7 @@ import nav_translate from "/translate/services/all_translate";
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 const NavbarApp = dynamic(()=>import('/pages/navbar_app/nav'),{ssr:false});
+import AppShow from "/pages/modules/app";
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -51,8 +52,10 @@ const MarginMarkup = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/business"}} choice="alone"/>
             <div className="main_app block_animation">
-                <h1>{nav_translate["margin_markup_calc"][lang]}</h1>
-                <p className="sub_content">{translate['content'][lang]}</p>
+            <div className="main_block_row">
+            <AppShow lang={lang} Image={Image} name={"margin_markup_calc"} translate={nav_translate['margin_markup_calc'][lang]}/>
+                {/* <h1>{nav_translate["margin_markup_calc"][lang]}</h1> */}
+                {/* <p className="sub_content">{translate['content'][lang]}</p> */}
                 <div className={style.nav__block_menu}>
                     <Link className='red_background white_font' prefetch={false} href="/business/margin-markup-calculator">
                             {translate['margin_markup_calc'][lang]}
@@ -308,6 +311,7 @@ const MarginMarkup = ({lang}) => {
                         </div>
                     </div>
                     {/*  */}
+                </div>
                 </div>
             </div>
         </>

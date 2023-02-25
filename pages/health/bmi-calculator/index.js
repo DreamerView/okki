@@ -8,9 +8,6 @@ import {useEffect,useState,useRef} from "react";
 import setBmiApi from '/pages/health/bmi-calculator/api';
 import NavbarApp from '/pages/navbar_app/nav';
 import AppShow from "/pages/modules/app";
-// export const getStaticProps = async ({locale}) => {
-//     return {props:{lang:locale}};
-// };
 
 const BMICalc = ({lang}) => {
     const [anim,setAnim] = useState(false);
@@ -160,7 +157,7 @@ const BMICalc = ({lang}) => {
                                     </div>:""}
                                 </div>
                             </div>
-                            <div className={style.main__calculator_m} style={male==='other'?{opacity:'0.5'}:{opacity:'1'}}>
+                            <div className={style.main__calculator_m} style={male==='other'&&age===""?{opacity:'0.5'}:{opacity:'1'}}>
                                 <p className={style.description}>{translate['h_text'][lang]}</p>
                                 <div className={`${male!=='other'&&n2===""&&"glow"} ${style.main__calculator_module}`}>
                                     <div>
@@ -168,7 +165,7 @@ const BMICalc = ({lang}) => {
                                             <Image priority src={male==='other'?"/emoji/restroom.webp":male==='male'?"/emoji/man_standing.webp":"/emoji/woman_standing.webp"} width={40} height={40} alt="emoji"/>
                                         </div>
                                     </div>
-                                    <input ref={i2} type="tel" pattern="[0-9,.]*" onChange={(e)=>{setN2((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={n2} className={`${style.main__calculator_module_input}`} placeholder={translate['h_text'][lang]} disabled={male==='other'?true:false}/>
+                                    <input ref={i2} type="tel" pattern="[0-9,.]*" onChange={(e)=>{setN2((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={n2} className={`${style.main__calculator_module_input}`} placeholder={translate['h_text'][lang]} disabled={male==='other'&&age===""?true:false}/>
                                     {n2!==''?
                                     <div className={style.main__calculator_module_close} onClick={()=>{setN2('')}}>
                                         <div className={style.main__calculator_module_close_img}>
