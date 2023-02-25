@@ -54,8 +54,8 @@ const MarginMarkup = ({lang}) => {
             <div className="main_app block_animation">
             <div className="main_block_row">
             <AppShow lang={lang} Image={Image} name={"margin_markup_calc"} translate={nav_translate['margin_markup_calc'][lang]}/>
-                {/* <h1>{nav_translate["margin_markup_calc"][lang]}</h1> */}
-                {/* <p className="sub_content">{translate['content'][lang]}</p> */}
+                <div className='more_information_app'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{translate['content'][lang]}</p></div>
+
                 <div className={style.nav__block_m}>
                     <div className={style.nav__block_menu}>
                         <Link className='red_background white_font' prefetch={false} href="/business/margin-markup-calculator">
