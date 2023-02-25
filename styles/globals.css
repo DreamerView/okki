@@ -377,6 +377,9 @@ div.more_information_app {
   gap:0 16px;
   color:hsl(0, 0%, 100%);
 }
+div.more_information_app > p {
+  margin: 0 auto;
+}
 div.more_information_app_small {
   max-width: 450px;
   width: 100%;
