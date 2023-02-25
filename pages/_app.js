@@ -10,7 +10,6 @@ import { Provider } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { SessionProvider } from "next-auth/react"
 import "/styles/globals.css";
-import Image from "next/image";
 const DocumentResult = dynamic(()=>import("/start/document"));
 
 const Preloader = () => {
