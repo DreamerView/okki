@@ -377,7 +377,9 @@ div.more_information_app {
   gap:0 16px;
   color:hsl(0, 0%, 100%);
 }
-
+div.more_information_app > p {
+  margin: 0 auto;
+}
 p.nav {
   font-size:16px;
   line-height:26px;
