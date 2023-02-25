@@ -315,11 +315,12 @@ div.nav__block_menu {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: -moz-box;
+    scroll-snap-align: start;
     overflow-x: scroll;
-    overflow-y:hidden;
     gap:0 16px;
 }
 div.nav__block_menu > a {
+    white-space: nowrap;
     padding:12px 24px;
     font-size:16px;
     -webkit-border-radius: 200px;
@@ -327,7 +328,7 @@ div.nav__block_menu > a {
             border-radius: 200px;
     cursor: pointer;
     /* display: block; */
-    text-align: center;
+    /* text-align: center; */
 }
 div.calc__table {
     margin-top:32px;
