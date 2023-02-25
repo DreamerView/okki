@@ -2057,11 +2057,11 @@ svg.banner {
 }
 @keyframes glow {
   0% {
-    box-shadow: 0 0 0 0 var(--brand-color);
+    box-shadow: 0 0 0 0 var(--header-color);
   }
   
   50% {
-    box-shadow: 0 0 30px 0 var(--brand-color);
+    box-shadow: 0 0 30px 0 var(--header-color);
   }
 }
 .glow {
