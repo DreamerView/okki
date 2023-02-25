@@ -308,9 +308,13 @@ i.show {
     margin-bottom: 16px;
     text-align: center;
 }
-div.nav__block_menu {
-    margin:48px 0;
+div.nav__block_m {
+    display: flex;
+    justify-content: center;
+    margin:48px auto;
     width:100%;
+}
+div.nav__block_menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;

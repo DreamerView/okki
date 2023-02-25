@@ -56,16 +56,18 @@ const MarginMarkup = ({lang}) => {
             <AppShow lang={lang} Image={Image} name={"margin_markup_calc"} translate={nav_translate['margin_markup_calc'][lang]}/>
                 {/* <h1>{nav_translate["margin_markup_calc"][lang]}</h1> */}
                 {/* <p className="sub_content">{translate['content'][lang]}</p> */}
-                <div className={style.nav__block_menu}>
-                    <Link className='red_background white_font' prefetch={false} href="/business/margin-markup-calculator">
-                            {translate['margin_markup_calc'][lang]}
-                    </Link>
-                    <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
-                            {translate['margin_cost_calc'][lang]}
-                    </Link>
-                    <Link className='block_background' prefetch={false} href="/business/markup-prime-calculator">
-                            {translate['markup_prime_calc'][lang]}
-                    </Link>
+                <div className={style.nav__block_m}>
+                    <div className={style.nav__block_menu}>
+                        <Link className='red_background white_font' prefetch={false} href="/business/margin-markup-calculator">
+                                {translate['margin_markup_calc'][lang]}
+                        </Link>
+                        <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
+                                {translate['margin_cost_calc'][lang]}
+                        </Link>
+                        <Link className='block_background' prefetch={false} href="/business/markup-prime-calculator">
+                                {translate['markup_prime_calc'][lang]}
+                        </Link>
+                    </div>
                 </div>
                 <div className={style.main__calc}>
                     

@@ -1,35 +1,17 @@
 import ux from "/translate/ux/action";
 import { RWebShare } from "react-web-share";
 const AppShow = ({name,translate,Image,lang}) => {
-    const pushNotification = async() => {
-        const img = "/img/support.webp";
-        const text = "Take a look at this brand new t-shirt!";
-        const title = "New Product Available";
-        const options = {
-            body: text,
-            icon: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
-            vibrate: [200, 100, 200],
-            tag: "new-product",
-            image: img,
-            badge: img,
-            actions: [{ action: "Detail", title: "View", icon: "https://via.placeholder.com/128/ff0000" }]
-        };
-
-        navigator!==undefined && navigator.serviceWorker.ready.then(function(serviceWorker) {
-        serviceWorker.showNotification(title, options);
-        });
-    };
     return(
         <div className="main__app_i">
         <div className="main__app_info">
-            <Image width={60} height={60} alt="icon" src={"/services/"+name+".webp"}/>
+            <Image loading="lazy" width={60} height={60} alt="icon" src={"/services/"+name+".webp"}/>
             <div className="main__app_info_block">
                 <div className="block_1">
                 <h3>{translate}</h3>
                 <p className="smaller">Здоровье</p>
                 </div>
                 <div className="block_2">
-                <button onClick={pushNotification} className="main__app_info_action anim_hover">{ux['save'][lang]}</button>
+                <button className="main__app_info_action anim_hover">{ux['save'][lang]}</button>
                 <RWebShare
                     data={{
                     text: "Здоровье",
@@ -56,12 +38,12 @@ const AppShow = ({name,translate,Image,lang}) => {
             </div>
             <div className="main__app_info_banner_block">
                 <p className="small">Developer</p>
-                <svg className="banner" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><path d="M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M12,6c1.93,0,3.5,1.57,3.5,3.5 c0,1.93-1.57,3.5-3.5,3.5s-3.5-1.57-3.5-3.5C8.5,7.57,10.07,6,12,6z M19,19H5v-0.23c0-0.62,0.28-1.2,0.76-1.58 C7.47,15.82,9.64,15,12,15s4.53,0.82,6.24,2.19c0.48,0.38,0.76,0.97,0.76,1.58V19z"/></g></svg>
+                <svg className="banner" xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><path d="M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M12,6c1.93,0,3.5,1.57,3.5,3.5 c0,1.93-1.57,3.5-3.5,3.5s-3.5-1.57-3.5-3.5C8.5,7.57,10.07,6,12,6z M19,19H5v-0.23c0-0.62,0.28-1.2,0.76-1.58 C7.47,15.82,9.64,15,12,15s4.53,0.82,6.24,2.19c0.48,0.38,0.76,0.97,0.76,1.58V19z"/></g></svg>
                 <p className="small">Okki.kz</p>
             </div>
             <div className="main__app_info_banner_block">
                 <p className="small">Release</p>
-                <svg className="banner" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><path d="M17,2c-0.55,0-1,0.45-1,1v1H8V3c0-0.55-0.45-1-1-1S6,2.45,6,3v1H5C3.89,4,3.01,4.9,3.01,6L3,20c0,1.1,0.89,2,2,2h14 c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2h-1V3C18,2.45,17.55,2,17,2z M19,20H5V10h14V20z M11,13c0-0.55,0.45-1,1-1s1,0.45,1,1 s-0.45,1-1,1S11,13.55,11,13z M7,13c0-0.55,0.45-1,1-1s1,0.45,1,1s-0.45,1-1,1S7,13.55,7,13z M15,13c0-0.55,0.45-1,1-1s1,0.45,1,1 s-0.45,1-1,1S15,13.55,15,13z M11,17c0-0.55,0.45-1,1-1s1,0.45,1,1s-0.45,1-1,1S11,17.55,11,17z M7,17c0-0.55,0.45-1,1-1 s1,0.45,1,1s-0.45,1-1,1S7,17.55,7,17z M15,17c0-0.55,0.45-1,1-1s1,0.45,1,1s-0.45,1-1,1S15,17.55,15,17z"/></g></svg>
+                <svg className="banner" xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><path d="M17,2c-0.55,0-1,0.45-1,1v1H8V3c0-0.55-0.45-1-1-1S6,2.45,6,3v1H5C3.89,4,3.01,4.9,3.01,6L3,20c0,1.1,0.89,2,2,2h14 c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2h-1V3C18,2.45,17.55,2,17,2z M19,20H5V10h14V20z M11,13c0-0.55,0.45-1,1-1s1,0.45,1,1 s-0.45,1-1,1S11,13.55,11,13z M7,13c0-0.55,0.45-1,1-1s1,0.45,1,1s-0.45,1-1,1S7,13.55,7,13z M15,13c0-0.55,0.45-1,1-1s1,0.45,1,1 s-0.45,1-1,1S15,13.55,15,13z M11,17c0-0.55,0.45-1,1-1s1,0.45,1,1s-0.45,1-1,1S11,17.55,11,17z M7,17c0-0.55,0.45-1,1-1 s1,0.45,1,1s-0.45,1-1,1S7,17.55,7,17z M15,17c0-0.55,0.45-1,1-1s1,0.45,1,1s-0.45,1-1,1S15,17.55,15,17z"/></g></svg>
                 <p className="small">12.08.2022</p>
             </div>
         </div>
