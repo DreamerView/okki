@@ -129,8 +129,8 @@ const PregnancyCalendar = ({lang})=>{
                 <AppShow lang={lang} Image={Image} name={"pregnancy_calendar"} translate={nav_text['pregnancy_calendar'][lang]}/>
                 {/* <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1> */}
                 <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text['content'][lang]}</p></div>
-                <div className={style.date_block}>
-                    <input type="date" placeholder={text['enter_date'][lang]}  onChange={e=>setDate(e.target.value)} className={style.date} required/>
+                <div className={`${style.date_block}`}>
+                    <input type="date" placeholder={text['enter_date'][lang]}  onChange={e=>setDate(e.target.value)} className={`${style.date} ${date===0&&"glow"}`} required/>
                 </div>
                 <div className={style.calendar_row}>
                     <div className={anim==='date'?style.calendar_block_loader:style.calendar_block}>
