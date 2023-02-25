@@ -78,7 +78,7 @@ const BMICalc = ({lang}) => {
                 <p className="sub_content">{translate['desctiption'][lang]}</p> */}
                 {/* New added */}
                 {}
-                <div className='more_information_app'>{translate['desctiption'][lang]}</div>
+                <div className='more_information_app'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{translate['desctiption'][lang]}</p></div>
                 <div className={style.main__calc}>
                     
                     <div className={style.main__result}>
