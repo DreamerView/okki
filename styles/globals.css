@@ -495,12 +495,13 @@ p.nav > a {
   }
 }
 
-#nprogress .bar {
-  background: var(--brand_back) !important;
+::selection {
+  background: var(--brand_back);
+  color:white;
 }
-
-#nprogress .peg {
-  box-shadow: 0 0 10px var(--brand_back), 0 0 5px var(--brand_back);
+::-moz-selection {
+  background: var(--brand_back);
+  color:white;
 }
 
 #nprogress .spinner-icon {
@@ -794,6 +795,7 @@ select:-webkit-autofill:focus {
   header {
       -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
+      gap:32px 0;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap
   }
@@ -804,7 +806,7 @@ select:-webkit-autofill:focus {
       width:50%
   }
   div.header__search {
-      padding-top:30px;
+      /* padding-top:30px; */
       width: 100%
   }
   div.header__action {
@@ -864,6 +866,7 @@ select:-webkit-autofill:focus {
   header {
       -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
+      gap:32px 0;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
           box-sizing: border-box
@@ -884,7 +887,7 @@ select:-webkit-autofill:focus {
       width:30%
   }
   div.header__search {
-      padding-top:32px;
+      /* padding-top:32px; */
       width: 100%
   }
 
