@@ -78,6 +78,7 @@ const BMICalc = ({lang}) => {
                 <p className="sub_content">{translate['desctiption'][lang]}</p> */}
                 {/* New added */}
                 {}
+                <div className='more_information_app'>{translate['desctiption'][lang]}</div>
                 <div className={style.main__calc}>
                     
                     <div className={style.main__result}>
