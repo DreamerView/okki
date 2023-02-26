@@ -6,6 +6,7 @@ import style from "/styles/calculator/index.module.css";
 import nav_translate from "/translate/services/all_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 import {useState,useCallback,useMemo} from 'react';
+import AppShow from "/pages/modules/app";
 
 const Deposit = ({lang}) => {
     const [bet,setBet] = useState('');
@@ -106,8 +107,8 @@ const Deposit = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/finance"}} choice="alone"/>
             <div className="main_app block_animation">
-                <h1 className="flex_text">{nav_translate["deposit_calc"][lang]} <div className="emoji_h1"><Image priority src={"/icons/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
-                <p className="sub_content">{text["description"][lang]}</p>
+                <AppShow lang={lang} Image={Image} name={"deposit_calc"} translate={nav_translate["deposit_calc"][lang]}/>
+                <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text["description"][lang]}</p></div>
                 {/* New added */}
                 <div className={style.main__calc}>
                     

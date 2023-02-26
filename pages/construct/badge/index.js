@@ -7,6 +7,7 @@ import ux from "/translate/ux/action";
 import text from "/translate/constructor/acc/index_translate";
 import seo from "/translate/constructor/acc/index_seo";
 import NavbarApp from '/pages/navbar_app/nav';
+import AppShow from "/pages/modules/app";
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -32,11 +33,11 @@ const Acc = ({lang}) => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-        <NavbarApp lang={lang} to={[{key:'constructor',location:'/construct'},{key:'acc_const',path:'last'}]}/>
-        <div className={`main block_animation`}>
+        <NavbarApp lang={lang} to={{href:"/construct"}} choice="alone"/>
+        <div className={`main_app block_animation`}>
             <div className="main_row">
-                <h1>{text['name'][lang]}</h1>
-                <p className="sub_content">{text['content'][lang]}</p>
+                <AppShow lang={lang} Image={Image} name={"acc_const"} translate={text['name'][lang]}/>
+                <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text["content"][lang]}</p></div>
                 <div className={`${style.main__block_menu_select} p-m`}>
                 <div className={`${style.main__block_menu_select_block} anim_hover`}>
                 <Link title={text['title1'][lang]} href="/construct/badge/logo" prefetch={false}>

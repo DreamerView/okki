@@ -6,6 +6,7 @@ import style from "/styles/calculator/index.module.css";
 import nav_translate from "/translate/services/all_translate";
 import text from "/translate/health/index-of-the-smoking-person/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
+import AppShow from "/pages/modules/app";
 
 const Deposit = ({lang}) => {
     const [num,setNum] = useState('');
@@ -52,8 +53,9 @@ const Deposit = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
-                <h1 className="flex_text">{nav_translate['index_of_the_smoking_person'][lang]}<div className="emoji_h1"><Image priority src={"/emoji-small/cigarette.webp"} width={26} height={26} alt="emoji"/></div></h1>
-                <p className="sub_content">{text['content'][lang]}</p>
+                
+                <AppShow lang={lang} Image={Image} name={"index_of_the_smoking_person"} translate={nav_translate["index_of_the_smoking_person"][lang]}/>
+                <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text["content"][lang]}</p></div>
                 {/* New added */}
                 <div className={style.main__calc}>
                     

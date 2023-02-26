@@ -6,6 +6,7 @@ import text from "/translate/health/ideal-weight/index_translate";
 import style from "/styles/calculator/index.module.css";
 import nav_text from "/translate/services/all_translate";
 import NavbarApp from '/pages/navbar_app/nav';
+import AppShow from "/pages/modules/app";
 
 const IdealWeight = ({lang}) => {
     const [male,setMale] = useState('other');
@@ -55,9 +56,9 @@ const IdealWeight = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone" with_save="yes" save_name="ideal_weight_calc"/>
             <div className="main_app block_animation">
-                <h1>{nav_text['ideal_weight_calc'][lang]}</h1>
-                <p className="sub_content">{text['desc'][lang]}</p>
                 {/* New added */}
+                <AppShow lang={lang} Image={Image} name={"ideal_weight_calc"} translate={nav_text['ideal_weight_calc'][lang]}/>
+                <div className='more_information_app'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text['desc'][lang]}</p></div>
                 <div className={style.main__calc}>
                     
                     <div className={style.main__result}>

@@ -74,10 +74,6 @@ const BMICalc = ({lang}) => {
             <div className="main_app block_animation">
             <div className="main_block_row">
                 <AppShow lang={lang} Image={Image} name={"bmi_calc"} translate={nav_text['bmi_calc'][lang]}/>
-                {/* <h1>{translate['step1'][lang]}</h1>
-                <p className="sub_content">{translate['desctiption'][lang]}</p> */}
-                {/* New added */}
-                {}
                 <div className='more_information_app'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{translate['desctiption'][lang]}</p></div>
                 <div className={style.main__calc}>
                     

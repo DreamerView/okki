@@ -74,7 +74,7 @@
     {
         "title":"Конструктор аккредитации",
         "name":"acc_const",
-        "image":"/services/badge.webp",
+        "image":"/services/acc_const.webp",
         "image_background":"purple_background",
         "key":"бейджик/аккредитация құрастырушысы,конструктор бейджиков/аккредитации,badge/accreditation constructor",
         "location":"/construct/badge",
@@ -95,7 +95,7 @@
     {
         "title":"Калькулятор идеального веса",
         "name":"ideal_weight_calc",
-        "image":"/services/ideal-weight.webp",
+        "image":"/services/ideal_weight_calc.webp",
         "image_background":"purple_background",
         "key":"мінсіз салмақ есептегіші,калькулятор идеального веса,ideal weight calculator",
         "location":"/health/ideal-weight",
@@ -106,7 +106,7 @@
     {
         "title":"Депозитный калькулятор",
         "name":"deposit_calc",
-        "image":"/services/deposit.webp",
+        "image":"/services/deposit_calc.webp",
         "image_background":"purple_background",
         "key":"депозиттік есептегіш,депозитный калькулятор,deposit calculator",
         "location":"/finance/deposit",
@@ -138,7 +138,7 @@
     {
         "title":"Индекс курящего человека",
         "name":"index_of_the_smoking_person",
-        "image":"/services/index-of-the-smoking-person.webp",
+        "image":"/services/index_of_the_smoking_person.webp",
         "image_background":"purple_background",
         "key":"темекі шегетін адамның индексі,индекс курящего человека,index of the smoking person",
         "location":"/health/ind-of-the-smoking-person",
