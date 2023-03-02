@@ -9,7 +9,7 @@ import type_translate from "/translate/services/type_translate";
 import seo from "/translate/health/index_seo";
 import AllService from '/start/services/all.json';
 import NavbarApp from '/pages/navbar_app/nav';
-
+import AppStore from "/pages/modules/apps";
 
 const HealthIndex = ({lang}) => {
     const historyAction = (service) => {
@@ -47,7 +47,7 @@ const HealthIndex = ({lang}) => {
             <div className={style.main__module_row}>
 
                 {/*  */}
-                {AllService.filter(e=>{return e.category === 'health'}).map((e,index)=>
+                {/* {AllService.filter(e=>{return e.category === 'health'}).map((e,index)=>
                     <Link onClick={()=>historyAction(e.name)} title={nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
                     <div className={`${style.main__module_row_block} anim_hover`}>
                         <div>
@@ -61,7 +61,8 @@ const HealthIndex = ({lang}) => {
                         </div>
                     </div>
                     </Link>
-                    )}
+                    )} */}
+                    <AppStore category="health" serv={AllService} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
                 {/*  */}
             </div>
             </div>

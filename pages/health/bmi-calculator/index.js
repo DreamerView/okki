@@ -201,7 +201,7 @@ const BMICalc = ({lang}) => {
 };
 
 BMICalc.getInitialProps = async ({locale}) => {
-    return { lang:locale };
+    return { lang:locale};
   };
 
 export default BMICalc;

@@ -16,7 +16,7 @@ const AppShow = ({name,translate,Image,lang}) => {
                     data={{
                     text: "Здоровье",
                     url: typeof Window !== 'undefined'&&window.location.href,
-                    title: {translate},
+                    title: translate,
                     }}
                     onClick={() => console.log("shared successfully!")}
                 >
