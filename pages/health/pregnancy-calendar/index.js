@@ -126,6 +126,7 @@ const PregnancyCalendar = ({lang})=>{
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
+            <div className="main_block_row">
                 <AppShow lang={lang} Image={Image} name={"pregnancy_calendar"} translate={nav_text['pregnancy_calendar'][lang]}/>
                 {/* <h1 className={style.header}>{nav_text['pregnancy_calendar'][lang]}</h1> */}
                 <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text['content'][lang]}</p></div>
@@ -226,6 +227,7 @@ const PregnancyCalendar = ({lang})=>{
                 </div>
                 </>
                 :""}
+                </div>
             </div>
         </>
     )

@@ -52,6 +52,7 @@ const RhFactorInPregnancyPlanning = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
             <div className="main_app block_animation">
+            <div className="main_block_row">
                 <AppShow lang={lang} Image={Image} name={"rh_factor_in_family_planning"} translate={nav_text['rh_factor_in_family_planning'][lang]}/>
                 {/* <h1>{nav_text['rh_factor_in_family_planning'][lang]}</h1> */}
                 {/* <p className="sub_content">{text['content'][lang]}</p> */}
@@ -128,6 +129,7 @@ const RhFactorInPregnancyPlanning = ({lang}) => {
                             <h4>{result.child} ({symbol.child})</h4>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </>
