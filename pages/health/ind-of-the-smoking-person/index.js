@@ -98,10 +98,8 @@ const Deposit = ({lang}) => {
                             <div className={style.main__calculator_m}>
                                 <p className={style.description}>{text['first_question'][lang]}</p>
                                 <div className={style.main__calculator_module}>
-                                    <div>
-                                        <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/cigarette.webp"} width={35} height={35} alt="emoji"/>
-                                        </div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji-small/cigarette.webp"} width={35} height={35} alt="emoji"/>
                                     </div>
                                     <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setNum((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} placeholder={text['enter_value'][lang]} className={`${style.main__calculator_module_input}`} value={num}/>
                                     {num!==''?
@@ -115,10 +113,8 @@ const Deposit = ({lang}) => {
                             <div className={style.main__calculator_m}>
                                 <p className={style.description}>{text['second_question'][lang]}</p>
                                 <div className={style.main__calculator_module}>
-                                    <div>
-                                        <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/calendar.webp"} width={35} height={35} alt="emoji"/>
-                                        </div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji-small/calendar.webp"} width={35} height={35} alt="emoji"/>
                                     </div>
                                     <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setExp((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} placeholder={text['enter_value'][lang]} className={`${style.main__calculator_module_input}`} value={exp}/>
                                     {exp!==''?

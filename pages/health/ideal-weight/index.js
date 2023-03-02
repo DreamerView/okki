@@ -100,10 +100,8 @@ const IdealWeight = ({lang}) => {
                             <div className={style.main__calculator_m}>
                                 <p className={style.description}>{text['male_selected'][lang]}</p>
                                 <div className={style.main__calculator_module}>
-                                    <div>
-                                        <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} width={40} height={40} alt="emoji"/>
-                                        </div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_raising_hand.webp":"/emoji-small/woman_raising_hand.webp"} width={40} height={40} alt="emoji"/>
                                     </div>
                                     <select onChange={(e)=>{setMale(e.target.value);setN1('');}} className={`${style.main__calculator_module_select}`}>
                                         <option value="other">{text['other'][lang]}</option>
@@ -115,10 +113,8 @@ const IdealWeight = ({lang}) => {
                             <div className={style.main__calculator_m} style={male==='other'?{opacity:'0.5'}:{opacity:'1'}}>
                                 <p className={style.description}>{text['h_text'][lang]}</p>
                                 <div className={style.main__calculator_module}>
-                                    <div>
-                                        <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} width={40} height={40} alt="emoji"/>
-                                        </div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={male==='other'?"/emoji-small/restroom.webp":male==='male'?"/emoji-small/man_standing.webp":"/emoji-small/woman_standing.webp"} width={40} height={40} alt="emoji"/>
                                     </div>
                                     <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setN1((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={n1} placeholder={text['enter'][lang]} className={`${style.main__calculator_module_input}`} disabled={male==='other'?true:false}/>
                                     <div className={style.show}>sd</div>

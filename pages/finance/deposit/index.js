@@ -151,10 +151,8 @@ const Deposit = ({lang}) => {
                             <div className={style.main__calculator_m}>
                                 <p className={style.description}>{text['annual'][lang]}</p>
                                 <div className={style.main__calculator_module}>
-                                    <div>
-                                        <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/bar_chart.webp"} width={35} height={35} alt="emoji"/>
-                                        </div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji-small/bar_chart.webp"} width={35} height={35} alt="emoji"/>
                                     </div>
                                     <input type="tel" pattern="[0-9]*"  placeholder={text['annual'][lang]} className={`${style.main__calculator_module_input}`} onChange={(e)=>{setBet((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={bet}/>
                                 </div>
@@ -162,10 +160,8 @@ const Deposit = ({lang}) => {
                             <div className={style.main__calculator_m}>
                                 <p className={style.description}>{text['amount'][lang]}</p>
                                 <div className={style.main__calculator_module}>
-                                    <div>
-                                        <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/dollar.webp"} width={35} height={35} alt="emoji"/>
-                                        </div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji-small/dollar.webp"} width={35} height={35} alt="emoji"/>
                                     </div>
                                     <input type="tel" pattern="[0-9]*"  placeholder={text['amount'][lang]} className={`${style.main__calculator_module_input}`} onChange={(e)=>{setSum((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={sum} />
                                 </div>
@@ -173,10 +169,8 @@ const Deposit = ({lang}) => {
                             <div className={style.main__calculator_m}>
                                 <p className={style.description}>{text['term'][lang]}</p>
                                 <div className={style.main__calculator_module}>
-                                    <div>
-                                        <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/aim.webp"} width={35} height={35} alt="emoji"/>
-                                        </div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji-small/aim.webp"} width={35} height={35} alt="emoji"/>
                                     </div>
                                     <select onChange={e=>setTerm(Number(e.target.value))} className={`${style.main__calculator_module_select}`}>
                                         <option value="not">{text['deadline'][lang]}</option>
@@ -191,10 +185,8 @@ const Deposit = ({lang}) => {
                             <div className={style.main__calculator_m}>
                                 <p className={style.description}>{text['replenishment'][lang]}</p>
                                 <div className={style.main__calculator_module}>
-                                    <div>
-                                        <div className={style.main__calculator_module_pic}>
-                                            <Image priority src={"/emoji-small/money_bag.webp"} width={35} height={35} alt="emoji"/>
-                                        </div>
+                                    <div className={style.main__calculator_module_pic}>
+                                        <Image priority src={"/emoji-small/money_bag.webp"} width={35} height={35} alt="emoji"/>
                                     </div>
                                     <input type="tel" onChange={(e)=>{setEvery((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, "."))}} value={every} pattern="[0-9]*"  placeholder={text['replenishment'][lang]} className={`${style.main__calculator_module_input}`}/>
                                 </div>
