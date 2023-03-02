@@ -21,7 +21,11 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
         content.current!==undefined&&content.current!==null&&content.current.removeEventListener('scroll', onScroll);
         };
     },[]);
-    const group = (items, n) => items.filter(e=>e.type === 'services').reverse().reduce((acc, x, i) => {
+    const group = (items, n) => category===undefined?items.filter(e=>e.type === 'services').reverse().reduce((acc, x, i) => {
+        const idx = Math.floor(i / n);
+        acc[idx] = [...(acc[idx] || []), x];
+        return acc;
+      }, []):items.filter(e=>e.type === 'services'&&e.category===category).reverse().reduce((acc, x, i) => {
         const idx = Math.floor(i / n);
         acc[idx] = [...(acc[idx] || []), x];
         return acc;
