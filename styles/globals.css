@@ -2021,6 +2021,7 @@ div.main__app_info > img {
   /* 136 */
   width: 100px;
   height: 100px;
+  background-color: var(--header-color);
   border-radius: 24px;
 }
 div.main__app_info_block {
