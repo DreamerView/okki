@@ -4,6 +4,9 @@ import NavbarApp from "/pages/navbar_app/nav";
 import style from "/styles/technology/qr/index.module.css";
 import dynamic from "next/dynamic";
 const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
+import AppShow from "/pages/modules/app";
+import nav_translate from "/translate/services/all_translate";
+import Image from "next/image";
 
 const QR = ({lang}) => {
     const [hide,setHide] = useState(false);
@@ -105,8 +108,8 @@ const QR = ({lang}) => {
         <>
         <NavbarApp lang={lang} onClick={()=>html5QrCode.stop()} choice="alone"/>
         <div className="main_app block_animation">
-            <h1 className="flex_text">Okki QR</h1>
-            <p className="sub_content">Welcome to Okki QR</p>
+            <AppShow lang={lang} Image={Image} name={"qr"} translate={"Okki QR"}/>
+            <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>Welcome to Okki QR</p></div>
             {hide===true?"":
             <div className={style.qr_row}>
                 <div onClick={()=>startQR(width<=768?"environment":"")}>
