@@ -5,7 +5,6 @@ import Link from "next/link";
 import translate from "/translate/constructor/acc/navbar_translate";
 import style from "/styles/constructor/index.module.css";
 import nav_translate from "/translate/services/all_translate";
-import type_translate from "/translate/services/type_translate";
 import seo from "/translate/health/index_seo";
 import AllService from '/start/services/all.json';
 import NavbarApp from '/pages/navbar_app/nav';
