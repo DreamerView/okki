@@ -600,7 +600,7 @@ select:-webkit-autofill:focus {
       --m-2: 64px 150px;
       --m-3: 64px 150px;
       --m-4: 8px 150px 48px 150px;
-      --s-1: 64px 150px 32px 150px;
+      --s-1: 32px 150px 32px 150px;
       --s-2: 32px 150px;
       --n-1: 32px 150px;
       --n-2: 16px 37.5px;
