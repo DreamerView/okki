@@ -44,27 +44,7 @@ const HealthIndex = ({lang}) => {
             <div className="main_row">
             <h1 className="flex_text">{nav_translate["health"][lang]} <div className="emoji_h1"><Image title={'Microsoft red heart emoji (Used for informational purposes only)'} priority src={"/emoji-small/red_heart.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
-            <div className={style.main__module_row}>
-
-                {/*  */}
-                {/* {AllService.filter(e=>{return e.category === 'health'}).map((e,index)=>
-                    <Link onClick={()=>historyAction(e.name)} title={nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
-                    <div className={`${style.main__module_row_block} anim_hover`}>
-                        <div>
-                            <div className={`${style.main__module_row_block_img}`}>
-                                <Image loading='lazy' title={nav_translate[e.name][lang]} alt="service" width={60} height={60} className={style.main__module_row_block_pic} src={e.image}/>
-                            </div>
-                        </div>
-                        <div className={style.main__module_row_block_f}>
-                            <span className="head_1">{nav_translate[e.name][lang]}</span>
-                            <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                        </div>
-                    </div>
-                    </Link>
-                    )} */}
-                    <AppStore category="health" serv={AllService} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
-                {/*  */}
-            </div>
+            <AppStore category="health" serv={AllService} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
             </div>
         </div>
       </>
