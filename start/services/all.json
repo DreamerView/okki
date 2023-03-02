@@ -155,5 +155,15 @@
         "location":"/health/rh-factor-in-family-planning",
         "type":"services",
         "category":"health"
+    },
+    {
+        "title":"Okki QR",
+        "name":"qr",
+        "image":"/services/qr.webp",
+        "image_background":"purple_background",
+        "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
+        "location":"/technology/qr",
+        "type":"services",
+        "category":"tech"
     }
 ]

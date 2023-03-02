@@ -83,5 +83,10 @@ export default {
         kk:"Отбасын жоспарлау кезіндегі Rh факторы",
         ru:"Резус фактор при планировании семьи",
         en:"Rh factor in family planning"
+    },
+    qr: {
+        kk:"Okki QR",
+        ru:"Okki QR",
+        en:"Okki QR"
     }
 }
