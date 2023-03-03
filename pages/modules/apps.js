@@ -1,4 +1,3 @@
-import type_translate from "/translate/services/type_translate";
 import style from "/styles/constructor/index.module.css";
 import {useState,useEffect,useRef} from "react";
 

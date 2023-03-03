@@ -28,7 +28,7 @@ const AppShow = ({name,translate,Image,lang}) => {
         <div className="main__app_info_banner">
             <div className="main__app_info_banner_block">
                 <p className="small">Rating</p>
-                <h1>4.8</h1>
+                <h1>5.0</h1>
                 <p className="small">★★★★★</p>
             </div>
             <div className="main__app_info_banner_block">
