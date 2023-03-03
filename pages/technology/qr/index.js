@@ -2,10 +2,7 @@ import { useEffect,useState } from "react";
 import {Html5Qrcode} from "html5-qrcode";
 import NavbarApp from "/pages/navbar_app/nav";
 import style from "/styles/technology/qr/index.module.css";
-import dynamic from "next/dynamic";
-const LazyImage = dynamic(()=>import("/start/lazyimage"),{ssr:false});
 import AppShow from "/pages/modules/app";
-import nav_translate from "/translate/services/all_translate";
 import Image from "next/image";
 
 const QR = ({lang}) => {
@@ -116,7 +113,7 @@ const QR = ({lang}) => {
                 <div onClick={()=>startQR(width<=768?"environment":"")}>
                     <div className={style.qr_image}>
                         <div className={style.qr_pic}>
-                            <LazyImage src={"/img/add_a_photo.svg"}/>
+                            <Image priority={true} width={50} height={50} alt="Add Image Icon" src={"/img/add_a_photo.svg"}/>
                         </div>
                     </div>
                     <p>Open camera</p>
@@ -124,7 +121,7 @@ const QR = ({lang}) => {
                 <div >
                     <div className={style.qr_image}>
                         <div className={style.qr_pic}>
-                            <LazyImage src={"/img/add_a_photo.svg"}/>
+                            <Image priority={true} width={50} height={50} alt="Upload Image Icon" src={"/img/add_a_photo.svg"}/>
                         </div>
                     </div>
                     <p>Click to start</p>

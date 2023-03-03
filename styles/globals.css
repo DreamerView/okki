@@ -960,7 +960,7 @@ div.c>input.header__search_input:focus+div.header__search_menu {
 ::-webkit-scrollbar-thumb {
   background-color: var(--sub_content);
   border-radius: 15px;
-  opacity: 0.3
+  opacity: 0.1
 }
 
 ::-webkit-scrollbar-thumb:hover {
