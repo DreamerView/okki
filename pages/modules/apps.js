@@ -1,5 +1,5 @@
 import style from "/styles/constructor/index.module.css";
-import {useState,useEffect,useRef} from "react";
+import {useState,useEffect,useRef,memo} from "react";
 
 const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
     const content = useRef();
@@ -60,4 +60,4 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
       </div>
     )
 };
-export default AppStore;
+export default memo(AppStore);

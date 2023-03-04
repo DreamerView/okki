@@ -1,5 +1,6 @@
 import ux from "/translate/ux/action";
 import { RWebShare } from "react-web-share";
+import { memo } from "react";
 const AppShow = ({name,translate,Image,lang}) => {
     return(
         <div className="main__app_i">
@@ -50,4 +51,4 @@ const AppShow = ({name,translate,Image,lang}) => {
         </div>
     );
 };
-export default AppShow;
+export default memo(AppShow);
