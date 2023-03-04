@@ -9,7 +9,7 @@ const AppShow = ({name,translate,Image,lang}) => {
             <div className="main__app_info_block">
                 <div className="block_1">
                 <h3>{translate}</h3>
-                <p className="smaller">Здоровье</p>
+                <p className="smaller">{ux['service'][lang]}</p>
                 </div>
                 <div className="block_2">
                 <button className="main__app_info_action anim_hover">{ux['save'][lang]}</button>

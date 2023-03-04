@@ -63,5 +63,10 @@ export default {
         kk:"Кіру",
         ru:"Войти",
         en:"Sign in"
+    },
+    service: {
+        kk:"Қызмет",
+        ru:"Сервис",
+        en:"Service"
     }
 }
