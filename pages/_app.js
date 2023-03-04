@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { SessionProvider } from "next-auth/react"
 import "/styles/globals.css";
+import "/styles/preloader.css";
 const DocumentResult = dynamic(()=>import("/start/document"));
 
 const Preloader = () => {
@@ -102,7 +103,7 @@ const MyApp = ({ Component, pageProps, session }) => {
             <SessionProvider session={session}>
                 <Provider store={store}>
                     <DocumentResult>
-                    {(result)? <Preloader/>:<Component {...pageProps} />}
+                    {result? <Preloader/>:<Component {...pageProps} />}
                     </DocumentResult>
                 </Provider>
             </SessionProvider>

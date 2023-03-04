@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 import { useEffect,useState,useRef } from "react";
 import dynamic from "next/dynamic";
-const AppStore =  dynamic(()=>import("/pages/modules/apps"));
+const AppStore =  dynamic(()=>import("/pages/modules/apps"),{loading: () => '<div className="app_show_preloader">Loading</div>',});
 
 const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,style}) => {
   const banner = useRef(),
@@ -62,7 +62,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
             </div>
             {/* <hr/> */}
             <h1>Просто попробуйте</h1>
-            <AppStore serv={serv} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
+              <AppStore serv={serv} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
           </div>
       </div>
         </>
