@@ -6,7 +6,8 @@ import style from "/styles/health/rh-factor-in-pregnancy-planning/index.module.c
 import nav_text from "/translate/services/all_translate";
 import text from "/translate/health/rh-factor-in-family-planning/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
-import AppShow from "/pages/modules/app";
+import dynamic from "next/dynamic";
+const AppShow =  dynamic(()=>import("/pages/modules/app"));
 
 const RhFactorInPregnancyPlanning = ({lang}) => {
     const [manRh,setManRh] = useState(`I`);

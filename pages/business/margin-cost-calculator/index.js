@@ -6,7 +6,8 @@ import translate from "/translate/business/margin-markup-calculator/index_transl
 import style from "/styles/calculator/index.module.css";
 import nav_translate from "/translate/services/all_translate";
 import { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
+const AppShow =  dynamic(()=>import("/pages/modules/app"));
 const NavbarApp = dynamic(()=>import('/pages/navbar_app/nav'),{ssr:false});
 
 export const getStaticProps = async ({locale}) => {

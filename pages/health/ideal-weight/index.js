@@ -6,7 +6,8 @@ import text from "/translate/health/ideal-weight/index_translate";
 import style from "/styles/calculator/index.module.css";
 import nav_text from "/translate/services/all_translate";
 import NavbarApp from '/pages/navbar_app/nav';
-import AppShow from "/pages/modules/app";
+import dynamic from "next/dynamic";
+const AppShow =  dynamic(()=>import("/pages/modules/app"));
 
 const IdealWeight = ({lang}) => {
     const [male,setMale] = useState('other');

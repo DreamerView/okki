@@ -7,7 +7,8 @@ import ux from "/translate/ux/action";
 import text from "/translate/constructor/acc/index_translate";
 import seo from "/translate/constructor/acc/index_seo";
 import NavbarApp from '/pages/navbar_app/nav';
-import AppShow from "/pages/modules/app";
+import dynamic from "next/dynamic";
+const AppShow =  dynamic(()=>import("/pages/modules/app"));
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};

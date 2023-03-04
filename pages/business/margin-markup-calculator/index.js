@@ -8,7 +8,7 @@ import nav_translate from "/translate/services/all_translate";
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 const NavbarApp = dynamic(()=>import('/pages/navbar_app/nav'),{ssr:false});
-import AppShow from "/pages/modules/app";
+const AppShow =  dynamic(()=>import("/pages/modules/app"));
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};

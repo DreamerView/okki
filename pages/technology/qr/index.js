@@ -2,7 +2,8 @@ import { useEffect,useState } from "react";
 import {Html5Qrcode} from "html5-qrcode";
 import NavbarApp from "/pages/navbar_app/nav";
 import style from "/styles/technology/qr/index.module.css";
-import AppShow from "/pages/modules/app";
+import dynamic from "next/dynamic";
+const AppShow =  dynamic(()=>import("/pages/modules/app"));
 import Image from "next/image";
 
 const QR = ({lang}) => {

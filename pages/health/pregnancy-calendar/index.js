@@ -6,7 +6,8 @@ import nav_text from "/translate/services/all_translate";
 import style from "/styles/health/index.module.css";
 import text from "/translate/health/pregnancy-calendar/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
-import AppShow from "/pages/modules/app";
+import dynamic from "next/dynamic";
+const AppShow =  dynamic(()=>import("/pages/modules/app"));
 
 const PregnancyCalendar = ({lang})=>{
     const [date,setDate] = useState(0);
