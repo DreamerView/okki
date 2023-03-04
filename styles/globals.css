@@ -1608,10 +1608,6 @@ div.main_app_block_row {
   display: flex;
   align-items: center;
   position: relative;
-  max-width:1920px;
-  width:100%;
-  min-width: 160px;
-  margin: 0 auto
 }
 div.main_app {
   padding:var(--m-4);
@@ -1861,7 +1857,10 @@ div.main_back_fixed_1 {
   background-color: var(--header-color);
   z-index:999;
   padding:var(--s-2);
-  box-sizing: border-box
+  box-sizing: border-box;
+  max-width:1920px;
+  width:100%;
+  min-width: 160px;
 }
 
 div.main_back {
