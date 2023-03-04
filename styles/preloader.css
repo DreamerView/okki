@@ -6,8 +6,8 @@ div.app_show_preloader {
     justify-content: center;
 }
 div.app_show_preloader > svg {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }
 .app_show_svg {
     fill:var(--font-color);
