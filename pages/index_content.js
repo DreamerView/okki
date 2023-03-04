@@ -1,19 +1,20 @@
 /*jshint esversion: 6 */
 import { useEffect,useState,useRef } from "react";
-import AppStore from "/pages/modules/apps";
+import dynamic from "next/dynamic";
+const AppStore =  dynamic(()=>import("/pages/modules/apps"));
 
 const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,style}) => {
-  const banner = useRef();
-  const [lazy,setLazy] = useState(false);
-  const [offset, setOffset] = useState(0);
-  const locale = lang,serv = service!==undefined?service:[{}];
-  const historyAction = (service) => {
+  const banner = useRef(),
+  [lazy,setLazy] = useState(false),
+  [offset, setOffset] = useState(0),
+  locale = lang,serv = service!==undefined?service:[{}],
+  historyAction = (service) => {
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
     return localStorage.historyAction=JSON.stringify(historyResult);
-  };
-  const onScroll = () => setOffset(prev=>prev=banner.current.scrollLeft);
-  const toRightScroll = () => banner.current.scrollBy({left:364,behavior: 'smooth'});
-  const toLeftScroll = () => banner.current.scrollBy({left:-364,behavior: 'smooth'});
+  },
+  onScroll = () => setOffset(prev=>prev=banner.current.scrollLeft),
+  toRightScroll = () => banner.current.scrollBy({left:364,behavior: 'smooth'}),
+  toLeftScroll = () => banner.current.scrollBy({left:-364,behavior: 'smooth'});
   useEffect(()=>{
     if(typeof Window !== 'undefined') {
       const result = banner.current;
