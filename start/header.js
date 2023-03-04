@@ -1,14 +1,13 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
 import {useEffect} from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
 const Search = dynamic(()=>import("/start/header_action/search"),{ssr:false});
 const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:false});
 
-const Header = ({action,useDispatch}) => {
+const Header = ({action,useDispatch,Link}) => {
     const send = useDispatch(),
     {locale} = action,
     SetLanguage = () => send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});

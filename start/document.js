@@ -69,7 +69,7 @@ const DocumentResult = ({children}) => {
             {frame!==false&&<FullFrame item={url} key={Date.now()}/>}
             {action!==false&&<ConfirmMode router={router} Link={Link} useDispatch={useDispatch} item={action} key={Date.now}/>}
             {image!==false&&<ResizeImage item={image} key={Date.now}/>}
-            {header===true&&<Header useDispatch={useDispatch} action={router}/>}
+            {header===true&&<Header Link={Link} useDispatch={useDispatch} action={router}/>}
             {main!==false&&<div className="main_hide"/>}
             <div className="result">{children}</div>
         </div>
