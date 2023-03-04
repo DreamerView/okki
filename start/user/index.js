@@ -1,18 +1,15 @@
 /*jshint esversion: 6 */
 
-import Link from "next/link";
 import Image from "next/image";
 import ux from "/translate/ux/action";
-import useTranslateText from "/start/translate";
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useState,useEffect,useRef } from "react";
 const AesEncryption = require('aes-encryption');
 
-const UserIndex = () => {
-    const lazy = useRef(false);
-    const [res,setRes] = useState(null);
-    const lang = useTranslateText();
-    const aes = new AesEncryption();
+const UserIndex = ({Link,lang}) => {
+    const lazy = useRef(false),
+    [res,setRes] = useState(null),
+    aes = new AesEncryption();
     aes.setSecretKey(process.env.aesKey);
     useEffect(() => {
       if (typeof window !== "undefined"&&lazy.current) return;

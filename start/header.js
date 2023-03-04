@@ -51,7 +51,7 @@ const Header = ({action}) => {
             </Link>
           </div>
           <div className="header__action">
-            <UserIndex item={{login:login}}/>
+            <UserIndex Link={Link} lang={locale}/>
             <div onClick={()=>SetLanguage()} className="header__action_block anim_hover">
             <span className="header__action_block_text">{locale}</span>
             <div className="header__search_menu_pic"></div>
