@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Head from 'next/head';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
-import Search from "/start/header_action/search";
-const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:true});
+const Search = dynamic(()=>import("/start/header_action/search"),{ssr:false});
+const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:false});
 
 const Header = ({action,useDispatch}) => {
     const send = useDispatch(),
