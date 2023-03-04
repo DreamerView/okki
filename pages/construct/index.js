@@ -9,7 +9,7 @@ import seo from "/translate/constructor/index_seo";
 import AllService from '/start/services/all.json';
 import NavbarApp from '/pages/navbar_app/nav';
 import dynamic from "next/dynamic";
-import AppStorePreloader from "pages/modules/apps_preloader";
+import AppStorePreloader from "/pages/modules/apps_preloader";
 const AppStore =  dynamic(()=>import("/pages/modules/apps"),{loading: AppStorePreloader});
 const ConstructorIndex = ({lang}) => {
     return(

@@ -9,7 +9,8 @@ import seo from "/translate/finance/index_seo";
 import AllService from '/start/services/all.json';
 import NavbarApp from '/pages/navbar_app/nav';
 import dynamic from "next/dynamic";
-const AppStore =  dynamic(()=>import("/pages/modules/apps"));
+import AppStorePreloader from "/pages/modules/apps_preloader";
+const AppStore =  dynamic(()=>import("/pages/modules/apps"),{loading: AppStorePreloader});
 
 const FinanceIndex = ({lang}) => {
     const historyAction = (service) => {
