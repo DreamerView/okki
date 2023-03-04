@@ -1,17 +1,13 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
-import { useState,useEffect} from 'react';
+import {useState,useEffect} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
-import { useDispatch,useSelector } from 'react-redux';
+import {useDispatch,useSelector } from 'react-redux';
 import Search from "/start/header_action/search";
 const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:true});
-
-export const getStaticPaths = async ({locale}) => {
-  return {props:{lang:locale}};
-};
 
 const Header = ({action}) => {
     const send = useDispatch();
