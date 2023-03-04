@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
-import {useState,useEffect} from 'react';
+import {useEffect} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import translate from "/translate/header_translate";
@@ -8,13 +8,10 @@ import text from "/translate/seo_index";
 import Search from "/start/header_action/search";
 const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:true});
 
-const Header = ({action,useDispatch,useSelector}) => {
+const Header = ({action,useDispatch}) => {
     const send = useDispatch(),
-    auth = useSelector(state=>state.auth),
     {locale} = action,
-    [login,setLogin] = useState(false),
     SetLanguage = () => send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
-    
     useEffect(()=>{
         let box = document.querySelector('header'),height = box.clientHeight;
         send({type:"setHeaderHeight",set:height});
