@@ -2,7 +2,6 @@ import style from "/styles/constructor/index.module.css";
 import {useState,useEffect,useRef} from "react";
 
 const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
-    console.log(category)
     const content = useRef();
     const [lazy,setLazy] = useState(false);
     const [offset, setOffset] = useState(0);

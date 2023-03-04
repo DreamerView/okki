@@ -1,8 +1,9 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { useEffect,useState,useRef } from 'react';
 import Header from "/start/header";
+import Link from 'next/link';
 const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
 const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
 const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
@@ -64,12 +65,12 @@ const DocumentResult = ({children}) => {
     },[]);
     return(
         <div>
-            {notification&&<NotificationModule/>}
-            {frame&&<FullFrame item={url} key={Date.now()}/>}
-            {action&&<ConfirmMode item={action} key={Date.now}/>}
-            {image&&<ResizeImage item={image} key={Date.now}/>}
+            {notification!==false&&<NotificationModule/>}
+            {frame!==false&&<FullFrame item={url} key={Date.now()}/>}
+            {action!==false&&<ConfirmMode router={router} Link={Link} useDispatch={useDispatch} item={action} key={Date.now}/>}
+            {image!==false&&<ResizeImage item={image} key={Date.now}/>}
             {header===true&&<Header action={router}/>}
-            {main&&<div className="main_hide"/>}
+            {main!==false&&<div className="main_hide"/>}
             <div className="result">{children}</div>
         </div>
     );
