@@ -36,8 +36,7 @@ const Header = () => {
       return () => false;
     },[auth]);
     useEffect(()=>{
-        let box = document.querySelector('header');
-        let height = box.clientHeight;
+        let box = document.querySelector('header'),height = box.clientHeight;
         send({type:"setHeaderHeight",set:height});
         return () => false;
     });
