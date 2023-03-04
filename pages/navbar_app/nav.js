@@ -7,22 +7,17 @@ import { useSelector } from "react-redux";
 import { useRouter } from 'next/navigation';
 
 
-const NavbarApp = ({to,choice,with_save,save_name,mode,lang}) => {
+const NavbarApp = ({to,choice,mode,lang}) => {
     const router = useRouter();
     const headerHeight= useSelector(state=>state.headerHeight);
-    const result = to!=='undefined'?to:[{}];
+    const result = to!==undefined?to:[{}];
     const [scrollResult,setScrollResult] = useState('');
     useEffect(() => {
         const handleScroll = () => {
-            if(choice==='alone'){
-                const scrolled = window.pageYOffset;
-                if (scrolled >= headerHeight) setScrollResult((prev)=>prev='_fixed');
-                else setScrollResult((prev)=>prev='');
-            }
+            const scrolled = window.pageYOffset;
+            choice==='alone'&&setScrollResult((prev)=>scrolled >= headerHeight?prev='_fixed':prev="");
         };
-    
         window.addEventListener('scroll', handleScroll);
-    
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
@@ -41,7 +36,7 @@ const NavbarApp = ({to,choice,with_save,save_name,mode,lang}) => {
         <div className="main__nav block_animation">
             <p className="nav">
             <Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  
-            {result?
+            {result!==undefined&&
             result.map((sends,index)=>
                 <React.Fragment key={index}>
                 {sends.path==='last'?
@@ -53,11 +48,11 @@ const NavbarApp = ({to,choice,with_save,save_name,mode,lang}) => {
                 }
                 </React.Fragment>
                 )
-            :''}
+            }
             </p>
         </div>:
         mode==='standalone'?<>
-        {scrollResult==="_fixed"?
+        {scrollResult==="_fixed"&&
             <div onClick={()=>router.back()} className={`main_back_fixed_1`}>
                 <div className="main_app_block_row">
                     <div className='main_back_button'>
@@ -66,7 +61,7 @@ const NavbarApp = ({to,choice,with_save,save_name,mode,lang}) => {
                 </div>
                 <p>{ux['back'][lang]}</p>
             </div>
-        :""}
+        }
             <div onClick={()=>router.back()} className={`main_back_1`}>
                 <div className="main_app_block_row">
                     <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
@@ -77,7 +72,7 @@ const NavbarApp = ({to,choice,with_save,save_name,mode,lang}) => {
             </div>
     </>:
         <>
-            {scrollResult==="_fixed"?
+            {scrollResult==="_fixed"&&
                 <div onClick={()=>router.back()} className={`main_back_fixed`}>
                     <div className="main_app_block_row">
                         <div className='main_back_button'>
@@ -86,9 +81,9 @@ const NavbarApp = ({to,choice,with_save,save_name,mode,lang}) => {
                         <p>{ux['back'][lang]}</p>
                     </div>
                 </div>
-            :""}
+            }
                 <div onClick={()=>router.back()} className={`main_back`}>
-                    <div className="main_app_block_row">
+                    <div className="main_app_block_row block_animation">
                         <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
                             <div className='main_back_button_i'/>
                         </div>
