@@ -7,7 +7,8 @@ import nav_translate from "/translate/services/all_translate";
 import text from "/translate/health/index-of-the-smoking-person/index_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 import dynamic from "next/dynamic";
-const AppShow =  dynamic(()=>import("/pages/modules/app"));
+import AppPreloader from "/pages/modules/app_preloader";
+const AppShow =  dynamic(()=>import("/pages/modules/app"),{loading: AppPreloader});
 
 const Deposit = ({lang}) => {
     const [num,setNum] = useState('');
