@@ -2,16 +2,16 @@
 import dynamic from 'next/dynamic';
 import { useSelector,useDispatch } from 'react-redux';
 import { useEffect,useState,useRef } from 'react';
-import Header from "/start/header";
 import Link from 'next/link';
+import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
+import { useRouter } from 'next/router';
+import { useMediaQuery } from 'react-responsive';
+const Header = dynamic(()=>import("/start/header"));
 const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
 const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
 const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
 const NotificationModule = dynamic(()=>import('/start/notification'),{ssr:false});
 const AesEncryption = require('aes-encryption');
-import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
-import { useRouter } from 'next/router';
-import { useMediaQuery } from 'react-responsive';
 
 const DocumentResult = ({children}) => {
     const lazy = useRef(false),
