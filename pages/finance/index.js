@@ -8,7 +8,8 @@ import nav_translate from "/translate/services/all_translate";
 import seo from "/translate/finance/index_seo";
 import AllService from '/start/services/all.json';
 import NavbarApp from '/pages/navbar_app/nav';
-import AppStore from "/pages/modules/apps";
+import dynamic from "next/dynamic";
+const AppStore =  dynamic(()=>import("/pages/modules/apps"));
 
 const FinanceIndex = ({lang}) => {
     const historyAction = (service) => {
