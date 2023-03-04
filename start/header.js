@@ -10,11 +10,11 @@ import Search from "/start/header_action/search";
 const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:true});
 
 const Header = ({action}) => {
-    const send = useDispatch();
-    const auth = useSelector(state=>state.auth);
-    const {locale} = action;
-    const [login,setLogin] = useState(false);
-    const SetLanguage = () => send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
+    const send = useDispatch(),
+    auth = useSelector(state=>state.auth),
+    {locale} = action,
+    [login,setLogin] = useState(false),
+    SetLanguage = () => send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
     useEffect(()=>{
       const getCookie = (cookieName) => {
         let cookies = {};

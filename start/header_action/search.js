@@ -6,13 +6,13 @@ import translate from "/translate/header_translate";
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
 
 const Search = (res) => {
-    const locale = res.lang;
-    const focus = useRef();
-    const [list,setList] = useState();
-    const [search,setSearch] = useState('');
-    const [cancel,setCancel] = useState(false);
-    const [result,setResult] = useState([]);
-    const [accept,setAccept] = useState(false);
+    const locale = res.lang,
+    focus = useRef(),
+    [list,setList] = useState(),
+    [search,setSearch] = useState(''),
+    [cancel,setCancel] = useState(false),
+    [result,setResult] = useState([]),
+    [accept,setAccept] = useState(false);
     useEffect(()=>{
         setResult(prev=>prev=SearchResult.filter((e)=>{
           if(search === '') return 0;
@@ -24,22 +24,22 @@ const Search = (res) => {
       },[search,focus]);
       useEffect(()=>{
           const handler = () =>{
-            setSearch(prev=>prev=list);
-            setCancel(prev=>prev=true);
-            return setAccept(prev=>prev=true);
+            return setSearch(prev=>prev=list),
+            setCancel(prev=>prev=true),
+            setAccept(prev=>prev=true);
           };
           focus.current.addEventListener('focus',handler);
           return () => {
             focus.current!==null&&focus.current.removeEventListener('focus',handler);
           };
       },[focus,list]);
-      const RemoveBlur = () => {setAccept(prev=>prev=false);setCancel(prev=>prev=false);setResult(prev=>prev=[]);focus.current.value=""};
+      const RemoveBlur = () => {setAccept(prev=>prev=false),setCancel(prev=>prev=false),setResult(prev=>prev=[]),focus.current.value=""};
       const getList = (e) => {
-        setList(prev=>prev=e);
-        focus.current.value = e;
-        setAccept(prev=>prev=false);
-        setCancel(prev=>prev=false);
-        return setSearch((prev)=>prev=e);
+        return setList(prev=>prev=e),
+        focus.current.value = e,
+        setAccept(prev=>prev=false),
+        setCancel(prev=>prev=false),
+        setSearch((prev)=>prev=e);
       };
     return (
       <>
