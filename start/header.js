@@ -5,30 +5,16 @@ import Link from 'next/link';
 import Head from 'next/head';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
-import {useDispatch,useSelector } from 'react-redux';
 import Search from "/start/header_action/search";
 const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:true});
 
-const Header = ({action}) => {
+const Header = ({action,useDispatch,useSelector}) => {
     const send = useDispatch(),
     auth = useSelector(state=>state.auth),
     {locale} = action,
     [login,setLogin] = useState(false),
     SetLanguage = () => send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
-    useEffect(()=>{
-      const getCookie = (cookieName) => {
-        let cookies = {};
-        document.cookie.split(';').forEach((el)=> {
-          let [key,value] = el.split('=');
-          cookies[key.trim()] = value;
-        });
-        return cookies[cookieName];
-      };
-      const cookie = getCookie("accessToken");
-      setLogin((prev)=>cookie!==undefined?prev=true:prev=false);
-      if(auth) setLogin((prev)=>prev=auth);
-      return () => false;
-    },[auth]);
+    
     useEffect(()=>{
         let box = document.querySelector('header'),height = box.clientHeight;
         send({type:"setHeaderHeight",set:height});
