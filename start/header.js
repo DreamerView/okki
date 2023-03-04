@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic';
 import { useState,useEffect} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
 import { useDispatch,useSelector } from 'react-redux';
@@ -14,11 +13,10 @@ export const getStaticPaths = async ({locale}) => {
   return {props:{lang:locale}};
 };
 
-const Header = () => {
+const Header = ({action}) => {
     const send = useDispatch();
-    const router = useRouter();
     const auth = useSelector(state=>state.auth);
-    const {locale} = router;
+    const {locale} = action;
     const [login,setLogin] = useState(false);
     const SetLanguage = () => send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
     useEffect(()=>{
@@ -64,7 +62,7 @@ const Header = () => {
           </div>
           </div></>
           <div className="header__search">
-            <Search text={translate['search'][locale]}/>
+            <Search lang={locale} text={translate['search'][locale]}/>
           </div>
         </header>
       </>

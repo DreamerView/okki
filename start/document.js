@@ -68,7 +68,7 @@ const DocumentResult = ({children}) => {
             {frame&&<FullFrame item={url} key={Date.now()}/>}
             {action&&<ConfirmMode item={action} key={Date.now}/>}
             {image&&<ResizeImage item={image} key={Date.now}/>}
-            {header===true&&<Header/>}
+            {header===true&&<Header action={router}/>}
             {main&&<div className="main_hide"/>}
             <div className="result">{children}</div>
         </div>

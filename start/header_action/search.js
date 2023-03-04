@@ -3,12 +3,10 @@ import { useState,useEffect,useRef,memo } from 'react';
 import SearchResult from "/start/services/all.json";
 import dynamic from 'next/dynamic';
 import translate from "/translate/header_translate";
-import { useRouter } from 'next/router';
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
 
 const Search = (res) => {
-    const router = useRouter(); 
-    const {locale} = router;
+    const locale = res.lang;
     const focus = useRef();
     const [list,setList] = useState();
     const [search,setSearch] = useState('');
@@ -55,7 +53,7 @@ const Search = (res) => {
                 <p>{translate['search_not'][locale]}</p>:
               <>
                 <p>{translate['search_found'][locale]}</p>
-                <div>{result.slice(0,5).map((v,i)=><SearchBlocks item={v} key={i+1} send={getList}/>)}</div>
+                <div>{result.slice(0,5).map((v,i)=><SearchBlocks item={v} lang={locale} key={i+1} send={getList}/>)}</div>
               </>}
             </div>}
       </>

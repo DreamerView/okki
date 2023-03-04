@@ -1,15 +1,13 @@
 /*jshint esversion: 6 */
 import translate from "/translate/services/all_translate";
 import type_translate from "/translate/services/type_translate";
-import { useRouter } from "next/router";
 import style from '/styles/search_block.module.css';
 import Image from "next/image";
 import Link from "next/link";
 import { memo } from "react";
 
 const SearchBlocks = (res) => {
-    const router = useRouter();
-    const {locale} = router;
+    const locale = res.lang;
     return(
         <>
             <Link href={res.item.location} prefetch={false} >
