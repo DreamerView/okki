@@ -1,12 +1,9 @@
 /*jshint esversion: 6 */
 import { useState,useCallback,memo } from 'react';
 import Cropper from 'react-easy-crop';
-import { useDispatch } from 'react-redux';
-import useTranslateText from '/start/translate';
-import ux from '/translate/ux/action';
 
-const ResizeImage = (result) => {
-    const lang = useTranslateText();
+const ResizeImage = ({item,router,useDispatch,ux}) => {
+    const lang = router.locale;
     const send = useDispatch();
     const [position,setPosition] = useState({width:'',height:'',x:'',y:''});
     const [crop, setCrop] = useState({ x: 0, y: 0 });
@@ -18,7 +15,7 @@ const ResizeImage = (result) => {
     }, []);
     const SaveResult = () => {
         const image = document.createElement('img');
-        image.src = result.item.image;
+        image.src = item.image;
         image.onload = () => {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
@@ -27,7 +24,7 @@ const ResizeImage = (result) => {
             canvas.height = position.height;
             ctx.drawImage(image, position.x, position.y,position.width, position.height, 0, 0, position.width, position.height);
             const srcRes = ctx.canvas.toDataURL("image/webp");
-            send({type:"getCropImage",set:{id:result.item.id,image:srcRes}});
+            send({type:"getCropImage",set:{id:item.id,image:srcRes}});
             send({type:"setCropImage",set:false});
         };
     };
@@ -35,7 +32,7 @@ const ResizeImage = (result) => {
     <div className="main__crop_image">
         <div className="main__crop_image_block">
             <Cropper
-                image={result.item.image}
+                image={item.image}
                 crop={crop}
                 zoom={zoom}
                 aspect={3 / 3}

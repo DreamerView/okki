@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import ux from "/translate/ux/action";
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 const Header = dynamic(()=>import("/start/header"));
 const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
@@ -61,9 +62,9 @@ const DocumentResult = ({children,router,useMediaQuery,useSelector,useDispatch,u
     return(
         <div>
             {notification!==false&&<NotificationModule useDispatch={useDispatch} useSelector={useSelector} Image={Image}/>}
-            {frame!==false&&<FullFrame Image={Image} item={url} router={router} useDispatch={useDispatch} key={Date.now()}/>}
+            {frame!==false&&<FullFrame ux={ux} Image={Image} item={url} router={router} useDispatch={useDispatch} key={Date.now()}/>}
             {action!==false&&<ConfirmMode router={router} Link={Link} useDispatch={useDispatch} item={action} key={Date.now}/>}
-            {image!==false&&<ResizeImage item={image} key={Date.now}/>}
+            {image!==false&&<ResizeImage ux={ux} useDispatch={useDispatch} router={router} item={image} key={Date.now}/>}
             {header===true&&<Header Link={Link} useDispatch={useDispatch} router={router} useEffect={useEffect}/>}
             {main!==false&&<div className="main_hide"/>}
             <div className="result">{children}</div>

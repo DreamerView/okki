@@ -1,8 +1,7 @@
 /*jshint esversion: 6 */
-import ux from "/translate/ux/action";
 import { memo } from "react";
 
-const FullFrame = ({item,router,useDispatch,Image}) => {
+const FullFrame = ({item,router,useDispatch,Image,ux}) => {
     const lang = router.locale;
     const send = useDispatch();
     return(
