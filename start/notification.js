@@ -1,8 +1,6 @@
 /*jshint esversion: 6 */
 
-import { useSelector,useDispatch } from "react-redux";
-import Image from "next/image";
-const setNotification = () => {
+const setNotification = ({useDispatch,useSelector,Image}) => {
     const send = useDispatch();
     const notification = useSelector(state=>state.notification);
     const status = notification.user;

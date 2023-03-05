@@ -9,7 +9,7 @@ const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
 const NotificationModule = dynamic(()=>import('/start/notification'),{ssr:false});
 const AesEncryption = require('aes-encryption');
 
-const DocumentResult = ({children,router,useMediaQuery,useSelector,useDispatch,useEffect,useState,useRef}) => {
+const DocumentResult = ({children,router,useMediaQuery,useSelector,useDispatch,useEffect,useState,useRef,Image}) => {
     const lazy = useRef(false),
     lazy1 = useRef(false),
     lazy2 = useRef(false),
@@ -60,8 +60,8 @@ const DocumentResult = ({children,router,useMediaQuery,useSelector,useDispatch,u
     },[]);
     return(
         <div>
-            {notification!==false&&<NotificationModule/>}
-            {frame!==false&&<FullFrame item={url} key={Date.now()}/>}
+            {notification!==false&&<NotificationModule useDispatch={useDispatch} useSelector={useSelector} Image={Image}/>}
+            {frame!==false&&<FullFrame Image={Image} item={url} router={router} useDispatch={useDispatch} key={Date.now()}/>}
             {action!==false&&<ConfirmMode router={router} Link={Link} useDispatch={useDispatch} item={action} key={Date.now}/>}
             {image!==false&&<ResizeImage item={image} key={Date.now}/>}
             {header===true&&<Header Link={Link} useDispatch={useDispatch} router={router} useEffect={useEffect}/>}

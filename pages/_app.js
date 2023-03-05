@@ -3,11 +3,12 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import Router,{useRouter} from 'next/router';
 import translate from "/translate/ux/loading_page";
-import { useEffect,useState,useRef } from "react";
+import { useEffect,useState,useRef,memo } from "react";
 import { legacy_createStore as createStore } from 'redux';
 import { Provider,useSelector,useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { SessionProvider } from "next-auth/react";
+import Image from "next/image";
 import "/styles/globals.css";
 import "/styles/preloader.css";
 const DocumentResult = dynamic(()=>import("/start/document"));
@@ -101,7 +102,7 @@ const MyApp = ({ Component, pageProps, session }) => {
             <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
             <SessionProvider session={session}>
                 <Provider store={store}>
-                    <DocumentResult router={useRouter()} useMediaQuery={useMediaQuery} useSelector={useSelector} useDispatch={useDispatch} useEffect={useEffect} useState={useState} useRef={useRef}>
+                    <DocumentResult Image={Image} router={useRouter()} useMediaQuery={useMediaQuery} useSelector={useSelector} useDispatch={useDispatch} useEffect={useEffect} useState={useState} useRef={useRef}>
                     {result? <Preloader/>:<Component {...pageProps} />}
                     </DocumentResult>
                 </Provider>
