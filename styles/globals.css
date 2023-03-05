@@ -1633,7 +1633,7 @@ div.main__nav {
   -o-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px); 
 }
-@media not all and (display-mode: standalone) {
+
   div#globalLoader {
     position: fixed;
     z-index: 8999;
@@ -1779,12 +1779,7 @@ div.main__nav {
       opacity: 0;
     }
   }
-}
-@media all and (display-mode: standalone) {
-  div.header_preloader > p {
-    display: none
-  }
-}
+
 
 div.main_back_block {
   width:100%;
