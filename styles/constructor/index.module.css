@@ -31,6 +31,7 @@ div.main__module_row {
     display: flex;
     gap:24px;
     height:280px;
+    scroll-snap-type: x proximity;
 }
 div.main__module_row_panel {
     display: flex;
