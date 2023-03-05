@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import Router,{useRouter} from 'next/router';
 import translate from "/translate/ux/loading_page";
-import { useEffect,useState,useRef,memo } from "react";
+import { useEffect,useState,useRef } from "react";
 import { legacy_createStore as createStore } from 'redux';
 import { Provider,useSelector,useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
