@@ -1,15 +1,14 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
-import {useEffect} from 'react';
 import Head from 'next/head';
 import translate from "/translate/header_translate";
 import text from "/translate/seo_index";
 const Search = dynamic(()=>import("/start/header_action/search"),{ssr:false});
 const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:false});
 
-const Header = ({action,useDispatch,Link}) => {
+const Header = ({router,useDispatch,Link,useEffect}) => {
     const send = useDispatch(),
-    {locale} = action,
+    {locale} = router,
     SetLanguage = () => send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
     useEffect(()=>{
         let box = document.querySelector('header'),height = box.clientHeight;

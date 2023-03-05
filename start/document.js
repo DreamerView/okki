@@ -1,11 +1,7 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
-import { useSelector,useDispatch } from 'react-redux';
-import { useEffect,useState,useRef } from 'react';
 import Link from 'next/link';
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
-import { useRouter } from 'next/router';
-import { useMediaQuery } from 'react-responsive';
 const Header = dynamic(()=>import("/start/header"));
 const ConfirmMode = dynamic(()=>import('/start/confirm'),{ssr:false});
 const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
@@ -13,11 +9,10 @@ const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
 const NotificationModule = dynamic(()=>import('/start/notification'),{ssr:false});
 const AesEncryption = require('aes-encryption');
 
-const DocumentResult = ({children}) => {
+const DocumentResult = ({children,router,useMediaQuery,useSelector,useDispatch,useEffect,useState,useRef}) => {
     const lazy = useRef(false),
     lazy1 = useRef(false),
     lazy2 = useRef(false),
-    router = useRouter(),
     [header,setHeader] = useState(null),
     action = useSelector(state=>state.act),
     frame = useSelector(state=>state.fullframe),
@@ -69,7 +64,7 @@ const DocumentResult = ({children}) => {
             {frame!==false&&<FullFrame item={url} key={Date.now()}/>}
             {action!==false&&<ConfirmMode router={router} Link={Link} useDispatch={useDispatch} item={action} key={Date.now}/>}
             {image!==false&&<ResizeImage item={image} key={Date.now}/>}
-            {header===true&&<Header Link={Link} useDispatch={useDispatch} action={router}/>}
+            {header===true&&<Header Link={Link} useDispatch={useDispatch} router={router} useEffect={useEffect}/>}
             {main!==false&&<div className="main_hide"/>}
             <div className="result">{children}</div>
         </div>

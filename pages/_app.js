@@ -1,20 +1,19 @@
 /*jshint esversion: 6 */
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import Router from 'next/router';
-import useTranslateText from "/start/translate";
+import Router,{useRouter} from 'next/router';
 import translate from "/translate/ux/loading_page";
-import { useEffect,useState } from "react";
+import { useEffect,useState,useRef } from "react";
 import { legacy_createStore as createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { Provider,useSelector,useDispatch } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
-import { SessionProvider } from "next-auth/react"
+import { SessionProvider } from "next-auth/react";
 import "/styles/globals.css";
 import "/styles/preloader.css";
 const DocumentResult = dynamic(()=>import("/start/document"));
 
 const Preloader = () => {
-    const [color,setColor] = useState("#4634bc"),[timer,setTimer] = useState(false),checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'}),locale = useTranslateText();
+    const [color,setColor] = useState("#4634bc"),[timer,setTimer] = useState(false),checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'}),{locale} = useRouter();
     useEffect(()=>{
         return setColor(prev=>prev=checkMode?"#7d7aff":"#4634bc");
     },[checkMode]);
@@ -40,7 +39,7 @@ const Preloader = () => {
 };
 
 const MyApp = ({ Component, pageProps, session }) => {
-    const locale = useTranslateText(),[result,setResult] = useState(false);
+    const {locale} = useRouter(),[result,setResult] = useState(false);
     useEffect(()=>{
         Router.events.on('routeChangeStart', () => setResult((prev)=>prev=true)),
         Router.events.on('routeChangeComplete', () => setResult((prev)=>prev=false)),
@@ -102,7 +101,7 @@ const MyApp = ({ Component, pageProps, session }) => {
             <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
             <SessionProvider session={session}>
                 <Provider store={store}>
-                    <DocumentResult>
+                    <DocumentResult router={useRouter()} useMediaQuery={useMediaQuery} useSelector={useSelector} useDispatch={useDispatch} useEffect={useEffect} useState={useState} useRef={useRef}>
                     {result? <Preloader/>:<Component {...pageProps} />}
                     </DocumentResult>
                 </Provider>
