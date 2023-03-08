@@ -4,11 +4,12 @@ import Head from 'next/head';
 import text from "/translate/finance/deposit/index_translate";
 import style from "/styles/calculator/index.module.css";
 import nav_translate from "/translate/services/all_translate";
-import NavbarApp from '/pages/navbar_app/nav';
 import {useState,useCallback,useMemo} from 'react';
 import dynamic from "next/dynamic";
 import AppPreloader from "/pages/modules/app_preloader";
 const AppShow =  dynamic(()=>import("/pages/modules/app"),{loading: AppPreloader});
+import NavPreloader from "/pages/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/pages/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
 const Deposit = ({lang}) => {
     const [bet,setBet] = useState('');

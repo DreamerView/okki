@@ -12,6 +12,39 @@ div.app_show_preloader div.app_one_preloader > svg {
 .app_show_svg {
     fill:var(--font-color);
 }
+div.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate
+}
+  
+@keyframes skeleton-loading {
+    0% {
+        background-color: var(--skeleton-start)
+    }
+    100% {
+        background-color: var(--skeleton-end)
+    }
+}
+.navbar__preloader_border {
+    width:100%;
+    padding:var(--s-1);
+    box-sizing: border-box;
+    background-color: var(--header-color);
+    border-radius: 24px 24px 0 0;
+    display: flex;
+    align-items: center;
+    gap:16px;
+}
+.navbar__preloader_logo {
+    width:40px;
+    height:40px;
+    border-radius: 100%;
+}
+.navbar__preloader_content {
+    max-width:150px;
+    width:100%;
+    height:24px;
+    border-radius: 16px;
+}
 @media screen and (min-width:1080px) {
     div.app_one_preloader {
         width:100%;
