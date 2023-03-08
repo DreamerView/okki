@@ -490,8 +490,8 @@ p.nav > a {
       --brand_back:hsl(248, 57%, 59%);
       --email_img: url(../public/img/email-light.svg);
       --key_img: url(../public/img/key-light.svg);
-      --skeleton-start:hsl(0, 0%, 70%);
-      --skeleton-end:hsl(0, 0%, 88%)
+      --skeleton-start:hsl(0, 0%, 98%);
+      --skeleton-end:hsl(0, 0%, 90%)
   }
 }
 
