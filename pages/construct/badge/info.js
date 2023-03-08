@@ -78,7 +78,7 @@ const InfoAcc = ({lang}) => {
             <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
-                {results.map(result=> result == [{}]?"":<InfoBlock change={SaveResult} remove={RemovePerson} action={action} item={result} key={result.id} />)}
+                {results.map(result=> result == [{}]?"":<InfoBlock change={SaveResult} remove={RemovePerson} action={action} item={result} key={result.id} lang={lang} />)}
                 <div className={`${style.main__block_interface_menu} block_animation c-m click`} onClick={()=>AddNewPerson()}>
                     <div className={style.main__block_interface_menu_c_end}>
                         <div className={style.main__block_interface_menu_background}>

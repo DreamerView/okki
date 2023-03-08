@@ -6,11 +6,10 @@ import { useState,useEffect } from 'react';
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import useTranslateText from '/start/translate';
 import text from "/translate/constructor/acc/info_block_translate";
 
 const InfoBlock = (result) => {
-    const lang = useTranslateText();
+    const lang = result.lang;
     const send = useDispatch();
     const getcrop = useSelector(state=>state.getcrop);
     const [logo,setLogo] = useState("/img/man.webp");

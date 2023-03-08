@@ -7,12 +7,7 @@ import text from "/translate/constructor/acc/index_translate";
 import nav_translate from "/translate/services/all_translate";
 import NavbarApp from '/pages/navbar_app/nav';
 
-export const getStaticProps = async ({locale}) => {
-    return {props:{locale:locale}};
-};
-
-const BusinessIndex = ({locale}) => {
-    const lang = locale;
+const EducationIndex = ({lang}) => {
     return(
         <>
             <Head>
@@ -35,4 +30,8 @@ const BusinessIndex = ({locale}) => {
     );
 };
 
-export default BusinessIndex;
+EducationIndex.getInitialProps = async ({locale}) => {
+    return { lang:locale };
+};
+
+export default EducationIndex;
