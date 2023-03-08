@@ -21,7 +21,7 @@ const BMICalc = ({lang}) => {
     const i1 = useRef();
     const i2 = useRef();
     const i3 = useRef();
-    const s = setBmiApi(male,age,n1,n2);
+    const s = setBmiApi(male,age,n1,n2,lang);
     useEffect(()=>{
         if(anim===true) {
             setTimeout(()=>{
