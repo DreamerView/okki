@@ -9,8 +9,8 @@ import translate from "/translate/index_translate";
 import nav_translate from "/translate/services/all_translate";
 import Link from "next/link";
 import Image from "next/image";
-const IndexMenu = dynamic(()=>import('/pages/index_menu'));
-const IndexContent = dynamic(()=>import('/pages/index_content'));
+const IndexMenu = dynamic(()=>import('/modules/index_menu'));
+const IndexContent = dynamic(()=>import('/modules/index_content'));
 
 const Home = ({locale}) => {
   return(
