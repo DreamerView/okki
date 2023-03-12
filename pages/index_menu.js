@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 
-const IndexMenu = ({lang,service,styles,translate,nav_translate,Link,Image}) => {
-    const locale =lang,serv = service!==undefined?service:[{}];
+const IndexMenu = ({locale,service,styles,translate,nav_translate,Link,Image}) => {
+    const serv = service!==undefined?service:[{}];
     return(
         <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>
             <div className={styles.main__menu_nav_blocks}>

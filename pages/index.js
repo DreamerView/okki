@@ -32,8 +32,8 @@ const Home = ({locale}) => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-      <IndexMenu lang={locale} service={AllService} styles={styles} translate={translate} nav_translate={nav_translate} Link={Link} Image={Image}/>
-      <IndexContent lang={locale} service={AllService} style={style} styles={styles} translate={translate} nav_translate={nav_translate} Link={Link} Image={Image}/>
+      <IndexMenu locale={locale} service={AllService} styles={styles} translate={translate} nav_translate={nav_translate} Link={Link} Image={Image}/>
+      <IndexContent locale={locale} service={AllService} style={style} styles={styles} translate={translate} nav_translate={nav_translate} Link={Link} Image={Image}/>
     </>
   )
 };

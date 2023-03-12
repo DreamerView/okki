@@ -4,11 +4,11 @@ import dynamic from "next/dynamic";
 import AppStorePreloader from "/pages/modules/apps_preloader";
 const AppStore =  dynamic(()=>import("/pages/modules/apps"),{loading: AppStorePreloader});
 
-const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,style}) => {
+const IndexContent = ({locale,service,styles,translate,nav_translate,Link,Image,style}) => {
   const banner = useRef(),
   [lazy,setLazy] = useState(false),
   [offset, setOffset] = useState(0),
-  locale = lang,serv = service!==undefined?service:[{}],
+  serv = service!==undefined?service:[{}],
   historyAction = (service) => {
     const history = JSON.parse(localStorage.getItem('historyAction')),action = history?history:[],checkExp = [...action,{name:service,time:Date.now()}],key = 'name',historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
     return localStorage.historyAction=JSON.stringify(historyResult);
@@ -63,7 +63,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
             </div>
             {/* <hr/> */}
             <h1>Просто попробуйте</h1>
-              <AppStore serv={serv} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
+              <AppStore serv={serv} style={style} Link={Link} nav_translate={nav_translate} lang={locale} Image={Image}/>
           </div>
       </div>
         </>
