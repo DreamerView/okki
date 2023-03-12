@@ -8,14 +8,18 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
     const toRightScroll = () => content.current.scrollBy({left:364,behavior: 'smooth'});
     const toLeftScroll = () => content.current.scrollBy({left:-364,behavior: 'smooth'});
     useEffect(()=>{
+      let scrollResult = null;
       const onScroll = () => setOffset(prev=>prev=content.current.scrollLeft);
         if(typeof Window !== 'undefined') {
           setLazy(prev=>prev=true);
-          content.current.addEventListener('scroll', onScroll, { passive: true });
+          if(content.current) {
+            content.current.addEventListener('scroll', onScroll, { passive: true });
+            scrollResult=content.current;
+          }
         }
         return () =>{
           setLazy(prev=>prev=false);
-          if(typeof Window !== 'undefined') content.current.removeEventListener('scroll', onScroll);
+          if(scrollResult) content.current.removeEventListener('scroll', onScroll);
         };
     },[]);
     const group = (items, n) => category===undefined?items.filter(e=>e.type === 'services').reverse().reduce((acc, x, i) => {
