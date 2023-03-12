@@ -8,8 +8,8 @@ import nav_translate from "/translate/services/all_translate";
 import seo from "/translate/constructor/index_seo";
 import AllService from '/start/services/all.json';
 import dynamic from "next/dynamic";
-import AppStorePreloader from "/pages/modules/apps_preloader";
-const AppStore =  dynamic(()=>import("/pages/modules/apps"),{loading: AppStorePreloader});
+import AppStorePreloader from "/modules/app_store/apps_preloader";
+const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 const ConstructorIndex = ({lang}) => {

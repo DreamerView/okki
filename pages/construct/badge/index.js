@@ -8,8 +8,8 @@ import text from "/translate/constructor/acc/index_translate";
 import seo from "/translate/constructor/acc/index_seo";
 import NavbarApp from '/modules/navbar_app/nav';
 import dynamic from "next/dynamic";
-import AppPreloader from "/pages/modules/app_preloader";
-const AppShow =  dynamic(()=>import("/pages/modules/app"),{loading: AppPreloader});
+import AppPreloader from "/modules/app_store/app_preloader";
+const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};

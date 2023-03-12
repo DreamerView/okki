@@ -7,8 +7,8 @@ import style from "/styles/calculator/index.module.css";
 import {useEffect,useState,useRef} from "react";
 import setBmiApi from '/pages/health/bmi-calculator/api';
 import dynamic from "next/dynamic";
-import AppPreloader from "/pages/modules/app_preloader";
-const AppShow =  dynamic(()=>import("/pages/modules/app"),{loading: AppPreloader});
+import AppPreloader from "/modules/app_store/app_preloader";
+const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 const BMICalc = ({lang}) => {

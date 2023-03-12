@@ -6,8 +6,8 @@ import nav_text from "/translate/services/all_translate";
 import style from "/styles/health/index.module.css";
 import text from "/translate/health/pregnancy-calendar/index_translate";
 import dynamic from "next/dynamic";
-import AppPreloader from "/pages/modules/app_preloader";
-const AppShow =  dynamic(()=>import("/pages/modules/app"),{loading: AppPreloader});
+import AppPreloader from "/modules/app_store/app_preloader";
+const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
