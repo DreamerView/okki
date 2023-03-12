@@ -10,6 +10,7 @@ import { SessionProvider } from "next-auth/react";
 import Image from "next/image";
 import "/styles/globals.css";
 import "/styles/preloader.css";
+import DocumentResult from "/start/document";
 
 const Preloader = () => {
     const [color,setColor] = useState("#4634bc"),[timer,setTimer] = useState(false),checkMode = useMediaQuery({query:'(prefers-color-scheme: dark)'}),{locale} = useRouter();
@@ -36,8 +37,6 @@ const Preloader = () => {
         </>
     )
 };
-
-import DocumentResult from "/start/document";
 
 const MyApp = ({ Component, pageProps, session }) => {
     const {locale} = useRouter(),[result,setResult] = useState(false);
