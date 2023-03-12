@@ -5,10 +5,10 @@ const AppShow = ({name,translate,Image,lang}) => {
     return(
         <div className="main__app_i">
         <div className="main__app_info">
-            <Image priority={true} width={60} height={60} alt="icon" src={"/services/"+name+".webp"}/>
+            <Image priority={true} width={60} height={60} alt="icon" src={"/services/"+name!==undefined&&name+".webp"}/>
             <div className="main__app_info_block">
                 <div className="block_1">
-                <h3>{translate}</h3>
+                <h3>{translate!==undefined&&translate}</h3>
                 <p className="smaller">{ux['service'][lang]}</p>
                 </div>
                 <div className="block_2">
@@ -17,7 +17,7 @@ const AppShow = ({name,translate,Image,lang}) => {
                     data={{
                     text: "Здоровье",
                     url: typeof Window !== 'undefined'&&window.location.href,
-                    title: translate,
+                    title: translate!==undefined&&translate,
                     }}
                     onClick={() => console.log("shared successfully!")}
                 >

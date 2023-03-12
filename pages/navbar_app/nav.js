@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 const NavbarApp = ({to,choice,mode,lang}) => {
     const router = useRouter();
     const headerHeight= useSelector(state=>state.headerHeight);
-    const result = to!==undefined?to:[{}];
+    const result = to!==undefined&&to!==undefined?to!==undefined&&to:[{}];
     const [scrollResult,setScrollResult] = useState('');
     useEffect(() => {
         const handleScroll = () => {
