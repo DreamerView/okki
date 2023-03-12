@@ -17,14 +17,15 @@ const IndexContent = ({locale,service,styles,translate,nav_translate,Link,Image,
   toRightScroll = () => banner.current.scrollBy({left:364,behavior: 'smooth'}),
   toLeftScroll = () => banner.current.scrollBy({left:-364,behavior: 'smooth'});
   useEffect(()=>{
+    let result = undefined;
     if(typeof Window !== 'undefined') {
-      const result = banner.current;
+      result = banner.current;
       setLazy(prev=>prev=true);
       result!==undefined&&result!==null&&result.removeEventListener('scroll', onScroll),result.addEventListener('scroll', onScroll, { passive: true });
     }
     return () =>{
       setLazy(prev=>prev=false);
-      banner.current!==undefined&&banner.current!==null&&banner.current.removeEventListener('scroll', onScroll);
+      result!==undefined&&result!==null&&result.removeEventListener('scroll', onScroll);
     };
   },[]);
   return(
