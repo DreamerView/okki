@@ -38,15 +38,15 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
         {serv&&group(serv, 3).map((children,index)=>
         <div key={index} className={style.main__module_row_panel}>
           {children.map((e,index) =>
-            <Link title={nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
+            <Link title={nav_translate!==undefined&&nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
             <div className={`${style.main__module_row_block} anim_hover`}>
                 <div>
                     <div className={`${style.main__module_row_block_img}`}>
-                        <Image priority={true} title={nav_translate[e.name][lang]} alt="service" width={60} height={60} className={style.main__module_row_block_pic} src={e.image} />
+                        <Image priority={true} title={nav_translate!==undefined&&nav_translate[e.name][lang]} alt="service" width={60} height={60} className={style.main__module_row_block_pic} src={e.image} />
                     </div>
                 </div>
                 <div className={style.main__module_row_block_f}>
-                    <span className="head_1">{nav_translate[e.name][lang]}</span>
+                    <span className="head_1">{nav_translate!==undefined&&nav_translate[e.name][lang]}</span>
                     <p className={style.main__module_row_block_f_p}>Рейтинг 5.0 ★</p>
                 </div>
                 <div className={style.main__module_row_block_action}>
