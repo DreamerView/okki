@@ -5,10 +5,10 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
     const content = useRef();
     const [lazy,setLazy] = useState(false);
     const [offset, setOffset] = useState(0);
-    const onScroll = () => setOffset(prev=>prev=content.current.scrollLeft);
     const toRightScroll = () => content.current.scrollBy({left:364,behavior: 'smooth'});
     const toLeftScroll = () => content.current.scrollBy({left:-364,behavior: 'smooth'});
     useEffect(()=>{
+      const onScroll = () => setOffset(prev=>prev=content.current.scrollLeft);
         if(typeof Window !== 'undefined') {
           setLazy(prev=>prev=true);
           content.current.addEventListener('scroll', onScroll, { passive: true });
