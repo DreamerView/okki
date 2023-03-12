@@ -1,5 +1,4 @@
 /*jshint esversion: 6 */
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Router,{useRouter} from 'next/router';
 import translate from "/translate/ux/loading_page";

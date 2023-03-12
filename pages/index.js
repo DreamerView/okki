@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 import Head from "next/head";
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import seo from "/translate/seo_index";
 import AllService from '/start/services/all.json';
 import styles from '/styles/index_main.module.css';
@@ -9,8 +9,8 @@ import translate from "/translate/index_translate";
 import nav_translate from "/translate/services/all_translate";
 import Link from "next/link";
 import Image from "next/image";
-import IndexMenu from '/pages/index_menu';
-import IndexContent from '/pages/index_content';
+const IndexMenu = dynamic(()=>import('/pages/index_menu'));
+const IndexContent = dynamic(()=>import('/pages/index_content'));
 
 const Home = ({locale}) => {
   return(
