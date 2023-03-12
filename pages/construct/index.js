@@ -10,8 +10,8 @@ import AllService from '/start/services/all.json';
 import dynamic from "next/dynamic";
 import AppStorePreloader from "/pages/modules/apps_preloader";
 const AppStore =  dynamic(()=>import("/pages/modules/apps"),{loading: AppStorePreloader});
-import NavPreloader from "/pages/navbar_app/nav_preloader";
-const NavbarApp = dynamic(()=>import('/pages/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 const ConstructorIndex = ({lang}) => {
     return(
         <>

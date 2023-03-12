@@ -6,7 +6,7 @@ import Image from "next/image";
 import ux from "/translate/ux/action";
 import text from "/translate/constructor/acc/index_translate";
 import seo from "/translate/constructor/acc/index_seo";
-import NavbarApp from '/pages/navbar_app/nav';
+import NavbarApp from '/modules/navbar_app/nav';
 import dynamic from "next/dynamic";
 import AppPreloader from "/pages/modules/app_preloader";
 const AppShow =  dynamic(()=>import("/pages/modules/app"),{loading: AppPreloader});

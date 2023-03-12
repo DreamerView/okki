@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 8 */
-import NavbarApp from '/pages/navbar_app/nav';
+import NavbarApp from '/modules/navbar_app/nav';
 import style from "/styles/signin/index.module.css";
 import { useDispatch } from 'react-redux';
 import { useState,useEffect,useCallback } from 'react';

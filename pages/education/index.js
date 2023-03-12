@@ -5,7 +5,7 @@ import Link from "next/link";
 import soon from "/translate/seo_index";
 import text from "/translate/constructor/acc/index_translate";
 import nav_translate from "/translate/services/all_translate";
-import NavbarApp from '/pages/navbar_app/nav';
+import NavbarApp from '/modules/navbar_app/nav';
 
 const EducationIndex = ({lang}) => {
     return(

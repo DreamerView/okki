@@ -1,7 +1,7 @@
 import {io} from "socket.io-client";
 import { useEffect,useState } from "react";
 import style from "/styles/education/quizy/index.module.css";
-import NavbarApp from '/pages/navbar_app/nav';
+import NavbarApp from '/modules/navbar_app/nav';
 
 export async function getServerSideProps({params}) {
     const id = params.id;

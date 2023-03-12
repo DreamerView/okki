@@ -2,7 +2,7 @@
 /*jshint esversion: 9 */
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 import dynamic from 'next/dynamic';
-import NavbarApp from '/pages/navbar_app/nav';
+import NavbarApp from '/modules/navbar_app/nav';
 import style from "/styles/user/index.module.css";
 import SearchResult from "/start/services/all.json";
 import { useMediaQuery } from 'react-responsive';

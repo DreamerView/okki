@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
-import NavbarApp from '/pages/navbar_app/nav';
+import NavbarApp from '/modules/navbar_app/nav';
 import style from "/styles/user/index.module.css";
 import { useMediaQuery } from 'react-responsive';
 import Head from 'next/head';

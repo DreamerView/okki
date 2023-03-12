@@ -5,8 +5,8 @@ import dynamic from "next/dynamic";
 import AppPreloader from "/pages/modules/app_preloader";
 const AppShow =  dynamic(()=>import("/pages/modules/app"),{loading: AppPreloader});
 import Image from "next/image";
-import NavPreloader from "/pages/navbar_app/nav_preloader";
-const NavbarApp = dynamic(()=>import('/pages/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
 const QR = ({lang}) => {
     const [hide,setHide] = useState(false);

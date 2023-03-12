@@ -7,7 +7,7 @@ import Head from "next/head";
 import translate from "/translate/constructor/acc/navbar_translate";
 import ux from "/translate/ux/action";
 import text from "/translate/constructor/acc/size_translate";
-import NavbarApp from "/pages/navbar_app/nav";
+import NavbarApp from "/modules/navbar_app/nav";
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};

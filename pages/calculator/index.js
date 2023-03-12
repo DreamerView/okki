@@ -9,8 +9,8 @@ import style from "/styles/constructor/index.module.css";
 import AllService from '/start/services/all.json';
 import type_translate from "/translate/services/type_translate";
 import dynamic from 'next/dynamic';
-import NavPreloader from "/pages/navbar_app/nav_preloader";
-const NavbarApp = dynamic(()=>import('/pages/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
 const BusinessIndex = ({lang}) => {
     return(

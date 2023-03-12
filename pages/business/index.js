@@ -9,8 +9,8 @@ import nav_translate from "/translate/services/all_translate";
 import type_translate from "/translate/services/type_translate";
 import seo from "/translate/business/index_seo";
 import AllService from '/start/services/all.json';
-import NavPreloader from "/pages/navbar_app/nav_preloader";
-const NavbarApp = dynamic(()=>import('/pages/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 // const seo = dynamic(()=>import("/translate/business/index_seo"));
 
 const BusinessIndex = ({lang}) => {

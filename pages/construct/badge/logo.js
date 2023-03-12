@@ -8,7 +8,7 @@ import Image from "next/image";
 import ux from "/translate/ux/action";
 import translate from "/translate/constructor/acc/navbar_translate";
 import text from "/translate/constructor/acc/logo_translate";
-import NavbarApp from '/pages/navbar_app/nav';
+import NavbarApp from '/modules/navbar_app/nav';
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};

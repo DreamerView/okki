@@ -2,7 +2,7 @@
 /*jshint esversion: 8 */
 import {useState,useEffect, useCallback,useRef} from "react";
 import Head from "next/head";
-import NavbarApp from '/pages/navbar_app/nav';
+import NavbarApp from '/modules/navbar_app/nav';
 import style from "/styles/signin/index.module.css";
 import { useDispatch } from "react-redux";
 import AesEncryption from "aes-encryption";
