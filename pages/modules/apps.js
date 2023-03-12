@@ -15,7 +15,7 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
         }
         return () =>{
           setLazy(prev=>prev=false);
-          content.current!==undefined&&content.current!==null&&content.current.removeEventListener('scroll', onScroll);
+          content.current.removeEventListener('scroll', onScroll);
         };
     },[]);
     const group = (items, n) => category===undefined?items.filter(e=>e.type === 'services').reverse().reduce((acc, x, i) => {
