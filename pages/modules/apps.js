@@ -11,7 +11,7 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
     useEffect(()=>{
         if(typeof Window !== 'undefined') {
           setLazy(prev=>prev=true);
-          content.current!==undefined&&content.current!==null&&content.current.removeEventListener('scroll', onScroll),content.current.addEventListener('scroll', onScroll, { passive: true });
+          content.current!==undefined&&content.current!==null&&content.current.addEventListener('scroll', onScroll, { passive: true });
         }
         return () =>{
           setLazy(prev=>prev=false);
