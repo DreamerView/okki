@@ -1,11 +1,12 @@
 /*jshint esversion: 6 */
 
-const IndexMenu = ({locale,service,styles,translate,nav_translate,Link,Image}) => {
-    const serv = service!==undefined?service:[{}];
+const IndexMenu = ({lang,service,styles,translate,nav_translate,Link,Image}) => {
+    const locale =lang,serv = service!==undefined?service:[{}];
     return(
-        <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>
+        <>
+            <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles.main__menu_nav} block_animation`}>
             <div className={styles.main__menu_nav_blocks}>
-            {serv&&serv.filter(e=>e.type === 'category').map((e,index)=>
+            {(serv)&&serv.filter(e=>e.type === 'category').map((e,index)=>
                 <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" key={index+1}>
                 <Link title={nav_translate[e.name][locale]} itemID={e.location} itemType="https://schema.org/Thing"  itemScope itemProp="item" href={e.location} prefetch={false}>
                     <div className={`${styles.main__menu_nav_block} anim_hover`}>
@@ -22,6 +23,7 @@ const IndexMenu = ({locale,service,styles,translate,nav_translate,Link,Image}) =
             )}
             </div>
         </div>
+        </>
     )
 };
 
