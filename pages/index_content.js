@@ -34,7 +34,7 @@ const IndexContent = ({locale,service,styles,translate,nav_translate,Link,Image,
           <div className="main_block_row">
             <h1 className="flex_text">{translate!==undefined&&translate['popular'][locale]} <div className="emoji_h1"><Image title={`Microsoft fire emoji (Used for informational purposes only)`} priority src={"/emoji-small/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate!==undefined&&translate['popular_subtext'][locale]}</p>
-            <div className={styles.main__index_b}>
+            <div className={styles!==undefined&&styles.main__index_b}>
               {lazy===true && offset<=10?"":
               <div className={`${styles.left} arrow-left arrow anim_hover`} onClick={toLeftScroll}><Image width={32} height={32} src="/img/arrow_left.svg" alt="arrow-left"/></div>}
               <div className={`${styles.right} arrow-right arrow anim_hover`} onClick={toRightScroll}><Image width={32} height={32} src="/img/arrow_right.svg" alt="arrow-right"/></div>
