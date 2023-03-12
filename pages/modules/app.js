@@ -5,7 +5,7 @@ const AppShow = ({name,translate,Image,lang}) => {
     return(
         <div className="main__app_i">
         <div className="main__app_info">
-            <Image priority={true} width={60} height={60} alt="icon" src={"/services/"+name!==undefined&&name+".webp"}/>
+            <Image priority={true} width={60} height={60} alt="icon" src={"/services/"+name+".webp"}/>
             <div className="main__app_info_block">
                 <div className="block_1">
                 <h3>{translate!==undefined&&translate}</h3>
