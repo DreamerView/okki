@@ -437,7 +437,7 @@ p.nav > a {
       --blue_back:hsl(210, 100%, 52%);
       --red_back:hsl(349, 100%, 59%);
       --orange_back:hsl(35, 100%, 50%);
-      --input_back_text:hsla(240, 33%, 94%,.6);
+      --input_back_text:hsla(240, 6%, 25%, 0.6);;
       --input_border:transparent;
       --border-color:hsl(240, 1%, 30%);
       --search_icon: url(../public/img/search_night.svg);
@@ -462,7 +462,7 @@ p.nav > a {
       --back:hsl(210, 10%, 96%);
       --background-color:hsl(0, 0%, 94%);
       --header-color:hsl(0, 0%, 100%);
-      --block-color:hsl(220, 14%, 95%);
+      --block-color:rgba(118, 118, 128, 0.12);
       --block-color_transparent:hsla(0, 0%, 87.5%, 0.5);
       --menu-color:hsl(248, 57%, 59%);
       --menu-border-color:hsl(248, 57%, 59%);
@@ -504,10 +504,6 @@ p.nav > a {
   color:white;
 }
 
-#nprogress .spinner-icon {
-  border-top-color: var(--brand_back) !important;
-  border-left-color: var(--brand_back) !important;
-}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
