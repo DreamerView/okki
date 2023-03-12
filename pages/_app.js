@@ -38,7 +38,7 @@ const Preloader = () => {
     )
 };
 
-const DocumentResult = dynamic(()=>import("/start/document"),{loading:Preloader});
+import DocumentResult from "/start/document";
 
 const MyApp = ({ Component, pageProps, session }) => {
     const {locale} = useRouter(),[result,setResult] = useState(false);
