@@ -5,21 +5,19 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
     const content = useRef();
     const [lazy,setLazy] = useState(false);
     const [offset, setOffset] = useState(0);
+    const onScroll = () => setOffset(prev=>prev=content.current.scrollLeft);
     const toRightScroll = () => content.current.scrollBy({left:364,behavior: 'smooth'});
     const toLeftScroll = () => content.current.scrollBy({left:-364,behavior: 'smooth'});
     useEffect(()=>{
-      let scrollResult = null;
-      const onScroll = () => setOffset(prev=>prev=content.current.scrollLeft);
+        let result = undefined;
         if(typeof Window !== 'undefined') {
+          result=content.current;
           setLazy(prev=>prev=true);
-          if(content.current) {
-            content.current.addEventListener('scroll', onScroll, { passive: true });
-            scrollResult=content.current;
-          }
+          result!==undefined&&result!==null&&result.removeEventListener('scroll', onScroll),result.addEventListener('scroll', onScroll, { passive: true });
         }
         return () =>{
-          setLazy(prev=>prev=false);
-          if(scrollResult) content.current.removeEventListener('scroll', onScroll);
+        setLazy(prev=>prev=false);
+        result!==undefined&&result!==null&&result.removeEventListener('scroll', onScroll);
         };
     },[]);
     const group = (items, n) => category===undefined?items.filter(e=>e.type === 'services').reverse().reduce((acc, x, i) => {
