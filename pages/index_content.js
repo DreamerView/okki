@@ -5,7 +5,7 @@ import AppStorePreloader from "/pages/modules/apps_preloader";
 const AppStore =  dynamic(()=>import("/pages/modules/apps"),{loading: AppStorePreloader});
 
 const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,style}) => {
-  const translateText = translate!==undefined&&translate,stylesResult=style!==undefined&&styles,navTranslate = nav_translate!==undefined&&nav_translate;
+  const translateText = translate!==undefined&&translate,stylesResult=styles!==undefined&&styles,navTranslate = nav_translate!==undefined&&nav_translate;
   const banner = useRef(),
   [lazy,setLazy] = useState(false),
   [offset, setOffset] = useState(0),
