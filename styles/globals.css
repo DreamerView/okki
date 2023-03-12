@@ -980,6 +980,7 @@ div.c>input.header__search_input:focus+div.header__search_menu {
 }
 
 html {
+  scroll-behavior: smooth;
   overflow-y: overlay
 }
 
