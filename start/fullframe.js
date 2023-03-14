@@ -1,9 +1,13 @@
 /*jshint esversion: 6 */
 import { memo } from "react";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import Image from "next/image";
 
-const FullFrame = ({item,router,useDispatch,Image,ux}) => {
-    const lang = router.locale;
-    const send = useDispatch();
+const FullFrame = ({item,ux}) => {
+    const router = useRouter(),
+    lang = router.locale,
+    send = useDispatch();
     return(
         <div className="fullscreen__result">
             <div className="fullscreen__result_block red_background" onClick={()=>{send({type:"setFullFrame",set:false});send({type:"setUrlFrame",set:false});}}>

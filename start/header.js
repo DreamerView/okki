@@ -2,12 +2,15 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import translate from "/translate/header_translate";
-import text from "/translate/seo_index";
+import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 const Search = dynamic(()=>import("/start/header_action/search"),{ssr:false});
 const UserIndex = dynamic(()=>import('/start/user/index'),{ssr:false});
 
-const Header = ({router,useDispatch,Link,useEffect}) => {
+const Header = () => {
     const send = useDispatch(),
+    router = useRouter(),
     {locale} = router,
     SetLanguage = () => send({type:"SetAction",set:{type:'language',name:translate.translate_title[locale],content:translate.translate_content[locale]}});
     useEffect(()=>{
@@ -23,21 +26,18 @@ const Header = ({router,useDispatch,Link,useEffect}) => {
           <meta name="robots" content="index,follow"/>
         </Head>
         <header>
-          <>
           <div className="header__logo">
-            <Link title={text['title'][locale]} href='/' prefetch={false}>
-                <div className='header__logo_p'>
-                  <div className="header__logo_pic anim_hover"></div>
-                </div>
-            </Link>
+            <div onClick={()=>router.push("/")} className='header__logo_p'>
+              <div className="header__logo_pic anim_hover"></div>
+            </div>
           </div>
           <div className="header__action">
-            <UserIndex Link={Link} lang={locale}/>
+            <UserIndex lang={locale}/>
             <div onClick={()=>SetLanguage()} className="header__action_block anim_hover">
             <span className="header__action_block_text">{locale}</span>
             <div className="header__search_menu_pic"></div>
           </div>
-          </div></>
+          </div>
           <div className="header__search">
             <Search lang={locale} text={translate['search'][locale]}/>
           </div>

@@ -1093,6 +1093,7 @@ div.header__logo {
 }
 
 div.header__logo_p {
+  cursor: pointer;
   width:150px
 }
 
@@ -1277,6 +1278,9 @@ div.main__preloader {
 svg.main__preloader_pic {
   width: 100px;
   height: 100px
+}
+svg.main__preloader_pic > path {
+  fill:var(--brand-color);
 }
 div.page_not_found {
   display: -webkit-box;

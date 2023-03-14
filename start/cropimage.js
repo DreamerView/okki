@@ -1,8 +1,11 @@
 /*jshint esversion: 6 */
 import { useState,useCallback,memo } from 'react';
 import Cropper from 'react-easy-crop';
+import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
 
-const ResizeImage = ({item,router,useDispatch,ux}) => {
+const ResizeImage = ({item,ux}) => {
+    const router = useRouter();
     const lang = router.locale;
     const send = useDispatch();
     const [position,setPosition] = useState({width:'',height:'',x:'',y:''});

@@ -5,8 +5,9 @@ import ux from "/translate/ux/action";
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useState,useEffect,useRef } from "react";
 const AesEncryption = require('aes-encryption');
+import Link from "next/link";
 
-const UserIndex = ({Link,lang}) => {
+const UserIndex = ({lang}) => {
     const lazy = useRef(false),
     [res,setRes] = useState(null),
     aes = new AesEncryption();

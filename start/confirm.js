@@ -1,9 +1,13 @@
 /*jshint esversion: 6 */
 import { memo } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { useDispatch } from "react-redux";
 
-const ConfirmMode = ({item,router,Link,useDispatch}) => {
+const ConfirmMode = ({item}) => {
     const send = useDispatch(),
-    SaveLanguage = (e) => document.cookie = `NEXT_LOCALE=${e}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+    SaveLanguage = (e) => document.cookie = `NEXT_LOCALE=${e}; expires=Fri, 31 Dec 9999 23:59:59 GMT`,
+    router = useRouter();
     return(
         <>
         <div className="confirm__back">

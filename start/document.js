@@ -1,6 +1,5 @@
 /*jshint esversion: 6 */
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import ux from "/translate/ux/action";
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 const Header = dynamic(()=>import("/start/header"),{ssr:false});
@@ -9,9 +8,14 @@ const FullFrame = dynamic(()=>import('/start/fullframe'),{ssr:false});
 const ResizeImage = dynamic(()=>import('/start/cropimage'),{ssr:false});
 const NotificationModule = dynamic(()=>import('/start/notification'),{ssr:false});
 const AesEncryption = require('aes-encryption');
+import { useRouter } from 'next/router';
+import { useMediaQuery } from 'react-responsive';
+import { useSelector} from 'react-redux';
+import { useState,useRef,useEffect } from 'react';
 
-const DocumentResult = ({children,router,useMediaQuery,useSelector,useDispatch,useEffect,useState,useRef,Image}) => {
+const DocumentResult = ({children}) => {
     const lazy = useRef(false),
+    router = useRouter(),
     lazy1 = useRef(false),
     lazy2 = useRef(false),
     [header,setHeader] = useState(null),
@@ -61,11 +65,11 @@ const DocumentResult = ({children,router,useMediaQuery,useSelector,useDispatch,u
     },[]);
     return(
         <div>
-            {notification!==false&&<NotificationModule useDispatch={useDispatch} useSelector={useSelector} Image={Image}/>}
-            {frame!==false&&<FullFrame ux={ux} Image={Image} item={url} router={router} useDispatch={useDispatch} key={Date.now()}/>}
-            {action!==false&&<ConfirmMode router={router} Link={Link} useDispatch={useDispatch} item={action} key={Date.now}/>}
-            {image!==false&&<ResizeImage ux={ux} useDispatch={useDispatch} router={router} item={image} key={Date.now}/>}
-            {header===true&&<Header Link={Link} useDispatch={useDispatch} router={router} useEffect={useEffect}/>}
+            {notification!==false&&<NotificationModule/>}
+            {frame!==false&&<FullFrame ux={ux} item={url} key={Date.now()}/>}
+            {action!==false&&<ConfirmMode item={action}/>}
+            {image!==false&&<ResizeImage ux={ux} item={image} key={Date.now}/>}
+            {header===true&&<Header/>}
             {main!==false&&<div className="main_hide"/>}
             <div className="result">{children}</div>
         </div>
