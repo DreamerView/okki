@@ -38,7 +38,7 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
         {serv&&group(serv, 3).map((children,index)=>
         <div key={index} className={style.main__module_row_panel}>
           {children.map((e,index) =>
-            <Link title={nav_translate!==undefined&&nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
+            <Link scroll={false} title={nav_translate!==undefined&&nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
             <div className={`${style.main__module_row_block} anim_hover`}>
                 <div>
                     <div className={`${style.main__module_row_block_img}`}>
