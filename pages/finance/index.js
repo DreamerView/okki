@@ -13,6 +13,10 @@ const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppSto
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
 const FinanceIndex = ({lang}) => {
     const historyAction = (service) => {
         const history = JSON.parse(localStorage.getItem('historyAction'));
@@ -49,10 +53,6 @@ const FinanceIndex = ({lang}) => {
         </div>
       </>
     );
-};
-
-FinanceIndex.getInitialProps = async ({locale}) => {
-    return { lang:locale };
 };
 
 export default FinanceIndex;

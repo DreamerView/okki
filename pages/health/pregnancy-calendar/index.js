@@ -11,6 +11,10 @@ const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPrelo
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
 const PregnancyCalendar = ({lang})=>{
     const [date,setDate] = useState(0);
     const [result,setResult] = useState({date:text.waiting[lang],month:'',year:''});
@@ -235,9 +239,5 @@ const PregnancyCalendar = ({lang})=>{
         </>
     )
 };
-
-PregnancyCalendar.getInitialProps = async ({locale}) => {
-    return { lang:locale };
-  };
 
 export default PregnancyCalendar;

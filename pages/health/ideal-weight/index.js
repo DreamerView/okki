@@ -11,6 +11,10 @@ const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPrelo
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
 const IdealWeight = ({lang}) => {
     const [male,setMale] = useState('other');
     const [maleText,setMaleText] = useState(text.other[lang]);
@@ -137,9 +141,5 @@ const IdealWeight = ({lang}) => {
         </>
     );
 };
-
-IdealWeight.getInitialProps = async ({locale}) => {
-    return { lang:locale };
-  };
 
 export default IdealWeight;

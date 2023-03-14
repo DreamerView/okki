@@ -11,6 +11,10 @@ const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPrelo
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
 const RhFactorInPregnancyPlanning = ({lang}) => {
     const [manRh,setManRh] = useState(`I`);
     const [womanRh,setWomanRh] = useState(`I`); 
@@ -138,9 +142,5 @@ const RhFactorInPregnancyPlanning = ({lang}) => {
         </>
     )
 };
-
-RhFactorInPregnancyPlanning.getInitialProps = async ({locale}) => {
-    return { lang:locale };
-  };
 
 export default RhFactorInPregnancyPlanning;

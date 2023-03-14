@@ -12,6 +12,10 @@ import dynamic from 'next/dynamic';
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+  };
+
 const BusinessIndex = ({lang}) => {
     return(
         <>
@@ -47,9 +51,5 @@ const BusinessIndex = ({lang}) => {
       </>
     );
 };
-
-BusinessIndex.getInitialProps = async ({locale}) => {
-    return { lang:locale };
-  };
 
 export default BusinessIndex;

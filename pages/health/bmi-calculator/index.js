@@ -11,6 +11,11 @@ import AppPreloader from "/modules/app_store/app_preloader";
 const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
 const BMICalc = ({lang}) => {
     const [anim,setAnim] = useState(false);
     const [n1,setN1] = useState('');
@@ -193,9 +198,5 @@ const BMICalc = ({lang}) => {
         </>
     );
 };
-
-BMICalc.getInitialProps = async ({locale}) => {
-    return { lang:locale };
-  };
 
 export default BMICalc;

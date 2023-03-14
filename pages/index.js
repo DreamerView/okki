@@ -12,6 +12,10 @@ import Image from "next/image";
 const IndexMenu = dynamic(()=>import('/modules/index_menu'));
 const IndexContent = dynamic(()=>import('/modules/index_content'));
 
+export const getStaticProps = async ({locale}) => {
+  return {props:{locale:locale}};
+};
+
 const Home = ({locale}) => {
   return(
     <>
@@ -36,10 +40,6 @@ const Home = ({locale}) => {
       <IndexContent lang={locale} service={AllService} style={style} styles={styles} translate={translate} nav_translate={nav_translate} Link={Link} Image={Image}/>
     </>
   )
-};
-
-Home.getInitialProps = async ({locale}) => {
-  return { locale };
 };
 
 export default Home;

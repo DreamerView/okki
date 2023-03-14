@@ -12,6 +12,11 @@ import AppStorePreloader from "/modules/app_store/apps_preloader";
 const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+
+export const getStaticProps = async ({locale}) => {
+  return {props:{lang:locale}};
+};
+
 const ConstructorIndex = ({lang}) => {
     return(
         <>
@@ -41,9 +46,5 @@ const ConstructorIndex = ({lang}) => {
       </>
     );
 };
-
-ConstructorIndex.getInitialProps = async ({locale}) => {
-    return { lang:locale };
-  };
 
 export default ConstructorIndex;

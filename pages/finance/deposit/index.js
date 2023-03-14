@@ -11,6 +11,10 @@ const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPrelo
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
 const Deposit = ({lang}) => {
     const [bet,setBet] = useState('');
     const [sum,setSum] = useState('');
@@ -230,9 +234,5 @@ const Deposit = ({lang}) => {
         </>
     );
 };
-
-Deposit.getInitialProps = async ({locale}) => {
-    return { lang:locale };
-  };
 
 export default Deposit;
