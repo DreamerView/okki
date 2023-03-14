@@ -1,11 +1,13 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 8 */
-import NavbarApp from '/modules/navbar_app/nav';
+import dynamic from "next/dynamic";
 import style from "/styles/signin/index.module.css";
 import { useDispatch } from 'react-redux';
 import { useState,useEffect,useCallback } from 'react';
 import AesEncryption from "aes-encryption";
 import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
+import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
 export const getServerSideProps = async (context) => {
     context.res.setHeader('Cache-Control', 'no-store');
