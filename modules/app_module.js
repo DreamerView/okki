@@ -8,11 +8,11 @@ const AppModule = ({children,session,change}) => {
     const {locale} = useRouter();
     useEffect(()=>{
         Router.events.on('routeChangeStart', () => change(true)),
-        Router.events.on('routeChangeComplete', () => change(false)),
+        Router.events.on('routeChangeComplete', () => {change(false);window.scroll({top: 0,left: 0,behavior: 'smooth'});}),
         Router.events.on('routeChangeError', () => change(false));
         return()=>{
             Router.events.off('routeChangeStart', () => change(true)),
-            Router.events.off('routeChangeComplete', () => change(false)),
+            Router.events.on('routeChangeComplete', () => {change(false);window.scroll({top: 0,left: 0,behavior: 'smooth'});}),
             Router.events.off('routeChangeError', () => change(false));
         };
     },[]);
