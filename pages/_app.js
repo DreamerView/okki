@@ -4,9 +4,6 @@ import dynamic from "next/dynamic";
 import Router,{useRouter} from 'next/router';
 import translate from "/translate/ux/loading_page";
 import { useEffect,useState } from "react";
-import { legacy_createStore as createStore } from 'redux';
-import { Provider } from 'react-redux';
-import { SessionProvider } from "next-auth/react";
 import "/styles/globals.css";
 import "/styles/preloader.css";
 
@@ -32,7 +29,7 @@ const Preloader = () => {
         </>
     )
 };
-
+const AppModule = dynamic(()=>import('/modules/app_module'),{ssr:false});
 const DocumentResult = dynamic(()=>import("/start/document"),{loading:Preloader});
 
 const MyApp = ({ Component, pageProps, session }) => {
@@ -57,52 +54,15 @@ const MyApp = ({ Component, pageProps, session }) => {
             return ()=>clearTimeout(timer);
         }
       }, []);
-    const defaultState = {
-        act:false,
-        confirm:false,
-        fullframe:false,
-        urlframe:false,
-        crop:false,
-        getcrop:false,
-        main:false,
-        hideReq:false,
-        headerHeight:0,
-        notification:false,
-        auth:false,
-        login:null
-    };
-
-
-    const reducer = (state=defaultState,action) => {
-    switch(action.type) {
-        case "SetAction": return {...state,act:action.set};
-        case "SetConfirm": return {...state,confirm:action.set};
-        case "setFullFrame": return {...state,fullframe:action.set};
-        case "setUrlFrame": return {...state,urlframe:action.set};
-        case "setCropImage": return {...state,crop:action.set};
-        case "getCropImage": return {...state,getcrop:action.set};
-        case "actionMain": return {...state,main:action.set};
-        case "hideRequest": return {...state,hideReq:action.set};
-        case "setHeaderHeight": return {...state,headerHeight:action.set};
-        case "setNotification": return {...state,notification:action.set};
-        case "setAuth": return {...state,auth:action.set};
-        case "setLogin": return {...state,login:action.set};
-        default: return state;
-    }
-    };
-
-    const store = createStore(reducer);
 
     return(
         <>
             <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
-            <SessionProvider session={session}>
-                <Provider store={store}>
-                    <DocumentResult>
+            <AppModule session={session}>
+                <DocumentResult>
                     {result? <Preloader/>:<Component {...pageProps} />}
-                    </DocumentResult>
-                </Provider>
-            </SessionProvider>
+                </DocumentResult>
+            </AppModule>
         </>
     )
 }
