@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 import Image from "next/image";
 import Head from "next/head";
-// import Link from "next/link";
+import Link from "next/link";
 import translate from "/translate/constructor/acc/navbar_translate";
 import style from "/styles/constructor/index.module.css";
 import nav_translate from "/translate/services/all_translate";
@@ -32,11 +32,11 @@ const ConstructorIndex = ({lang}) => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            {/* <NavbarApp to={{href:"/"}} choice="alone" lang={lang}/> */}
+            <NavbarApp to={{href:"/"}} choice="alone" lang={lang}/>
             <div className="main_app block_animation">
             <h1 className="flex_text">{translate["step0"][lang]} <div className="emoji_h1"><Image title={'Microsoft fire emoji (Used for informational purposes only)'} priority src={"/emoji-small/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
-            {/* <AppStore category="constructor" serv={AllService} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/> */}
+            <AppStore category="constructor" serv={AllService} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
         </div>
       </>
     );
