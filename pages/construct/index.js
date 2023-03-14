@@ -8,9 +8,9 @@ import nav_translate from "/translate/services/all_translate";
 import seo from "/translate/constructor/index_seo";
 import AllService from '/start/services/all.json';
 import dynamic from "next/dynamic";
-import AppStorePreloader from "/modules/app_store/apps_preloader";
+const AppStorePreloader = dynamic(()=>import("/modules/app_store/apps_preloader"),{ssr:false});
 const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
-import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavPreloader = dynamic(()=>import("/modules/navbar_app/nav_preloader"),{ssr:false});
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 const ConstructorIndex = ({lang}) => {
     return(
