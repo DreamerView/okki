@@ -1,6 +1,8 @@
 /*jshint esversion: 6 */
 import Head from "next/head";
-import NavbarApp from '/modules/navbar_app/nav';
+import dynamic from "next/dynamic";
+import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";

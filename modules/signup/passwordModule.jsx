@@ -1,42 +1,15 @@
-/*jshint esversion: 6 */
-import Head from "next/head";
-import NavbarApp from '/modules/navbar_app/nav';
 import style from "/styles/signin/index.module.css";
 import {useState,useEffect} from 'react';
 import { useRouter } from "next/router";
+import Image from "next/image";
 import AesEncryption from "aes-encryption";
-import ServerJsonFetchReq from "/start/ServerJsonFetchReq";
 const platform = require('platform');
-import { useDispatch } from "react-redux";
+import text from "/translate/signup/index_translate.json";
 
-export const getServerSideProps = async (context) => {
-    const lang = context.locale;
-    const ip = context.req.headers["x-real-ip"] || context.req.connection.remoteAddress;
-    const data = await ServerJsonFetchReq({
-        method:"GET",
-        path:"/get-data",
-        cookie:context.req.headers.cookie,
-        server:context,
-        auth:"yes"
-    });
-    if(data!==undefined&&data.result==='redirect') {
-        return {
-            props: {ip:ip,lang:lang}
-        }; 
-    } 
-    return {
-        redirect: {
-            permanent: false,
-            destination: '/',
-        }
-    }; 
-};
-
-const SignUp = ({ip,lang}) => {
-    const getIp = ip;
+const PasswordModule = ({lang,getIp}) => {
     const [name,setName] = useState("");
+    const [passValue,setPassValue] = useState('password');
     const router = useRouter();
-    const send = useDispatch();
     useEffect(()=>{
         const nameUser = localStorage.getItem("RegistrationName");
         const surnameUser = localStorage.getItem("RegistrationSurname");
@@ -56,16 +29,20 @@ const SignUp = ({ip,lang}) => {
                 const decryptVerified = aes.decrypt(otpUserVerified);
                 if(decryptVerified!=="verified-"+dectryptOTP) router.push('/signup/email');
             } else router.push('/signup/email');
-        } else if(passwordUser) {
-            router.push('/signup/password');
         }
+        if(passwordUser) setName(prev=>prev=passwordUser);
         return () =>{ 
             return false;
         };
     },[router]);
     const actionState = (e) => {
         setName(prev=>prev=e);
-        localStorage.setItem("RegistrationName",e);
+        localStorage.setItem("RegistrationPassword",e);
+    };
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          if(name!=="") return createAcc();
+        }
     };
     const createAcc = async() =>{
         const aes = new AesEncryption();
@@ -73,7 +50,7 @@ const SignUp = ({ip,lang}) => {
         const nameUser = localStorage.getItem("RegistrationName");
         const surnameUser = localStorage.getItem("RegistrationSurname");
         const emailUser = localStorage.getItem("RegistrationEmail");
-        const passwordUser = localStorage.getItem("RegistrationPassword");
+        const passwordUser = name;
         const checkVar = (result) =>{
             if(result===null) return null;
             else if(result===undefined) return null;
@@ -103,34 +80,32 @@ const SignUp = ({ip,lang}) => {
             expire.setTime(today.getTime() + 3600000*24*14);
             document.cookie=`accessToken=${accessToken};path=/;secure;expires=${expire.toGMTString()}`;
             document.cookie=`clientId=${clientId};path=/;secure;expires=${expire.toGMTString()}`;
-            send({
-                type:"setAuth",
-                set:true
-            });
             localStorage.removeItem("RegistrationName");
             localStorage.removeItem("RegistrationSurname");
             localStorage.removeItem("RegistrationEmail");
             localStorage.removeItem("RegistrationOTP");
             localStorage.removeItem("RegistrationOTPVerified");
             localStorage.removeItem("RegistrationPassword");
-            router.push("/");
+            window.location.href="/";
         }
-    }
-    return(
-        <>
-            <Head>
-                <title>Okki ID</title>
-                <meta property="og:title" content={`Okki ID`} />
-                <meta name="description" content={`Welcome to Okki ID`} />
-            </Head>
-            <NavbarApp lang={lang} to={{href:"/signin"}} choice="alone" mode="standalone"/>
-            <div className="main_app_full block_animation">
-                <div className={style.login_form}>
-                    <h1 className={style.head_center} onClick={()=>createAcc()}>Creating your account!</h1>
-                    <p className={style.text_center}>Please wait a minute!</p>
+    };
+    return(<div className="main_app_full block_animation">
+    <div className={style.login_form}>
+        <h1 className={style.head_center}>{text.step5[lang]}</h1>
+        <p className={style.text_center}>{text.step5_text[lang]}</p>
+            <div className={style.login_row}>
+                <div className={style.password}>
+                    <div className={style.password__show_row}>
+                        <div className={style.password__show}>
+                            <Image width={24} height={24} alt="password" onClick={()=>{setPassValue(passValue==="password"?"text":"password")}} src={`/img/visibility${passValue==='password'?``:`_off`}.svg`}/>
+                        </div>
+                    </div>
+                    <input onKeyDown={handleKeyDown} type={passValue} value={name} onChange={(e)=>actionState(e.target.value)} name="password" className={`${style.password_input} ${style.key}`} placeholder={text.step5_input[lang]} required/>
                 </div>
+                <button type="button" onClick={()=>name!==""?createAcc():""} className={`${style.login_button} ${name===""?style.disable:"block_animation"}`}>{text.continue[lang]}</button>
             </div>
-        </>
-    )
+    </div>
+</div>)
 };
-export default SignUp;
+
+export default PasswordModule;

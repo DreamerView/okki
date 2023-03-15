@@ -1,7 +1,8 @@
 /*jshint esversion: 6 */
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
-import dynamic from 'next/dynamic';
-import NavbarApp from '/modules/navbar_app/nav';
+import dynamic from "next/dynamic";
+import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 import style from "/styles/user/index.module.css";
 import { useMediaQuery } from 'react-responsive';
 import Head from 'next/head';
