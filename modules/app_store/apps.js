@@ -48,7 +48,7 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
                 </div>
                 <div className={style.main__module_row_block_f}>
                     <span className="head_1">{nav_translate!==undefined&&nav_translate[e.name][lang]}</span>
-                    <p className={style.main__module_row_block_f_p}>Рейтинг 5.0 ★</p>
+                    <p className={style.main__module_row_block_f_p}>{ux['rating'][lang]} 5.0 ★</p>
                 </div>
                 <div className={style.main__module_row_block_action}>
                     {ux['open'][lang]}
