@@ -68,5 +68,30 @@ export default {
         kk:"Қызмет",
         ru:"Сервис",
         en:"Service"
+    },
+    rating: {
+        kk:"Рейтинг",
+        ru:"Рейтинг",
+        en:"Rating"
+    },
+    language: {
+        kk:"Тіл",
+        ru:"Язык",
+        en:"Language"
+    },
+    more: {
+        kk:"Тағы",
+        ru:"Еще",
+        en:"More"
+    },
+    developer: {
+        kk:"Әзірлеуші",
+        ru:"Разработчик",
+        en:"Developer"
+    },
+    release: {
+        kk:"Шығарылды",
+        ru:"Выпущен",
+        en:"Release"
     }
 }
