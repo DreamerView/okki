@@ -38,7 +38,7 @@ export const getServerSideProps = async (context) => {
 };
 
 const UserInterface = ({getId,data,locale}) => {
-    
+    const lang = locale;
     const titleHead = `${ux['devices'][lang]} | Okki.kz`;
     return(
     <>
@@ -46,7 +46,7 @@ const UserInterface = ({getId,data,locale}) => {
                 <title>{titleHead}</title>
         </Head>
         <NavbarApp lang={lang} to={{href:"/user"}} choice="alone" mode="standalone"/>
-        <DevicesModule ux={ux} getId={getId} data={data} locale={locale} />
+        <DevicesModule ux={ux} getId={getId} data={data} lang={lang} />
     </>
     );
 };

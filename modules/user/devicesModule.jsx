@@ -9,7 +9,6 @@ import { useRouter } from 'next/router';
 const DevicesModule = ({ux,getId,data,locale}) => {
     const router = useRouter();
     const [lazy,setLazy] = useState(false);
-    const lang = locale;
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
     useEffect(()=>{
         setLazy((lazy)=>lazy=true);
