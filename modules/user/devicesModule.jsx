@@ -6,7 +6,7 @@ const HeaderUser = dynamic(()=>import('/modules/user/headerModule'),{ssr:false})
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
 
-const DevicesModule = ({ux,getId,data,locale}) => {
+const DevicesModule = ({ux,getId,data,lang}) => {
     const router = useRouter();
     const [lazy,setLazy] = useState(false);
     const isTabletOrMobile = useMediaQuery({ query: '(min-width:1px) and (max-width:750px)' });
