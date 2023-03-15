@@ -93,5 +93,10 @@ export default {
         kk:"Шығарылды",
         ru:"Выпущен",
         en:"Release"
+    },
+    open: {
+        kk:"Ашу",
+        ru:"Открыть",
+        en:"Open"
     }
 }

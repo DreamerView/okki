@@ -1,5 +1,6 @@
 import style from "/styles/constructor/index.module.css";
 import {useState,useEffect,useRef,memo} from "react";
+import ux from "/translate/ux/action";
 
 const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
     const content = useRef();
@@ -50,7 +51,7 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
                     <p className={style.main__module_row_block_f_p}>Рейтинг 5.0 ★</p>
                 </div>
                 <div className={style.main__module_row_block_action}>
-                    Open
+                    {ux['open'][lang]}
                 </div>
             </div>
             </Link>
