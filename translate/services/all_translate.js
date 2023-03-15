@@ -85,8 +85,8 @@ export default {
         en:"Rh factor in family planning"
     },
     qr: {
-        kk:"Okki QR",
-        ru:"Okki QR",
-        en:"Okki QR"
+        kk:"QR сканері",
+        ru:"Сканнер QR",
+        en:"QR scanner"
     }
 }
