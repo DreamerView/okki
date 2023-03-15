@@ -3,6 +3,7 @@ import { useEffect,useState,useRef } from "react";
 import dynamic from "next/dynamic";
 import AppStorePreloader from "/modules/app_store/apps_preloader";
 const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
+import ux from "/translate/ux/action";
 
 const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,style}) => {
   const banner = useRef(),
@@ -49,7 +50,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
                           <span className="head">{nav_translate!==undefined&&nav_translate[e.category][locale]}</span>
                         </div>
                         <div className={styles!==undefined&&styles.main__index_block_pic_info_block_action}>
-                          Open
+                          {ux!==undefined&&ux['open'][locale]}
                         </div>
                       </div>
                       <div className={styles!==undefined&&styles.main__index_block_pic_back}></div>
@@ -62,7 +63,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
               </div>
             </div>
             {/* <hr/> */}
-            <h1>Просто попробуйте</h1>
+            <h1>{translate!==undefined&&translate['try_use'][locale]}</h1>
               <AppStore serv={serv} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
           </div>
       </div>
