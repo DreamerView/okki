@@ -10,7 +10,7 @@ import { useEffect,useState } from 'react';
 import Image from 'next/image';
 import ux from "/translate/user/index_translate";
 import Head from 'next/head';
-import HeaderUser from '/pages/user/headerModule';
+const HeaderUser = dynamic(()=>import('/modules/user/headerModule'),{ssr:false});
 import Link from 'next/link';
 
 export const getServerSideProps = async (context) => {

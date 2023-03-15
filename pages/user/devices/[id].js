@@ -1,15 +1,16 @@
 /*jshint esversion: 6 */
 /*jshint esversion: 9 */
 import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
-import dynamic from 'next/dynamic';
-import NavbarApp from '/modules/navbar_app/nav';
+import dynamic from "next/dynamic";
+import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 import style from "/styles/user/index.module.css";
 import { useMediaQuery } from 'react-responsive';
 import { useEffect,useState } from 'react';
 import Image from 'next/image';
 import ux from "/translate/user/index_translate";
 import Head from 'next/head';
-import HeaderUser from '/pages/user/headerModule';
+const HeaderUser = dynamic(()=>import('/modules/user/headerModule'),{ssr:false});
 import ClientJsonFetchReq from "/start/ClientJsonFetchReq";
 import { useRouter } from 'next/router';
 

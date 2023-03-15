@@ -8,8 +8,8 @@ import { useMediaQuery } from 'react-responsive';
 import Head from 'next/head';
 import ux from "/translate/user/index_translate";
 import { useEffect,useState } from 'react';
-import HeaderUser from '/pages/user/headerModule';
-import HistoryUser from '/pages/user/historyModule';
+const HeaderUser = dynamic(()=>import('/modules/user/headerModule'),{ssr:false});
+const HistoryUser = dynamic(()=>import('/modules/user/historyModule'),{ssr:false});
 
 
 export const getServerSideProps = async (context) => {

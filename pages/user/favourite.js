@@ -13,7 +13,7 @@ import Image from 'next/image';
 import ux from "/translate/user/index_translate";
 import services from "/translate/services/all_translate";
 import Head from 'next/head';
-import HeaderUser from '/pages/user/headerModule';
+const HeaderUser = dynamic(()=>import('/modules/user/headerModule'),{ssr:false});
 
 export const getServerSideProps = async (context) => {
     context.res.setHeader('Cache-Control', 'no-store');
