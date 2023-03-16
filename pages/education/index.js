@@ -12,10 +12,11 @@ export const getStaticProps = async ({locale}) => {
 };
 
 const EducationIndex = ({lang}) => {
+    const titleHead = `${nav_translate['education'][lang]} | Okki.kz`;
     return(
         <>
             <Head>
-                <title>{nav_translate['education'][lang]} | Okki.kz</title>
+                <title>{titleHead}</title>
                 <meta property="og:title" content={`${nav_translate['education'][lang]} | Okki.kz`} />
                 <meta name="description" content={text['seo_description'][lang]} />
             </Head>

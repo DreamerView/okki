@@ -1,6 +1,6 @@
 *{
   margin:0;
-  padding:0
+  padding:0;
 }
 
 .disable {
@@ -342,7 +342,7 @@ to {
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards
+    animation-fill-mode: forwards;
 }
 .basic_animation {
     -webkit-animation-name: basic_animation;

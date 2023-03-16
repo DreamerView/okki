@@ -7,11 +7,16 @@ import text from "/translate/constructor/acc/index_translate";
 import nav_translate from "/translate/services/all_translate";
 import NavbarApp from "/modules/navbar_app/nav";
 
+export const getStaticProps = async ({locale}) => {
+    return {props:{lang:locale}};
+};
+
 const TechnologyIndex = ({lang}) => {
+    const titleHead = `${nav_translate['tech'][lang]} | Okki.kz`;
     return(
         <>
             <Head>
-                <title>{nav_translate['tech'][lang]} | Okki.kz</title>
+                <title>{titleHead}</title>
                 <meta property="og:title" content={`${nav_translate['tech'][lang]} | Okki.kz`} />
                 <meta name="description" content={text['seo_description'][lang]} />
             </Head>
@@ -23,15 +28,11 @@ const TechnologyIndex = ({lang}) => {
                     </div>
                     <h1 className="page_not_found">{nav_translate['tech'][lang]}</h1>
                     <p className="page_not_found">{soon['soon1'][lang]} {soon['soon2'][lang]}</p>
-                    <Link prefetch={false} href="/technology/qr" className="page_not_found">{soon['soon3'][lang]}</Link>
+                    <Link prefetch={false} href="/" className="page_not_found">{soon['soon3'][lang]}</Link>
                 </div>
             </div>
       </>
     );
-};
-
-TechnologyIndex.getInitialProps = async ({locale}) => {
-    return { lang:locale };
 };
 
 export default TechnologyIndex;

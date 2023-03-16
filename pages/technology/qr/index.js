@@ -8,6 +8,10 @@ import Image from "next/image";
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
+export const getStaticProps = async ({locale}) => {
+    return {props:{locale:locale}};
+};
+
 const QR = ({lang}) => {
     const [hide,setHide] = useState(false);
     const [html5QrCode,setHtml5QrCode] = useState(null);
@@ -157,7 +161,4 @@ const QR = ({lang}) => {
     )
 }
 
-QR.getInitialProps = async ({locale}) => {
-    return { lang:locale };
-  };
 export default QR;

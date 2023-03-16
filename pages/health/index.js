@@ -52,6 +52,7 @@ const HealthIndex = ({lang}) => {
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <AppStore category="health" serv={AllService} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>
             </div>
+            
         </div>
       </>
     );
