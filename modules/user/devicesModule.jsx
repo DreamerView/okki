@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import style from "/styles/user/index.module.css";
 import { useMediaQuery } from 'react-responsive';
 import { useEffect,useState } from 'react';
