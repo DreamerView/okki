@@ -32,13 +32,12 @@ export const getServerSideProps = async (context) => {
         }; 
     } 
     return {
-        props: { getId: id,data:data,locale:locale}
+        props: { getId: id,data:data,lang:locale}
     }; 
     
 };
 
-const UserInterface = ({getId,data,locale}) => {
-    const lang = locale;
+const UserInterface = ({getId,data,lang}) => {
     const titleHead = `${ux['devices'][lang]} | Okki.kz`;
     return(
     <>
