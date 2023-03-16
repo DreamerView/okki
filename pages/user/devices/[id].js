@@ -39,7 +39,6 @@ export const getServerSideProps = async (context) => {
 
 const UserInterface = ({getId,data,lang}) => {
     const titleHead = `${ux['devices'][lang]} | Okki.kz`;
-    console.log(DevicesModule);
     return(
     <>
         <Head>
