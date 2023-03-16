@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { useState,useEffect } from "react";
 import "/styles/globals.css";
 import "/styles/preloader.css";
+import translate from "/translate/ux/loading_page";
 
 const Preloader = dynamic(()=>import("/modules/preloader"),{ssr:false});
 

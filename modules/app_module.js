@@ -3,7 +3,6 @@ import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Router,{ useRouter } from "next/router";
 import { useEffect } from "react";
-import translate from "/translate/ux/loading_page";
 const AppModule = ({children,session,change}) => {
     const {locale} = useRouter();
     useEffect(()=>{
