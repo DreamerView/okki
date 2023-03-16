@@ -4,7 +4,8 @@ import ServerJsonFetchReq from '/start/ServerJsonFetchReq';
 import dynamic from "next/dynamic";
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
-const DevicesModule = dynamic(()=>import('/modules/user/devicesModule'),{ssr:false});
+// const DevicesModule = dynamic(()=>import('/modules/user/devicesModule'),{ssr:false});
+import DevicesModule from '/modules/user/devicesModule';
 import ux from "/translate/user/index_translate";
 import Head from 'next/head';
 
