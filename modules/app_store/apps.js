@@ -40,7 +40,7 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
         <div key={index} className={style.main__module_row_panel}>
           {children.map((e,index) =>
             <Link title={nav_translate!==undefined&&nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
-            <div className={`${style.main__module_row_block} anim_hover`}>
+            <div className={`${style.main__module_row_block}`}>
                 <div>
                     <div className={`${style.main__module_row_block_img}`}>
                         <Image priority={true} title={nav_translate!==undefined&&nav_translate[e.name][lang]} alt="service" width={60} height={60} className={style.main__module_row_block_pic} src={`${e.image}`} />
@@ -50,7 +50,7 @@ const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
                     <span className="head_1">{nav_translate!==undefined&&nav_translate[e.name][lang]}</span>
                     <p className={style.main__module_row_block_f_p}>{ux['rating'][lang]} 5.0 ★</p>
                 </div>
-                <div className={style.main__module_row_block_action}>
+                <div className={`${style.main__module_row_block_action} anim_hover`}>
                     {ux['open'][lang]}
                 </div>
             </div>
