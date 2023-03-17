@@ -9,7 +9,7 @@ import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
 export const getStaticProps = async ({locale}) => {
-    return {props:{locale:locale}};
+    return {props:{lang:locale}};
 };
 
 const QR = ({lang}) => {

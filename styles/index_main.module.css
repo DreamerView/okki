@@ -114,7 +114,8 @@
                    -moz-box-pack: center;
                 justify-content: center;
         background-color: var(--nav_block);
-        margin:0 16px;
+        margin:0 auto;
+        width:calc(100% - 32px);
         padding: 24px 0;
         box-sizing: border-box;
         -webkit-border-radius: 24px;
