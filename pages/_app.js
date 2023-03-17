@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import "/styles/colorPallete.css";
 import "/styles/globals.css";
 import "/styles/preloader.css";
 

@@ -412,89 +412,6 @@ p.nav > a {
   opacity: 0.5
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-      --back-img:url(../public/img/back-night.svg);
-      --top-icon:url(../public/img/top-night.svg);
-      --menu-icon:url(../public/img/menu-night.svg);
-      --logo:url(../public/img/logo-night.webp);
-      --back:hsl(0, 0%, 0%);
-      --background-color:hsla(0, 0%, 0%,0.93);
-      --header-color:hsl(240, 3%, 11%);
-      --block-color: hsl(218, 9%, 18%);
-      --block-color_transparent: hsla(0, 0%, 20%, 0.5);
-      --menu-color:hsl(240, 2%, 18%);
-      --menu-border-color:hsl(240, 2%, 18%);
-      --menu-font-color:hsl(241, 100%, 77%);
-      --input_back:hsl(218, 9%, 18%);
-      --nav_block:hsl(240, 3%, 11%);
-      --nav_block_blur:hsla(240, 3%, 9%,0.7);
-      --font-color:hsl(0, 0%, 100%);
-      --brand-color:hsl(241, 100%, 74%);
-      --sub_content:hsla(240, 33%, 94%, 0.6);
-      --green_back:hsl(129, 67%, 52%);
-      --purple_back:hsl(280, 85%, 65%);
-      --blue_back:hsl(210, 100%, 52%);
-      --red_back:hsl(349, 100%, 59%);
-      --orange_back:hsl(35, 100%, 50%);
-      --input_back_text:hsla(240, 33%, 94%,.6);
-      --input_border:transparent;
-      --border-color:hsl(240, 1%, 30%);
-      --search_icon: url(../public/img/search_night.svg);
-      --nav_menu_c:hsl(240, 2%, 18%);
-      --back_contrast:brightness(100%);
-      --confirm_block:hsl(240, 2%, 18%);
-      --search_back:hsl(240, 2%, 18%);
-      --search-block: hsl(240, 2%, 28%);
-      --brand_back:hsl(241, 100%, 74%);
-      --email_img: url(../public/img/email-night.svg);
-      --key_img: url(../public/img/key-night.svg);
-      --skeleton-start:hsl(240, 1%, 14%);
-      --skeleton-end:hsl(240, 1%, 24%)
-  }
-}
-@media (prefers-color-scheme: light) {
-  :root {
-      --back-img:url(../public/img/back-light.svg);
-      --top-icon:url(../public/img/top.svg);
-      --menu-icon:url(../public/img/menu.svg);
-      --logo:url(../public/img/logo.webp);
-      --back:hsl(210, 10%, 96%);
-      --background-color:hsl(0, 0%, 94%);
-      --header-color:hsl(0, 0%, 100%);
-      --block-color:hsl(220, 14%, 95%);
-      --block-color_transparent:hsla(0, 0%, 87.5%, 0.5);
-      --menu-color:hsl(248, 57%, 59%);
-      --menu-border-color:hsl(248, 57%, 59%);
-      --menu-font-color:hsl(0, 0%, 100%);
-      --input_back:hsl(0, 0%, 100%);
-      --nav_block:hsl(0, 0%, 100%);
-      --nav_block_blur:hsla(0, 0%, 98%,0.7);
-      --font-color:hsl(225, 15%, 16%);
-      --brand-color:hsl(248, 57%, 47%);
-      --sub_content:hsl(0, 0%, 38%);
-      --green_back: hsl(135, 59%, 49%);
-      --purple_back:hsl(280, 68%, 60%);
-      --blue_back: hsl(211, 100%, 50%);
-      --red_back:hsl(349, 100%, 59%);
-      --orange_back:hsl(36, 100%, 52%);
-      --input_back_text:hsl(0, 0%, 30%);
-      --input_border:hsl(220, 14%, 91%);
-      --border-color:hsl(216, 10%, 90%);
-      --search_icon: url(../public/img/search.svg);
-      --nav_menu_c:hsl(240, 24%, 98%);
-      --back_contrast:brightness(40%);
-      --confirm_block:hsl(0, 0%, 100%);
-      --search_back:hsl(0, 0%, 100%);
-      --search-block: hsl(210, 7%, 95%);
-      --brand_back:hsl(248, 57%, 59%);
-      --email_img: url(../public/img/email-light.svg);
-      --key_img: url(../public/img/key-light.svg);
-      --skeleton-start:hsl(0, 0%, 98%);
-      --skeleton-end:hsl(0, 0%, 90%)
-  }
-}
-
 ::selection {
   background: var(--brand_back);
   color:white;
@@ -1073,7 +990,7 @@ header {
   padding:var(--m-1);
   background-color: var(--header-color);
   display: var(--display);
-  margin-bottom: 16px ;
+  /* margin-bottom: 16px ; */
   border-radius: 0 0 24px 24px;
   box-sizing: border-box
 }
