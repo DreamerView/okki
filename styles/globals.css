@@ -990,7 +990,7 @@ header {
   padding:var(--m-1);
   background-color: var(--header-color);
   display: var(--display);
-  /* margin-bottom: 16px ; */
+  margin-bottom: 16px ;
   border-radius: 0 0 24px 24px;
   box-sizing: border-box
 }
