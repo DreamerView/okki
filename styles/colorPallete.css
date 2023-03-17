@@ -6,14 +6,14 @@
         --logo:url(../public/img/logo-night.webp);
         --back:hsl(0, 0%, 0%);
         --background-color:hsla(0, 0%, 0%,0.93);
-        --header-color:#121212;
-        --block-color: hsl(240, 3%, 13%);
+        --header-color:hsl(240, 3%, 11%);
+        --block-color: hsl(218, 9%, 18%);
         --block-color_transparent: hsla(0, 0%, 20%, 0.5);
         --menu-color:hsl(240, 2%, 18%);
         --menu-border-color:hsl(240, 2%, 18%);
         --menu-font-color:hsl(241, 100%, 77%);
         --input_back:hsl(218, 9%, 18%);
-        --nav_block:#121212;
+        --nav_block:hsl(240, 3%, 11%);
         --nav_block_blur:hsla(240, 3%, 9%,0.7);
         --font-color:hsl(0, 0%, 100%);
         --brand-color:hsl(241, 100%, 74%);
