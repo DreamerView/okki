@@ -4,7 +4,7 @@ const IndexMenu = ({lang,service,styles,translate,nav_translate,Link,Image}) => 
     const locale =lang,serv = service!==undefined?service:[{}];
     return(
         <>
-            <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles!==undefined&&styles.main__menu_nav} block_animation`}>
+            <div itemScope itemType="https://schema.org/BreadcrumbList" className={`${styles!==undefined&&styles.main__menu_nav}`}>
             <div className={styles!==undefined&&styles.main__menu_nav_blocks}>
             {(serv)&&serv.filter(e=>e.type === 'category').map((e,index)=>
                 <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" key={index+1}>

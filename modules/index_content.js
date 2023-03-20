@@ -30,7 +30,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
   },[]);
   return(
         <>
-        <div className="main block_animation">
+        <div className="main">
           <div className="main_block_row">
             <h1 className="flex_text">{translate!==undefined&&translate['popular'][locale]} <div className="emoji_h1"><Image title={`Microsoft fire emoji (Used for informational purposes only)`} priority src={"/emoji-small/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate!==undefined&&translate['popular_subtext'][locale]}</p>

@@ -46,7 +46,7 @@ const FinanceIndex = ({lang}) => {
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
             <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
-            <div className="main_app block_animation">
+            <div className="main_app ">
             <h1 className="flex_text">{nav_translate["finance"][lang]} <div className="emoji_h1"><Image title={'Microsoft money bag emoji (Used for informational purposes only)'} priority src={"/emoji-small/money_bag.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <AppStore category="finance" serv={AllService} style={style} Link={Link} nav_translate={nav_translate} lang={lang} Image={Image}/>

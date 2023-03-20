@@ -16,7 +16,7 @@ const MyApp = ({ Component, pageProps, session }) => {
     return(
             <AppModule change={(res)=>setResult(prev=>prev=res)} session={session}>
                 <DocumentResult>
-                    {result? <Preloader/>:<Component {...pageProps} />}
+                    {result? <Preloader/>:<div className="block_animation"><Component {...pageProps} /></div>}
                 </DocumentResult>
             </AppModule>
     )

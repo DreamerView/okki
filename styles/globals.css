@@ -1309,6 +1309,9 @@ div.main_app_block_row {
   align-items: center;
   position: relative;
 }
+div.result {
+  position: relative;
+}
 div.main_app {
   padding:var(--m-4);
   background-color: var(--header-color);
@@ -1529,10 +1532,9 @@ div.main_back_action_block_img {
 
 div.main_back_fixed {
   top:0;
-  position:fixed;
+  position:sticky;
   display: flex;
   align-items: center;
-  margin-bottom: 32px;
   cursor: pointer;
   width:100%;
   background-color: var(--header-color);
@@ -1541,42 +1543,14 @@ div.main_back_fixed {
   box-sizing: border-box
 }
 
-div.main_back_fixed_1 {
-  top:0;
-  position:fixed;
-  display: flex;
-  align-items: center;
-  margin-bottom: 32px;
-  cursor: pointer;
-  width:100%;
-  background-color: var(--header-color);
-  z-index:999;
-  padding:var(--s-2);
-  box-sizing: border-box;
-  max-width:1920px;
-  width:100%;
-  min-width: 160px;
-}
-
 div.main_back {
-  display: flex;
+  display: sticky;
   align-items: center;
-  /* margin-bottom: 32px; */
   cursor: pointer;
   width:100%;
   padding:var(--s-1);
   background-color: var(--header-color);
   border-radius: 24px 24px 0 0;
-  box-sizing: border-box
-}
-div.main_back_1 {
-  display: flex;
-  align-items: center;
-  /* margin-bottom: 32px; */
-  cursor: pointer;
-  width:100%;
-  padding:var(--s-1);
-  background-color: var(--header-color);
   box-sizing: border-box
 }
 
