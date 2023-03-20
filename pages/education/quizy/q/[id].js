@@ -55,7 +55,7 @@ const Quizy = ({getId}) => {
     return(
         <>
         <NavbarApp to={{href:"/education"}} choice="alone"/>
-        <div className="main_app block_animation">
+        <div className="main_app ">
             <h1 className="flex_text">Okki Quizy [{getId}]</h1>
             <p className="sub_content">Welcome to Okki Quizy</p>
             <div className={style.quiz}>

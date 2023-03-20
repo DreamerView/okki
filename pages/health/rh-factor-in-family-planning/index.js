@@ -58,7 +58,7 @@ const RhFactorInPregnancyPlanning = ({lang}) => {
                 <meta property="og:title" content={`${nav_text['rh_factor_in_family_planning'][lang]} | Okki.kz`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
-            <div className="main_app block_animation">
+            <div className="main_app ">
             <div className="main_block_row">
                 <AppShow lang={lang} Image={Image} name={"rh_factor_in_family_planning"} translate={nav_text['rh_factor_in_family_planning'][lang]}/>
                 {/* <h1>{nav_text['rh_factor_in_family_planning'][lang]}</h1> */}

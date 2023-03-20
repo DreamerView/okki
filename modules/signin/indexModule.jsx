@@ -114,7 +114,7 @@ const IndexModule = ({lang,providers,ip,signIn}) => {
             }
         }
     };
-    return(<div className="main_app block_animation">
+    return(<div className="main_app ">
     <div className={style.login_form}>
         <h1 className={style.head_center}>{text['welcome_back'][lang]}</h1>
         <p className={style.text_center}>{text['signin_text'][lang]}</p>

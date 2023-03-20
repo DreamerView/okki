@@ -208,7 +208,7 @@ const SocialNetworkModule = ({lang,data,ip,signOut}) => {
             }
         }
     }
-    return(<div className="main_app block_animation">
+    return(<div className="main_app ">
     <div className={style.login_form}>
         {params!==null&&params.auth===false?<h1 className={style.head_center}>{text['register_social'][lang]}</h1>:<h1 className={style.head_center}>{text['welcome_back'][lang]}</h1>}
         {params!==null&&params.auth===false?params.email===true?<p className={style.text_center}>{text['email'][lang]}</p>:<p className={style.text_center}>{text['password'][lang]}</p>:<p className={style.text_center}>{text['signin_text'][lang]}</p>}

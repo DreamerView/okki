@@ -89,7 +89,7 @@ const PasswordModule = ({lang,getIp}) => {
             window.location.href="/";
         }
     };
-    return(<div className="main_app_full block_animation">
+    return(<div className="main_app_full ">
     <div className={style.login_form}>
         <h1 className={style.head_center}>{text.step5[lang]}</h1>
         <p className={style.text_center}>{text.step5_text[lang]}</p>
@@ -102,7 +102,7 @@ const PasswordModule = ({lang,getIp}) => {
                     </div>
                     <input onKeyDown={handleKeyDown} type={passValue} value={name} onChange={(e)=>actionState(e.target.value)} name="password" className={`${style.password_input} ${style.key}`} placeholder={text.step5_input[lang]} required/>
                 </div>
-                <button type="button" onClick={()=>name!==""?createAcc():""} className={`${style.login_button} ${name===""?style.disable:"block_animation"}`}>{text.continue[lang]}</button>
+                <button type="button" onClick={()=>name!==""?createAcc():""} className={`${style.login_button} ${name===""?style.disable:""}`}>{text.continue[lang]}</button>
             </div>
     </div>
 </div>)

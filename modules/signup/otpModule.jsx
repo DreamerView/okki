@@ -57,7 +57,7 @@ const OtpModule = ({lang}) => {
         localStorage.setItem("RegistrationOTPVerified",verifiedOTP);
         router.push("/signup/password");
     };
-    return(<div className="main_app_full block_animation">
+    return(<div className="main_app_full ">
     <div className={style.login_form}>
         <h1 className={style.head_center}>{text.step4[lang]}</h1>
         <p className={style.text_center}>{text.step4_text_1[lang]} <b className="green_font">{name}</b> {text.step4_text_2[lang]}</p>
@@ -78,7 +78,7 @@ const OtpModule = ({lang}) => {
                         )
                     })}
                 </div>
-                <button type={OtpContinue===false?"button":"submit"} onClick={()=>OtpContinue===false?"":OTPVerified()} className={`${style.login_button} ${OtpContinue===false?style.disable:"block_animation"}`}>{text.continue[lang]}</button>
+                <button type={OtpContinue===false?"button":"submit"} onClick={()=>OtpContinue===false?"":OTPVerified()} className={`${style.login_button} ${OtpContinue===false?style.disable:""}`}>{text.continue[lang]}</button>
             </div>
     </div>
 </div>)

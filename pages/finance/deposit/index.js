@@ -113,7 +113,7 @@ const Deposit = ({lang}) => {
                 <meta property="og:title" content={titleText} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/finance"}} choice="alone"/>
-            <div className="main_app block_animation">
+            <div className="main_app ">
                 <AppShow lang={lang} Image={Image} name={"deposit_calc"} translate={nav_translate["deposit_calc"][lang]}/>
                 <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text["description"][lang]}</p></div>
                 {/* New added */}

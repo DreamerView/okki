@@ -33,7 +33,7 @@ const NavbarApp = ({to,choice,mode,lang}) => {
     return(
         <>
         {choice!=='alone'?
-        <div className="main__nav block_animation">
+        <div className="main__nav ">
             <p className="nav">
             <Link href="/" prefetch={false}><b className="b_color">{nav_translate['home'][lang]}  /</b></Link>  
             {result!==undefined&&
@@ -63,7 +63,7 @@ const NavbarApp = ({to,choice,mode,lang}) => {
                 </div>
             }
                 {/* <div onClick={()=>router.back()} className={`main_back`}>
-                    <div className="main_app_block_row block_animation">
+                    <div className="main_app_block_row ">
                         <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
                             <div className='main_back_button_i'/>
                         </div>

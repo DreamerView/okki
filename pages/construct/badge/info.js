@@ -37,7 +37,7 @@ const InfoAcc = ({lang}) => {
         setResults([...results,{id:setId}]);
         localStorage.setItem('check_massive',JSON.stringify([...results,{id:setId}]));
         setReady(true);
-        setAction('block_animation');
+        setAction('');
     };
     const RemovePerson = (res) => {
         let name,surname;
@@ -79,7 +79,7 @@ const InfoAcc = ({lang}) => {
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
                 {results.map(result=> result == [{}]?"":<InfoBlock change={SaveResult} remove={RemovePerson} action={action} item={result} key={result.id} lang={lang} />)}
-                <div className={`${style.main__block_interface_menu} block_animation c-m click`} onClick={()=>AddNewPerson()}>
+                <div className={`${style.main__block_interface_menu}  c-m click`} onClick={()=>AddNewPerson()}>
                     <div className={style.main__block_interface_menu_c_end}>
                         <div className={style.main__block_interface_menu_background}>
                             <Image width={46} height={46} className={style.main__block_interface_menu_logo_icon_img_back} src={"/img/person_add.svg" } alt="icon" />

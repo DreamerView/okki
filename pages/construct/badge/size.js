@@ -130,7 +130,7 @@ const SizeAcc = ({lang}) => {
             <div className="main">
                 <h1>{text['name'][lang]}</h1>
                 <p className="sub_content">{text['content'][lang]}</p>
-                <div className={`${style.main__block_interface_menu} c-m block_animation`}>
+                <div className={`${style.main__block_interface_menu} c-m `}>
                     <div className={style.main__block_interface_menu_c}>
                         <h1>{text['title'][lang]}</h1>
                     </div>

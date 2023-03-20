@@ -78,7 +78,7 @@ const BMICalc = ({lang}) => {
                 <meta property="og:title" content={titleText} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
-            <div className="main_app block_animation">
+            <div className="main_app ">
             <div className="main_block_row">
                 <AppShow lang={lang} Image={Image} name={"bmi_calc"} translate={nav_text['bmi_calc'][lang]}/>
                 <div className='more_information_app'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{translate['desctiption'][lang]}</p></div>

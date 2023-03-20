@@ -99,7 +99,7 @@ const ForgetModule = ({lang}) => {
             element.nextSibling.focus();
         }
     };
-    return(<div className="main_app block_animation">
+    return(<div className="main_app ">
     <div className={style.login_form}>
         {change===false?
         <><h1 className={style.head_center}>Forget password?</h1>
@@ -130,7 +130,7 @@ const ForgetModule = ({lang}) => {
                         )
                     })}
                 </div>
-                <button type={OtpContinue===false?"button":"submit"} className={`${style.login_button} ${OtpContinue===false?style.disable:"block_animation"}`}>Submit</button>
+                <button type={OtpContinue===false?"button":"submit"} className={`${style.login_button} ${OtpContinue===false?style.disable:""}`}>Submit</button>
             </div>
         </form></>
         }

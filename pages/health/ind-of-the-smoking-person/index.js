@@ -59,7 +59,7 @@ const Deposit = ({lang}) => {
                 <meta property="og:title" content={`${nav_translate['index_of_the_smoking_person'][lang]} | Okki.kz`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/health"}} choice="alone"/>
-            <div className="main_app block_animation">
+            <div className="main_app ">
                 
                 <AppShow lang={lang} Image={Image} name={"index_of_the_smoking_person"} translate={nav_translate["index_of_the_smoking_person"][lang]}/>
                 <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text["content"][lang]}</p></div>

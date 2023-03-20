@@ -36,7 +36,7 @@ const Acc = ({lang}) => {
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
         <NavbarApp lang={lang} to={{href:"/construct"}} choice="alone"/>
-        <div className={`main_app block_animation`}>
+        <div className={`main_app `}>
             <div className="main_row">
                 <AppShow lang={lang} Image={Image} name={"acc_const"} translate={text['name'][lang]}/>
                 <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text["content"][lang]}</p></div>

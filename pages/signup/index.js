@@ -58,13 +58,13 @@ const SignUp = ({lang}) => {
                 <meta name="description" content={`Welcome to Okki ID`} />
             </Head>
             <NavbarApp lang={lang} to={{href:"/signin"}} choice="alone" mode="standalone"/>
-            <div className="main_app_full block_animation">
+            <div className="main_app_full ">
                 <div className={style.login_form}>
                     <h1 className={style.head_center}>{text.step1[lang]}</h1>
                     <p className={style.text_center}>{text.step1_text[lang]}</p>
                         <div className={style.login_row}>
                             <input onKeyDown={handleKeyDown} type="text" name="text" value={name} onChange={(e)=>actionState(e.target.value)} className={`${style.login_input} ${style.email}`} placeholder={text.step1_input[lang]} required />
-                            <button type="button" onClick={()=>name!==""?router.push('/signup/surname'):""} className={`${style.login_button} ${name===""?style.disable:"block_animation anim_hover"}`}>{text.continue[lang]}</button>
+                            <button type="button" onClick={()=>name!==""?router.push('/signup/surname'):""} className={`${style.login_button} ${name===""?style.disable:" anim_hover"}`}>{text.continue[lang]}</button>
                         </div>
                 </div>
             </div>

@@ -114,7 +114,7 @@ const EmailModule = ({lang}) => {
           if(name!=="") return handleEmail();
         }
     };
-    return(<div className="main_app_full block_animation">
+    return(<div className="main_app_full ">
     <div className={style.login_form}>
         <h1 className={style.head_center}>{text.step3[lang]}</h1>
         <p className={style.text_center}>{text.step3_text[lang]} <b className="green_font">andrey.alekseev@okki.kz</b></p>

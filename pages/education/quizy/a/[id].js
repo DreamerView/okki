@@ -61,7 +61,7 @@ const Quizy = ({getId}) => {
     return(
         <>
         
-        <div className="main block_animation">
+        <div className="main ">
             <div className={style.quiz_timer}>
                     <div className={style.quiz_timer_block}>{timer.min1}</div>
                     <div className={style.quiz_timer_block}>{timer.min2}</div>
