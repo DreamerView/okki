@@ -1,8 +1,12 @@
-import style from "/styles/constructor/index.module.css";
 import {useState,useEffect,useRef,memo} from "react";
 import ux from "/translate/ux/action";
+import serv from '/start/services/all.json';
+import style from "/styles/constructor/index.module.css";
+import nav_translate from "/translate/services/all_translate";
+import Link from "next/link";
+import Image from "next/image";
 
-const AppStore = ({serv,Link,nav_translate,lang,Image,category}) =>{
+const AppStore = ({lang,category}) =>{
     const content = useRef();
     const [lazy,setLazy] = useState(false);
     const [offset, setOffset] = useState(0);
