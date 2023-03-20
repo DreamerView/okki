@@ -397,7 +397,7 @@ select:-webkit-autofill:focus {
       --m-3: 64px 64px;
       --m-4: 8px 64px 48px 64px;
       --s-1: 32px 64px;
-      --s-2: 16px 64px;
+      --s-2: 24px 64px;
       --n-1: 24px 64px;
       --n-2: 16px 12.5px;
       --m-p: 40px 20px;
@@ -1532,6 +1532,10 @@ div.main_back_action_block_img {
 
 div.main_back_fixed {
   top:0;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
   position:sticky;
   display: flex;
   align-items: center;
@@ -1543,15 +1547,11 @@ div.main_back_fixed {
   box-sizing: border-box
 }
 
-div.main_back {
-  display: sticky;
-  align-items: center;
-  cursor: pointer;
-  width:100%;
-  padding:var(--s-1);
-  background-color: var(--header-color);
+.no_radius {
+  border-radius: 0px;
+}
+.with_radius {
   border-radius: 24px 24px 0 0;
-  box-sizing: border-box
 }
 
 div.main_back_with_action {

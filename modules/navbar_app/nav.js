@@ -51,29 +51,9 @@ const NavbarApp = ({to,choice,mode,lang}) => {
             }
             </p>
         </div>:
-        mode==='standalone'?<>
-        {scrollResult==="_fixed"&&
-            <div onClick={()=>router.back()} className={`main_back_fixed_1`}>
-                <div className="main_app_block_row">
-                    <div className='main_back_button'>
-                        <div className='main_back_button_i'/>
-                    </div>
-                </div>
-                <p>{ux['back'][lang]}</p>
-            </div>
-        }
-            <div onClick={()=>router.back()} className={`main_back_1`}>
-                <div className="main_app_block_row">
-                    <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
-                        <div className='main_back_button_i'/>
-                    </div>
-                    <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
-                </div>
-            </div>
-    </>:
         <>
-            {scrollResult==="_fixed"&&
-                <div onClick={()=>router.back()} className={`main_back_fixed`}>
+            {
+                <div onClick={()=>router.back()} className={`main_back_fixed ${scrollResult==="_fixed"?"no_radius":"with_radius"}`}>
                     <div className="main_app_block_row">
                         <div className='main_back_button'>
                             <div className='main_back_button_i'/>
@@ -82,14 +62,14 @@ const NavbarApp = ({to,choice,mode,lang}) => {
                     </div>
                 </div>
             }
-                <div onClick={()=>router.back()} className={`main_back`}>
+                {/* <div onClick={()=>router.back()} className={`main_back`}>
                     <div className="main_app_block_row block_animation">
                         <div className={`main_back_button ${scrollResult==="_fixed"?"opacity_zero":""}`}>
                             <div className='main_back_button_i'/>
                         </div>
                         <p className={`${scrollResult==="_fixed"?"opacity_zero":""}`}>{ux['back'][lang]}</p>
                     </div>
-                </div>
+                </div> */}
         </>
         }
         </>
