@@ -7,6 +7,17 @@ div.image_block {
     border-radius: 16px;
     margin: 0 auto;
 }
+div.editor {
+    max-width: 900px;
+    width:100%;
+    min-width: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+div.editor > label {
+    text-align: center;
+}
 div.editor_block {
     padding:16px 0;
     box-sizing: border-box;

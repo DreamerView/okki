@@ -2,11 +2,13 @@ import dynamic from "next/dynamic";
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 import style from "/styles/technology/image-editor/index.module.css";
+import { useState } from "react";
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
 };
 
 const ImageEditor = ({lang}) => {
+    const [range,setRange] = useState();
     return(
         <>
         <NavbarApp lang={lang} choice="alone"/>
@@ -49,7 +51,7 @@ const ImageEditor = ({lang}) => {
                         <h6>Sepia</h6>
                     </div>
                 </div>
-                <div>
+                <div className={style.editor}>
                     <input id="cowbell" type="range" defaultValue="100" min="0" max="200"/>
                     <label for="cowbell">Cowbell</label>
                 </div>
