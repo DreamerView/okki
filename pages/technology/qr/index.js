@@ -111,7 +111,7 @@ const QR = ({lang}) => {
     return(
         <>
         <NavbarApp lang={lang} onClick={()=>html5QrCode.stop()} choice="alone"/>
-        <div className="main_app block_animation">
+        <div className="main_app">
         <div className="main_block_row">
             <AppShow lang={lang} Image={Image} name={"qr"} translate={"Okki QR"}/>
             <div className='more_information_app_small'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>Welcome to Okki QR</p></div>
