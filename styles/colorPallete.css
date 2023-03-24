@@ -124,4 +124,6 @@
   }
   /*  */
   
-  
+svg.svgIcon {
+  fill:var(--font-color);
+}

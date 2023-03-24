@@ -3,6 +3,7 @@ import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 import style from "/styles/technology/image-editor/index.module.css";
 import { useState } from "react";
+import Image from "next/image";
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
 };
@@ -19,35 +20,51 @@ const ImageEditor = ({lang}) => {
                 </div>
                 <div className={style.editor_block}>
                     <div className={style.editor_block_button}>
-                        <div className={style.editor_block_button_icon}></div>
+                        <div className={style.editor_block_button_icon}>
+                            <Image src="/img/blur.svg" width="36" height="36" alt="icon" />
+                        </div>
                         <h6>Blur</h6>
                     </div>
                     <div className={style.editor_block_button}>
-                        <div className={style.editor_block_button_icon}></div>
+                        <div className={style.editor_block_button_icon}>
+                            <Image src="/img/brightness.svg" width="36" height="36" alt="icon" />
+                        </div>
                         <h6>Brightness</h6>
                     </div>
                     <div className={style.editor_block_button}>
-                        <div className={style.editor_block_button_icon}></div>
+                        <div className={style.editor_block_button_icon}>
+                            <Image src="/img/contrast.svg" width="36" height="36" alt="icon" />
+                        </div>
                         <h6>Contrast</h6>
                     </div>
                     <div className={style.editor_block_button}>
-                        <div className={style.editor_block_button_icon}></div>
+                        <div className={style.editor_block_button_icon}>
+                            <Image src="/img/contrast.svg" width="36" height="36" alt="icon" />
+                        </div>
                         <h6>Grayscale</h6>
                     </div>
                     <div className={style.editor_block_button}>
-                        <div className={style.editor_block_button_icon}></div>
+                        <div className={style.editor_block_button_icon}>
+                            <Image src="/img/hue.svg" width="36" height="36" alt="icon" />
+                        </div>
                         <h6>Hue-rotate</h6>
                     </div>
                     <div className={style.editor_block_button}>
-                        <div className={style.editor_block_button_icon}></div>
+                        <div className={style.editor_block_button_icon}>
+                            <Image src="/img/hue.svg" width="36" height="36" alt="icon" />
+                        </div>
                         <h6>Invert</h6>
                     </div>
                     <div className={style.editor_block_button}>
-                        <div className={style.editor_block_button_icon}></div>
+                        <div className={style.editor_block_button_icon}>
+                            <Image src="/img/saturate.svg" width="36" height="36" alt="icon" />
+                        </div>
                         <h6>Saturate</h6>
                     </div>
                     <div className={style.editor_block_button}>
-                        <div className={style.editor_block_button_icon}></div>
+                        <div className={style.editor_block_button_icon}>
+                            <Image src="/img/sepia.svg" width="36" height="36" alt="icon" />
+                        </div>
                         <h6>Sepia</h6>
                     </div>
                 </div>

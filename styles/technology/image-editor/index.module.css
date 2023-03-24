@@ -36,10 +36,16 @@ div.editor_block_button {
     cursor: pointer;
 }
 div.editor_block_button_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width:60px;
     height:60px;
     border-radius: 100%;
     border-radius: 100%;
     background-color: var(--block-color);
     margin-bottom:8px;
+}
+div.editor_block_button_icon > img {
+    opacity:70%;
 }
