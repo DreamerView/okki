@@ -8,7 +8,7 @@ export const getStaticProps = async ({locale}) => {
 };
 
 const ImageEditor = ({lang}) => {
-    const [range,setRange] = useState();
+    const [range,setRange] = useState(0);
     return(
         <>
         <NavbarApp lang={lang} choice="alone"/>
@@ -52,8 +52,9 @@ const ImageEditor = ({lang}) => {
                     </div>
                 </div>
                 <div className={style.editor}>
-                    <input id="cowbell" type="range" defaultValue="100" min="0" max="200"/>
-                    <label for="cowbell">Cowbell</label>
+                    <label for="cowbell">Blur</label>
+                    <input onChange={(e)=>setRange(prev=>prev=e.target.value-100)} id="cowbell" type="range" defaultValue="100" min="0" max="200"/>
+                    <h1>{range}</h1>
                 </div>
             </div>
         </div>
