@@ -165,5 +165,15 @@
         "location":"/technology/qr",
         "type":"services",
         "category":"tech"
+    },
+    {
+        "title":"Image Editor",
+        "name":"image_editor",
+        "image":"/services/qr.webp",
+        "image_background":"purple_background",
+        "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
+        "location":"/technology/image-editor",
+        "type":"services",
+        "category":"tech"
     }
 ]

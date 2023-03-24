@@ -88,5 +88,10 @@ export default {
         kk:"QR сканері",
         ru:"Сканнер QR",
         en:"QR scanner"
+    },
+    image_editor: {
+        kk:"Image Editor",
+        ru:"Image Editor",
+        en:"Image Editor"
     }
 }
