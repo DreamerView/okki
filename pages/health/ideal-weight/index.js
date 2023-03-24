@@ -10,6 +10,7 @@ import AppPreloader from "/modules/app_store/app_preloader";
 const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+import CalculatorComponent from '/modules/calculator/component';
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -55,6 +56,8 @@ const IdealWeight = ({lang}) => {
     useEffect(()=>{
        return n1==='' ? setN1text(0): setN1text(n1);
     },[n1]);
+    const inputCalculator = [{type:"input",value:setN1}];
+    const resultCalculator = [{value:n1}];
     return(
         <>
             <Head>
@@ -66,8 +69,8 @@ const IdealWeight = ({lang}) => {
                 {/* New added */}
                 <AppShow lang={lang} Image={Image} name={"ideal_weight_calc"} translate={nav_text['ideal_weight_calc'][lang]}/>
                 <div className='more_information_app'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{text['desc'][lang]}</p></div>
-                <div className={style.main__calc}>
-                    
+                {/* <CalculatorComponent lang={lang} /> */}
+                <div className={style.main__calc}>  
                     <div className={style.main__result}>
                         <h2>{text['results'][lang]}</h2>
                         <div className={style.module_result_row}>
@@ -100,7 +103,7 @@ const IdealWeight = ({lang}) => {
                             </div>
                         </div>
                     </div>
-                    {/*  */}
+
                     <div className={style.main__calculator}>
                         <h2>{nav_text['calculator'][lang]}</h2>
                         <div className={style.module_result_row}>
@@ -135,7 +138,6 @@ const IdealWeight = ({lang}) => {
                             </div>
                         </div>
                     </div>
-                    {/*  */}
                 </div>
             </div>
         </>

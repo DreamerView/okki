@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import Router,{ useRouter } from "next/router";
 import { useEffect } from "react";
 import translate from "/translate/ux/loading_page";
+import dynamic from "next/dynamic";
+const DocumentResult = dynamic(()=>import("/start/document"));
 
 const AppModule = ({children,session,change}) => {
     const {locale} = useRouter();
@@ -64,7 +66,9 @@ const AppModule = ({children,session,change}) => {
         <div id="globalLoader"><div className="header_preloader"><div className="logo_preloader"/><p>{translate["content"][locale]}</p></div><div className="footer_preloader"><div className="lds-ripple"><div></div><div></div></div></div></div>
         <SessionProvider session={session}>
             <Provider store={store}>
-                {children}
+                <DocumentResult>
+                    {children}
+                </DocumentResult>
             </Provider>
         </SessionProvider>
     </>)

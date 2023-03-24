@@ -151,7 +151,7 @@ const Deposit = ({lang}) => {
                             </div>
                         </div>
                     </div>
-                    {/*  */}
+
                     <div className={style.main__calculator}>
                         <h2>{nav_translate['calculator'][lang]}</h2>
                         <div className={style.module_result_row}>
@@ -200,7 +200,6 @@ const Deposit = ({lang}) => {
                             </div>
                         </div>
                     </div>
-                    {/*  */}
                 </div>
                 {bet!==0 && term!=='not' && sum!==0?
                 <>
