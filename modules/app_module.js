@@ -4,8 +4,7 @@ import { Provider } from 'react-redux';
 import Router,{ useRouter } from "next/router";
 import { useEffect } from "react";
 import translate from "/translate/ux/loading_page";
-import dynamic from "next/dynamic";
-const DocumentResult = dynamic(()=>import("/start/document"));
+import DocumentResult from "/start/document";
 
 const AppModule = ({children,session,change}) => {
     const {locale} = useRouter();
