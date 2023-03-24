@@ -251,48 +251,6 @@ select:-webkit-autofill:focus {
 .top_header {
   margin-top:32px
 }
-.grey_background {
-  background-color: var(--sub_content)
-}
-.brand_background {
-  background-color: var(--brand_back)
-}
-.green_background {
-  background-color: var(--green_back)
-}
-.block_background {
-  background-color: var(--block-color)
-}
-.blue_background {
-  background-color: var(--blue_back)
-}
-.red_background {
-  background-color: var(--red_back)
-}
-.purple_background {
-  background-color: var(--purple_back)
-}
-.orange_background {
-  background-color: var(--orange_back)
-}
-.green_font{
-  color: var(--green_back)
-}
-.blue_font {
-  color: var(--blue_back)
-}
-.red_font {
-  color: var(--red_back)
-}
-.purple_font {
-  color: var(--purple_back)
-}
-.orange_font {
-  color: var(--orange_back)
-}
-.white_font {
-  color: hsl(0, 0%, 100%)
-}
 
 @media screen and (min-width:1900px) {
   :root {
