@@ -1,38 +1,60 @@
 /*jshint esversion: 6 */
+
 import Image from "next/image";
 import Head from "next/head";
-import Link from "next/link";
-import soon from "/translate/seo_index";
-import text from "/translate/constructor/acc/index_translate";
+import translate from "/translate/constructor/acc/navbar_translate";
 import nav_translate from "/translate/services/all_translate";
-import NavbarApp from "/modules/navbar_app/nav";
+import seo from "/translate/health/index_seo";
+import dynamic from "next/dynamic";
+import AppStorePreloader from "/modules/app_store/apps_preloader";
+const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
+import NavPreloader from "/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
 };
 
-const TechnologyIndex = ({lang}) => {
-    const titleHead = `${nav_translate['tech'][lang]} | Okki.kz`;
+const HealthIndex = ({lang}) => {
+    const historyAction = (service) => {
+        const history = JSON.parse(localStorage.getItem('historyAction'));
+        const action = history?history:[];
+        const checkExp = [...action,{name:service,time:Date.now()}];
+        const key = 'name';
+        const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
+        localStorage.setItem('historyAction',JSON.stringify(historyResult))
+    };
     return(
         <>
             <Head>
-                <title>{titleHead}</title>
-                <meta property="og:title" content={`${nav_translate['tech'][lang]} | Okki.kz`} />
-                <meta name="description" content={text['seo_description'][lang]} />
+            <title>{seo['title'][lang]}</title>
+                <meta name="keywords" content={seo['keywords'][lang]} />
+                <meta name="description" content={seo['description'][lang]} />
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={seo['title'][lang]} />
+                <meta property="og:site_name" content={process.env.authorName} />
+                <meta property="og:description" content={seo['description'][lang]} />
+                <meta name="twitter:title" content={seo['title'][lang]}/>
+                <meta name="twitter:description" content={seo['description'][lang]}/>
+                <meta property="og:url" content={process.env.hostName} />
+                <meta name="twitter:card" content="summary_large_image"/>
+                <meta name="twitter:site" content={"@"+process.env.siteName}/>
+                <meta property="og:image" content={process.env.hostName+"/seo_image/twitter.webp"} />
+                <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
+                <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <NavbarApp lang={lang} to={[{key:'tech',path:'last'}]} />
-            <div className="page_not_found">
-                <div className="page_not_found_block">
-                    <div className="page_not_found_block_img">
-                        <Image priority width={200} height={200} src="/emoji/cowboy_hat_face.webp" alt="not found" />
-                    </div>
-                    <h1 className="page_not_found">{nav_translate['tech'][lang]}</h1>
-                    <p className="page_not_found">{soon['soon1'][lang]} {soon['soon2'][lang]}</p>
-                    <Link prefetch={false} href="/" className="page_not_found">{soon['soon3'][lang]}</Link>
-                </div>
+            <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
+            <div className="main_app ">
+            <div className="main_row">
+            <h1 className="flex_text">{nav_translate["tech"][lang]} <div className="emoji_h1"><Image title={'Microsoft laptop emoji (Used for informational purposes only)'} priority src={"/emoji-small/laptop.webp"} width={26} height={26} alt="emoji"/></div></h1>
+            <p className="sub_content">{translate["step0_description"][lang]}</p>
+            <AppStore category="tech" lang={lang} />
             </div>
+            
+        </div>
       </>
     );
 };
 
-export default TechnologyIndex;
+export default HealthIndex;
+

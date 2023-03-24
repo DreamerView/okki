@@ -1,0 +1,36 @@
+div.image_block {
+    max-width: 600px;
+    width:100%;
+    min-width: 100px;
+    height:400px;
+    background-color: var(--block-color);
+    border-radius: 16px;
+    margin: 0 auto;
+}
+div.editor_block {
+    padding:16px 0;
+    box-sizing: border-box;
+    display: flex;
+    gap:0 16px;
+    border-radius: 24px;
+    margin: 16px auto 0 auto;
+    max-width: 900px;
+    width:100%;
+    min-width: 100px;
+    overflow-x: scroll;
+}
+div.editor_block_button {
+    width:100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+div.editor_block_button_icon {
+    width:60px;
+    height:60px;
+    border-radius: 100%;
+    border-radius: 100%;
+    background-color: var(--block-color);
+    margin-bottom:8px;
+}
