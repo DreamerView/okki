@@ -7,6 +7,7 @@
         --back:hsl(0, 0%, 0%);
         --background-color:hsla(0, 0%, 0%,0.93);
         --header-color:hsl(240, 3%, 11%);
+        --header-color_transparent:hsl(240, 3%, 11%,.9);
         --block-color: hsl(218, 9%, 18%);
         --block-color_transparent: hsla(0, 0%, 20%, 0.5);
         --menu-color:hsl(240, 2%, 18%);
@@ -48,6 +49,7 @@
         --back:hsl(210, 10%, 96%);
         --background-color:hsl(0, 0%, 94%);
         --header-color:hsl(0, 0%, 100%);
+        --header-color_transparent:hsl(0, 0%, 100%,.9);
         --block-color:hsl(220, 14%, 95%);
         --block-color_transparent:hsla(0, 0%, 87.5%, 0.5);
         --menu-color:hsl(248, 57%, 59%);

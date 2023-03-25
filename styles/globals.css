@@ -1564,9 +1564,10 @@ div.main_back_fixed {
   align-items: center;
   cursor: pointer;
   width:100%;
-  background-color: var(--header-color);
+  background-color: var(--header-color_transparent);
   z-index:999;
   padding:var(--s-2);
+  backdrop-filter: blur(4px);
   box-sizing: border-box
 }
 
