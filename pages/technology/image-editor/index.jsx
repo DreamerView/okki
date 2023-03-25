@@ -20,10 +20,14 @@ const ImageEditor = ({lang}) => {
         saturate:1,
         sepia:0
     });
+    const [rotate,setRotate] = useState(0);
     const [selected,setSelectChoice] = useState("blur");
     useEffect(()=>{
         imageEditor.current.style.filter = `blur(${range.blur}px) brightness(${range.brightness}%) contrast(${range.contrast}%) grayscale(${range.grayscale}%) hue-rotate(${range.hue}deg) invert(${range.invert}%) saturate(${range.saturate}) sepia(${range.sepia}%)`;
     },[range]);
+    useEffect(()=>{
+        imageEditor.current.style.transform = `rotate(${rotate}deg)`;
+    },[rotate])
     return(
         <>
         <NavbarApp lang={lang} choice="alone"/>
@@ -81,6 +85,12 @@ const ImageEditor = ({lang}) => {
                         </div>
                         <h6>Sepia</h6>
                     </div>
+                    <div onClick={()=>setSelectChoice(prev=>prev='rotated')} className={`${style.editor_block_button} anim_hover`}>
+                        <div className={selected==="sepia"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
+                            <Image src="/img/sepia.svg" width="36" height="36" alt="icon" />
+                        </div>
+                        <h6>Rotated</h6>
+                    </div>
                 </div>
                 <div className={style.editor}>
                     {selected==="blur"&&<div className={`${style.editor_b} block_animation`}>
@@ -122,6 +132,11 @@ const ImageEditor = ({lang}) => {
                         <label htmlFor="cowbell">Sepia</label>
                         <input onChange={(e)=>setRange({...range,sepia:e.target.value})} id="cowbell" type="range" defaultValue={range.sepia} min="0" max="100"/>
                         <input type="tel" value={range.sepia} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>}
+                    {selected==="rotated"&&<div className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">Rotated</label>
+                        <input onChange={(e)=>setRotate(prev=>prev=e.target.value)} id="cowbell" type="range" defaultValue={rotate} min="0" max="360"/>
+                        <input type="tel" value={rotate} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
                     </div>}
                 </div>
             </div>
