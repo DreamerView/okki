@@ -2,7 +2,7 @@ div.image_block {
     max-width: 600px;
     width:100%;
     min-width: 100px;
-    height:400px;
+    /* height:400px; */
     background-color: var(--block-color);
     border-radius: 16px;
     margin: 0 auto;
@@ -15,6 +15,12 @@ div.editor {
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+div.editor > input {
+    font-size: 24px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
 }
 div.editor_block {
     padding:16px 0;
@@ -42,10 +48,15 @@ div.editor_block_button_icon {
     width:60px;
     height:60px;
     border-radius: 100%;
-    border-radius: 100%;
     background-color: var(--block-color);
-    margin-bottom:8px;
+    margin-bottom:16px;
 }
 div.editor_block_button_icon > img {
     opacity:80%;
+}
+img.check {
+    max-width: 600px;
+    width:100%;
+    min-width: 100px;
+    height:auto;
 }
