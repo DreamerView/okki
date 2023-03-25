@@ -102,49 +102,49 @@ const ImageEditor = ({lang}) => {
                     {selected==="blur"&&<div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Blur</label>
                         <input onChange={(e)=>setRange({...range,blur:e.target.value})} id="cowbell" type="range" defaultValue={range.blur} value={range.blur} min="0" max="16"/>
-                        <input className={style.enter_number} type="tel" value={range.blur} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,blur:e.target.value} : v))}} />
+                        <input className={style.enter_number} type="tel" value={range.blur} pattern="(16)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,blur:e.target.value} : v))}} />
                     </div>}
                     {selected==="brightness"&&<div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Brightness</label>
                         <input onChange={(e)=>setRange({...range,brightness:e.target.value})} value={range.brightness} id="cowbell" type="range" defaultValue={range.brightness} min="0" max="200"/>
-                        <input className={style.enter_number} type="tel" value={range.brightness} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,brightness:e.target.value} : v))}} />
+                        <input className={style.enter_number} type="tel" value={range.brightness} pattern="^([0-9]|[1-9][0-9]|[1][0-9][0-9]|20[0-0])$" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,brightness:e.target.value} : v))}} />
                     </div>}
                     {selected==="contrast"&&<div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Contrast</label>
                         <input onChange={(e)=>setRange({...range,contrast:e.target.value})} value={range.contrast} id="cowbell" type="range" defaultValue={range.contrast} min="0" max="200"/>
-                        <input className={style.enter_number} type="tel" value={range.contrast} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,contrast:e.target.value} : v))}} />
+                        <input className={style.enter_number} type="tel" value={range.contrast} pattern="^([0-9]|[1-9][0-9]|[1][0-9][0-9]|20[0-0])$" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,contrast:e.target.value} : v))}} />
                     </div>}
                     {selected==="grayscale"&&<div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Grayscale</label>
                         <input onChange={(e)=>setRange({...range,grayscale:e.target.value})} value={range.grayscale} id="cowbell" type="range" defaultValue={range.grayscale} min="0" max="100"/>
-                        <input className={style.enter_number} type="tel" value={range.grayscale} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,grayscale:e.target.value} : v))}} />
+                        <input className={style.enter_number} type="tel" value={range.grayscale} pattern="(100)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,grayscale:e.target.value} : v))}} />
                     </div>}
                     {selected==="hue"&&<div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Hue-rotate</label>
                         <input onChange={(e)=>setRange({...range,hue:e.target.value})} value={range.hue} id="cowbell" type="range" defaultValue={range.hue} min="0" max="360"/>
-                        <input className={style.enter_number} type="tel" value={range.hue} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,hue:e.target.value} : v))}} />
+                        <input className={style.enter_number} type="tel" value={range.hue} pattern="^([1-9][0-9]?|[12][0-9][0-9]|3[0-5][0-9]|36[0-5])$" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,hue:e.target.value} : v))}} />
                     </div>}
                     {selected==="invert"&&<div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Invert</label>
                         <input onChange={(e)=>setRange({...range,invert:e.target.value})} value={range.invert} id="cowbell" type="range" defaultValue={range.invert} min="0" max="100"/>
-                        <input className={style.enter_number} type="tel" value={range.invert} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,invert:e.target.value} : v))}} />
+                        <input className={style.enter_number} type="tel" value={range.invert} pattern="(100)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,invert:e.target.value} : v))}} />
                     </div>}
                     {selected==="saturate"&&<div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Saturate</label>
                         <input onChange={(e)=>setRange({...range,saturate:e.target.value})} value={range.saturate} id="cowbell" type="range" defaultValue={range.saturate} min="0" max="100"/>
-                        <input className={style.enter_number} type="tel" value={range.saturate} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,saturate:e.target.value} : v))}} />
+                        <input className={style.enter_number} type="tel" value={range.saturate} pattern="(100)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,saturate:e.target.value} : v))}} />
                     </div>}
                     {selected==="sepia"&&<div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Sepia</label>
                         <input onChange={(e)=>setRange({...range,sepia:e.target.value})} value={range.sepia} id="cowbell" type="range" defaultValue={range.sepia} min="0" max="100"/>
-                        <input className={style.enter_number} type="tel" value={range.sepia} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,sepia:e.target.value} : v))}} />
+                        <input className={style.enter_number} type="tel" value={range.sepia} pattern="(100)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,sepia:e.target.value} : v))}} />
                     </div>}
                 </div></>}
                 {nav==="rotate"&&<div className={style.editor}>
                 <div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Rotated</label>
                         <input onChange={(e)=>setRotate(prev=>prev=e.target.value)} id="cowbell" type="range" defaultValue={rotate} value={rotate} min="0" max="360"/>
-                        <input className={style.enter_number} type="tel" value={rotate} pattern="[0-9]*" onChange={(e)=>{setRotate((v) => (e.target.validity.valid ? e.target.value : v))}} />
+                        <input className={style.enter_number} type="tel" value={rotate} pattern="-?[0-9]*" onChange={(e)=>{setRotate((v) => (e.target.validity.valid ? e.target.value : v))}} />
                     </div>
                     </div>}
             </div>
