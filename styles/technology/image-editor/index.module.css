@@ -69,6 +69,7 @@ div.editor_block_button_icon {
     height:60px;
     border-radius: 100%;
     background-color: rgba(0,0,0,.6);
+    border:1.5px solid transparent;
     margin-bottom:16px;
 }
 div.editor_block_button_icon_active {
@@ -79,6 +80,18 @@ div.editor_block_button_icon_active {
     height:60px;
     border-radius: 100%;
     background-color: var(--blue_back);
+    border:1.5px solid transparent;
+    margin-bottom:16px;
+}
+div.editor_block_button_icon_changed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:60px;
+    height:60px;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,.6);;
+    border:1.5px solid var(--orange_back);
     margin-bottom:16px;
 }
 div.editor_block_button_icon > img {

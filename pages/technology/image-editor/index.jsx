@@ -10,7 +10,7 @@ export const getStaticProps = async ({locale}) => {
 
 const ImageEditor = ({lang}) => {
     const imageEditor = useRef();
-    const [range,setRange] = useState({
+    const params = {
         blur:0,
         brightness:100,
         contrast:100,
@@ -19,7 +19,8 @@ const ImageEditor = ({lang}) => {
         invert:0,
         saturate:1,
         sepia:0
-    });
+    }
+    const [range,setRange] = useState(params);
     const [rotate,setRotate] = useState(0);
     const [selected,setSelectChoice] = useState("blur");
     const [nav,setNav] = useState('correction');
@@ -50,49 +51,49 @@ const ImageEditor = ({lang}) => {
                 </div>
                 {nav==="correction"&&<><div className={`${style.editor_block} block_animation`}>
                     <div onClick={()=>setSelectChoice(prev=>prev='blur')} className={`${style.editor_block_button} `}>
-                        <div className={selected==="blur"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
+                        <div className={selected==="blur"?style.editor_block_button_icon_active:params.blur!==range.blur?style.editor_block_button_icon_changed:style.editor_block_button_icon}>
                             <Image src="/img/blur.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Blur</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='brightness')} className={`${style.editor_block_button} `}>
-                        <div className={selected==="brightness"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
+                        <div className={selected==="brightness"?style.editor_block_button_icon_active:params.brightness!==range.brightness?style.editor_block_button_icon_changed:style.editor_block_button_icon}>
                             <Image src="/img/brightness.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Brightness</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='contrast')} className={`${style.editor_block_button} `}>
-                        <div className={selected==="contrast"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
+                        <div className={selected==="contrast"?style.editor_block_button_icon_active:params.contrast!==range.contrast?style.editor_block_button_icon_changed:style.editor_block_button_icon}>
                             <Image src="/img/contrast.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Contrast</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='grayscale')} className={`${style.editor_block_button} `}>
-                        <div className={selected==="grayscale"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
+                        <div className={selected==="grayscale"?style.editor_block_button_icon_active:params.grayscale!==range.grayscale?style.editor_block_button_icon_changed:style.editor_block_button_icon}>
                             <Image src="/img/contrast.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Grayscale</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='hue')} className={`${style.editor_block_button} `}>
-                        <div className={selected==="hue"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
+                        <div className={selected==="hue"?style.editor_block_button_icon_active:params.hue!==range.hue?style.editor_block_button_icon_changed:style.editor_block_button_icon}>
                             <Image src="/img/hue.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Hue-rotate</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='invert')} className={`${style.editor_block_button} `}>
-                        <div className={selected==="invert"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
+                        <div className={selected==="invert"?style.editor_block_button_icon_active:params.invert!==range.invert?style.editor_block_button_icon_changed:style.editor_block_button_icon}>
                             <Image src="/img/hue.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Invert</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='saturate')} className={`${style.editor_block_button} `}>
-                        <div className={selected==="saturate"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
+                        <div className={selected==="saturate"?style.editor_block_button_icon_active:params.saturate!==range.saturate?style.editor_block_button_icon_changed:style.editor_block_button_icon}>
                             <Image src="/img/saturate.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Saturate</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='sepia')} className={`${style.editor_block_button} `}>
-                        <div className={selected==="sepia"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
+                        <div className={selected==="sepia"?style.editor_block_button_icon_active:params.sepia!==range.sepia?style.editor_block_button_icon_changed:style.editor_block_button_icon}>
                             <Image src="/img/sepia.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Sepia</h6>
