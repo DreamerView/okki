@@ -3,10 +3,15 @@ div.image_block {
     max-width: 600px;
     width:100%;
     min-width: 100px;
-    /* height:400px; */
     background-color: var(--block-color);
     border-radius: 16px;
     margin: 0 auto;
+}
+img.check {
+    max-width: 600px;
+    width:100%;
+    min-width: 100px;
+    height:auto;
 }
 div.editor {
     z-index:10;
@@ -38,12 +43,12 @@ div.editor_b > input.enter_number {
 div.editor_block {
     position: relative;
     z-index:10;
-    padding:16px 0;
+    padding-bottom:16px;
     box-sizing: border-box;
     display: flex;
     gap:0 24px;
     border-radius: 24px;
-    margin: 16px auto 0 auto;
+    margin: 0 auto;
     max-width: 900px;
     width:100%;
     min-width: 100px;
@@ -79,14 +84,8 @@ div.editor_block_button_icon_active {
 div.editor_block_button_icon > img {
     opacity:100%;
 }
-img.check {
-    max-width: 600px;
-    width:100%;
-    min-width: 100px;
-    height:auto;
-}
 div.editor_nav {
-    margin: 24px auto;
+    margin: 24px auto 40px auto;
     display: flex;
     gap:16px;
     justify-content: center;

@@ -35,7 +35,7 @@ const ImageEditor = ({lang}) => {
         <div className="main_app">
             <div className="main_block_row">
                 <div className={style.image_block}>
-                    <Image ref={imageEditor} className={style.check} src="/img/editor.jpg" width={600} height={400} alt="editor" />
+                    <Image ref={imageEditor} className={style.check} src="/img/editor.jpg" width={600} height={300} alt="editor" />
                 </div>
                 <div className={style.editor_nav}>
                     <div onClick={()=>setNav(prev=>prev="correction")} className={nav==="correction"?style.editor_nav_block_active:style.editor_nav_block}>
