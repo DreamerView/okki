@@ -78,3 +78,25 @@ img.check {
     min-width: 100px;
     height:auto;
 }
+div.editor_nav {
+    margin: 16px auto;
+    display: flex;
+    gap:16px;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    width:100%;
+    min-width: 100px;
+}
+div.editor_nav_block {
+    border-radius: 16px;
+    padding:8px 16px;
+    background-color: var(--block-color);
+    cursor: pointer;
+}
+div.editor_nav_block_active {
+    border-radius: 16px;
+    padding:8px 16px;
+    background-color: var(--blue_back);
+    cursor: pointer;
+}

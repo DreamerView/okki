@@ -22,6 +22,7 @@ const ImageEditor = ({lang}) => {
     });
     const [rotate,setRotate] = useState(0);
     const [selected,setSelectChoice] = useState("blur");
+    const [nav,setNav] = useState('correction');
     useEffect(()=>{
         imageEditor.current.style.filter = `blur(${range.blur}px) brightness(${range.brightness}%) contrast(${range.contrast}%) grayscale(${range.grayscale}%) hue-rotate(${range.hue}deg) invert(${range.invert}%) saturate(${range.saturate}) sepia(${range.sepia}%)`;
     },[range]);
@@ -36,7 +37,18 @@ const ImageEditor = ({lang}) => {
                 <div className={style.image_block}>
                     <Image ref={imageEditor} className={style.check} src="/img/editor.jpg" width={600} height={400} alt="editor" />
                 </div>
-                <div className={style.editor_block}>
+                <div className={style.editor_nav}>
+                    <div onClick={()=>setNav(prev=>prev="correction")} className={nav==="correction"?style.editor_nav_block_active:style.editor_nav_block}>
+                        Коррекция
+                    </div>
+                    <div onClick={()=>setNav(prev=>prev="filter")} className={nav==="filter"?style.editor_nav_block_active:style.editor_nav_block}>
+                        Фильтры
+                    </div>
+                    <div onClick={()=>setNav(prev=>prev="rotate")} className={nav==="rotate"?style.editor_nav_block_active:style.editor_nav_block}>
+                        Выпрямление
+                    </div>
+                </div>
+                {nav==="correction"&&<><div className={style.editor_block}>
                     <div onClick={()=>setSelectChoice(prev=>prev='blur')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={selected==="blur"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/blur.svg" width="36" height="36" alt="icon" />
@@ -85,12 +97,6 @@ const ImageEditor = ({lang}) => {
                         </div>
                         <h6>Sepia</h6>
                     </div>
-                    <div onClick={()=>setSelectChoice(prev=>prev='rotated')} className={`${style.editor_block_button} anim_hover`}>
-                        <div className={selected==="sepia"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
-                            <Image src="/img/sepia.svg" width="36" height="36" alt="icon" />
-                        </div>
-                        <h6>Rotated</h6>
-                    </div>
                 </div>
                 <div className={style.editor}>
                     {selected==="blur"&&<div className={`${style.editor_b} block_animation`}>
@@ -133,12 +139,14 @@ const ImageEditor = ({lang}) => {
                         <input onChange={(e)=>setRange({...range,sepia:e.target.value})} id="cowbell" type="range" defaultValue={range.sepia} min="0" max="100"/>
                         <input type="tel" value={range.sepia} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
                     </div>}
-                    {selected==="rotated"&&<div className={`${style.editor_b} block_animation`}>
+                </div></>}
+                {nav==="rotate"&&<div className={style.editor}>
+                <div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Rotated</label>
                         <input onChange={(e)=>setRotate(prev=>prev=e.target.value)} id="cowbell" type="range" defaultValue={rotate} min="0" max="360"/>
                         <input type="tel" value={rotate} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>
                     </div>}
-                </div>
             </div>
         </div>
         </>
