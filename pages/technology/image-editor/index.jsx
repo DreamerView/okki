@@ -34,49 +34,49 @@ const ImageEditor = ({lang}) => {
                 </div>
                 <div className={style.editor_block}>
                     <div onClick={()=>setSelectChoice(prev=>prev='blur')} className={`${style.editor_block_button} anim_hover`}>
-                        <div className={style.editor_block_button_icon}>
+                        <div className={selected==="blur"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/blur.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Blur</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='brightness')} className={`${style.editor_block_button} anim_hover`}>
-                        <div className={style.editor_block_button_icon}>
+                        <div className={selected==="brightness"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/brightness.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Brightness</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='contrast')} className={`${style.editor_block_button} anim_hover`}>
-                        <div className={style.editor_block_button_icon}>
+                        <div className={selected==="contrast"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/contrast.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Contrast</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='grayscale')} className={`${style.editor_block_button} anim_hover`}>
-                        <div className={style.editor_block_button_icon}>
+                        <div className={selected==="grayscale"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/contrast.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Grayscale</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='hue')} className={`${style.editor_block_button} anim_hover`}>
-                        <div className={style.editor_block_button_icon}>
+                        <div className={selected==="hue"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/hue.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Hue-rotate</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='invert')} className={`${style.editor_block_button} anim_hover`}>
-                        <div className={style.editor_block_button_icon}>
+                        <div className={selected==="invert"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/hue.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Invert</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='saturate')} className={`${style.editor_block_button} anim_hover`}>
-                        <div className={style.editor_block_button_icon}>
+                        <div className={selected==="saturate"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/saturate.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Saturate</h6>
                     </div>
                     <div onClick={()=>setSelectChoice(prev=>prev='sepia')} className={`${style.editor_block_button} anim_hover`}>
-                        <div className={style.editor_block_button_icon}>
+                        <div className={selected==="sepia"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/sepia.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Sepia</h6>

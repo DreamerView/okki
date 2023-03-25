@@ -52,11 +52,21 @@ div.editor_block_button_icon {
     width:60px;
     height:60px;
     border-radius: 100%;
-    background-color: var(--block-color);
+    background-color: rgba(0,0,0,.6);
+    margin-bottom:16px;
+}
+div.editor_block_button_icon_active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:60px;
+    height:60px;
+    border-radius: 100%;
+    background-color: var(--blue_back);
     margin-bottom:16px;
 }
 div.editor_block_button_icon > img {
-    opacity:80%;
+    opacity:100%;
 }
 img.check {
     max-width: 600px;
