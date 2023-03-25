@@ -98,5 +98,6 @@ div.editor_nav_block_active {
     border-radius: 16px;
     padding:8px 16px;
     background-color: var(--blue_back);
+    color:hsl(0, 0%, 100%);
     cursor: pointer;
 }
