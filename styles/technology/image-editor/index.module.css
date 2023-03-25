@@ -85,7 +85,7 @@ div.editor_block_button_icon > img {
     opacity:100%;
 }
 div.editor_nav {
-    margin: 24px auto 40px auto;
+    margin: 24px auto 24px auto;
     display: flex;
     gap:16px;
     justify-content: center;
