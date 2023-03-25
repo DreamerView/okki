@@ -24,11 +24,16 @@ div.editor_b {
     gap:24px;
     text-align: center;
 }
-div.editor_b > input {
+div.editor_b > input.enter_number {
+    padding:16px;
+    width:100px;
     font-size: 24px;
     text-align: center;
     margin: 0 auto;
     font-weight: bold;
+    background-color: var(--block-color);
+    box-sizing: border-box;
+    border-radius:16px;
 }
 div.editor_block {
     position: relative;
