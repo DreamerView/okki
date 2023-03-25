@@ -48,7 +48,7 @@ const ImageEditor = ({lang}) => {
                         Выпрямление
                     </div>
                 </div>
-                {nav==="correction"&&<><div className={style.editor_block}>
+                {nav==="correction"&&<><div className={`${style.editor_block} block_animation`}>
                     <div onClick={()=>setSelectChoice(prev=>prev='blur')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={selected==="blur"?style.editor_block_button_icon_active:style.editor_block_button_icon}>
                             <Image src="/img/blur.svg" width="36" height="36" alt="icon" />
