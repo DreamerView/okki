@@ -6,6 +6,9 @@ div.image_block {
     background-color: var(--block-color);
     border-radius: 16px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 img.check {
     max-width: 600px;
@@ -90,6 +93,7 @@ div.editor_nav {
     max-width: 900px;
     width:100%;
     min-width: 100px;
+    overflow-x: scroll;
 }
 div.editor_nav_block {
     border-radius: 16px;
@@ -97,6 +101,12 @@ div.editor_nav_block {
     background-color: var(--block-color);
     cursor: pointer;
 }
+/* div.editor_nav_block:first-child {
+    margin-left: auto;
+}
+div.editor_nav_block:last-child {
+    margin-right: auto;
+} */
 div.editor_nav_block_active {
     border-radius: 16px;
     padding:8px 16px;
