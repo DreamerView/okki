@@ -41,13 +41,10 @@ div.editor_b > input.enter_number {
     border-radius:16px;
 }
 div.editor_block {
-    position: relative;
-    z-index:10;
     padding-bottom:16px;
     box-sizing: border-box;
     display: flex;
     gap:0 24px;
-    border-radius: 24px;
     margin: 0 auto;
     max-width: 900px;
     width:100%;
