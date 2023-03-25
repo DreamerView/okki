@@ -12,17 +12,18 @@ const ImageEditor = ({lang}) => {
     const imageEditor = useRef();
     const [range,setRange] = useState({
         blur:0,
-        brightness:0,
-        contrast:0,
+        brightness:100,
+        contrast:100,
         grayscale:0,
         hue:0,
         invert:0,
-        saturate:0,
+        saturate:1,
         sepia:0
     });
+    const [selected,setSelectChoice] = useState("blur");
     useEffect(()=>{
-        imageEditor.current.style.filter = `blur(${range.blur}px)`;
-    },[range])
+        imageEditor.current.style.filter = `blur(${range.blur}px) brightness(${range.brightness}%) contrast(${range.contrast}%) grayscale(${range.grayscale}%) hue-rotate(${range.hue}deg) invert(${range.invert}%) saturate(${range.saturate}) sepia(${range.sepia}%)`;
+    },[range]);
     return(
         <>
         <NavbarApp lang={lang} choice="alone"/>
@@ -32,49 +33,49 @@ const ImageEditor = ({lang}) => {
                     <Image ref={imageEditor} className={style.check} src="/img/editor.jpg" width={600} height={400} alt="editor" />
                 </div>
                 <div className={style.editor_block}>
-                    <div className={`${style.editor_block_button} anim_hover`}>
+                    <div onClick={()=>setSelectChoice(prev=>prev='blur')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={style.editor_block_button_icon}>
                             <Image src="/img/blur.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Blur</h6>
                     </div>
-                    <div className={`${style.editor_block_button} anim_hover`}>
+                    <div onClick={()=>setSelectChoice(prev=>prev='brightness')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={style.editor_block_button_icon}>
                             <Image src="/img/brightness.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Brightness</h6>
                     </div>
-                    <div className={`${style.editor_block_button} anim_hover`}>
+                    <div onClick={()=>setSelectChoice(prev=>prev='contrast')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={style.editor_block_button_icon}>
                             <Image src="/img/contrast.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Contrast</h6>
                     </div>
-                    <div className={`${style.editor_block_button} anim_hover`}>
+                    <div onClick={()=>setSelectChoice(prev=>prev='grayscale')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={style.editor_block_button_icon}>
                             <Image src="/img/contrast.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Grayscale</h6>
                     </div>
-                    <div className={`${style.editor_block_button} anim_hover`}>
+                    <div onClick={()=>setSelectChoice(prev=>prev='hue')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={style.editor_block_button_icon}>
                             <Image src="/img/hue.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Hue-rotate</h6>
                     </div>
-                    <div className={`${style.editor_block_button} anim_hover`}>
+                    <div onClick={()=>setSelectChoice(prev=>prev='invert')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={style.editor_block_button_icon}>
                             <Image src="/img/hue.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Invert</h6>
                     </div>
-                    <div className={`${style.editor_block_button} anim_hover`}>
+                    <div onClick={()=>setSelectChoice(prev=>prev='saturate')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={style.editor_block_button_icon}>
                             <Image src="/img/saturate.svg" width="36" height="36" alt="icon" />
                         </div>
                         <h6>Saturate</h6>
                     </div>
-                    <div className={`${style.editor_block_button} anim_hover`}>
+                    <div onClick={()=>setSelectChoice(prev=>prev='sepia')} className={`${style.editor_block_button} anim_hover`}>
                         <div className={style.editor_block_button_icon}>
                             <Image src="/img/sepia.svg" width="36" height="36" alt="icon" />
                         </div>
@@ -82,9 +83,46 @@ const ImageEditor = ({lang}) => {
                     </div>
                 </div>
                 <div className={style.editor}>
-                    <label for="cowbell">Blur</label>
-                    <input onChange={(e)=>setRange({...range,blur:e.target.value-100})} id="cowbell" type="range" defaultValue="100" min="0" max="200"/>
-                    <input type="tel" value={range.blur} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    {selected==="blur"&&<div className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">Blur</label>
+                        <input onChange={(e)=>setRange({...range,blur:e.target.value})} id="cowbell" type="range" defaultValue={range.blur} min="0" max="16"/>
+                        <input type="tel" value={range.blur} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>}
+                    {selected==="brightness"&&<div className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">Brightness</label>
+                        <input onChange={(e)=>setRange({...range,brightness:e.target.value})} id="cowbell" type="range" defaultValue={range.brightness} min="0" max="200"/>
+                        <input type="tel" value={range.brightness} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>}
+                    {selected==="contrast"&&<div className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">Contrast</label>
+                        <input onChange={(e)=>setRange({...range,contrast:e.target.value})} id="cowbell" type="range" defaultValue={range.contrast} min="0" max="200"/>
+                        <input type="tel" value={range.contrast} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>}
+                    {selected==="grayscale"&&<div className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">Grayscale</label>
+                        <input onChange={(e)=>setRange({...range,grayscale:e.target.value})} id="cowbell" type="range" defaultValue={range.grayscale} min="0" max="100"/>
+                        <input type="tel" value={range.grayscale} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>}
+                    {selected==="hue"&&<div className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">Hue-rotate</label>
+                        <input onChange={(e)=>setRange({...range,hue:e.target.value})} id="cowbell" type="range" defaultValue={range.hue} min="0" max="360"/>
+                        <input type="tel" value={range.hue} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>}
+                    {selected==="invert"&&<div className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">Invert</label>
+                        <input onChange={(e)=>setRange({...range,invert:e.target.value})} id="cowbell" type="range" defaultValue={range.invert} min="0" max="100"/>
+                        <input type="tel" value={range.invert} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>}
+                    {selected==="saturate"&&<div className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">Saturate</label>
+                        <input onChange={(e)=>setRange({...range,saturate:e.target.value})} id="cowbell" type="range" defaultValue={range.saturate} min="0" max="100"/>
+                        <input type="tel" value={range.saturate} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>}
+                    {selected==="sepia"&&<div className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">Sepia</label>
+                        <input onChange={(e)=>setRange({...range,sepia:e.target.value})} id="cowbell" type="range" defaultValue={range.sepia} min="0" max="100"/>
+                        <input type="tel" value={range.sepia} pattern="[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? e.target.value : v).replace(/,/g, ""))}} />
+                    </div>}
                 </div>
             </div>
         </div>
