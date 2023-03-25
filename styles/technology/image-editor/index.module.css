@@ -17,9 +17,11 @@ div.editor {
     height:300px
 }
 div.editor_b {
+    margin-top:24px;
     width:100%;
     display: flex;
     flex-direction: column;
+    gap:16px;
     text-align: center;
 }
 div.editor_b > input {
@@ -79,7 +81,7 @@ img.check {
     height:auto;
 }
 div.editor_nav {
-    margin: 16px auto;
+    margin: 24px auto;
     display: flex;
     gap:16px;
     justify-content: center;
