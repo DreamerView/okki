@@ -135,9 +135,9 @@ div.editor_panel {
     min-width:100px;
     height:100px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap:0 16px;
+    /* gap:0 16px; */
     margin: 0 auto 40px auto;
 }
 div.editor_panel_row {
