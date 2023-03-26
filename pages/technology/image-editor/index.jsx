@@ -177,7 +177,7 @@ const ImageEditor = ({lang}) => {
                     <div className={style.editor_panel_row}><div onClick={()=>setRange({...range,scaleY:range.scaleY===1?-1:1})} className={style.editor_panel_block}><Image className={style.top} src="/img/flip.svg" width={36} height={36} alt="icon"/></div><h6>Вертикальная</h6></div>
                     <div className={style.editor_panel_row}><div onClick={()=>setRange({...range,rotate:range.rotate+90})} className={style.editor_panel_block}><Image src="/img/rotate_right.svg" width={36} height={36} alt="icon"/></div><h6>Направо</h6></div>
                 </div>
-                <div className={`${style.editor_b} block_animation`}>
+                <div className={`${style.editor_b}`}>
                         <label htmlFor="cowbell">Rotated</label>
                         <input onChange={(e)=>setRange({...range,rotate:e.target.value})} id="cowbell" type="range" value={range.rotate} min="0" max="360"/>
                         <input className={style.enter_number} type="tel" value={range.rotate} pattern="-?[0-9]*" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,rotate:e.target.value} : v))}} />
