@@ -1,12 +1,21 @@
+div.image_editor {
+    max-width: 1100px;
+    width: 100%;
+    min-width: 100px;
+    background-color: var(--block-color);
+    margin: 0 auto;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+}
 div.image_block_land {
     overflow:hidden;
-    max-width: 900px;
+    max-width: 600px;
     width:100%;
     min-width: 100px;
     background-color: var(--block-color);
-    border-radius: 16px;
-    margin: 0 auto;
     display: flex;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
 }
@@ -112,15 +121,24 @@ div.editor_block_button_icon > img {
     opacity:100%;
 }
 div.editor_nav {
+    /* padding:24px 0 40px 0; */
     margin: 24px auto 40px auto;
     display: flex;
     gap:16px;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    text-align: center;
+    /* margin:auto; */
     max-width: 700px;
     width:100%;
     min-width: 100px;
     overflow-x: scroll;
+}
+div.editor_nav > div:first-child {
+    margin-left:auto;
+}
+div.editor_nav > div:last-child {
+    margin-right:auto;
 }
 div.editor_nav_block {
     border-radius: 16px;
