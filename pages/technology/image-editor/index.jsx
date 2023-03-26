@@ -5,7 +5,6 @@ import style from "/styles/technology/image-editor/index.module.css";
 import { useState,useRef,useEffect,useMemo } from "react";
 import Image from "next/image";
 import correctionText from "/pages/technology/image-editor/correctionDatabase.json";
-import navText from "/pages/technology/image-editor/navDatabase.json";
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
 };
@@ -33,6 +32,7 @@ const ImageEditor = ({lang}) => {
         if(imageEditor!==undefined) imageEditor.current.style.cssText = `filter:blur(${range.blur}px) brightness(${range.brightness}%) contrast(${range.contrast}%) grayscale(${range.grayscale}%) hue-rotate(${range.hue}deg) invert(${range.invert}%) saturate(${range.saturate+1}) sepia(${range.sepia}%);transform:rotate(${range.rotate}deg);`;
     },[range]);
     const navMenu = useMemo(()=>{
+        const navText = [{text:"Коррекция",nav:"correction"},{text:"Фильтры",nav:"filter"},{text:"Выпрямление",nav:"rotate"}];
         return(
             <div className={style.editor_nav}>
                 {navText.map((result,index)=><div key={index} onClick={()=>setSelectChoice({...selected,nav:result.nav})} className={selected.nav===result.nav?style.editor_nav_block_active:style.editor_nav_block}>
@@ -53,6 +53,88 @@ const ImageEditor = ({lang}) => {
             sepia:0,
             rotate:0
         };
+        const correctionText = [
+            {
+                text:"Blur",
+                image:"/img/blur.svg",
+                key:"blur",
+                func:(e)=>setRange({...range,blur:e.target.value}),
+                input:(e)=>setRange((v) => (e.target.validity.valid ? {...range,blur:e.target.value} : v)),
+                pattern:"(16)|[0-9]\d?",
+                min:0,
+                max:16
+            },
+            {
+                text:"Brightness",
+                image:"/img/brightness.svg",
+                key:"brightness",
+                func:(e)=>setRange({...range,brightness:e.target.value}),
+                input:(e)=>setRange((v) => (e.target.validity.valid ? {...range,brightness:e.target.value} : v)),
+                pattern:"^([0-9]|[1-9][0-9]|[1][0-9][0-9]|20[0-0])$",
+                min:0,
+                max:200
+            },
+            {
+                text:"Contrast",
+                image:"/img/contrast.svg",
+                key:"contrast",
+                func:(e)=>setRange({...range,contrast:e.target.value}),
+                input:(e)=>setRange((v) => (e.target.validity.valid ? {...range,contrast:e.target.value} : v)),
+                pattern:"^([0-9]|[1-9][0-9]|[1][0-9][0-9]|20[0-0])$",
+                min:0,
+                max:200
+            },
+            {
+                text:"Grayscale",
+                image:"/img/contrast.svg",
+                key:"grayscale",
+                func:(e)=>setRange({...range,grayscale:e.target.value}),
+                input:(e)=>setRange((v) => (e.target.validity.valid ? {...range,grayscale:e.target.value} : v)),
+                pattern:"(100)|[0-9]\d?",
+                min:0,
+                max:100
+            },
+            {
+                text:"Hue-rotate",
+                image:"/img/hue.svg",
+                key:"hue",
+                func:(e)=>setRange({...range,hue:e.target.value}),
+                input:(e)=>setRange((v) => (e.target.validity.valid ? {...range,hue:e.target.value} : v)),
+                pattern:"^([1-9][0-9]?|[12][0-9][0-9]|3[0-5][0-9]|36[0-5])$",
+                min:0,
+                max:360
+            },
+            {
+                text:"Invert",
+                image:"/img/hue.svg",
+                key:"invert",
+                func:(e)=>setRange({...range,invert:e.target.value}),
+                input:(e)=>setRange((v) => (e.target.validity.valid ? {...range,invert:e.target.value} : v)),
+                pattern:"(100)|[0-9]\d?",
+                min:0,
+                max:100
+            },
+            {
+                text:"Saturate",
+                image:"/img/saturate.svg",
+                key:"saturate",
+                func:(e)=>setRange({...range,saturate:e.target.value}),
+                input:(e)=>setRange((v) => (e.target.validity.valid ? {...range,saturate:e.target.value} : v)),
+                pattern:"(100)|[0-9]\d?",
+                min:0,
+                max:100
+            },
+            {
+                text:"Sepia",
+                image:"/img/sepia.svg",
+                key:"sepia",
+                func:(e)=>setRange({...range,sepia:e.target.value}),
+                input:(e)=>setRange((v) => (e.target.validity.valid ? {...range,sepia:e.target.value} : v)),
+                pattern:"(100)|[0-9]\d?",
+                min:0,
+                max:100
+            }
+        ];
         return(
             selected.nav==="correction"&&<><div className={`${style.editor_block} block_animation`}>
                 {correctionText.map((result,index)=>
@@ -69,8 +151,8 @@ const ImageEditor = ({lang}) => {
                     {correctionText.map((result,index)=>
                         selected.correction===result.key&&<div key={index} className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">{result.text}</label>
-                        <input onChange={eval(result.func)} id="cowbell" type="range" min={result.min} max={result.max}  value={range[result.key]}/>
-                        <input className={style.enter_number} type="tel" value={range[result.key]}  onChange={eval(result.input)} />
+                        <input onChange={result.func} id="cowbell" type="range" min={result.min} max={result.max}  value={range[result.key]}/>
+                        <input className={style.enter_number} pattern={result.pattern} type="tel" value={range[result.key]}  onChange={result.input} />
                     </div>
                     )}
                 </div></>
