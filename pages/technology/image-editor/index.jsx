@@ -17,7 +17,7 @@ const ImageEditor = ({lang}) => {
         grayscale:0,
         hue:0,
         invert:0,
-        saturate:1,
+        saturate:0,
         sepia:0
     }
     const [range,setRange] = useState(params);
@@ -25,7 +25,7 @@ const ImageEditor = ({lang}) => {
     const [selected,setSelectChoice] = useState("blur");
     const [nav,setNav] = useState('correction');
     useEffect(()=>{
-        imageEditor.current.style.filter = `blur(${range.blur}px) brightness(${range.brightness}%) contrast(${range.contrast}%) grayscale(${range.grayscale}%) hue-rotate(${range.hue}deg) invert(${range.invert}%) saturate(${range.saturate}) sepia(${range.sepia}%)`;
+        imageEditor.current.style.filter = `blur(${range.blur}px) brightness(${range.brightness}%) contrast(${range.contrast}%) grayscale(${range.grayscale}%) hue-rotate(${range.hue}deg) invert(${range.invert}%) saturate(${range.saturate+1}) sepia(${range.sepia}%)`;
     },[range]);
     useEffect(()=>{
         imageEditor.current.style.transform = `rotate(${rotate}deg)`;
@@ -102,7 +102,7 @@ const ImageEditor = ({lang}) => {
                 <div className={style.editor}>
                     {selected==="blur"&&<div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Blur</label>
-                        <input onChange={(e)=>setRange({...range,blur:e.target.value})} id="cowbell" type="range"  value={range.blur}/>
+                        <input onChange={(e)=>setRange({...range,blur:e.target.value})} id="cowbell" type="range" min={0} max={16}  value={range.blur}/>
                         <input className={style.enter_number} type="tel" value={range.blur} pattern="(16)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,blur:e.target.value} : v))}} />
                     </div>}
                     {selected==="brightness"&&<div className={`${style.editor_b} block_animation`}>
