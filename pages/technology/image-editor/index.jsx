@@ -34,7 +34,7 @@ const ImageEditor = ({lang}) => {
         const navText = [{text:"Коррекция",nav:"correction"},{text:"Фильтры",nav:"filter"},{text:"Выпрямление",nav:"rotate"}];
         return(
             <div className={style.editor_nav}>
-                {navText.map((result)=><div onClick={()=>setSelectChoice({...selected,nav:result.nav})} className={selected.nav===result.nav?style.editor_nav_block_active:style.editor_nav_block}>
+                {navText.map((result,index)=><div key={index} onClick={()=>setSelectChoice({...selected,nav:result.nav})} className={selected.nav===result.nav?style.editor_nav_block_active:style.editor_nav_block}>
                     {result.text}
                 </div>)}
             </div>
@@ -90,8 +90,8 @@ const ImageEditor = ({lang}) => {
         ]
         return(
             selected.nav==="correction"&&<><div className={`${style.editor_block} block_animation`}>
-                {correctionText.map((result)=>
-                    <div onClick={()=>setSelectChoice({...selected,correction:result.key})} className={`${style.editor_block_button} `}>
+                {correctionText.map((result,index)=>
+                    <div key={index} onClick={()=>setSelectChoice({...selected,correction:result.key})} className={`${style.editor_block_button} `}>
                         <div className={selected.correction===result.key?style.editor_block_button_icon_active:Number(params[result.key])===Number(range[result.key])?style.editor_block_button_icon:style.editor_block_button_icon_changed}>
                             <Image src={result.image} width="36" height="36" alt="icon" />
                         </div>
