@@ -64,7 +64,7 @@ const ImageEditor = ({lang}) => {
                     )}
                 </div></>
         );
-    },[selected,range]);
+    },[selected,range,params]);
     return(
         <>
         <NavbarApp lang={lang} choice="alone"/>
