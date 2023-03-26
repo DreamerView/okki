@@ -42,11 +42,22 @@ const ImageEditor = ({lang}) => {
         );
     },[selected]);
     const correctionMenu = useMemo(()=>{
+        const param = {
+            blur:0,
+            brightness:100,
+            contrast:100,
+            grayscale:0,
+            hue:0,
+            invert:0,
+            saturate:0,
+            sepia:0,
+            rotate:0
+        };
         return(
             selected.nav==="correction"&&<><div className={`${style.editor_block} block_animation`}>
                 {correctionText.map((result,index)=>
                     <div key={index} onClick={()=>setSelectChoice({...selected,correction:result.key})} className={`${style.editor_block_button} `}>
-                        <div className={selected.correction===result.key?style.editor_block_button_icon_active:Number(params[result.key])===Number(range[result.key])?style.editor_block_button_icon:style.editor_block_button_icon_changed}>
+                        <div className={selected.correction===result.key?style.editor_block_button_icon_active:Number(param[result.key])===Number(range[result.key])?style.editor_block_button_icon:style.editor_block_button_icon_changed}>
                             <Image src={result.image} width="36" height="36" alt="icon" />
                         </div>
                         <h6>{result.text}</h6>
