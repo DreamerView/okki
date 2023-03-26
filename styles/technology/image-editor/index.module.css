@@ -11,9 +11,7 @@ div.image_block {
     justify-content: center;
 }
 img.check {
-    max-width: 600px;
     width:100%;
-    min-width: 100px;
     height:auto;
 }
 div.editor {
@@ -130,4 +128,37 @@ div.editor_nav_block_active {
 div.editor_b > label {
     font-size: 24px;
     font-weight: 700;
+}
+div.editor_panel {
+    max-width:600px;
+    width: 100%;
+    min-width:100px;
+    height:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0 32px;
+    margin: 0 auto 40px auto;
+}
+div.editor_panel_row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:16px 0;
+    font-size: 16px;
+}
+div.editor_panel_block {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:60px;
+    height:60px;
+    background-color: rgba(0,0,0,.6);
+    border-radius: 100%;
+    cursor: pointer;
+}
+img.top {
+    transform:rotate(90deg);
 }

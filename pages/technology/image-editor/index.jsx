@@ -20,7 +20,9 @@ const ImageEditor = ({lang}) => {
         invert:0,
         saturate:0,
         sepia:0,
-        rotate:0
+        rotate:0,
+        scaleX:1,
+        scaleY:1
     };
     const selectParams = {
         nav:"correction",
@@ -29,7 +31,7 @@ const ImageEditor = ({lang}) => {
     const [range,setRange] = useState(params);
     const [selected,setSelectChoice] = useState(selectParams);
     useEffect(()=>{
-        if(imageEditor!==undefined) imageEditor.current.style.cssText = `filter:blur(${range.blur}px) brightness(${range.brightness}%) contrast(${range.contrast}%) grayscale(${range.grayscale}%) hue-rotate(${range.hue}deg) invert(${range.invert}%) saturate(${range.saturate+1}) sepia(${range.sepia}%);transform:rotate(${range.rotate}deg);`;
+        if(imageEditor!==undefined) imageEditor.current.style.cssText = `filter:blur(${range.blur}px) brightness(${range.brightness}%) contrast(${range.contrast}%) grayscale(${range.grayscale}%) hue-rotate(${range.hue}deg) invert(${range.invert}%) saturate(${range.saturate+1}) sepia(${range.sepia}%);transform:rotate(${range.rotate}deg) scaleX(${range.scaleX}) scaleY(${range.scaleY});`;
     },[range]);
     const navMenu = useMemo(()=>{
         const navText = [{text:"Коррекция",nav:"correction"},{text:"Фильтры",nav:"filter"},{text:"Выпрямление",nav:"rotate"}];
@@ -168,7 +170,13 @@ const ImageEditor = ({lang}) => {
                 </div>
                 {navMenu}
                 {correctionMenu}
-                {selected.nav==="rotate"&&<div className={style.editor}>
+                {selected.nav==="rotate"&&<div className={`${style.editor} block_animation`}>
+                <div className={style.editor_panel}>
+                    <div className={style.editor_panel_row}><div onClick={()=>setRange({...range,rotate:range.rotate-90})} className={style.editor_panel_block}><Image src="/img/rotate_left.svg" width={36} height={36} alt="icon"/></div><h6>Налево</h6></div>
+                    <div className={style.editor_panel_row}><div onClick={()=>setRange({...range,scaleX:range.scaleX===1?-1:1})} className={style.editor_panel_block}><Image src="/img/flip.svg" width={36} height={36} alt="icon"/></div><h6>Горизонтальная</h6></div>
+                    <div className={style.editor_panel_row}><div onClick={()=>setRange({...range,scaleY:range.scaleY===1?-1:1})} className={style.editor_panel_block}><Image className={style.top} src="/img/flip.svg" width={36} height={36} alt="icon"/></div><h6>Вертикальная</h6></div>
+                    <div className={style.editor_panel_row}><div onClick={()=>setRange({...range,rotate:range.rotate+90})} className={style.editor_panel_block}><Image src="/img/rotate_right.svg" width={36} height={36} alt="icon"/></div><h6>Направо</h6></div>
+                </div>
                 <div className={`${style.editor_b} block_animation`}>
                         <label htmlFor="cowbell">Rotated</label>
                         <input onChange={(e)=>setRange({...range,rotate:e.target.value})} id="cowbell" type="range" value={range.rotate} min="0" max="360"/>
