@@ -45,47 +45,82 @@ const ImageEditor = ({lang}) => {
             {
                 text:"Blur",
                 image:"/img/blur.svg",
-                key:"blur" 
+                key:"blur",
+                func:(e)=>setRange({...range,blur:e.target.value}),
+                input:(e)=>{setRange((v) => (e.target.validity.valid ? {...range,blur:e.target.value} : v))},
+                pattern:"(16)|[0-9]\d?",
+                min:0,
+                max:16
             },
             {
                 text:"Brightness",
                 image:"/img/brightness.svg",
-                key:"brightness"
+                key:"brightness",
+                func:(e)=>setRange({...range,brightness:e.target.value}),
+                input:(e)=>{setRange((v) => (e.target.validity.valid ? {...range,brightness:e.target.value} : v))},
+                pattern:"^([0-9]|[1-9][0-9]|[1][0-9][0-9]|20[0-0])$",
+                min:0,
+                max:200
             },
             {
                 text:"Contrast",
                 image:"/img/contrast.svg",
                 key:"contrast",
+                func:(e)=>setRange({...range,contrast:e.target.value}),
+                input:(e)=>{setRange((v) => (e.target.validity.valid ? {...range,contrast:e.target.value} : v))},
+                pattern:"^([0-9]|[1-9][0-9]|[1][0-9][0-9]|20[0-0])$",
+                min:0,
+                max:200
             },
             {
                 text:"Grayscale",
                 image:"/img/contrast.svg",
-                key:"grayscale"
+                key:"grayscale",
+                func:(e)=>setRange({...range,grayscale:e.target.value}),
+                input:(e)=>{setRange((v) => (e.target.validity.valid ? {...range,grayscale:e.target.value} : v))},
+                pattern:"(100)|[0-9]\d?",
+                min:0,
+                max:100
             },
             {
                 text:"Hue-rotate",
                 image:"/img/hue.svg",
-                key:"hue"
+                key:"hue",
+                func:(e)=>setRange({...range,hue:e.target.value}),
+                input:(e)=>{setRange((v) => (e.target.validity.valid ? {...range,hue:e.target.value} : v))},
+                pattern:"^([1-9][0-9]?|[12][0-9][0-9]|3[0-5][0-9]|36[0-5])$",
+                min:0,
+                max:360
             },
             {
                 text:"Invert",
                 image:"/img/hue.svg",
-                key:"invert"
+                key:"invert",
+                func:(e)=>setRange({...range,invert:e.target.value}),
+                input:(e)=>{setRange((v) => (e.target.validity.valid ? {...range,invert:e.target.value} : v))},
+                pattern:"(100)|[0-9]\d?",
+                min:0,
+                max:100
             },
             {
                 text:"Saturate",
                 image:"/img/saturate.svg",
-                key:"saturate"
-            },
-            {
-                text:"Saturate",
-                image:"/img/saturate.svg",
-                key:"saturate"
+                key:"saturate",
+                func:(e)=>setRange({...range,saturate:e.target.value}),
+                input:(e)=>{setRange((v) => (e.target.validity.valid ? {...range,saturate:e.target.value} : v))},
+                pattern:"(100)|[0-9]\d?",
+                min:0,
+                max:100
             },
             {
                 text:"Sepia",
                 image:"/img/sepia.svg",
-                key:"sepia"
+                key:"sepia",
+                func:(e)=>setRange({...range,sepia:e.target.value}),
+                input:(e)=>{setRange((v) => (e.target.validity.valid ? {...range,sepia:e.target.value} : v))},
+                pattern:"(100)|[0-9]\d?",
+                min:0,
+                max:100
             }
         ]
         return(
@@ -101,46 +136,13 @@ const ImageEditor = ({lang}) => {
                     }
                 </div>
                 <div className={style.editor}>
-                    {selected.correction==="blur"&&<div className={`${style.editor_b} block_animation`}>
-                        <label htmlFor="cowbell">Blur</label>
-                        <input onChange={(e)=>setRange({...range,blur:e.target.value})} id="cowbell" type="range" min={0} max={16}  value={range.blur}/>
-                        <input className={style.enter_number} type="tel" value={range.blur} pattern="(16)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,blur:e.target.value} : v))}} />
-                    </div>}
-                    {selected.correction==="brightness"&&<div className={`${style.editor_b} block_animation`}>
-                        <label htmlFor="cowbell">Brightness</label>
-                        <input onChange={(e)=>setRange({...range,brightness:e.target.value})} value={range.brightness} id="cowbell" type="range" min="0" max="200"/>
-                        <input className={style.enter_number} type="tel" value={range.brightness} pattern="^([0-9]|[1-9][0-9]|[1][0-9][0-9]|20[0-0])$" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,brightness:e.target.value} : v))}} />
-                    </div>}
-                    {selected.correction==="contrast"&&<div className={`${style.editor_b} block_animation`}>
-                        <label htmlFor="cowbell">Contrast</label>
-                        <input onChange={(e)=>setRange({...range,contrast:e.target.value})} value={range.contrast} id="cowbell" type="range" min="0" max="200"/>
-                        <input className={style.enter_number} type="tel" value={range.contrast} pattern="^([0-9]|[1-9][0-9]|[1][0-9][0-9]|20[0-0])$" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,contrast:e.target.value} : v))}} />
-                    </div>}
-                    {selected.correction==="grayscale"&&<div className={`${style.editor_b} block_animation`}>
-                        <label htmlFor="cowbell">Grayscale</label>
-                        <input onChange={(e)=>setRange({...range,grayscale:e.target.value})} value={range.grayscale} id="cowbell" type="range" min="0" max="100"/>
-                        <input className={style.enter_number} type="tel" value={range.grayscale} pattern="(100)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,grayscale:e.target.value} : v))}} />
-                    </div>}
-                    {selected.correction==="hue"&&<div className={`${style.editor_b} block_animation`}>
-                        <label htmlFor="cowbell">Hue-rotate</label>
-                        <input onChange={(e)=>setRange({...range,hue:e.target.value})} value={range.hue} id="cowbell" type="range" min="0" max="360"/>
-                        <input className={style.enter_number} type="tel" value={range.hue} pattern="^([1-9][0-9]?|[12][0-9][0-9]|3[0-5][0-9]|36[0-5])$" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,hue:e.target.value} : v))}} />
-                    </div>}
-                    {selected.correction==="invert"&&<div className={`${style.editor_b} block_animation`}>
-                        <label htmlFor="cowbell">Invert</label>
-                        <input onChange={(e)=>setRange({...range,invert:e.target.value})} value={range.invert} id="cowbell" type="range" min="0" max="100"/>
-                        <input className={style.enter_number} type="tel" value={range.invert} pattern="(100)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,invert:e.target.value} : v))}} />
-                    </div>}
-                    {selected.correction==="saturate"&&<div className={`${style.editor_b} block_animation`}>
-                        <label htmlFor="cowbell">Saturate</label>
-                        <input onChange={(e)=>setRange({...range,saturate:e.target.value})} value={range.saturate} id="cowbell" type="range" min="0" max="100"/>
-                        <input className={style.enter_number} type="tel" value={range.saturate} pattern="(100)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,saturate:e.target.value} : v))}} />
-                    </div>}
-                    {selected.correction==="sepia"&&<div className={`${style.editor_b} block_animation`}>
-                        <label htmlFor="cowbell">Sepia</label>
-                        <input onChange={(e)=>setRange({...range,sepia:e.target.value})} value={range.sepia} id="cowbell" type="range" min="0" max="100"/>
-                        <input className={style.enter_number} type="tel" value={range.sepia} pattern="(100)|[0-9]\d?" onChange={(e)=>{setRange((v) => (e.target.validity.valid ? {...range,sepia:e.target.value} : v))}} />
-                    </div>}
+                    {correctionText.map((result,index)=>
+                        selected.correction===result.key&&<div key={index} className={`${style.editor_b} block_animation`}>
+                        <label htmlFor="cowbell">{result.text}</label>
+                        <input onChange={result.func} id="cowbell" type="range" min={result.min} max={result.max}  value={range[result.key]}/>
+                        <input className={style.enter_number} type="tel" value={range[result.key]}  onChange={result.input} />
+                    </div>
+                    )}
                 </div></>
         );
     },[selected,range]);
