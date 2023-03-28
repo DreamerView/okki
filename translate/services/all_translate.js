@@ -93,5 +93,10 @@ export default {
         kk:"Image Editor",
         ru:"Image Editor",
         en:"Image Editor"
+    },
+    counter: {
+        kk:"Counter",
+        ru:"Counter",
+        en:"Counter"
     }
 }
