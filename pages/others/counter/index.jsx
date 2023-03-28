@@ -39,7 +39,7 @@ const CounterApp = ({lang}) => {
                     <h1 className={style.counter_header}>{counter}</h1>
                     </div>
                     <div className={style.counter_block}>
-                        <button type="button" onClick={addCount} className={`${style.counter_main} disable`} disabled={loading===true?true:false}>+</button>
+                        <button type="button" onClick={addCount} className={`${style.counter_main} disable glow`} disabled={loading===true?true:false}>+</button>
                         <button type="button" onClick={resetCount} className={`${style.counter_reset} disable`} disabled={loading===true?true:false}>Reset</button>
                     </div>
                 </div>
