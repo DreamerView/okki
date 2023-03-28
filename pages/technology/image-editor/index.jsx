@@ -4,7 +4,6 @@ const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loadi
 import style from "/styles/technology/image-editor/index.module.css";
 import { useState,useRef,useEffect,useMemo } from "react";
 import Image from "next/image";
-import correctionText from "/pages/technology/image-editor/correctionDatabase.json";
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
 };
@@ -26,7 +25,7 @@ const ImageEditor = ({lang}) => {
     };
     const selectParams = {
         nav:"correction",
-        correction:"blur"
+        correction:"blur",
     };
     const [range,setRange] = useState(params);
     const [selected,setSelectChoice] = useState(selectParams);
@@ -34,7 +33,7 @@ const ImageEditor = ({lang}) => {
         if(imageEditor!==undefined) imageEditor.current.style.cssText = `filter:blur(${range.blur}px) brightness(${range.brightness}%) contrast(${range.contrast}%) grayscale(${range.grayscale}%) hue-rotate(${range.hue}deg) invert(${range.invert}%) saturate(${range.saturate+1}) sepia(${range.sepia}%);transform:rotate(${range.rotate}deg) scaleX(${range.scaleX}) scaleY(${range.scaleY});`;
     },[range]);
     const navMenu = useMemo(()=>{
-        const navText = [{text:"Коррекция",nav:"correction"},{text:"Фильтры",nav:"filter"},{text:"Выпрямление",nav:"rotate"}];
+        const navText = [{text:"Коррекция",nav:"correction"},{text:"Фильтры",nav:"filter"},{text:"Выпрямление",nav:"rotate"},{text:"Параметры",nav:"params"}];
         return(
             <div className={style.editor_nav}>
                 {navText.map((result,index)=><div key={index} onClick={()=>setSelectChoice({...selected,nav:result.nav})} className={selected.nav===result.nav?style.editor_nav_block_active:style.editor_nav_block}>

@@ -146,12 +146,6 @@ div.editor_nav_block {
     background-color: var(--block-color);
     cursor: pointer;
 }
-/* div.editor_nav_block:first-child {
-    margin-left: auto;
-}
-div.editor_nav_block:last-child {
-    margin-right: auto;
-} */
 div.editor_nav_block_active {
     border-radius: 16px;
     padding:8px 16px;

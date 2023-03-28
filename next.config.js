@@ -38,7 +38,7 @@ const ContentSecurityPolicy = `
     style-src 'self' 'report-sample'; 
     style-src-elem  'self'  'unsafe-inline'; 
     style-src-attr 'self' 'unsafe-inline'; 
-    connect-src 'self' https://cdnjs.cloudflare.com https://app.okki.kz wss://app.okki.kz http://localhost:3001;
+    connect-src 'self' https://cdnjs.cloudflare.com https://app.okki.kz wss://app.okki.kz http://localhost:3001 https://api.fast.com;
     base-uri 'none';
     form-action 'self';
     object-src 'none'; 
