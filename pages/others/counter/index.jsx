@@ -10,6 +10,12 @@ export const getStaticProps = async ({locale}) => {
 
 const CounterApp = ({lang}) => {
     const [counter,setCounter] = useState(0);
+    const addCount = () => {
+        return setCounter(prev=>prev+1);
+    };
+    const resetCount = () => {
+        return setCounter(prev=>prev=0);
+    };
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
         <div className="main_app ">
@@ -20,8 +26,8 @@ const CounterApp = ({lang}) => {
                     <h1 className={style.counter_header}>{counter}</h1>
                     </div>
                     <div className={style.counter_block}>
-                        <button onClick={()=>setCounter(prev=>prev+1)} className={style.counter_main}>+</button>
-                        <button onClick={()=>setCounter(prev=>prev=0)} className={style.counter_reset}>Reset</button>
+                        <button onClick={()=>addCount()} className={style.counter_main}>+</button>
+                        <button onClick={()=>resetCount()} className={style.counter_reset}>Reset</button>
                     </div>
                 </div>
             </div>

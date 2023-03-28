@@ -32,7 +32,7 @@ button.counter_main {
     background-color: var(--brand-color);
     border-radius: 100%;
     cursor: pointer;
-    font-size: 60px;
+    font-size: 72px;
     color:hsl(0, 0%, 100%);
 }
 button.counter_reset {
