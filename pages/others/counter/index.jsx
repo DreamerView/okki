@@ -16,19 +16,15 @@ const CounterApp = ({lang}) => {
     const addCount = useCallback(() => {
         setLoading(prev=>prev=true);
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
-        let promise = new Promise((resolve, reject)=>{
-            resolve(new Audio(audioDownloaded).play());  
-        });
-        promise.then(()=>{
-            setCounter(prev=>prev+1);
-            setLoading(prev=>prev=false);
-        })
+        setCounter(prev=>prev+1);
+        new Audio(audioDownloaded).play();
+        setLoading(prev=>prev=false);
     },[]);
     const resetCount = useCallback(() => {
         setLoading(prev=>prev=true);
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
-        new Audio(audioDownloaded).play();
         setCounter(prev=>prev=0);
+        new Audio(audioDownloaded).play();
         setLoading(prev=>prev=false);
     },[]);
     return(<>
