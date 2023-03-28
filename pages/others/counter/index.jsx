@@ -24,7 +24,7 @@ const CounterApp = ({lang}) => {
         <NavbarApp lang={lang} choice="alone"/>
         <div className="main_app ">
             <div className="main_block_row">
-                <div className={style.row}>
+                <div className={`${style.row} disable`}>
                     <h1>Counter</h1>
                     <div>
                     <h1 className={style.counter_header}>{counter}</h1>
