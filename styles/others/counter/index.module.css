@@ -27,8 +27,8 @@ div.counter_block {
     /* background-color: aqua; */
 }
 button.counter_main {
-    width:100px;
-    height:100px;
+    width:120px;
+    height:120px;
     background-color: var(--brand-color);
     border-radius: 100%;
     cursor: pointer;
