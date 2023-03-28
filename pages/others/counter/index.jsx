@@ -10,12 +10,13 @@ export const getStaticProps = async ({locale}) => {
 
 const CounterApp = ({lang}) => {
     const [counter,setCounter] = useState(0);
+    const audio = new Audio("/audio/click-button.mp3");
     const addCount = () => {
-        new Audio("/audio/click-button.mp3").play();
+        audio.play();
         return setCounter(prev=>prev+1);
     };
     const resetCount = () => {
-        new Audio("/audio/click-button.mp3").play();
+        audio.play();
         return setCounter(prev=>prev=0);
     };
     return(<>
