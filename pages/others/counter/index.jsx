@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 import style from "/styles/others/counter/index.module.css";
-import { useState } from "react";
+import { useState,useCallback } from "react";
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -10,16 +10,12 @@ export const getStaticProps = async ({locale}) => {
 
 const CounterApp = ({lang}) => {
     const [counter,setCounter] = useState(0);
-    const addCount = () => {
-        const audio = new Audio("/audio/click-button.mp3");
-        audio.play();
-        return setCounter(prev=>prev+1);
-    };
-    const resetCount = () => {
-        const audio = new Audio("/audio/click-button.mp3");
-        audio.play();
-        return setCounter(prev=>prev=0);
-    };
+    const addCount = useCallback(() => {
+        new Audio("/audio/click-button.mp3").play(),setCounter(prev=>prev+1);
+    },[]);
+    const resetCount = useCallback(() => {
+        new Audio("/audio/click-button.mp3").play(),setCounter(prev=>prev=0);
+    },[]);
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
         <div className="main_app ">
