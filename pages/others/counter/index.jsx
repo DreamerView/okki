@@ -18,7 +18,7 @@ const CounterApp = ({lang}) => {
         setLoading(prev=>prev=true);
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         setCounter(prev=>prev+1);
-        new Audio(audioDownloaded).play();
+        // new Audio(audioDownloaded).play();
         setLoading(prev=>prev=false);
     },[]);
     const resetCount = useCallback((e) => {
@@ -26,7 +26,7 @@ const CounterApp = ({lang}) => {
         setLoading(prev=>prev=true);
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         setCounter(prev=>prev=0);
-        new Audio(audioDownloaded).play();
+        // new Audio(audioDownloaded).play();
         setLoading(prev=>prev=false);
     },[]);
     return(<>
