@@ -1,0 +1,44 @@
+div.row {
+    max-width: 900px;
+    width: 100%;
+    min-width: 100px;
+    height:400px;
+    background-color: var(--block-color);
+    border-radius: 16px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* gap:16px; */
+}
+h1.counter_header {
+    line-height: 100px;
+    font-size:100px;
+    text-align: center;
+}
+div.counter_block {
+    display: flex;
+    justify-content: center;
+    gap: 0 40px;
+    max-width:600px;
+    width: 100%;
+    min-width: 100px;
+    /* background-color: aqua; */
+}
+button.counter_main {
+    width:100px;
+    height:100px;
+    background-color: var(--brand-color);
+    border-radius: 100%;
+    cursor: pointer;
+    font-size: 60px;
+}
+button.counter_reset {
+    width:60px;
+    height:60px;
+    background-color: var(--red_back);
+    border-radius: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
