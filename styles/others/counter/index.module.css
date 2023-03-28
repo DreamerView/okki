@@ -2,7 +2,7 @@ div.row {
     max-width: 900px;
     width: 100%;
     min-width: 100px;
-    height:400px;
+    height:500px;
     background-color: var(--block-color);
     border-radius: 16px;
     margin: 0 auto;
@@ -27,8 +27,8 @@ div.counter_block {
     /* background-color: aqua; */
 }
 button.counter_main {
-    width:120px;
-    height:120px;
+    width:160px;
+    height:160px;
     background-color: var(--brand-color);
     border-radius: 100%;
     cursor: pointer;
