@@ -8,13 +8,15 @@ export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
 };
 
+const audioDownloaded = "/audio/click-button.mp3";
+
 const CounterApp = ({lang}) => {
     const [counter,setCounter] = useState(0);
     const addCount = useCallback(() => {
-        new Audio("/audio/click-button.mp3").play(),setCounter(prev=>prev+1);
+        setCounter(prev=>prev+1),new Audio(audioDownloaded).play();
     },[]);
     const resetCount = useCallback(() => {
-        new Audio("/audio/click-button.mp3").play(),setCounter(prev=>prev=0);
+        setCounter(prev=>prev=0),new Audio(audioDownloaded).play();
     },[]);
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
@@ -26,8 +28,8 @@ const CounterApp = ({lang}) => {
                     <h1 className={style.counter_header}>{counter}</h1>
                     </div>
                     <div className={style.counter_block}>
-                        <button type="button" onClick={()=>addCount()} className={style.counter_main}>+</button>
-                        <button type="button" onClick={()=>resetCount()} className={style.counter_reset}>Reset</button>
+                        <button type="button" onClick={addCount} className={style.counter_main}>+</button>
+                        <button type="button" onClick={resetCount} className={style.counter_reset}>Reset</button>
                     </div>
                 </div>
             </div>
