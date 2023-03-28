@@ -13,14 +13,16 @@ const audioDownloaded = "/audio/click-button.mp3";
 const CounterApp = ({lang}) => {
     const [loading,setLoading] = useState(false);
     const [counter,setCounter] = useState(0);
-    const addCount = useCallback(() => {
+    const addCount = useCallback((e) => {
+        e.preventDefault();
         setLoading(prev=>prev=true);
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         setCounter(prev=>prev+1);
         new Audio(audioDownloaded).play();
         setLoading(prev=>prev=false);
     },[]);
-    const resetCount = useCallback(() => {
+    const resetCount = useCallback((e) => {
+        e.preventDefault();
         setLoading(prev=>prev=true);
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         setCounter(prev=>prev=0);
