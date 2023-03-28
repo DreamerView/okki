@@ -9,7 +9,13 @@
      -khtml-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none; 
-            user-select: none; 
+            user-select: none;
+  -webkit-touch-action: manipulation;
+  -moz-touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  -o-touch-action: manipulation;
+  -khtml-touch-action: manipulation;
+  touch-action: manipulation;
 }
 div.emoji_h1 {
   width: 26px;

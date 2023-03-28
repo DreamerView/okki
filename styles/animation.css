@@ -3,6 +3,7 @@
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
+    -khtml-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out
   }
 .anim_hover:hover {
@@ -10,11 +11,13 @@
     -o-transform: translate(0%, -8%);
     -ms-transform: translate(0%, -8%);
     -webkit-transform: translate(0%, -8%);
+    -khtml-transform: translate(0%, -8%);
     transform: translate(0%, -8%);
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -ms-transition: 0.2s;
     -o-transition: 0.2s;
+    -khtml-transition: 0.2s;
     transition: 0.2s;
     opacity: 0.7
 }
@@ -25,6 +28,7 @@
         -moz-transform: scale(0.95);
         -ms-transform: scale(0.95);
         -o-transform: scale(0.95);
+        -khtml-transform: scale(0.95);
                 transform: scale(0.95);
         opacity: 0.7
     }
@@ -33,6 +37,7 @@
         -moz-transform: scale(1);
         -ms-transform: scale(1);
         -o-transform: scale(1);
+        -khtml-transform: scale(1);
                 transform: scale(1);
         opacity: 1
     }
@@ -43,6 +48,7 @@
         -moz-transform: scale(0.95);
         -ms-transform: scale(0.95);
         -o-transform: scale(0.95);
+        -khtml-transform: scale(0.95);
                 transform: scale(0.95);
         opacity: 0.7
     }
@@ -51,6 +57,7 @@
         -moz-transform: scale(1);
         -ms-transform: scale(1);
         -o-transform: scale(1);
+        -khtml-transform: scale(1);
                 transform: scale(1);
         opacity: 1
     }
@@ -216,26 +223,31 @@
     -moz-animation-name: block_animation;
     -ms-animation-name: block_animation;
     -o-animation-name: block_animation;
+    -khtml-animation-name: block_animation;
     animation-name: block_animation;
     -webkit-animation-duration: 0.4s;
     -ms-animation-duration: 0.4s;
     -o-animation-duration: 0.4s;
     -moz-animation-duration: 0.4s;
+    -khtml-animation-duration: 0.4s;
     animation-duration: 0.4s;
     -webkit-animation-iteration-count: 1;
     -moz-animation-iteration-count: 1;
     -ms-animation-iteration-count: 1;
     -o-animation-iteration-count: 1;
+    -khtml-animation-iteration-count: 1;
     animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
     -moz-animation-timing-function: ease-in-out;
     -ms-animation-timing-function: ease-in-out;
     -o-animation-timing-function: ease-in-out;
+    -khtml-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
+    -khtml-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
   .basic_animation {
