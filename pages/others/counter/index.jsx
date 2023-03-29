@@ -35,7 +35,7 @@ const CounterApp = ({lang}) => {
                         <button type="button" onClick={resetCount} className={`${style.counter_reset} disable`}>Reset</button>
                     </div>
         </div>)
-    },[counter])
+    },[counter,addCount,resetCount])
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
         <div className="main_app ">
