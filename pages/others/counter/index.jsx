@@ -34,7 +34,7 @@ const CounterApp = ({lang}) => {
         <div className="main_app ">
             <div className="main_block_row">
                 <div className={`${style.row} disable`}>
-                    <h1>Counter</h1>
+                    <h1 className={style.counter_head}>Counter</h1>
                     <div>
                     <h1 className={style.counter_header}>{counter}</h1>
                     </div>
