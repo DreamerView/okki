@@ -27,17 +27,17 @@ div.counter_block {
     /* background-color: aqua; */
 }
 button.counter_main {
-    width:120px;
-    height:120px;
+    width:140px;
+    height:140px;
     background-color: var(--brand_back);
     border-radius: 100%;
     cursor: pointer;
-    font-size: 72px;
+    font-size: 100px;
     color:hsl(0, 0%, 100%);
 }
 button.counter_reset {
-    width:60px;
-    height:60px;
+    width:80px;
+    height:80px;
     background-color: var(--red_back);
     border-radius: 100%;
     cursor: pointer;
