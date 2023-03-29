@@ -31,7 +31,7 @@ div.counter_block {
     min-width: 100px;
     /* background-color: aqua; */
 }
-div.counter_main {
+button.counter_main {
     width:140px;
     height:140px;
     background-color: var(--brand_back);
@@ -40,7 +40,7 @@ div.counter_main {
     font-size: 100px;
     color:hsl(0, 0%, 100%);
 }
-div.counter_reset {
+button.counter_reset {
     width:80px;
     height:80px;
     background-color: var(--red_back);
