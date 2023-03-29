@@ -16,13 +16,17 @@ const CounterApp = ({lang}) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         setCounter(prev=>prev+1);
-        // new Audio(audioDownloaded).play();
+        const myAudio = document.createElement("audio");
+        myAudio.src = audioDownloaded;
+        myAudio.play();
     },[]);
     const resetCount = useCallback((e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(100);
         setCounter(prev=>prev=0);
-        // new Audio(audioDownloaded).play();
+        const myAudio = document.createElement("audio");
+        myAudio.src = audioDownloaded;
+        myAudio.play();
     },[]);
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
