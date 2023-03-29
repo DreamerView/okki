@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 import style from "/styles/others/counter/index.module.css";
-import { useState,useMemo,useCallback } from "react";
+import { useState,useCallback } from "react";
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -20,12 +20,15 @@ const CounterApp = ({lang}) => {
     },[]);
     const resetCount = useCallback((e) => {
         e.preventDefault();
-        window.navigator && window.navigator.vibrate && navigator.vibrate(10);
+        window.navigator && window.navigator.vibrate && navigator.vibrate(100);
         setCounter(prev=>prev=0);
         // new Audio(audioDownloaded).play();
     },[]);
-    const result = useMemo(()=>{
-        return(<div className={`${style.row} disable`}>
+    return(<>
+        <NavbarApp lang={lang} choice="alone"/>
+        <div className="main_app ">
+            <div className="main_block_row">
+                <div className={`${style.row} disable`}>
                     <h1 className={style.counter_head}>Counter</h1>
                     <div>
                     <h1 className={style.counter_header}>{counter}</h1>
@@ -34,13 +37,7 @@ const CounterApp = ({lang}) => {
                         <button type="button" onClick={addCount} className={`${style.counter_main} disable glow`}>+</button>
                         <button type="button" onClick={resetCount} className={`${style.counter_reset} disable`}>Reset</button>
                     </div>
-        </div>)
-    },[counter,addCount,resetCount])
-    return(<>
-        <NavbarApp lang={lang} choice="alone"/>
-        <div className="main_app ">
-            <div className="main_block_row">
-                {result}
+                </div>
             </div>
         </div>
     </>)
