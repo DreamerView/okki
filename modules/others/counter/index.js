@@ -13,6 +13,7 @@ const CounterModule = () => {
         e.preventDefault();
         setCounter(prev=>prev+1);
         const sound = new Audio();
+        sound.preload = "auto";
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
@@ -22,9 +23,11 @@ const CounterModule = () => {
         e.preventDefault();
         setCounter(prev=>prev=0);
         const sound = new Audio();
+        sound.preload = "auto";
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
+
         window.navigator && window.navigator.vibrate && navigator.vibrate(100);
     },[]);
     return(
