@@ -15,20 +15,20 @@ const CounterApp = ({lang}) => {
     const addCount = useCallback((e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
-        setCounter(prev=>prev+1);
         const sound = new Audio();
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
+        setCounter(prev=>prev+1);
     },[]);
     const resetCount = useCallback((e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(100);
-        setCounter(prev=>prev=0);
         const sound = new Audio();
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
+        setCounter(prev=>prev=0);
     },[]);
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
