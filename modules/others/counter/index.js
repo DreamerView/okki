@@ -9,7 +9,7 @@ const audioDownloaded = "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2
 
 const CounterModule = () => {
     const [counter,setCounter] = useState(0);
-    const addCount = useCallback(async(e) => {
+    const addCount = useCallback((e) => {
         e.preventDefault();
         setCounter(prev=>prev+1);
         const sound = new Audio();
@@ -19,7 +19,7 @@ const CounterModule = () => {
         sound.play();
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
     },[]);
-    const resetCount = useCallback(async(e) => {
+    const resetCount = useCallback((e) => {
         e.preventDefault();
         setCounter(prev=>prev=0);
         const sound = new Audio();
