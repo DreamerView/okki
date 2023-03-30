@@ -23,18 +23,19 @@ const CounterApp = ({lang}) => {
         setTimeout(function(){
             player.pause();
             player.currentTime = 0;
-        }, 375);
+        }, 500);
     },[]);
     const resetCount = useCallback((e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(100);
         setCounter(prev=>prev=0);
         const player = audioControl.current;
+        player.currentTime = 0;
         player.play();
         setTimeout(function(){
             player.pause();
             player.currentTime = 0;
-        }, 100);
+        }, 500);
     },[]);
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
