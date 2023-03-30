@@ -12,6 +12,7 @@ const CounterModule = () => {
     const addCount = () => {
         sound.pause();
         sound.currentTime = 0;
+        sound.load();
         sound.play();
         setCounter(prev=>prev+1);
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
@@ -19,6 +20,7 @@ const CounterModule = () => {
     const resetCount = () => {
         sound.pause();
         sound.currentTime = 0;
+        sound.load();
         sound.play();
         setCounter(prev=>prev=0);
         window.navigator && window.navigator.vibrate && navigator.vibrate(100);
