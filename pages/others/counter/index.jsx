@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 import style from "/styles/others/counter/index.module.css";
-import { useState,useCallback } from "react";
+import { useState,useCallback,useRef } from "react";
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -11,22 +11,29 @@ export const getStaticProps = async ({locale}) => {
 const audioDownloaded = "/audio/click-button.mp3";
 
 const CounterApp = ({lang}) => {
+    const audioControl = useRef();
     const [counter,setCounter] = useState(0);
     const addCount = useCallback((e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         setCounter(prev=>prev+1);
-        const myAudio = document.createElement("audio");
-        myAudio.src = audioDownloaded;
-        myAudio.play();
+        const player = audioControl.current;
+        player.play();
+        setTimeout(function(){
+            player.pause();
+            player.currentTime = 0;
+        }, 100);
     },[]);
     const resetCount = useCallback((e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(100);
         setCounter(prev=>prev=0);
-        const myAudio = document.createElement("audio");
-        myAudio.src = audioDownloaded;
-        myAudio.play();
+        const player = audioControl.current;
+        player.play();
+        setTimeout(function(){
+            player.pause();
+            player.currentTime = 0;
+        }, 100);
     },[]);
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
@@ -42,6 +49,7 @@ const CounterApp = ({lang}) => {
                         <button type="button" onClick={resetCount} className={`${style.counter_reset} disable`}>Reset</button>
                     </div>
                 </div>
+                <audio ref={audioControl} src={audioDownloaded} controls />
             </div>
         </div>
     </>)
