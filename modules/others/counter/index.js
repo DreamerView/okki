@@ -12,20 +12,20 @@ const CounterModule = () => {
     const addCount = useCallback((e) => {
         e.preventDefault();
         setCounter(prev=>prev+1);
-        window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         const sound = new Audio();
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
+        window.navigator && window.navigator.vibrate && navigator.vibrate(10);
     },[]);
     const resetCount = useCallback((e) => {
         e.preventDefault();
         setCounter(prev=>prev=0);
-        window.navigator && window.navigator.vibrate && navigator.vibrate(100);
         const sound = new Audio();
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
+        window.navigator && window.navigator.vibrate && navigator.vibrate(100);
     },[]);
     return(
         <div className={`${style.row} disable`}>
