@@ -38,6 +38,7 @@ button.counter_main {
     border-radius: 100%;
     cursor: pointer;
     font-size: 100px;
+    line-height: 100px;
     color:hsl(0, 0%, 100%);
 }
 button.counter_reset {
@@ -47,5 +48,6 @@ button.counter_reset {
     border-radius: 100%;
     cursor: pointer;
     font-size: 16px;
+    line-height: 16px;
     color:hsl(0, 0%, 100%);
 }
