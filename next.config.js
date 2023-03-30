@@ -50,7 +50,7 @@ const ContentSecurityPolicy = `
     worker-src 'self';
     font-src 'self';  
     default-src 'self';
-    media-src 'self';
+    media-src 'self' data:;
     frame-ancestors 'self';
     upgrade-insecure-requests;
 `;
