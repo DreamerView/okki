@@ -23,7 +23,7 @@ const CounterApp = ({lang}) => {
         setTimeout(function(){
             player.pause();
             player.currentTime = 0;
-        }, 500);
+        }, 250);
     },[]);
     const resetCount = useCallback((e) => {
         e.preventDefault();
