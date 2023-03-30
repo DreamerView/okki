@@ -1,5 +1,5 @@
 import style from "/styles/others/counter/index.module.css";
-import { useState,useCallback } from "react";
+import { useState } from "react";
 
 const ButtonAction = ({action,title,type,prop}) => {
     return(<button type="button" onClick={action} className={`${style[type]} ${prop}`}>{title}</button>)
@@ -9,7 +9,7 @@ const audioDownloaded = "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2
 
 const CounterModule = () => {
     const [counter,setCounter] = useState(0);
-    const addCount = useCallback((e) => {
+    const addCount = (e) => {
         e.preventDefault();
         setCounter(prev=>prev+1);
         const sound = new Audio();
@@ -18,8 +18,8 @@ const CounterModule = () => {
         sound.currentTime = 0;
         sound.play();
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
-    },[]);
-    const resetCount = useCallback((e) => {
+    };
+    const resetCount = (e) => {
         e.preventDefault();
         setCounter(prev=>prev=0);
         const sound = new Audio();
@@ -28,7 +28,7 @@ const CounterModule = () => {
         sound.currentTime = 0;
         sound.play();
         window.navigator && window.navigator.vibrate && navigator.vibrate(100);
-    },[]);
+    };
     return(
         <div className={`${style.row} disable`}>
                     <h1 className={style.counter_head}>Counter</h1>
