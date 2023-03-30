@@ -12,7 +12,7 @@ const audioDownloaded = "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2
 
 const CounterApp = ({lang}) => {
     const [counter,setCounter] = useState(0);
-    const addCount = useCallback((e) => {
+    const addCount = (e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         setCounter(prev=>prev+1);
@@ -20,8 +20,8 @@ const CounterApp = ({lang}) => {
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
-    },[]);
-    const resetCount = useCallback((e) => {
+    };
+    const resetCount = (e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(100);
         setCounter(prev=>prev=0);
@@ -29,7 +29,7 @@ const CounterApp = ({lang}) => {
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
-    },[]);
+    };
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
         <div className="main_app ">
