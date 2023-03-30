@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
 import style from "/styles/others/counter/index.module.css";
-import { useState } from "react";
+import { useState,useCallback } from "react";
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -12,7 +12,7 @@ const audioDownloaded = "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2
 
 const CounterApp = ({lang}) => {
     const [counter,setCounter] = useState(0);
-    const addCount = (e) => {
+    const addCount = useCallback((e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         setCounter(prev=>prev+1);
@@ -20,8 +20,8 @@ const CounterApp = ({lang}) => {
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
-    };
-    const resetCount = (e) => {
+    },[]);
+    const resetCount = useCallback((e) => {
         e.preventDefault();
         window.navigator && window.navigator.vibrate && navigator.vibrate(100);
         setCounter(prev=>prev=0);
@@ -29,7 +29,7 @@ const CounterApp = ({lang}) => {
         sound.src = audioDownloaded;
         sound.currentTime = 0;
         sound.play();
-    };
+    },[]);
     return(<>
         <NavbarApp lang={lang} choice="alone"/>
         <div className="main_app ">
