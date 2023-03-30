@@ -18,11 +18,12 @@ const CounterApp = ({lang}) => {
         window.navigator && window.navigator.vibrate && navigator.vibrate(10);
         setCounter(prev=>prev+1);
         const player = audioControl.current;
+        player.currentTime = 0;
         player.play();
         setTimeout(function(){
             player.pause();
             player.currentTime = 0;
-        }, 100);
+        }, 500);
     },[]);
     const resetCount = useCallback((e) => {
         e.preventDefault();
