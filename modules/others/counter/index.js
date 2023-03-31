@@ -46,7 +46,7 @@ const CounterModule = () => {
         }
         setCounter(prev=>prev+1);
         limit!==0&&setLimit(prev=>prev-1);
-        setSetting(limit===0?{...setting,result:"Limit reached"}:{...setting,result:"Available"});
+        // setSetting(limit===0?{...setting,result:"Limit reached"}:{...setting,result:"Available"});
         if(setting.vibration===1) {
             window.navigator && window.navigator.vibrate && navigator.vibrate(100);
         }
