@@ -11,7 +11,8 @@ import seo from "/translate/business/index_seo";
 import AllService from '/start/services/all.json';
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
-// const seo = dynamic(()=>import("/translate/business/index_seo"));
+import AppStorePreloader from "/modules/app_store/apps_preloader";
+const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -41,25 +42,7 @@ const BusinessIndex = ({lang}) => {
             <div className="main_app ">
             <h1 className="flex_text">{nav_translate['business'][lang]} <div className="emoji_h1"><Image title={'Microsoft briefcase emoji (Used for informational purposes only)'} priority src={"/emoji-small/briefcase.webp"} width={26} height={26} alt="emoji"/></div></h1>
             <p className="sub_content">{translate["step0_description"][lang]}</p>
-            <div className={style.main__module_row}>
-                {/*  */}
-                {AllService.filter(e=>{return e.category === 'business'}).map((e,index)=>
-                    <Link title={nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
-                    <div className={`${style.main__module_row_block} anim_hover`}>
-                        <div>
-                            <div className={`${style.main__module_row_block_img}`}>
-                                <Image loading='lazy' title={nav_translate[e.name][lang]} alt="service" width={60} height={60} className={style.main__module_row_block_pic} src={e.image}/>
-                            </div>
-                        </div>
-                        <div className={style.main__module_row_block_f}>
-                            <span className="head_1">{nav_translate[e.name][lang]}</span>
-                            <p className={style.main__module_row_block_f_p}>{type_translate['services'][lang]}</p>
-                        </div>
-                    </div>
-                    </Link>
-                    )}
-                {/*  */}
-            </div>
+            <AppStore category="business" lang={lang} />
         </div>
       </>
     );
