@@ -1808,4 +1808,5 @@ svg.banner {
 }
 div.apps_list::-webkit-scrollbar-thumb {
   background-color: transparent;
+  scroll-snap-type: x mandatory;
 }
