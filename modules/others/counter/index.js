@@ -13,7 +13,7 @@ const params = {
     volume:0,
     vibration:0,
     tune:0,
-    color:"block_background",
+    color:"",
     colorChange:0
 };
 const CounterModule = () => {
@@ -33,13 +33,13 @@ const CounterModule = () => {
             };
             let colorPick;
             switch(getRandomInt(6)) {
-                case 0: colorPick="red_background";break;
-                case 1: colorPick="green_background";break;
-                case 2: colorPick="blue_background";break;
-                case 3: colorPick="purple_background";break;
-                case 4: colorPick="orange_background";break;
-                case 5: colorPick="block_background";break;
-                default: colorPick="block_background";
+                case 0: colorPick="red_font";break;
+                case 1: colorPick="green_font";break;
+                case 2: colorPick="blue_font";break;
+                case 3: colorPick="purple_font";break;
+                case 4: colorPick="orange_font";break;
+                case 5: colorPick="";break;
+                default: colorPick="";
             };
             setSetting({...setting,color:colorPick});
         }
@@ -65,10 +65,10 @@ const CounterModule = () => {
     };
     return(
         <>
-            <div className={`${style.row} ${setting.color} disable`}>
+            <div className={`${style.row} disable`}>
                 <h1 className={style.counter_head}>Counter</h1>
                 <div>
-                    <h1 ref={header} className={`${style.counter_header}`}>{counter}</h1>
+                    <h1 ref={header} className={`${style.counter_header} ${setting.color}`}>{counter}</h1>
                     <span className={style.counter_content}>Available: {limit}</span>
                 </div>
                 <div className={style.counter_block}>
