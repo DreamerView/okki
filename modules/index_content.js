@@ -47,7 +47,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
                         <Image priority title={nav_translate!==undefined&&nav_translate[e.name][locale]} alt={`Illustration by <a href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a href="https://icons8.com/illustrations">Ouch!</a>`} width={60} className={styles!==undefined&&styles.main__index_block_pic_info_img} height={60} src={e.image}/>
                         <div className={styles!==undefined&&styles.main__index_block_pic_info_block}>
                           <h6>{nav_translate!==undefined&&nav_translate[e.name][locale]}</h6>
-                          <span className="head">{nav_translate!==undefined&&nav_translate[e.category][locale]}</span>
+                          <span className="head">{nav_translate!==undefined&&nav_translate[e.category[0]][locale]}</span>
                         </div>
                         <div className={styles!==undefined&&styles.main__index_block_pic_info_block_action}>
                           {ux!==undefined&&ux['open'][locale]}

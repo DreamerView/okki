@@ -90,13 +90,13 @@ export default {
         en:"QR scanner"
     },
     image_editor: {
-        kk:"Image Editor",
-        ru:"Image Editor",
+        kk:"Сурет редакторы",
+        ru:"Фото редактор",
         en:"Image Editor"
     },
     counter: {
-        kk:"Counter",
-        ru:"Counter",
+        kk:"Санағыш",
+        ru:"Счетчик",
         en:"Counter"
     }
 }

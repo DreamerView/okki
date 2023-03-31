@@ -79,7 +79,7 @@
         "key":"бейджик/аккредитация құрастырушысы,конструктор бейджиков/аккредитации,badge/accreditation constructor",
         "location":"/construct/badge",
         "type":"services",
-        "category":"constructor"
+        "category":["constructor"]
     },
     {
         "title":"ИМТ калькулятор",
@@ -90,7 +90,7 @@
         "location":"/health/bmi-calculator",
         "type":"services",
         "main":"calculator",
-        "category":"health"
+        "category":["health","calculator"]
     },
     {
         "title":"Калькулятор идеального веса",
@@ -101,7 +101,7 @@
         "location":"/health/ideal-weight",
         "type":"services",
         "main":"calculator",
-        "category":"health"
+        "category":["health","calculator"]
     },
     {
         "title":"Депозитный калькулятор",
@@ -112,7 +112,7 @@
         "location":"/finance/deposit",
         "type":"services",
         "main":"calculator",
-        "category":"finance"
+        "category":["finance","calculator"]
     },
     {
         "title":"Калькулятор расчета маржи и наценки",
@@ -123,7 +123,7 @@
         "location":"/business/margin-markup-calculator",
         "type":"services",
         "main":"calculator",
-        "category":"business"
+        "category":["business","calculator"]
     },
     {
         "title":"Календарь беременности",
@@ -133,7 +133,7 @@
         "key":"жүктілік күнтізбесі,календарь беременности,pregnancy calendar",
         "location":"/health/pregnancy-calendar",
         "type":"services",
-        "category":"health"
+        "category":["health"]
     },
     {
         "title":"Индекс курящего человека",
@@ -144,7 +144,7 @@
         "location":"/health/ind-of-the-smoking-person",
         "type":"services",
         "main":"calculator",
-        "category":"health"
+        "category":["health","calculator"]
     },
     {
         "title":"Резус фактор при планировании семьи",
@@ -154,7 +154,7 @@
         "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
         "location":"/health/rh-factor-in-family-planning",
         "type":"services",
-        "category":"health"
+        "category":["health"]
     },
     {
         "title":"Okki QR",
@@ -164,7 +164,7 @@
         "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
         "location":"/technology/qr",
         "type":"services",
-        "category":"tech"
+        "category":["tech"]
     },
     {
         "title":"Image Editor",
@@ -174,7 +174,7 @@
         "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
         "location":"/technology/image-editor",
         "type":"services",
-        "category":"tech"
+        "category":["tech"]
     },
     {
         "title":"counter",
@@ -184,6 +184,6 @@
         "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
         "location":"/others/counter",
         "type":"services",
-        "category":"others"
+        "category":["others"]
     }
 ]

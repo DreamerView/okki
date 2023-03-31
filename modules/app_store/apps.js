@@ -29,7 +29,7 @@ const AppStore = ({lang,category}) =>{
         const idx = Math.floor(i / n);
         acc[idx] = [...(acc[idx] || []), x];
         return acc;
-      }, []):items.filter(e=>e.type === 'services'&&e.category===category).reverse().reduce((acc, x, i) => {
+      }, []):items.filter(e=>e.type === 'services'&&e.category.includes(category)).reverse().reduce((acc, x, i) => {
         const idx = Math.floor(i / n);
         acc[idx] = [...(acc[idx] || []), x];
         return acc;
