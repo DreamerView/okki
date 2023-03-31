@@ -51,9 +51,13 @@ div.row_editor_1_row_block {
     gap:16px 0;
     align-items: center;
     justify-content: center;
+    padding:32px;
+    box-sizing: border-box;
 }
 div.row_editor_1_row_block > input {
     max-width: 300px;
+    width:100%;
+    min-width: 100px;
     background-color: var(--block-color);
     padding:16px 8px;
     box-sizing: border-box;
