@@ -49,18 +49,18 @@ div.row_editor_1_row_block {
     background-color: var(--header-color);
     display: flex;
     flex-direction: column;
-    gap:16px 0;
+    gap:24px 0;
     align-items: center;
     justify-content: center;
     padding:32px;
     box-sizing: border-box;
 }
 div.row_editor_1_row_block > input {
-    max-width: 300px;
+    max-width: 200px;
     width:100%;
     min-width: 100px;
     background-color: var(--block-color);
-    padding:16px 8px;
+    padding:8px 8px;
     box-sizing: border-box;
     border-radius: 16px;
     text-align: center;
