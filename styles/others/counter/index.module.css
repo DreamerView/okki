@@ -10,7 +10,8 @@ div.row {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    /* gap:16px; */
+    text-align: center;
+    gap:8px;
 }
 div.row_editor {
     padding:24px;
@@ -23,6 +24,43 @@ div.row_editor {
     display: flex;
     box-sizing: border-box;
     gap:24px;
+}
+div.row_editor_1 {
+    padding:24px;
+    max-width: 900px;
+    width: 100%;
+    min-width: 100px;
+    background-color: var(--block-color);
+    border-radius: 16px;
+    margin: 24px auto;
+    box-sizing: border-box;
+}
+div.row_editor_1_row {
+    margin-top:24px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap:16px;
+}
+div.row_editor_1_row_block {
+    height:200px;
+    border-radius: 24px;
+    background-color: var(--header-color);
+    display: flex;
+    flex-direction: column;
+    gap:16px 0;
+    align-items: center;
+    justify-content: center;
+}
+div.row_editor_1_row_block > input {
+    max-width: 300px;
+    background-color: var(--block-color);
+    padding:16px 8px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
 }
 div.row_editor > div:first-child {
     margin-left:auto;
@@ -38,6 +76,11 @@ h1.counter_head {
 h1.counter_header {
     line-height: 100px;
     font-size:100px;
+    text-align: center;
+    margin-bottom:16px
+}
+span.counter_content {
+    line-height: 16px;
     text-align: center;
 }
 div.counter_block {

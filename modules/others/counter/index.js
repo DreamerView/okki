@@ -19,6 +19,7 @@ const params = {
 const CounterModule = () => {
     const header = useRef();
     const [counter,setCounter] = useState(0);
+    const [limit,setLimit] = useState(0);
     const [setting,setSetting] = useState(params);
     const addCount = () => {
         if(setting.volume===1) {
@@ -43,6 +44,7 @@ const CounterModule = () => {
             setSetting({...setting,color:colorPick});
         }
         setCounter(prev=>prev+1);
+        limit!==0&&setLimit(prev=>prev-1);
         if(setting.vibration===1) {
             window.navigator && window.navigator.vibrate && navigator.vibrate(100);
         }
@@ -67,6 +69,7 @@ const CounterModule = () => {
                 <h1 className={style.counter_head}>Counter</h1>
                 <div>
                     <h1 ref={header} className={`${style.counter_header} ${setting.color}`}>{counter}</h1>
+                    <span className={style.counter_content}>Available: {limit}</span>
                 </div>
                 <div className={style.counter_block}>
                     <ButtonAction type={"counter_main"} title={"+"} action={addCount} prop="disable glow" />
@@ -81,7 +84,7 @@ const CounterModule = () => {
                     <span>Volume</span>
                 </div>
                 <div title="Vibration" className={style.row_editor_block} onClick={()=>setSetting(setting.vibration===0?{...setting,vibration:1}:{...setting,vibration:0})}>
-                    <div className={`${style.row_editor_block_icon} ${setting.vibration===0?"red_background":"green_background"}`}>
+                    <div className={`${style.row_editor_block_icon} ${setting.vibration===0?"red_background":"blue_background"}`}>
                         <Image title="Vibration" src="/img/vibration.svg" alt="icon" width={32} height={32} />
                     </div>
                     <span>Vibration</span>
@@ -93,12 +96,26 @@ const CounterModule = () => {
                     <span>Color</span>
                 </div>
                 <div title="Setting" className={style.row_editor_block} onClick={()=>setSetting(setting.tune===0?{...setting,tune:1}:{...setting,tune:0})}>
-                    <div className={`${style.row_editor_block_icon} ${setting.tune===0?"red_background":"green_background"}`}>
+                    <div className={`${style.row_editor_block_icon} ${setting.tune===0?"red_background":"blue_background"}`}>
                         <Image title="Setting" src="/img/settings.svg" alt="icon" width={32} height={32} />
                     </div>
                     <span>Setting</span>
                 </div>
             </div>
+            {setting.tune===1&&<div className={`${style.row_editor_1} disable`}>
+                <h1>Settings</h1>
+                <div className={style.row_editor_1_row}>
+                    <div className={style.row_editor_1_row_block}>
+                        <h1>Set Count</h1>
+                        <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setCounter((v) => (e.target.validity.valid ? Number(e.target.value) : v))}} value={counter} />
+                    </div>
+                    <div className={style.row_editor_1_row_block}>
+                        <h1>Set Limit</h1>
+                        <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setLimit((v) => (e.target.validity.valid ? Number(e.target.value) : v))}} value={limit} />
+                    </div>
+                    <div className={style.row_editor_1_row_block}></div>
+                </div>
+            </div>}
         </> 
                 );
 };
