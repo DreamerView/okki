@@ -24,6 +24,7 @@ div.row_editor {
     display: flex;
     box-sizing: border-box;
     gap:24px;
+    overflow-x: scroll;
 }
 div.row_editor_1 {
     padding:24px;
