@@ -20,6 +20,7 @@ const CounterModule = () => {
     const header = useRef();
     const [counter,setCounter] = useState(0);
     const [limit,setLimit] = useState(0);
+    const [word,setWord] = useState("Counter");
     const [setting,setSetting] = useState(params);
     const addCount = () => {
         if(setting.volume===1) {
@@ -66,7 +67,7 @@ const CounterModule = () => {
     return(
         <>
             <div className={`${style.row} disable`}>
-                <h1 className={style.counter_head}>Counter</h1>
+                <h1 className={style.counter_head}>{word}</h1>
                 <div>
                     <h1 ref={header} className={`${style.counter_header} ${setting.color}`}>{counter}</h1>
                     <span className={style.counter_content}>Available: {limit}</span>
@@ -113,7 +114,10 @@ const CounterModule = () => {
                         <h1>Set Limit</h1>
                         <input type="tel" pattern="[0-9,.]*" onChange={(e)=>{setLimit((v) => (e.target.validity.valid ? Number(e.target.value) : v))}} value={limit} />
                     </div>
-                    <div className={style.row_editor_1_row_block}></div>
+                    <div className={style.row_editor_1_row_block}>
+                        <h1>Set Word</h1>
+                        <input type="text" onChange={e=>setWord(prev=>prev=e.target.value)} />
+                    </div>
                 </div>
             </div>}
         </> 
