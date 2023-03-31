@@ -70,8 +70,12 @@ button.counter_reset {
     color:hsl(0, 0%, 100%);
 }
 div.row_editor_block {
-    width:60px;
+    width:100px;
     cursor: pointer;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:8px 0;
 }
 div.row_editor_block_icon {
     display: flex;

@@ -1,5 +1,5 @@
 import style from "/styles/others/counter/index.module.css";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import Image from "next/image";
 
 const ButtonAction = ({action,title,type,prop}) => {
@@ -12,9 +12,12 @@ sound.load();
 const params = {
     volume:0,
     vibration:0,
-    tune:0
+    tune:0,
+    color:"",
+    colorChange:0
 };
 const CounterModule = () => {
+    const header = useRef();
     const [counter,setCounter] = useState(0);
     const [setting,setSetting] = useState(params);
     const addCount = () => {
@@ -22,6 +25,22 @@ const CounterModule = () => {
             sound.pause();
             sound.currentTime = 0;
             sound.play();
+        }
+        if(setting.colorChange===1) {
+            const getRandomInt = (max) => {
+                return Math.floor(Math.random() * max);
+            };
+            let colorPick;
+            switch(getRandomInt(6)) {
+                case 0: colorPick="red_font";break;
+                case 1: colorPick="green_font";break;
+                case 2: colorPick="blue_font";break;
+                case 3: colorPick="purple_font";break;
+                case 4: colorPick="orange_font";break;
+                case 5: colorPick="";break;
+                default: colorPick="";
+            };
+            setSetting({...setting,color:colorPick});
         }
         setCounter(prev=>prev+1);
         if(setting.vibration===1) {
@@ -34,6 +53,9 @@ const CounterModule = () => {
             sound.currentTime = 0;
             sound.play();
         }
+        if(setting.colorChange===1) {
+            setSetting({...setting,color:""});
+        }
         setCounter(prev=>prev=0);
         if(setting.vibration===1) {
             window.navigator && window.navigator.vibrate && navigator.vibrate(100);
@@ -44,7 +66,7 @@ const CounterModule = () => {
             <div className={`${style.row} disable`}>
                 <h1 className={style.counter_head}>Counter</h1>
                 <div>
-                    <h1 className={style.counter_header}>{counter}</h1>
+                    <h1 ref={header} className={`${style.counter_header} ${setting.color}`}>{counter}</h1>
                 </div>
                 <div className={style.counter_block}>
                     <ButtonAction type={"counter_main"} title={"+"} action={addCount} prop="disable glow" />
@@ -52,20 +74,29 @@ const CounterModule = () => {
                 </div>
             </div>
             <div className={`${style.row_editor} disable`}>
-                <div className={style.row_editor_block} onClick={()=>setSetting(setting.volume===0?{...setting,volume:1}:{...setting,volume:0})}>
+                <div title="Volume" className={style.row_editor_block} onClick={()=>setSetting(setting.volume===0?{...setting,volume:1}:{...setting,volume:0})}>
                     <div className={`${style.row_editor_block_icon} ${setting.volume===0?"red_background":"green_background"}`}>
-                        <Image src={setting.volume===0?"/img/volume_off.svg":"/img/volume.svg"} alt="icon" width={32} height={32} />
+                        <Image title="Volume" src={setting.volume===0?"/img/volume_off.svg":"/img/volume.svg"} alt="icon" width={32} height={32} />
                     </div>
+                    <span>Volume</span>
                 </div>
-                <div className={style.row_editor_block} onClick={()=>setSetting(setting.vibration===0?{...setting,vibration:1}:{...setting,vibration:0})}>
+                <div title="Vibration" className={style.row_editor_block} onClick={()=>setSetting(setting.vibration===0?{...setting,vibration:1}:{...setting,vibration:0})}>
                     <div className={`${style.row_editor_block_icon} ${setting.vibration===0?"red_background":"green_background"}`}>
-                        <Image src="/img/vibration.svg" alt="icon" width={32} height={32} />
+                        <Image title="Vibration" src="/img/vibration.svg" alt="icon" width={32} height={32} />
                     </div>
+                    <span>Vibration</span>
                 </div>
-                <div className={style.row_editor_block} onClick={()=>setSetting(setting.tune===0?{...setting,tune:1}:{...setting,tune:0})}>
-                    <div className={`${style.row_editor_block_icon} ${setting.tune===0?"red_background":"green_background"}`}>
-                        <Image src="/img/settings.svg" alt="icon" width={32} height={32} />
+                <div title="Vibration" className={style.row_editor_block} onClick={()=>setSetting(setting.colorChange===0?{...setting,colorChange:1}:{...setting,colorChange:0})}>
+                    <div className={`${style.row_editor_block_icon} ${setting.colorChange===0?"red_background":"green_background"}`}>
+                        <Image title="Vibration" src="/img/color_lens.svg" alt="icon" width={32} height={32} />
                     </div>
+                    <span>Color</span>
+                </div>
+                <div title="Setting" className={style.row_editor_block} onClick={()=>setSetting(setting.tune===0?{...setting,tune:1}:{...setting,tune:0})}>
+                    <div className={`${style.row_editor_block_icon} ${setting.tune===0?"red_background":"green_background"}`}>
+                        <Image title="Setting" src="/img/settings.svg" alt="icon" width={32} height={32} />
+                    </div>
+                    <span>Setting</span>
                 </div>
             </div>
         </> 
