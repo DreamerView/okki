@@ -78,7 +78,7 @@ const CounterModule = () => {
                     <ButtonAction type={"counter_reset"} title={"Reset"} action={resetCount} prop="disable" />
                 </div>
             </div>
-            <div className={`${style.row_editor} disable`}>
+            <div className={`${style.row_editor} apps_list disable`}>
                 <div title="Volume" className={style.row_editor_block} onClick={()=>setSetting(setting.volume===0?{...setting,volume:1}:{...setting,volume:0})}>
                     <div className={`${style.row_editor_block_icon} ${setting.volume===0?"red_background":"green_background"}`}>
                         <Image title="Volume" src={setting.volume===0?"/img/volume_off.svg":"/img/volume.svg"} alt="icon" width={32} height={32} />

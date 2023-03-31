@@ -38,7 +38,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
               {lazy===true && offset<=10?"":
               <div className={`${styles!==undefined&&styles.left} arrow-left arrow anim_hover`} onClick={toLeftScroll}><Image width={32} height={32} src="/img/arrow_left.svg" alt="arrow-left"/></div>}
               <div className={`${styles!==undefined&&styles.right} arrow-right arrow anim_hover`} onClick={toRightScroll}><Image width={32} height={32} src="/img/arrow_right.svg" alt="arrow-right"/></div>
-              <div className={`${styles!==undefined&&styles.main__index_block_row} box-inner`} ref={banner}>
+              <div className={`${styles!==undefined&&styles.main__index_block_row} box-inner apps_list`} ref={banner}>
                 {serv&&serv.filter(e=>e.type === 'services').reverse().map((e,index)=>
                 <Link onClick={()=>historyAction(e.name)} title={nav_translate!==undefined&&nav_translate[e.name][locale]} href={e.location} prefetch={false} key={index+1}>
                   <div className={`${styles!==undefined&&styles.main__index_block_row_b}`}>

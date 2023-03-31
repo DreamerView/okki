@@ -1806,3 +1806,6 @@ svg.banner {
 .glow {
   animation: glow 1.4s linear infinite;
 }
+div.apps_list::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}

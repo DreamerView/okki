@@ -10,9 +10,6 @@
         overflow-y:hidden;
         overflow-x:scroll;
     }
-    div.main__module_row::-webkit-scrollbar-thumb {
-        background-color: transparent;
-    }
 }
 @media (hover: hover) { 
     div.main__module_row {

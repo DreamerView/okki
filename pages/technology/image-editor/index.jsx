@@ -37,7 +37,7 @@ const ImageEditor = ({lang}) => {
     const navMenu = useMemo(()=>{
         const navText = [{text:"Коррекция",nav:"correction"},{text:"Фильтры",nav:"filter"},{text:"Выпрямление",nav:"rotate"},{text:"Параметры",nav:"params"}];
         return(
-            <div className={style.editor_nav}>
+            <div className={`${style.editor_nav} apps_list`}>
                 {navText.map((result,index)=><div key={index} onClick={()=>setSelectChoice({...selected,nav:result.nav})} className={selected.nav===result.nav?style.editor_nav_block_active:style.editor_nav_block}>
                     {result.text}
                 </div>)}
@@ -128,7 +128,7 @@ const ImageEditor = ({lang}) => {
             }
         ];
         return(
-            selected.nav==="correction"&&<><div className={`${style.editor_block} block_animation`}>
+            selected.nav==="correction"&&<><div className={`${style.editor_block} block_animation apps_list`}>
                 {correctionText.map((result,index)=>
                     <div key={index} onClick={()=>setSelectChoice({...selected,correction:result.key})} className={`${style.editor_block_button} `}>
                         <div className={selected.correction===result.key?style.editor_block_button_icon_active:Number(params[result.key])===Number(range[result.key])?style.editor_block_button_icon:style.editor_block_button_icon_changed}>

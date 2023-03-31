@@ -59,7 +59,7 @@ const MarginMarkup = ({lang}) => {
                 <div className='more_information_app'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{translate['content'][lang]}</p></div>
 
                 <div className={style.nav__block_m}>
-                    <div className={style.nav__block_menu}>
+                    <div className={`${style.nav__block_menu} apps_list`}>
                         <Link className='red_background white_font' prefetch={false} href="/business/margin-markup-calculator">
                                 {translate['margin_markup_calc'][lang]}
                         </Link>
