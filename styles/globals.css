@@ -337,9 +337,9 @@ select:-webkit-autofill:focus {
 
 @media screen and (min-width:1900px) {
   :root {
-      --m-1: 32px 150px;
+      --m-1: 24px 150px;
       --m-2: 64px 150px;
-      --m-3: 64px 150px;
+      --m-3: 48px 150px;
       --m-4: 8px 150px 48px 150px;
       --s-1: 32px 150px 32px 150px;
       --s-2: 32px 150px;
@@ -433,9 +433,9 @@ select:-webkit-autofill:focus {
 }
 @media screen and (min-width:1161px) and (max-width:1899px) {
   :root {
-      --m-1: 32px 64px;
+      --m-1: 24px 64px;
       --m-2: 64px 64px;
-      --m-3: 64px 64px;
+      --m-3: 48px 64px;
       --m-4: 8px 64px 48px 64px;
       --s-1: 32px 64px;
       --s-2: 24px 64px;
@@ -515,7 +515,7 @@ select:-webkit-autofill:focus {
 }
 @media (min-width:601px) and (max-width:1160px) {
   :root {
-      --m-1: 30px 32px;
+      --m-1: 24px 32px;
       --m-2: 58px 32px;
       --m-3: 32px 32px;
       --m-4: 8px 32px 48px 32px;

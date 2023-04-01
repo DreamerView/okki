@@ -1,14 +1,16 @@
-import ux from "/translate/ux/action";
+import ux from "@/translate/ux/action";
 import { RWebShare } from "react-web-share";
 import { memo } from "react";
-const AppShow = ({name,translate,Image,lang}) => {
+import Image from "next/image";
+import translate from "@/translate/services/all_translate.js";
+const AppShow = ({name,lang}) => {
     return(
         <div className="main__app_i">
         <div className="main__app_info">
             <Image priority={true} width={60} height={60} alt="icon" src={"/services/"+name+".webp"}/>
             <div className="main__app_info_block">
                 <div className="block_1">
-                <h3>{translate!==undefined&&translate}</h3>
+                <h3>{translate[name][lang]}</h3>
                 <p className="smaller">{ux['service'][lang]}</p>
                 </div>
                 <div className="block_2">
@@ -17,7 +19,7 @@ const AppShow = ({name,translate,Image,lang}) => {
                     data={{
                     text: "Здоровье",
                     url: typeof Window !== 'undefined'&&window.location.href,
-                    title: translate!==undefined&&translate,
+                    title: translate[name][lang],
                     }}
                     onClick={() => console.log("shared successfully!")}
                 >

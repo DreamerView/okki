@@ -169,7 +169,7 @@
     {
         "title":"Image Editor",
         "name":"image_editor",
-        "image":"/services/qr.webp",
+        "image":"/services/image_editor.webp",
         "image_background":"purple_background",
         "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
         "location":"/technology/image-editor",
@@ -179,7 +179,7 @@
     {
         "title":"counter",
         "name":"counter",
-        "image":"/services/qr.webp",
+        "image":"/services/counter.webp",
         "image_background":"purple_background",
         "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
         "location":"/others/counter",
@@ -189,7 +189,7 @@
     {
         "title":"simple_calculator",
         "name":"simple_calculator",
-        "image":"/services/qr.webp",
+        "image":"/services/simple_calculator.webp",
         "image_background":"purple_background",
         "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
         "location":"/calculator/simple-calculator",

@@ -1,9 +1,12 @@
 import dynamic from "next/dynamic";
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+import AppPreloader from "/modules/app_store/app_preloader";
+const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
 import style from "/styles/technology/image-editor/index.module.css";
 import { useState,useRef,useEffect,useMemo } from "react";
 import Image from "next/image";
+
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -155,6 +158,7 @@ const ImageEditor = ({lang}) => {
         <NavbarApp lang={lang} choice="alone"/>
         <div className="main_app">
             <div className="main_block_row">
+                <AppShow name="image_editor" lang={lang}/>
                 <div className={style.image_editor}>
                 <div className={style.image_block_port}>
                     <Image ref={imageEditor} className={style.check_port} src="/img/editor_port.jpg" width={600} height={300} alt="editor" />

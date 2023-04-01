@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import NavPreloader from "@/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('@/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+import AppPreloader from "/modules/app_store/app_preloader";
+const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
 import style from "/styles/calculator/simple-calculator/index.module.css";
 import {useState,useEffect,useCallback} from 'react';
 
@@ -67,6 +69,7 @@ const SimpleCalculator = ({lang}) => {
         <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
         <div className="main_app">
             <div className="main_row">
+                <AppShow name="simple_calculator" lang={lang} />
                 <div className={style.calculator}>
                     <div className={style.calculator_main}>
                         <div className={style.calculator_main_output}>
