@@ -185,5 +185,15 @@
         "location":"/others/counter",
         "type":"services",
         "category":["others"]
+    },
+    {
+        "title":"simple_calculator",
+        "name":"simple_calculator",
+        "image":"/services/qr.webp",
+        "image_background":"purple_background",
+        "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
+        "location":"/calculator/simple-calculator",
+        "type":"services",
+        "category":["calculator"]
     }
 ]

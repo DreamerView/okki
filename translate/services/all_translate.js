@@ -98,5 +98,10 @@ export default {
         kk:"Санағыш",
         ru:"Счетчик",
         en:"Counter"
+    },
+    simple_calculator: {
+        kk:"Ыңғайлы есептегіш",
+        ru:"Удобный калькулятор",
+        en:"Simple calculator"
     }
 }
