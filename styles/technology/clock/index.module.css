@@ -1,0 +1,22 @@
+div.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    min-width: 100px;
+    height:150px;
+    background-color: var(--block-color);
+    margin: 0 auto;
+    border-radius: 16px;
+    gap:16px;
+}
+div.clock_panel {
+    display: flex;
+    /* width:100%; */
+}
+div.clock_panel > span {
+    font-size: 64px;
+    line-height:64px;
+}

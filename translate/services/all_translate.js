@@ -103,5 +103,10 @@ export default {
         kk:"Ыңғайлы есептегіш",
         ru:"Удобный калькулятор",
         en:"Simple calculator"
+    },
+    clock: {
+        kk:"Сағат",
+        ru:"Часы",
+        en:"Clock"
     }
 }

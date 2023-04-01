@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import NavPreloader from "/modules/navbar_app/nav_preloader";
 const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
-const CounterModule = dynamic(()=>import("@/modules/others/counter"),{ssr:false});
 import AppPreloader from "/modules/app_store/app_preloader";
 const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
+const CounterModule = dynamic(()=>import("@/modules/others/counter"),{ssr:false});
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};

@@ -195,5 +195,15 @@
         "location":"/calculator/simple-calculator",
         "type":"services",
         "category":["calculator"]
+    },
+    {
+        "title":"Clock",
+        "name":"clock",
+        "image":"/services/clock.webp",
+        "image_background":"purple_background",
+        "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
+        "location":"/technology/clock",
+        "type":"services",
+        "category":["tech"]
     }
 ]
