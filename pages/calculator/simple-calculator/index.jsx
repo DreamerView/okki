@@ -87,7 +87,7 @@ const SimpleCalculator = ({lang}) => {
                         <h1>Журнал</h1>
                         <div className={style.calculator_logs_list}>
                             {logs.map((res,index)=> res !== [{}]&&
-                                    <span className={style.calculator_logs_result} key={index}>{res.text}</span>
+                                    <span className={style.calculator_logs_result} key={index}>{(index+1)+") "+res.text}</span>
                                 
                             )}
                         </div>
