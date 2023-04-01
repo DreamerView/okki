@@ -24,3 +24,28 @@ div.clock_panel > span {
 div.clock_panel > p {
     color:var(--sub_content);
 }
+div.clock_info {
+    max-width: 800px;
+    width: 100%;
+    min-width: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: 24px auto;
+    gap:16px;
+}
+div.clock_info > div {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+    height:70px;
+    background-color: var(--block-color);
+    border-radius: 16px;
+    padding:16px;
+    box-sizing: border-box;
+}
+div.clock_info > div > span {
+    font-size:14px;
+    color:var(--sub_content)
+}

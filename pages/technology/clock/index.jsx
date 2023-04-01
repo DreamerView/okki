@@ -12,23 +12,28 @@ export const getStaticProps = async ({locale}) => {
 
 const ClockApp = ({lang}) => {
     const [clock,setClock] = useState({
+        dayWeek:"",
         hour:0,
         min:0,
         sec:0,
         day:0,
         month:0,
-        year:0
+        year:0,
+        utc:0
     });
     useEffect(() => {
         function time() {
+            const weekday = ["Воскресенье","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"];
             const date = new Date();
+            const utc = date.getUTCHours();
+            const dayWeek = weekday[date.getDay()];;
             const day = String(date.getDate()).length===1?"0"+String(date.getDate()):date.getDate();
             const month = String(date.getMonth()+1).length===1?"0"+String(date.getMonth()+1):String(date.getMonth()+1);
             const year = date.getFullYear();
             const hours = String(date.getHours()).length===1?"0"+String(date.getHours()):date.getHours();
             const minutes = String(date.getMinutes()).length===1?"0"+String(date.getMinutes()):date.getMinutes();
             const sec = String(date.getSeconds()).length===1?"0"+String(date.getSeconds()):date.getSeconds();;
-            setClock({...clock,hour:hours,min:minutes,sec:sec,day:day,month:month,year:year})
+            setClock({...clock,hour:hours,min:minutes,sec:sec,day:day,month:month,year:year,dayWeek:dayWeek,utc:utc})
           }
           
           let intervalId = setInterval(time, 1000);
@@ -52,6 +57,11 @@ const ClockApp = ({lang}) => {
                     <div className={style.clock_panel}>
                         <p>{clock.day+"."+clock.month+"."+clock.year}</p>
                     </div>
+                </div>
+                <div className={style.clock_info}>
+                    <div><span>Дата</span><p>{clock.day+"."+clock.month+"."+clock.year}</p></div>
+                    <div><span>Сейчас</span><p>{clock.dayWeek}</p></div>
+                    <div><span>UTC часы</span><p>{clock.utc}</p></div>
                 </div>
             </div>
         </div>
