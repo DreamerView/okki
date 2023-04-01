@@ -36,7 +36,7 @@ const SimpleCalculator = ({lang}) => {
             case "/": solve = Number(prev) / Number(solution);break;
             default: solve = solution;
         }
-        setLogs([...logs,{text:String(`${prev}${action}${solution} = ${solve}`)}]);
+        setLogs([...logs,{text:String(`${prev} ${action} ${solution} = ${solve}`)}]);
         setResult(prev=>prev=Number(solve));
     },[result,prev,action]);
     const operationProcess = useCallback((operation) => {
@@ -70,7 +70,7 @@ const SimpleCalculator = ({lang}) => {
                 <div className={style.calculator}>
                     <div className={style.calculator_main}>
                         <div className={style.calculator_main_output}>
-                            <p>{logs[logs.length-1]!==undefined&&logs[logs.length-1].text}</p>
+                            <p>{logs[logs.length-1]!==undefined?logs[logs.length-1].text:"Waiting"}</p>
                             <span>{result}</span>
                         </div>
                         <div className={style.calculator_main_input}>
