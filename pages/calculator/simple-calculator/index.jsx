@@ -14,7 +14,13 @@ const SimpleCalculator = ({lang}) => {
     const [result,setResult] = useState(0);
     const [logs,setLogs] = useState([]);
     const insertNumber = useCallback((num) => {
-        setResult(prev=>prev=(result+num).replace(/^0+/, ''));
+        const checkDot = ".";
+        const enterValue = (result+num);
+        if (enterValue.includes(checkDot)) {
+            setResult(prev=>prev=enterValue);
+        } else {
+            setResult(prev=>prev=num===checkDot?enterValue:enterValue.replace(/^0+/, ''));
+        }
     },[result]);
     const resetNumber = useCallback(()=>{
         setResult(prev=>prev=0);
@@ -37,12 +43,17 @@ const SimpleCalculator = ({lang}) => {
         setResult(prev=>prev=0);
         setAction(operation);
     },[result]);
+    const putSybmol = () => {
+        setResult(Number(-result));
+    };
     useEffect(() => {
         const handleKeyDown = (e) => {
             const arrayNumber = [0,1,2,3,4,5,6,7,8,9];
+            const dotCheck = ['.',','];
             const actionInput = ['+','-','*','/'];
             arrayNumber.includes(Number(e.key))&&insertNumber(String(Number(e.key)));
             actionInput.includes(String(e.key))&&operationProcess(String(e.key));
+            dotCheck.includes(String(e.key))&&insertNumber(String("."));
             if(e.keyCode===13) e.preventDefault(),solveProcess();
             e.key==="Escape"&&resetNumber();
         };
@@ -77,7 +88,7 @@ const SimpleCalculator = ({lang}) => {
                             <button onClick={()=>insertNumber("2")} type="button">2</button>
                             <button onClick={()=>insertNumber("3")} type="button">3</button>
                             <button onClick={()=>operationProcess('+')} type="button">+</button>
-                            <button type="button">+/-</button>
+                            <button onClick={()=>putSybmol()} type="button">+/-</button>
                             <button onClick={()=>insertNumber("0")} type="button">0</button>
                             <button onClick={()=>insertNumber(".")} type="button">,</button>
                             <button onClick={()=>solveProcess()} type="button">=</button>
