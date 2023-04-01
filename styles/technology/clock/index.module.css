@@ -19,6 +19,7 @@ div.clock_panel {
 div.clock_panel > span {
     font-size: 64px;
     line-height:64px;
+    font-weight: 500;
 }
 div.clock_panel > p {
     color:var(--sub_content);
