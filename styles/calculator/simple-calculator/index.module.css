@@ -24,16 +24,21 @@ div.calculator_main {
 }
 div.calculator_main_output {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap:16px 0;
     width:100%;
     height:100px;
     overflow-x: scroll;
 }
 div.calculator_main_output > span {
     margin-left: auto;
-    text-align: right;
     font-size: 48px;
     font-weight: 700;
+}
+div.calculator_main_output > p {
+    margin-left:auto;
+    color:var(--sub_content)
 }
 div.calculator_main_input {
     width:100%;
