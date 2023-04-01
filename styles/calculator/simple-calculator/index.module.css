@@ -44,7 +44,7 @@ div.calculator_main_input {
     width:100%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap:8px;
+    gap:16px;
 }
 div.calculator_main_input > button {
     width: 100%;
