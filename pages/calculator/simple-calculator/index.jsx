@@ -45,14 +45,12 @@ const SimpleCalculator = ({lang}) => {
             actionInput.includes(String(e.key))&&operationProcess(String(e.key));
             if(e.keyCode===13) e.preventDefault(),solveProcess();
             e.key==="Escape"&&resetNumber();
-            console.log(e.key);
         };
         document.addEventListener('keydown', handleKeyDown);
         return () => {
           document.removeEventListener('keydown', handleKeyDown);
         };
     }, [insertNumber,solveProcess,resetNumber,operationProcess]);
-    console.log(logs)
     return(<>
         <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
         <div className="main_app">
@@ -67,7 +65,7 @@ const SimpleCalculator = ({lang}) => {
                             <button type="button">x<sup>2</sup></button>
                             <button type="button">&#8730;</button>
                             <button onClick={()=>operationProcess('/')} type="button">/</button>
-                            <button onKeyDown={e=>console.log(e.key)} onClick={()=>insertNumber("7")} type="button">7</button>
+                            <button onClick={()=>insertNumber("7")} type="button">7</button>
                             <button onClick={()=>insertNumber("8")} type="button">8</button>
                             <button onClick={()=>insertNumber("9")} type="button">9</button>
                             <button onClick={()=>operationProcess('*')} type="button">x</button>
