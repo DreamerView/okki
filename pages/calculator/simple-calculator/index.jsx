@@ -79,7 +79,7 @@ const SimpleCalculator = ({lang}) => {
                             <button onClick={()=>operationProcess('+')} type="button">+</button>
                             <button type="button">+/-</button>
                             <button onClick={()=>insertNumber("0")} type="button">0</button>
-                            <button type="button">,</button>
+                            <button onClick={()=>insertNumber(".")} type="button">,</button>
                             <button onClick={()=>solveProcess()} type="button">=</button>
                         </div>
                     </div>

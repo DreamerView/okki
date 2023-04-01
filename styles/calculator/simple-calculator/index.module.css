@@ -47,6 +47,7 @@ div.calculator_main_input > button {
     background-color: var(--header-color);
     cursor: pointer;
     border-radius: 13px;
+    font-weight: 700;
 }
 div.calculator_main_input > button:hover {
     opacity: 0.5;
