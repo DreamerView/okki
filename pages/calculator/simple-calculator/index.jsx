@@ -30,7 +30,7 @@ const SimpleCalculator = ({lang}) => {
             default: solve = solution;
         }
         setLogs([...logs,{text:String(`${prev}${action}${solution}=${solve}`)}]);
-        setResult(prev=>prev=solve);
+        setResult(prev=>prev=Number(solve));
     },[result,prev,action]);
     const operationProcess = useCallback((operation) => {
         setPrev(result);
