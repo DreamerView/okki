@@ -72,7 +72,7 @@ const ClockApp = ({lang}) => {
                         <span>{clock.sec}</span>
                     </div>
                     <div className={style.clock_panel}>
-                        <p>{clock.day+"."+clock.month+"."+clock.year}</p>
+                        <p>Current time</p>
                     </div>
                 </div>
                 <div className={style.clock_info}>

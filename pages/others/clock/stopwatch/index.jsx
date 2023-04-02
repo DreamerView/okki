@@ -35,7 +35,7 @@ const StopWatch = ({lang}) => {
         return () => {
             clearInterval(td);
         };
-    },[action,count]);
+    },[action,count,sec]);
     const resetSec = () => {
         setAction(false);
         setCount(prev=>prev=0);
@@ -72,6 +72,9 @@ const StopWatch = ({lang}) => {
                         <span>{sec.min}:</span>
                         <span>{sec.sec}:</span>
                         <span>{sec.ms}</span>
+                    </div>
+                    <div className={style.clock_panel}>
+                        <p>Stopwatch</p>
                     </div>
                 </div>
                 <div className={style.stopwatch_action}>
