@@ -310,32 +310,6 @@ i.show {
     margin-bottom: 16px;
     text-align: center;
 }
-div.nav__block_m {
-    display: flex;
-    justify-content: center;
-    margin:48px auto;
-    width:100%;
-}
-div.nav__block_menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: -moz-box;
-    scroll-snap-align: start;
-    overflow-x: scroll;
-    gap:0 16px;
-}
-div.nav__block_menu > a {
-    white-space: nowrap;
-    padding:12px 24px;
-    font-size:16px;
-    -webkit-border-radius: 200px;
-       -moz-border-radius: 200px;
-            border-radius: 200px;
-    cursor: pointer;
-    /* display: block; */
-    /* text-align: center; */
-}
 div.calc__table {
     margin-top:32px;
     width:100%;

@@ -55,18 +55,21 @@ const MarginMarkup = ({lang}) => {
             </Head>
             <NavbarApp lang={lang} to={{href:"/business"}} choice="alone"/>
             <div className="main_app ">
-                <h1>{translate["markup_prime_calc"][lang]}</h1>
-                <p className="sub_content">{translate['content'][lang]}</p>
-                <div className={style.nav__block_menu}>
-                    <Link className='block_background' prefetch={false} href="/business/margin-markup-calculator">
-                            {translate['margin_markup_calc'][lang]}
-                    </Link>
-                    <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
-                            {translate['margin_cost_calc'][lang]}
-                    </Link>
-                    <Link className='red_background white_font' prefetch={false} href="/business/markup-prime-calculator">
-                            {translate['markup_prime_calc'][lang]}
-                    </Link>
+            <AppShow lang={lang} name={"margin_markup_calc"}/>
+                <div className='more_information_app'><Image width={36} height={36} alt="icon" src="/img/info.svg" /><p>{translate['content'][lang]}</p></div>
+
+                <div className="nav__block_m">
+                    <div className={`nav__block_menu apps_list`}>
+                        <Link className='block_background' prefetch={false} href="/business/margin-markup-calculator">
+                                {translate['margin_markup_calc'][lang]}
+                        </Link>
+                        <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
+                                {translate['margin_cost_calc'][lang]}
+                        </Link>
+                        <Link className='red_background white_font' prefetch={false} href="/business/markup-prime-calculator">
+                                {translate['markup_prime_calc'][lang]}
+                        </Link>
+                    </div>
                 </div>
                 <div className={style.main__calc}>
                     

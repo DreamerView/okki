@@ -5,6 +5,7 @@ import AppPreloader from "/modules/app_store/app_preloader";
 const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
 import style from "/styles/technology/clock/index.module.css";
 import { useState,useEffect } from "react";
+import Link from "next/link";
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
@@ -13,12 +14,12 @@ export const getStaticProps = async ({locale}) => {
 const ClockApp = ({lang}) => {
     const [clock,setClock] = useState({
         dayWeek:"",
-        hour:0,
-        min:0,
-        sec:0,
-        day:0,
-        month:0,
-        year:0,
+        hour:"00",
+        min:"00",
+        sec:"00",
+        day:"00",
+        month:"00",
+        year:"0000",
         utc:0
     });
     useEffect(() => {
@@ -48,6 +49,22 @@ const ClockApp = ({lang}) => {
         <div className="main_app ">
             <div className="main_block_row">
                 <AppShow name="clock" lang={lang} />
+                <div className="nav__block_m">
+                    <div className={`nav__block_menu apps_list`}>
+                        <Link className='red_background white_font' prefetch={false} href="/technology/clock">
+                              Worldwide clock
+                        </Link>
+                        <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
+                                Alarm
+                        </Link>
+                        <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
+                                Stopwatch
+                        </Link>
+                        <Link className='block_background' prefetch={false} href="/business/markup-prime-calculator">
+                                Timer
+                        </Link>
+                    </div>
+                </div>
                 <div className={style.clock}>
                     <div className={style.clock_panel}>
                         <span>{clock.hour}:</span>
