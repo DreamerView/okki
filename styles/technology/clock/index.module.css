@@ -1,4 +1,5 @@
 div.clock {
+    padding:8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,11 +7,12 @@ div.clock {
     max-width: 800px;
     width: 100%;
     min-width: 100px;
-    min-height:150px;
+    height:150px;
     background-color: var(--block-color);
     margin: 0 auto;
     border-radius: 16px;
     gap:16px;
+    box-sizing: border-box;
 }
 div.clock_panel {
     display: flex;
@@ -81,11 +83,34 @@ button.stopwatch_action_stop {
     background-color: var(--red_back);
     color:hsl(0, 0%, 100%);
 }
+div.alarm_block {
+    max-width: 500px;
+    width:100%;
+    min-width: 100px;
+    height:150px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:16px;
+}
 input.alarm {
     background-color: var(--header-color);
-    font-size:60px;
-    line-height:60px;
+    font-size:48px;
+    line-height:48px;
     padding:8px 16px;
     box-sizing: border-box;
     border-radius: 16px;
+}
+button.add_alarm {
+    background-color:var(--blue_back);
+    color:#fff;
+    padding: 8px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button.add_alarm:hover {
+    opacity: 0.8;
 }

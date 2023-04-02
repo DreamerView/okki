@@ -37,7 +37,7 @@ const AlarmApp = ({lang}) => {
                         <input type="time" className={style.alarm} name="appt" defaultValue="00:00" />
                     </div>
                     <div className={style.clock_panel}>
-                        <p>Alarm</p>
+                        <button className={style.add_alarm}>Add alarm</button>
                     </div>
                 </div>
                 <div className={style.stopwatch_action}>
