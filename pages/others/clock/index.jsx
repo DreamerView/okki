@@ -52,7 +52,7 @@ const ClockApp = ({lang}) => {
                 <div className="nav__block_m">
                     <div className={`nav__block_menu apps_list`}>
                         <Link className='red_background white_font' prefetch={false} href="/others/clock">
-                              Worldwide clock
+                              Clock
                         </Link>
                         <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
                                 Alarm
