@@ -78,7 +78,7 @@ const ClockApp = ({lang}) => {
                 <div className={style.clock_info}>
                     <div><span>Дата</span><p>{clock.day+"."+clock.month+"."+clock.year}</p></div>
                     <div><span>Сейчас</span><p>{clock.dayWeek}</p></div>
-                    <div><span>UTC часы</span><p>{clock.utc}</p></div>
+                    <div><span>UTC часы</span><p>+{clock.hour-clock.utc} часов</p></div>
                 </div>
             </div>
         </div>
