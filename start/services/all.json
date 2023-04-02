@@ -202,8 +202,8 @@
         "image":"/services/clock.webp",
         "image_background":"purple_background",
         "key":"отбасын жоспарлау кезіндегі rh факторы,резус фактор при планировании семьи,rh factor in family planning",
-        "location":"/technology/clock",
+        "location":"/others/clock",
         "type":"services",
-        "category":["tech"]
+        "category":["others"]
     }
 ]

@@ -49,3 +49,32 @@ div.clock_info > div > span {
     font-size:14px;
     color:var(--sub_content)
 }
+div.stopwatch_action {
+    max-width: 700px;
+    width:100%;
+    min-width: 100px;
+    height:120px;
+    margin: 32px auto;
+    display: flex;
+    justify-content: space-around;
+}
+div.stopwatch_action > button {
+    width:100px;
+    height:100px;
+    border-radius: 100%;
+    font-size: 24px;
+    cursor: pointer;
+}
+button.stopwatch_action_reset {
+    background-color: var(--block-color);
+}
+button.stopwatch_action_start {
+    background-color: var(--green_back);
+    color:hsl(0, 0%, 100%);
+    padding:16px;
+    border:1px solid var(--green_back);
+}
+button.stopwatch_action_stop {
+    background-color: var(--red_back);
+    color:hsl(0, 0%, 100%);
+}

@@ -51,13 +51,13 @@ const ClockApp = ({lang}) => {
                 <AppShow name="clock" lang={lang} />
                 <div className="nav__block_m">
                     <div className={`nav__block_menu apps_list`}>
-                        <Link className='red_background white_font' prefetch={false} href="/technology/clock">
+                        <Link className='red_background white_font' prefetch={false} href="/others/clock">
                               Worldwide clock
                         </Link>
                         <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
                                 Alarm
                         </Link>
-                        <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
+                        <Link className='block_background' prefetch={false} href="/others/clock/stopwatch">
                                 Stopwatch
                         </Link>
                         <Link className='block_background' prefetch={false} href="/business/markup-prime-calculator">
