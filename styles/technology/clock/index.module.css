@@ -6,7 +6,7 @@ div.clock {
     max-width: 800px;
     width: 100%;
     min-width: 100px;
-    height:150px;
+    min-height:150px;
     background-color: var(--block-color);
     margin: 0 auto;
     border-radius: 16px;
@@ -80,4 +80,12 @@ button.stopwatch_action_start {
 button.stopwatch_action_stop {
     background-color: var(--red_back);
     color:hsl(0, 0%, 100%);
+}
+input.alarm {
+    background-color: var(--header-color);
+    font-size:48px;
+    line-height: 48px;
+    padding:8px 16px;
+    box-sizing: border-box;
+    border-radius: 16px;
 }

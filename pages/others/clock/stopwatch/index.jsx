@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
-import NavPreloader from "/modules/navbar_app/nav_preloader";
-const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
-import AppPreloader from "/modules/app_store/app_preloader";
-const AppShow =  dynamic(()=>import("/modules/app_store/app"),{loading: AppPreloader});
-import style from "/styles/technology/clock/index.module.css";
+import NavPreloader from "@/modules/navbar_app/nav_preloader";
+const NavbarApp = dynamic(()=>import('@/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+import AppPreloader from "@/modules/app_store/app_preloader";
+const AppShow =  dynamic(()=>import("@/modules/app_store/app"),{loading: AppPreloader});
+import style from "@/styles/technology/clock/index.module.css";
 import Link from "next/link";
 import {useState,useEffect} from "react";
 
@@ -55,10 +55,10 @@ const StopWatch = ({lang}) => {
                         <Link className='block_background' prefetch={false} href="/others/clock">
                               Clock
                         </Link>
-                        <Link className='block_background' prefetch={false} href="/business/margin-cost-calculator">
+                        <Link className='block_background' prefetch={false} href="/others/clock/alarm">
                                 Alarm
                         </Link>
-                        <Link className='red_background white_font' prefetch={false} href="/business/margin-cost-calculator">
+                        <Link className='red_background white_font' prefetch={false} href="/others/clock/stopwatch">
                                 Stopwatch
                         </Link>
                         <Link className='block_background' prefetch={false} href="/business/markup-prime-calculator">
