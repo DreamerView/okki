@@ -78,7 +78,7 @@ const StopWatch = ({lang}) => {
                     </div>
                 </div>
                 <div className={style.stopwatch_action}>
-                    <button type="button" className={style.stopwatch_action_reset} onClick={()=>action===true?writeResult():resetSec()}>{action===true?"Round":"Reset"}</button>
+                    <button type="button" className={action===false?style.stopwatch_action_stop:style.stopwatch_action_reset} onClick={()=>action===true?writeResult():resetSec()}>{action===true?"Round":"Reset"}</button>
                     <button type="button" className={action===false?style.stopwatch_action_start:style.stopwatch_action_stop} onClick={()=>setAction(action===false?true:false)}>{action===false?"Start":"Stop"}</button>
                 </div>
                 <div className={style.clock_info}>
