@@ -83,8 +83,8 @@ button.stopwatch_action_stop {
 }
 input.alarm {
     background-color: var(--header-color);
-    font-size:48px;
-    line-height: 48px;
+    font-size:60px;
+    line-height:60px;
     padding:8px 16px;
     box-sizing: border-box;
     border-radius: 16px;
