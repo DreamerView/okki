@@ -17,8 +17,8 @@ div.clock_panel {
     /* width:100%; */
 }
 div.clock_panel > span {
-    font-size: 64px;
-    line-height:64px;
+    font-size: 60px;
+    line-height:60px;
     font-weight: 500;
 }
 div.clock_panel > p {
