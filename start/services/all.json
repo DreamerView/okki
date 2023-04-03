@@ -2,7 +2,7 @@
     {
         "title":"Конструктор",
         "name":"constructor",
-        "image":"/icons/constructor.svg",
+        "image":"/category/constructor.png",
         "image_background":"green_background",
         "key":"конструктор,құрастырғыш,constructor",
         "location":"/construct",
@@ -11,7 +11,7 @@
     {
         "title":"Калькулятор",
         "name":"calculator",
-        "image":"/icons/calculate.svg",
+        "image":"/category/calculator.png",
         "image_background":"red_background",
         "key":"калькулятор,calculator,есептегіш",
         "location":"/calculator",
@@ -20,7 +20,7 @@
     {
         "title":"Бизнес",
         "name":"business",
-        "image":"/icons/work.svg",
+        "image":"/category/business.png",
         "image_background":"blue_background",
         "key":"кәсіп,бизнес,business",
         "location":"/business",
@@ -29,7 +29,7 @@
     {
         "title":"Образование",
         "name":"education",
-        "image":"/icons/education.svg",
+        "image":"/category/education.png",
         "image_background":"purple_background",
         "key":"білім,образование,education",
         "location":"/education",
@@ -38,7 +38,7 @@
     {
         "title":"Здоровье",
         "name":"health",
-        "image":"/icons/health.svg",
+        "image":"/category/health.png",
         "image_background":"red_background",
         "key":"денсаулық,здоровье,health",
         "location":"/health",
@@ -47,7 +47,7 @@
     {
         "title":"Финансы",
         "name":"finance",
-        "image":"/icons/finance.svg",
+        "image":"/category/finance.png",
         "image_background":"green_background",
         "key":"қаржы,финансы,finance",
         "location":"/finance",
@@ -56,7 +56,7 @@
     {
         "title":"Технологии",
         "name":"tech",
-        "image":"/icons/tech.svg",
+        "image":"/category/tech.png",
         "image_background":"brand_background",
         "key":"технологиялар,технологии,technology",
         "location":"/technology",
@@ -65,7 +65,7 @@
     {
         "title":"Другие",
         "name":"others",
-        "image":"/icons/other.svg",
+        "image":"/category/others.png",
         "image_background":"orange_background",
         "key":"басқа,другие,others",
         "location":"/others",

@@ -10,11 +10,11 @@ const IndexMenu = ({lang,service,styles,translate,nav_translate,Link,Image}) => 
                 <div itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" key={index+1}>
                 <Link title={nav_translate!==undefined&&nav_translate[e.name][locale]} itemID={e.location} itemType="https://schema.org/Thing"  itemScope itemProp="item" href={e.location} prefetch={false}>
                     <div className={`${styles!==undefined&&styles.main__menu_nav_block} anim_hover`}>
-                    <div className={`${styles!==undefined&&styles.main__menu_nav_block_image} ${e.image_background}`}>
+                    {/* <div className={`${styles!==undefined&&styles.main__menu_nav_block_image} ${e.image_background}`}> */}
                         <div className={`${styles!==undefined&&styles.main__menu_nav_block_image_pic}`}>
-                        <Image priority title={translate!==undefined&&translate[e.name][locale]} width={36} height={36} src={e.image} alt="icon"/>
+                        <Image priority title={translate!==undefined&&translate[e.name][locale]} width={52} height={52} src={e.image} alt="icon"/>
                         </div>
-                    </div>
+                    {/* </div> */}
                     <span className={styles!==undefined&&styles.nav_header} itemProp="name">{nav_translate!==undefined&&nav_translate[e.name][locale]}</span>
                     </div>
                 </Link>
