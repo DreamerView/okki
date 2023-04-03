@@ -55,7 +55,7 @@ const AlarmApp = ({lang}) => {
                     <button type="button" onClick={addAlarm} className={style.add_alarm}>Add alarm</button>
                     <button className={style.more} onClick={resetAlarm}>Reset</button>
                 </div>
-                <div className={style.clock_info}>
+                <div className={style.alarm_info}>
                     {alarm.length!==0&&alarm.map((res,index)=>
                     <div key={index}>
                         <div className={style.alarm_clock}>

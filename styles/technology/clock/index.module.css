@@ -123,7 +123,6 @@ button.more:hover {
     opacity: 0.8;
 }
 div.alarm_clock {
-    padding:64px;
     width:100%;
     display: flex;
     justify-content: space-between;
@@ -132,8 +131,33 @@ div.alarm_clock_block {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap:8px;
+}
+div.alarm_clock_block > h1 {
+    font-size: 36px;
 }
 div.alarm_clock_block > span {
     color:var(--sub_content);
-    font-size: 13px;
+    font-size: 16px;
+}
+div.alarm_info {
+    max-width: 700px;
+    width: 100%;
+    min-width: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin: 24px auto;
+    gap:16px;
+}
+div.alarm_info > div {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+    height:100px;
+    background-color: var(--block-color);
+    border-radius: 16px;
+    padding:16px;
+    box-sizing: border-box;
 }
