@@ -123,6 +123,7 @@ button.more:hover {
     opacity: 0.8;
 }
 div.alarm_clock {
+    padding:64px;
     width:100%;
     display: flex;
     justify-content: space-between;
@@ -131,4 +132,8 @@ div.alarm_clock_block {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+div.alarm_clock_block > span {
+    color:var(--sub_content);
+    font-size: 13px;
 }

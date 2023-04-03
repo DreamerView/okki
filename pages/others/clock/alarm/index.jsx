@@ -64,7 +64,7 @@ const AlarmApp = ({lang}) => {
                                 <span>No name</span>
                             </div>
                             <div className={style.alarm_clock_block}>
-                                <input input class="apple-switch" type="checkbox" />
+                                <input className="apple-switch" type="checkbox" defaultChecked={true} />
                             </div>
                         </div>
                     </div>
