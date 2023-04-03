@@ -763,6 +763,12 @@ input,button,input:focus,textarea,textarea:focus,select,hr {
   caret-color: var(--brand-color)
 }
 
+input.time::-webkit-calendar-picker-indicator {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
 hr {
   height:1px;
   background-color: var(--block-color);

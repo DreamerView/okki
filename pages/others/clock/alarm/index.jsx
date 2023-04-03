@@ -34,7 +34,7 @@ const AlarmApp = ({lang}) => {
                 </div>
                 <div className={style.clock}>
                     <div className={style.clock_panel}>
-                        <input type="time" className={style.alarm} name="appt" defaultValue="00:00" />
+                        <input type="time" className={`${style.alarm} time`} name="appt" defaultValue="00:00" />
                     </div>
                     <div className={style.clock_panel}>
                         Alarm
@@ -42,6 +42,7 @@ const AlarmApp = ({lang}) => {
                 </div>
                 <div className={style.alarm_block}>
                     <button className={style.add_alarm}>Add alarm</button>
+                    <button className={style.more}>Settings</button>
                 </div>
                 <div className={style.stopwatch_action}>
                     {/* <button type="button" className={action===false?style.stopwatch_action_stop:style.stopwatch_action_reset} onClick={()=>action===true?writeResult():resetSec()}>{action===true?"Round":"Reset"}</button>
