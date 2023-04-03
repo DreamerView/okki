@@ -136,7 +136,7 @@ div.alarm_clock_block {
 div.alarm_clock_action {
     display: flex;
     align-items: center;
-    gap:8px;
+    gap:16px;
 }
 div.alarm_clock_block > h1 {
     font-size: 36px;
