@@ -57,8 +57,8 @@ const AlarmApp = ({lang}) => {
                 </div>
                 <div className={style.clock_info}>
                     {alarm.length!==0&&alarm.map((res,index)=>
-                    <div>
-                        <div className={style.alarm_clock} key={index}>
+                    <div key={index}>
+                        <div className={style.alarm_clock}>
                             <div className={style.alarm_clock_block}>
                                 <h1>{res.time}</h1>
                                 <span>No name</span>
