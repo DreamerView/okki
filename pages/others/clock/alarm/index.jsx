@@ -56,7 +56,19 @@ const AlarmApp = ({lang}) => {
                     <button className={style.more} onClick={resetAlarm}>Reset</button>
                 </div>
                 <div className={style.clock_info}>
-                    {alarm.length!==0&&alarm.map((res,index)=><div key={index}><span>Время</span><p>{res.time}</p></div>)}
+                    {alarm.length!==0&&alarm.map((res,index)=>
+                    <div>
+                        <div className={style.alarm_clock} key={index}>
+                            <div className={style.alarm_clock_block}>
+                                <h1>{res.time}</h1>
+                                <span>No name</span>
+                            </div>
+                            <div className={style.alarm_clock_block}>
+                                <input input class="apple-switch" type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    )}
                 </div>
             </div>
         </div>

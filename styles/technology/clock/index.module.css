@@ -122,3 +122,13 @@ button.more:hover {
     background-color: var(--block-color);
     opacity: 0.8;
 }
+div.alarm_clock {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+div.alarm_clock_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
