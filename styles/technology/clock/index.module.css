@@ -87,10 +87,10 @@ div.alarm_block {
     max-width: 500px;
     width:100%;
     min-width: 100px;
-    margin: 0 auto;
+    margin: 24px auto;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap:16px;
 }
 input.alarm {
@@ -108,7 +108,6 @@ button.add_alarm {
     border-radius: 13px;
     cursor: pointer;
     font-size: 20px;
-    margin: 24px auto;
 }
 button.add_alarm:hover {
     opacity: 0.8;
@@ -118,7 +117,6 @@ button.more {
     border-radius: 13px;
     cursor: pointer;
     font-size: 20px;
-    margin: 24px auto;
 }
 button.more:hover {
     background-color: var(--block-color);
