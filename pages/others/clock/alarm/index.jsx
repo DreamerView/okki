@@ -18,6 +18,10 @@ const AlarmApp = ({lang}) => {
         e.preventDefault();
         setAlarm([...alarm,{time:inputAlarm.current.value}]);
     };
+    const resetAlarm = (e) => {
+        e.preventDefault();
+        inputAlarm.current.value = "00:00";
+    };
     return(<>
     <NavbarApp lang={lang} choice="alone"/>
         <div className="main_app ">
@@ -49,7 +53,7 @@ const AlarmApp = ({lang}) => {
                 </div>
                 <div className={style.alarm_block}>
                     <button type="button" onClick={addAlarm} className={style.add_alarm}>Add alarm</button>
-                    <button className={style.more}>Settings</button>
+                    <button className={style.more} onClick={resetAlarm}>Reset</button>
                 </div>
                 <div className={style.clock_info}>
                     {alarm.length!==0&&alarm.map((res,index)=><div key={index}><span>Время</span><p>{res.time}</p></div>)}
