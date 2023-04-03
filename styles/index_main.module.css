@@ -417,7 +417,6 @@ div.main__index_block_row {
     display: flex;
     gap:24px;
     height: auto;
-    height:240px;
 }
 div.main__index_block_row_b {
     width:340px;
