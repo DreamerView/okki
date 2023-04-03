@@ -161,3 +161,14 @@ div.alarm_info > div {
     padding:16px;
     box-sizing: border-box;
 }
+div.delete_alarm {
+    width:32px;
+    height:32px;
+    background-color: var(--red_back);
+    border-radius: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:auto;
+    cursor: pointer;
+}

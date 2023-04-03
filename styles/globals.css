@@ -1846,7 +1846,7 @@ input.apple-switch {
   width: 50px; height: 30px;
   background-color: #ffffff; border: 1px solid #D9DADC;
   border-radius: 50px; box-shadow: inset -20px 0 0 0 #ffffff;
-  transition-duration: 200ms;
+  transition-duration: 100ms;
   cursor: pointer;
 }
 input.apple-switch:after {

@@ -5,6 +5,7 @@ import AppPreloader from "@/modules/app_store/app_preloader";
 const AppShow =  dynamic(()=>import("@/modules/app_store/app"),{loading: AppPreloader});
 import style from "@/styles/technology/clock/index.module.css";
 import Link from "next/link";
+import Image from "next/image";
 import { useState,useRef } from "react";
 
 export const getStaticProps = async ({locale}) => {
@@ -16,12 +17,15 @@ const AlarmApp = ({lang}) => {
     const [alarm,setAlarm] = useState([]);
     const addAlarm = (e) => {
         e.preventDefault();
-        setAlarm([...alarm,{time:inputAlarm.current.value}]);
+        setAlarm([...alarm,{id:Date.now(),time:inputAlarm.current.value}]);
     };
     const resetAlarm = (e) => {
         e.preventDefault();
         inputAlarm.current.value = "00:00";
     };
+    const deleteAlarm = (id) => {
+        setAlarm(prev=>prev=alarm.filter(e=>e.id!==id));
+    }
     return(<>
     <NavbarApp lang={lang} choice="alone"/>
         <div className="main_app ">
@@ -57,7 +61,7 @@ const AlarmApp = ({lang}) => {
                 </div>
                 <div className={style.alarm_info}>
                     {alarm.length!==0&&alarm.map((res,index)=>
-                    <div key={index}>
+                    <div className="block_animation" key={index}>
                         <div className={style.alarm_clock}>
                             <div className={style.alarm_clock_block}>
                                 <h1>{res.time}</h1>
@@ -65,6 +69,9 @@ const AlarmApp = ({lang}) => {
                             </div>
                             <div className={style.alarm_clock_block}>
                                 <input className="apple-switch" type="checkbox" defaultChecked={true} />
+                                <div onClick={()=>deleteAlarm(res.id)} className={style.delete_alarm}>
+                                    <Image alt="icon" src="/img/delete_forever.svg" width={24} height={24} />
+                                </div>
                             </div>
                         </div>
                     </div>
