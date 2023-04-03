@@ -133,6 +133,11 @@ div.alarm_clock_block {
     justify-content: center;
     gap:8px;
 }
+div.alarm_clock_action {
+    display: flex;
+    align-items: center;
+    gap:8px;
+}
 div.alarm_clock_block > h1 {
     font-size: 36px;
 }
@@ -145,7 +150,7 @@ div.alarm_info {
     width: 100%;
     min-width: 100px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     margin: 24px auto;
     gap:16px;
 }
@@ -162,8 +167,8 @@ div.alarm_info > div {
     box-sizing: border-box;
 }
 div.delete_alarm {
-    width:32px;
-    height:32px;
+    width:40px;
+    height:40px;
     background-color: var(--red_back);
     border-radius: 100%;
     display:flex;
@@ -171,4 +176,7 @@ div.delete_alarm {
     justify-content: center;
     margin-left:auto;
     cursor: pointer;
+}
+div.delete_alarm:hover {
+    opacity:0.8;
 }

@@ -67,7 +67,7 @@ const AlarmApp = ({lang}) => {
                                 <h1>{res.time}</h1>
                                 <span>No name</span>
                             </div>
-                            <div className={style.alarm_clock_block}>
+                            <div className={style.alarm_clock_action}>
                                 <input className="apple-switch" type="checkbox" defaultChecked={true} />
                                 <div onClick={()=>deleteAlarm(res.id)} className={style.delete_alarm}>
                                     <Image alt="icon" src="/img/delete_forever.svg" width={24} height={24} />
