@@ -3,9 +3,9 @@ import { useDispatch,useSelector } from "react-redux";
 import Image from "next/image";
 
 const setNotification = () => {
-    const send = useDispatch();
-    const notification = useSelector(state=>state.notification);
-    const status = notification.user;
+    const send = useDispatch(),
+    notification = useSelector(state=>state.notification),
+    status = notification.user;
     return(
         <>
             <div className="notification__back">
