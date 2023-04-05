@@ -12,7 +12,7 @@ const IndexMenu = ({lang,service,styles,translate,nav_translate,Link,Image}) => 
                     <div className={`${styles!==undefined&&styles.main__menu_nav_block} anim_hover`}>
                     <div className={`${styles!==undefined&&styles.main__menu_nav_block_image}`}>
                         <div className={`${styles!==undefined&&styles.main__menu_nav_block_image_pic}`}>
-                        <Image priority title={translate!==undefined&&translate[e.name][locale]} width={40} height={40} src={e.image} alt="icon"/>
+                        <Image priority title={translate!==undefined&&translate[e.name][locale]} width={44} height={44} src={e.image} alt="icon"/>
                         </div>
                     </div>
                     <span className={styles!==undefined&&styles.nav_header} itemProp="name">{nav_translate!==undefined&&nav_translate[e.name][locale]}</span>
