@@ -13,9 +13,11 @@ const AppModule = dynamic(()=>import('/modules/app_module'));
 const MyApp = ({ Component, pageProps, session }) => {
     const [result,setResult] = useState(prev=>prev=false);
     return(
-            <AppModule change={(res)=>setResult(prev=>prev=res)} session={session}>
+        <>
+            // <AppModule change={(res)=>setResult(prev=>prev=res)} session={session}>
                 {result? <Preloader/>:<div className="block_animation"><Component {...pageProps} /></div>}
-            </AppModule>
+            // </AppModule>
+        </>
     )
 }
 
