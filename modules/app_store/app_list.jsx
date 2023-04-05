@@ -6,7 +6,7 @@ import Link from "next/link";
 import nav_translate from "/translate/services/all_translate";
 import list from '@/start/services/all.json';
 
-const AppList = ({lang,category}) => {
+const AppList = ({lang,category,search}) => {
     const banner = useRef(),
     [lazy,setLazy] = useState(false),
     [offset, setOffset] = useState(0),
@@ -29,13 +29,14 @@ const AppList = ({lang,category}) => {
         banner.current!==undefined&&banner.current!==null&&banner.current.removeEventListener('scroll', onScroll);
       };
     },[]);
+    // list.map(e=>console.log(e["category"]))
     return(
         <div className={styles!==undefined&&styles.main__index_b}>
               {lazy===true && offset<=10?"":
               <div className={`${styles!==undefined&&styles.left} arrow-left arrow anim_hover`} onClick={toLeftScroll}><Image width={32} height={32} src="/img/arrow_left.svg" alt="arrow-left"/></div>}
               <div className={`${styles!==undefined&&styles.right} arrow-right arrow anim_hover`} onClick={toRightScroll}><Image width={32} height={32} src="/img/arrow_right.svg" alt="arrow-right"/></div>
               <div className={`${styles!==undefined&&styles.main__index_block_row} box-inner apps_list`} ref={banner}>
-                {list&&list.filter(e=>e.type === 'services').reverse().map((e,index)=>
+                {list&&list.filter(e=>{return( category!==undefined?e.type === 'services' &&e[category].includes(search):e.type === 'services')}).reverse().map((e,index)=>
                 <Link onClick={()=>historyAction(e.name)} title={nav_translate!==undefined&&nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
                   <div className={`${styles!==undefined&&styles.main__index_block_row_b}`}>
                     <div className={styles!==undefined&&styles.main__index_block}>

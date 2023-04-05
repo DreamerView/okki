@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import service from '@/start/services/all.json';
 
-
 const IndexMenu = ({lang}) => {
     const locale =lang,serv = service!==undefined?service:[{}];
     return(
