@@ -20,10 +20,9 @@ const IndexContent = ({lang}) => {
             {/* <hr/> */}
             <h1>{translate!==undefined&&translate['try_use'][lang]}</h1>
               <AppStore lang={lang}/>
-              {all.map((e,index)=>
-              <div key={index}>
+              {all.map((e)=>
               <SubAppList lang={lang} category={e.name} />
-              </div>)}
+              )}
           </div>
       </div>
   )
