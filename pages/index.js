@@ -30,7 +30,7 @@ const Home = ({locale}) => {
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
       <IndexMenu lang={locale} />
-      {/* <IndexContent lang={locale} /> */}
+      <IndexContent lang={locale} />
     </>
   )
 };
