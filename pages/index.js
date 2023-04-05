@@ -3,7 +3,7 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import seo from "@/translate/seo_index";
 const IndexMenu = dynamic(()=>import('@/modules/index_menu'));
-// const IndexContent = dynamic(()=>import('@/modules/index_content'));
+const IndexContent = dynamic(()=>import('@/modules/index_content'));
 
 export const getStaticProps = async ({locale}) => {
   return {props:{locale:locale}};
