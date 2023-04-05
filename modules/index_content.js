@@ -49,7 +49,7 @@ const IndexContent = ({lang,service,styles,translate,nav_translate,Link,Image,st
                           <h6>{nav_translate!==undefined&&nav_translate[e.name][locale]}</h6>
                           <span className="head">{nav_translate!==undefined&&nav_translate[e.category[0]][locale]}</span>
                         </div>
-                        <div className={styles!==undefined&&styles.main__index_block_pic_info_block_action}>
+                        <div className={`${styles!==undefined&&styles.main__index_block_pic_info_block_action} anim_hover`}>
                           {ux!==undefined&&ux['open'][locale]}
                         </div>
                       </div>
