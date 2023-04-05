@@ -1,8 +1,8 @@
 /*jshint esversion: 6 */
 import Head from "next/head";
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import seo from "@/translate/seo_index";
-// const IndexMenu = dynamic(()=>import('@/modules/index_menu'));
+const IndexMenu = dynamic(()=>import('@/modules/index_menu'));
 // const IndexContent = dynamic(()=>import('@/modules/index_content'));
 
 export const getStaticProps = async ({locale}) => {
@@ -29,8 +29,8 @@ const Home = ({locale}) => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-      {/* <IndexMenu lang={locale} />
-      <IndexContent lang={locale} /> */}
+      <IndexMenu lang={locale} />
+      {/* <IndexContent lang={locale} /> */}
     </>
   )
 };
