@@ -14,7 +14,7 @@ const SearchBlocks = (res) => {
             <div className={`${style.search__block} basic_animation`} onClick={()=>res.send(translate[res.item.name][locale])}>
                 {res.item.type==='category'?
                 <div>
-                <div className={`${style.search__block_image} ${res.item.image_background}`}>
+                <div className={`${style.search__block_image} block_background`}>
                     <div className={style.search__block_pic}>
                         <Image priority width={26} height={26} alt="category" src={res.item.image}/>
                     </div>
