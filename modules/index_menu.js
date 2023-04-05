@@ -1,11 +1,13 @@
 /*jshint esversion: 6 */
-import translate from "/translate/index_translate";
-import styles from '/styles/index_main.module.css';
-import nav_translate from "/translate/services/all_translate";
+import translate from "@/translate/index_translate";
+import styles from '@/styles/index_main.module.css';
+import nav_translate from "@/translate/services/all_translate";
 import Link from "next/link";
 import Image from "next/image";
+import service from '@/start/services/all.json';
 
-const IndexMenu = ({lang,service}) => {
+
+const IndexMenu = ({lang}) => {
     const locale =lang,serv = service!==undefined?service:[{}];
     return(
         <>

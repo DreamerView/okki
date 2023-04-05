@@ -4,8 +4,9 @@ import {useState,useEffect,useRef} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import nav_translate from "/translate/services/all_translate";
+import list from '@/start/services/all.json';
 
-const AppList = ({list,lang}) => {
+const AppList = ({lang,category}) => {
     const banner = useRef(),
     [lazy,setLazy] = useState(false),
     [offset, setOffset] = useState(0),
