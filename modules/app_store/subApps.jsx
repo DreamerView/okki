@@ -43,11 +43,11 @@ const SubAppStore = ({lang,category}) =>{
         <div className={`${style.right} arrow-right arrow anim_hover`} onClick={toRightScroll}><Image width={32} height={32} src="/img/arrow_right.svg" alt="arrow-right"/></div>
         <div className={`${style.main__module_row} apps_list`} ref={content}>
         {serv&&group(serv, 3).map((children,index)=>
-        <div key={`grouped-${index}`}className={style.main__module_row_panel}>
-          {children.filter(e=>e.name===category).map((result,index) =>
+        <div key={index} className={style.main__module_row_panel}>
+          {children.filter(e=>e.name===category).map((result) =>
             
             all.filter(req=>result.value.includes(req.name)).map((e,index)=>
-              <Link title={nav_translate!==undefined&&nav_translate[e.name][lang]} href={e.location} prefetch={false} key={`linked-${index+1}`}>
+              <Link title={nav_translate!==undefined&&nav_translate[e.name][lang]} href={e.location} prefetch={false} key={index+1}>
             <div className={`${style.main__module_row_block}`}>
                 <div>
                     <div className={`${style.main__module_row_block_img}`}>
