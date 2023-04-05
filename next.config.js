@@ -13,7 +13,7 @@ const images = production?"app.okki.kz":"localhost";
 const host = production?"https://okki.vercel.app":"http://localhost:3000";
 const withPWA = require('next-pwa')({
   dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
+  disable: process.env.NODE_ENV === 'production',
   register: true,
   skipWaiting: true,
   runtimeCaching: [
