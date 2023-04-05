@@ -30,7 +30,6 @@ const SubAppList = ({lang,category,search}) => {
         banner.current!==undefined&&banner.current!==null&&banner.current.removeEventListener('scroll', onScroll);
       };
     },[]);
-    // list.map(e=>console.log(e["category"]))
     return(
         <>
         <h1>{serv.find(e=>e.name===category).title}</h1>
