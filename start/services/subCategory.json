@@ -9,6 +9,6 @@
         "title":"Следите за здоровьем правильно",
         "name":"health_life",
         "category":"health",
-        "value":["ideal_weight_calc","","index_of_the_smoking_person"]
+        "value":["ideal_weight_calc","bmi_calc","index_of_the_smoking_person"]
     }
 ]
