@@ -3,12 +3,6 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import seo from "/translate/seo_index";
 import AllService from '/start/services/all.json';
-import styles from '/styles/index_main.module.css';
-import style from "/styles/constructor/index.module.css";
-import translate from "/translate/index_translate";
-import nav_translate from "/translate/services/all_translate";
-import Link from "next/link";
-import Image from "next/image";
 const IndexMenu = dynamic(()=>import('/modules/index_menu'));
 const IndexContent = dynamic(()=>import('/modules/index_content'));
 
@@ -36,8 +30,8 @@ const Home = ({locale}) => {
         <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
         <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
       </Head>
-      <IndexMenu lang={locale} service={AllService} styles={styles} translate={translate} nav_translate={nav_translate} Link={Link} Image={Image}/>
-      <IndexContent lang={locale} service={AllService} style={style} styles={styles} translate={translate} nav_translate={nav_translate} Link={Link} Image={Image}/>
+      <IndexMenu lang={locale} service={AllService}/>
+      <IndexContent lang={locale} service={AllService}/>
     </>
   )
 };
