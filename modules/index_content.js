@@ -21,7 +21,7 @@ const IndexContent = ({lang}) => {
               <AppStore lang={lang}/>
               {all.map((e,index)=>
               <div key={index}>
-              {index%2===0?<SubAppList key={index} lang={lang} category={e.name} />:<SubAppStore key={index} lang={lang} category={e.name} />}
+              <SubAppStore key={index} lang={lang} category={e.name} />
               </div>)}
           </div>
       </div>
