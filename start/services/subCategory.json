@@ -1,0 +1,14 @@
+[
+    {
+        "title":"Планируйте беременность правильно",
+        "name":"pregnancy",
+        "category":"health",
+        "value":["rh_factor_in_family_planning","pregnancy_calendar","bmi_calc"]
+    },
+    {
+        "title":"Следите за здоровьем правильно",
+        "name":"health_life",
+        "category":"health",
+        "value":["ideal_weight_calc","","index_of_the_smoking_person"]
+    }
+]

@@ -3,8 +3,10 @@ import dynamic from "next/dynamic";
 import AppStorePreloader from "@/modules/app_store/apps_preloader";
 const AppStore =  dynamic(()=>import("@/modules/app_store/apps"),{loading: AppStorePreloader});
 const AppList =  dynamic(()=>import("@/modules/app_store/app_list"),{loading: AppStorePreloader});
+const SubAppStore =  dynamic(()=>import("@/modules/app_store/subApps"),{loading: AppStorePreloader});
 import Image from "next/image";
 import translate from "@/translate/index_translate";
+import all from '/start/services/subCategory.json';
 
 const IndexContent = ({lang}) => {
   return(
@@ -16,6 +18,7 @@ const IndexContent = ({lang}) => {
             {/* <hr/> */}
             <h1>{translate!==undefined&&translate['try_use'][lang]}</h1>
               <AppStore lang={lang}/>
+              {all.map((e,index)=><SubAppStore key={index} lang={lang} category={e.name} />)}
           </div>
       </div>
   )
