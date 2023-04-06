@@ -21,7 +21,7 @@ const IndexContent = ({lang}) => {
               <AppStore lang={lang}/>
               {/* <SubAppList lang={lang} category={"pregnancy"} />
               <SubAppList lang={lang} category={"health_life"} /> */}
-              {all!==undefined&&JSON.parse(all).map((e,index)=>
+              {all!==undefined&&all.map((e,index)=>
               index%2===0?<SubAppList key={index} lang={lang} category={e.name} />:<SubAppStore key={index} lang={lang} category={e.name} />)}
           </div>
       </div>
