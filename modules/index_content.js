@@ -7,7 +7,7 @@ const SubAppStore =  dynamic(()=>import("@/modules/app_store/subApps"),{loading:
 const SubAppList =  dynamic(()=>import("@/modules/app_store/subAppList"),{loading: AppStorePreloader});
 import Image from "next/image";
 import translate from "@/translate/index_translate";
-import all from '/start/services/subCategory.json';
+import all from '@/start/services/subCategory.json';
 
 const IndexContent = ({lang}) => {
   return(
@@ -19,9 +19,9 @@ const IndexContent = ({lang}) => {
             {/* <hr/> */}
             <h1>{translate!==undefined&&translate['try_use'][lang]}</h1>
               <AppStore lang={lang}/>
-              <SubAppList lang={lang} category={"pregnancy"} />
-              {/* {all.map((e,index)=>
-              index%2===0?<SubAppList key={index} lang={lang} category={e.name} />:<SubAppStore key={index} lang={lang} category={e.name} />)} */}
+              {/* <SubAppList lang={lang} category={"pregnancy"} /> */}
+              {all!==undefined&&all.map((e,index)=>
+              index%2===0?<SubAppList key={index} lang={lang} category={e.name} />:<SubAppStore key={index} lang={lang} category={e.name} />)}
           </div>
       </div>
   )
