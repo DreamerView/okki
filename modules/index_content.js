@@ -19,10 +19,10 @@ const IndexContent = ({lang}) => {
             {/* <hr/> */}
             <h1>{translate!==undefined&&translate['try_use'][lang]}</h1>
               <AppStore lang={lang}/>
-              <SubAppList lang={lang} category={"pregnancy"} />
-              <SubAppList lang={lang} category={"health_life"} />
-              {/* {all!==undefined&&all.map((e,index)=>
-              index%2===0?<SubAppList key={index} lang={lang} category={e.name} />:<SubAppStore key={index} lang={lang} category={e.name} />)} */}
+              {/* <SubAppList lang={lang} category={"pregnancy"} />
+              <SubAppList lang={lang} category={"health_life"} /> */}
+              {all!==undefined&&JSON.parse(all).map((e,index)=>
+              index%2===0?<SubAppList key={index} lang={lang} category={e.name} />:<SubAppStore key={index} lang={lang} category={e.name} />)}
           </div>
       </div>
   )
