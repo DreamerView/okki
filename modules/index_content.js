@@ -10,6 +10,7 @@ import translate from "@/translate/index_translate";
 import all from '@/start/services/subCategory.json';
 
 const IndexContent = ({lang}) => {
+  console.log(all.map(e=>console.log(e)));
   return(
         <div className="main">
           <div className="main_block_row">
