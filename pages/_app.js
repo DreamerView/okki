@@ -6,9 +6,8 @@ import "@/styles/globals.css";
 import "@/styles/preloader.css";
 import "@/styles/animation.css";
 
-const Preloader = dynamic(()=>import("/modules/preloader"),{ssr:false});
-
-const AppModule = dynamic(()=>import('/modules/app_module'));
+const Preloader = dynamic(()=>import("@/modules/preloader"),{ssr:false});
+const AppModule = dynamic(()=>import('@/modules/app_module'));
 
 const MyApp = ({ Component, pageProps, session }) => {
     const [result,setResult] = useState(prev=>prev=false);
