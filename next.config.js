@@ -39,15 +39,15 @@ const ContentSecurityPolicy = `
     style-src 'self' 'report-sample'; 
     style-src-elem  'self'  'unsafe-inline'; 
     style-src-attr 'self' 'unsafe-inline'; 
-    connect-src 'self' https://cdnjs.cloudflare.com https://app.okki.kz wss://app.okki.kz http://localhost:3001 https://api.fast.com;
+    connect-src 'self' https://cdnjs.cloudflare.com https://app.okki.kz wss://app.okki.kz http://localhost:3001;
     base-uri 'none';
     form-action 'self';
     object-src 'none'; 
     child-src 'none';
     frame-src 'self';
-    img-src 'self' data: blob: https://fjwp.s3.amazonaws.com;
+    img-src 'self' data: blob:;
     manifest-src 'self';
-    prefetch-src 'self';
+    prefetch-src 'self' ${backend};
     worker-src 'self';
     font-src 'self';  
     default-src 'self';
