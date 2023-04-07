@@ -1,9 +1,9 @@
 import {useState,useEffect,useRef,memo} from "react";
-import ux from "/translate/ux/action";
-import all from '/start/services/all.json';
-import serv from '/start/services/subCategory.json';
-import style from "/styles/constructor/index.module.css";
-import nav_translate from "/translate/services/all_translate";
+import ux from "@/translate/ux/action";
+import all from '@/start/services/all.json';
+import serv from '@/start/services/subCategory.json';
+import style from "@/styles/constructor/index.module.css";
+import nav_translate from "@/translate/services/all_translate";
 import Link from "next/link";
 import Image from "next/image";
 

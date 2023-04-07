@@ -1,9 +1,9 @@
-import ux from "/translate/ux/action";
+import ux from "@/translate/ux/action";
 import styles from "@/styles/apps.module.css";
 import {useState,useEffect,useRef} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import nav_translate from "/translate/services/all_translate";
+import nav_translate from "@/translate/services/all_translate";
 import list from '@/start/services/all.json';
 
 const AppList = ({lang,category,search}) => {

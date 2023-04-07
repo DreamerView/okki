@@ -1,5 +1,5 @@
 import Head from "next/head";
-import translate from "/translate/ux/loading_page";
+import translate from "@/translate/ux/loading_page";
 import { useState,useEffect } from "react";
 import { useRouter } from "next/router";
 

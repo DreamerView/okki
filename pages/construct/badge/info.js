@@ -5,7 +5,7 @@ import style from "/styles/constructor/acc/index.module.css";
 import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import Head from "next/head";
-const InfoBlock = dynamic(()=>import('./info_block'));
+const InfoBlock = dynamic(()=>import('./info_block'),{ssr:false});
 import Image from "next/image";
 import useConfirm from "/start/conf";
 import { useDispatch } from 'react-redux';

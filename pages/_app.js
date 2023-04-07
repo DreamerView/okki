@@ -1,10 +1,10 @@
 /*jshint esversion: 6 */
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import "/styles/colorPallete.css";
-import "/styles/globals.css";
-import "/styles/preloader.css";
-import "/styles/animation.css";
+import "@/styles/colorPallete.css";
+import "@/styles/globals.css";
+import "@/styles/preloader.css";
+import "@/styles/animation.css";
 
 const Preloader = dynamic(()=>import("/modules/preloader"),{ssr:false});
 

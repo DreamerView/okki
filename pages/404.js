@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import translate from "/translate/ux/404_translate";
+import translate from "@/translate/ux/404_translate";
 
 export const getStaticProps = async ({locale}) => {
     return {props:{locale:locale}};
