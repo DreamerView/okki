@@ -9,9 +9,9 @@ import Image from "next/image";
 import translate from "@/translate/index_translate";
 import all from '@/start/services/subCategory.json';
 
-const Component = ({lang}) => {
-  return(all!==undefined&&all.map((e,index)=>index%2===0?<SubAppList key={index} lang={lang} category={e.name} />:<SubAppStore key={index} lang={lang} category={e.name} />))
-};
+// const Component = ({lang}) => {
+//   return(all!==undefined&&all.map((e,index)=>index%2===0?<SubAppList key={index} lang={lang} category={e.name} />:<SubAppStore key={index} lang={lang} category={e.name} />))
+// };
 
 const IndexContent = ({lang}) => {
   return(
@@ -26,7 +26,7 @@ const IndexContent = ({lang}) => {
               <SubAppList lang={lang} category={"health_life"} /> */}
               {/* {all!==undefined&&all.map((e,index)=>
               <SubAppStore key={index} lang={lang} category={e.name} />)} */}
-              <Component lang={lang} />
+              {/* <Component lang={lang} /> */}
           </div>
       </div>
   )
