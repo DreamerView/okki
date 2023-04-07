@@ -50,4 +50,4 @@ const CategoryComponent = ({name,lang}) => {
     );
 };
 
-export default memo(CategoryComponent);
+export default CategoryComponent;
