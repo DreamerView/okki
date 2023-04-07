@@ -388,8 +388,8 @@
         background-color: var(--block-color);
     }
     div.main__menu_nav_block_image_pic>img {
-        width:11vw;
-        height:11vw;
+        width:12vw;
+        height:12vw;
         position: relative;
         display: flex;
         align-items: center;
