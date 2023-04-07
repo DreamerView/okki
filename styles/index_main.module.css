@@ -365,8 +365,8 @@
         /* background-color: aqua; */
     }
     div.main__menu_nav_block_image {
-        width:60px;
-        height:60px;
+        width:18vw;
+        height:18vw;
         display: -webkit-box;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -382,14 +382,14 @@
                 -webkit-justify-content: center;
                    -moz-box-pack: center;
                 justify-content: center;
-        -webkit-border-radius: 24px;
-           -moz-border-radius: 24px;
-                border-radius: 24px;
+        -webkit-border-radius: 7vw;
+           -moz-border-radius: 7vw;
+                border-radius: 7vw;
         background-color: var(--block-color);
     }
     div.main__menu_nav_block_image_pic>img {
-        width:44px;
-        height:44px;
+        width:12vw;
+        height:12vw;
         position: relative;
         display: flex;
         align-items: center;
