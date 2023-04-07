@@ -1,29 +1,14 @@
 /*jshint esversion: 6 */
-import Image from "next/image";
 import Head from "next/head";
-import translate from "/translate/constructor/acc/navbar_translate";
-import nav_translate from "/translate/services/all_translate";
 import seo from "/translate/finance/index_seo";
 import dynamic from "next/dynamic";
-import AppStorePreloader from "/modules/app_store/apps_preloader";
-const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
-const AppList =  dynamic(()=>import("/modules/app_store/app_list"),{loading: AppStorePreloader});
-import NavPreloader from "/modules/navbar_app/nav_preloader";
-const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+const CategoryComponent = dynamic(()=>import("@/modules/category"));
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
 };
 
 const FinanceIndex = ({lang}) => {
-    const historyAction = (service) => {
-        const history = JSON.parse(localStorage.getItem('historyAction'));
-        const action = history?history:[];
-        const checkExp = [...action,{name:service,time:Date.now()}];
-        const key = 'name';
-        const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
-        localStorage.setItem('historyAction',JSON.stringify(historyResult))
-    };
     return(
         <>
             <Head>
@@ -43,13 +28,7 @@ const FinanceIndex = ({lang}) => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
-            <div className="main_app ">
-            <h1 className="flex_text">{nav_translate["finance"][lang]} <div className="emoji_h1"><Image title={'Microsoft money bag emoji (Used for informational purposes only)'} priority src={"/emoji-small/money_bag.webp"} width={26} height={26} alt="emoji"/></div></h1>
-            <p className="sub_content">{translate["step0_description"][lang]}</p>
-            <AppList lang={lang} category={"category"} search={"finance"} />
-            <AppStore category="finance" lang={lang}/>
-        </div>
+            <CategoryComponent name={"finance"} lang={lang} />
       </>
     );
 };

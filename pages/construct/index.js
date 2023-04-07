@@ -1,14 +1,8 @@
 /*jshint esversion: 6 */
-import Image from "next/image";
 import Head from "next/head";
-import translate from "/translate/constructor/acc/navbar_translate";
 import seo from "/translate/constructor/index_seo";
 import dynamic from "next/dynamic";
-import AppStorePreloader from "/modules/app_store/apps_preloader";
-const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
-const AppList =  dynamic(()=>import("/modules/app_store/app_list"),{loading: AppStorePreloader});
-import NavPreloader from "/modules/navbar_app/nav_preloader";
-const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+const CategoryComponent = dynamic(()=>import("@/modules/category/index"));
 
 export const getStaticProps = async ({locale}) => {
   return {props:{lang:locale}};
@@ -34,13 +28,7 @@ const ConstructorIndex = ({lang}) => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <NavbarApp to={{href:"/"}} choice="alone" lang={lang}/>
-            <div className="main_app ">
-            <h1 className="flex_text">{translate["step0"][lang]} <div className="emoji_h1"><Image title={'Microsoft fire emoji (Used for informational purposes only)'} priority src={"/emoji-small/fire.webp"} width={26} height={26} alt="emoji"/></div></h1>
-            <p className="sub_content">{translate["step0_description"][lang]}</p>
-            <AppList lang={lang} category={"category"} search={"constructor"} />
-            <AppStore category="constructor" lang={lang}/>
-        </div>
+            <CategoryComponent name={'constructor'} lang={lang} />
       </>
     );
 };

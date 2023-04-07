@@ -1,22 +1,15 @@
 /*jshint esversion: 6 */
 
-import Image from "next/image";
 import Head from "next/head";
-import translate from "/translate/constructor/acc/navbar_translate";
-import nav_translate from "/translate/services/all_translate";
 import seo from "/translate/health/index_seo";
 import dynamic from "next/dynamic";
-import AppStorePreloader from "/modules/app_store/apps_preloader";
-const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
-const AppList =  dynamic(()=>import("/modules/app_store/app_list"),{loading: AppStorePreloader});
-import NavPreloader from "/modules/navbar_app/nav_preloader";
-const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+const CategoryComponent = dynamic(()=>import("@/modules/category/index"));
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
 };
 
-const HealthIndex = ({lang}) => {
+const CalculatorIndex = ({lang}) => {
     const historyAction = (service) => {
         const history = JSON.parse(localStorage.getItem('historyAction'));
         const action = history?history:[];
@@ -28,7 +21,7 @@ const HealthIndex = ({lang}) => {
     return(
         <>
             <Head>
-            <title>{seo['title'][lang]}</title>
+                <title>{seo['title'][lang]}</title>
                 <meta name="keywords" content={seo['keywords'][lang]} />
                 <meta name="description" content={seo['description'][lang]} />
                 <meta property="og:type" content="article" />
@@ -44,19 +37,10 @@ const HealthIndex = ({lang}) => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
-            <div className="main_app ">
-            <div className="main_row">
-            <h1 className="flex_text">{nav_translate["calculator"][lang]} <div className="emoji_h1"><Image title={'Microsoft laptop emoji (Used for informational purposes only)'} priority src={"/emoji-small/laptop.webp"} width={26} height={26} alt="emoji"/></div></h1>
-            <p className="sub_content">{translate["step0_description"][lang]}</p>
-            <AppList lang={lang} category={"category"} search={"calculator"} />
-            <AppStore category="calculator" lang={lang} />
-            </div>
-            
-        </div>
+            <CategoryComponent name={"calculator"} lang={lang}/>
       </>
     );
 };
 
-export default HealthIndex;
+export default CalculatorIndex;
 

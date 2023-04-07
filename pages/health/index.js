@@ -1,30 +1,14 @@
 /*jshint esversion: 6 */
-import Image from "next/image";
 import Head from "next/head";
-import translate from "/translate/constructor/acc/navbar_translate";
-import nav_translate from "/translate/services/all_translate";
 import seo from "/translate/health/index_seo";
 import dynamic from "next/dynamic";
-import AppStorePreloader from "/modules/app_store/apps_preloader";
-const AppStore =  dynamic(()=>import("/modules/app_store/apps"),{loading: AppStorePreloader});
-const AppList =  dynamic(()=>import("/modules/app_store/app_list"),{loading: AppStorePreloader});
-const SubAppStore =  dynamic(()=>import("/modules/app_store/subApps"),{loading: AppStorePreloader});
-import NavPreloader from "/modules/navbar_app/nav_preloader";
-const NavbarApp = dynamic(()=>import('/modules/navbar_app/nav'),{ssr:false,loading:NavPreloader});
+const CategoryComponent =  dynamic(()=>import("@/modules/category/index"));
 
 export const getStaticProps = async ({locale}) => {
     return {props:{lang:locale}};
 };
 
 const HealthIndex = ({lang}) => {
-    const historyAction = (service) => {
-        const history = JSON.parse(localStorage.getItem('historyAction'));
-        const action = history?history:[];
-        const checkExp = [...action,{name:service,time:Date.now()}];
-        const key = 'name';
-        const historyResult = [...new Map(checkExp.map(item =>[item[key], item])).values()];
-        localStorage.setItem('historyAction',JSON.stringify(historyResult))
-    };
     return(
         <>
             <Head>
@@ -44,17 +28,7 @@ const HealthIndex = ({lang}) => {
                 <meta name="twitter:image" content={process.env.hostName+"/seo_image/twitter.webp"}/>
                 <link rel="image_src" href={process.env.hostName+"/seo_image/twitter.webp"}/>
             </Head>
-            <NavbarApp lang={lang} to={{href:"/"}} choice="alone"/>
-            <div className="main_app ">
-            <div className="main_row">
-            <h1 className="flex_text">{nav_translate["health"][lang]} <div className="emoji_h1"><Image title={'Microsoft red heart emoji (Used for informational purposes only)'} priority src={"/emoji-small/red_heart.webp"} width={26} height={26} alt="emoji"/></div></h1>
-            <p className="sub_content">{translate["step0_description"][lang]}</p>
-            <AppList lang={lang} category={"category"} search={"health"} />
-            <AppStore category="health" lang={lang} />
-            <SubAppStore lang={lang} category="pregnancy" />
-            </div>
-            
-        </div>
+            <CategoryComponent name="health" lang={lang} />
       </>
     );
 };
