@@ -7,6 +7,7 @@ const NavbarApp = dynamic(()=>import('@/modules/navbar_app/nav'),{ssr:false,load
 import AppStorePreloader from "@/modules/app_store/apps_preloader";
 const AppStore =  dynamic(()=>import("@/modules/app_store/apps"),{loading: AppStorePreloader});
 const AppList =  dynamic(()=>import("@/modules/app_store/app_list"),{loading: AppStorePreloader});
+const CategoryList = dynamic(()=>import("@/modules/category/component"),{ssr:false});
 import { memo } from "react";
 import seo from "@/translate/category_seo/index_translate";
 import Head from "next/head";
@@ -45,9 +46,10 @@ const CategoryComponent = ({name,lang}) => {
             <p className="sub_content">{translate["step0_description"][lang]}</p>
             <AppList lang={lang} category={"category"} search={name} />
             <AppStore category={name} lang={lang} />
-        </div>    
+            <CategoryList lang={lang} category={name} />  
+        </div>
     </>
     );
 };
 
-export default CategoryComponent;
+export default memo(CategoryComponent);

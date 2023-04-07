@@ -7,7 +7,7 @@ import nav_translate from "@/translate/services/all_translate";
 import all from '@/start/services/all.json';
 import list from '@/start/services/subCategory.json';
 
-const SubAppList = ({lang,category,search}) => {
+const SubAppList = ({lang,category}) => {
     const banner = useRef(),
     [lazy,setLazy] = useState(false),
     [offset, setOffset] = useState(0),
