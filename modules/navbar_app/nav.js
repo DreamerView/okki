@@ -1,13 +1,12 @@
 /*jshint esversion: 6 */
 import React,{memo,useState,useEffect} from "react";
 import Link from "next/link";
-import nav_translate from "/translate/services/all_translate";
-import ux from "/translate/ux/action";
 import { useSelector } from "react-redux";
 import { useRouter } from 'next/navigation';
 
 
-const NavbarApp = ({to,choice,mode,lang}) => {
+const NavbarApp = ({to,choice,lang,ux,service}) => {
+    const text = (req,res) => req.find(e=>e.name===res)[lang];
     const router = useRouter();
     const headerHeight= useSelector(state=>state.headerHeight);
     const result = to!==undefined?to:[{}];
@@ -41,9 +40,9 @@ const NavbarApp = ({to,choice,mode,lang}) => {
                 <React.Fragment key={index}>
                 {sends.path==='last'?
                 sends.text?<>{sends.text}</>:
-                <>{nav_translate[sends.key][lang]}</>:
+                <>{text(service['translate'],sends.key)}</>:
                 sends.text?<><Link href={sends.location} prefetch={false}>{sends.text}</Link>  /  </>:
-                <><Link href={sends.location} prefetch={false}>{nav_translate[sends.key][lang]}</Link>  /  </>
+                <><Link href={sends.location} prefetch={false}>{text(service['translate'],sends.key)}</Link>  /  </>
                  
                 }
                 </React.Fragment>
@@ -58,7 +57,7 @@ const NavbarApp = ({to,choice,mode,lang}) => {
                         <div className='main_back_button'>
                             <div className='main_back_button_i'/>
                         </div>
-                        <p>{ux['back'][lang]}</p>
+                        <p>{text(ux,"back")}</p>
                     </div>
                 </div>
             }

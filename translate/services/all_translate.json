@@ -1,0 +1,112 @@
+[
+    {   "name":"home",
+        "kk":"Басты бет",
+        "ru":"Главная",
+        "en":"Home"
+    },
+    {"name":"constructor",
+        "kk":"Құрастырғыш",
+        "ru":"Конструктор",
+        "en":"Constructor"
+    },
+    {"name":"calculator",
+        "kk":"Есептегіш",
+        "ru":"Калькулятор",
+        "en":"Calculator"
+    },
+    {"name":"business",
+        "kk":"Кәсіп",
+        "ru":"Бизнес",
+        "en":"Business"
+    },
+    {"name":"education",
+        "kk":"Білім",
+        "ru":"Образование",
+        "en":"Education"
+    },
+    {"name":"health",
+        "kk":"Денсаулық",
+        "ru":"Здоровье",
+        "en":"Health"
+    },
+    {"name":"finance",
+        "kk":"Қаржы",
+        "ru":"Финансы",
+        "en":"Finance"
+    },
+    {"name":"tech",
+        "kk":"Технологиялар",
+        "ru":"Технологии",
+        "en":"Technologies"
+    },
+    {"name":"others",
+        "kk":"Басқалар",
+        "ru":"Другие",
+        "en":"Others"
+    },
+    {"name":"acc_const",
+        "kk":"Бейджик Құрастырушысы",
+        "ru":"Конструктор Бейджиков",
+        "en":"Badge Сonstructor"
+    },
+    {"name":"bmi_calc",
+        "kk":"ДСИ Есептегіш (Ересек)",
+        "ru":"ИМТ Калькулятор (Взрослый)",
+        "en":"BMI Сalculator (Adult)"
+    },
+    {"name":"ideal_weight_calc",
+        "kk":"Мінсіз Салмақ Есептегіші",
+        "ru":"Калькулятор Идеального Веса",
+        "en":"Ideal Weight Calculator"
+    },
+    {"name":"deposit_calc",
+        "kk":"Депозиттік есептегіш",
+        "ru":"Депозитный калькулятор",
+        "en":"Deposit Calculator"
+    },
+    {"name":"margin_markup_calc",
+        "kk":"Маржа мен үстеме бағаны есептеу калькуляторы",
+        "ru":"Калькулятор расчета маржи и наценки",
+        "en":"Margin and markup calculator"
+    },
+    {"name":"pregnancy_calendar",
+        "kk":"Жүктілік күнтізбесі",
+        "ru":"Календарь беременности",
+        "en":"Pregnancy calendar"
+    },
+    {"name":"index_of_the_smoking_person",
+        "kk":"Темекі шегетін адамның индексі",
+        "ru":"Индекс курящего человека",
+        "en":"Index of the smoking person"
+    },
+    {"name":"rh_factor_in_family_planning",
+        "kk":"Отбасын жоспарлау кезіндегі Rh факторы",
+        "ru":"Резус фактор при планировании семьи",
+        "en":"Rh factor in family planning"
+    },
+    {"name":"qr",
+        "kk":"QR сканері",
+        "ru":"Сканнер QR",
+        "en":"QR scanner"
+    },
+    {"name":"image_editor",
+        "kk":"Сурет редакторы",
+        "ru":"Фото редактор",
+        "en":"Image Editor"
+    },
+    {"name":"counter",
+        "kk":"Санағыш",
+        "ru":"Счетчик",
+        "en":"Counter"
+    },
+    {"name":"simple_calculator",
+        "kk":"Ыңғайлы есептегіш",
+        "ru":"Удобный калькулятор",
+        "en":"Simple calculator"
+    },
+    {"name":"clock",
+        "kk":"Сағат",
+        "ru":"Часы",
+        "en":"Clock"
+    }
+]

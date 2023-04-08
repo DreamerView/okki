@@ -3,6 +3,7 @@ import { useState,useEffect,useRef,memo } from 'react';
 import SearchResult from "/start/services/all.json";
 import dynamic from 'next/dynamic';
 import translate from "/translate/header_translate";
+import all from "@/translate/services/all_translate";
 const SearchBlocks = dynamic(()=>import('/start/header_action/searchblocks'),{ssr:false});
 
 const Search = (res) => {
@@ -14,9 +15,16 @@ const Search = (res) => {
     [result,setResult] = useState([]),
     [accept,setAccept] = useState(false);
     useEffect(()=>{
+    //   const obj = all;
+    //   const result1 = Object.keys(obj);
+    //   const result2 = result1.map(e=>Object.keys(obj)).map(e=>obj);
+    // console.log(result2);
         setResult(prev=>prev=SearchResult.filter((e)=>{
           if(search === '') return 0;
-          else if(String(e.key).toLowerCase().includes(String(search).toLowerCase())) return e;
+          // // else if(String(e.key).toLowerCase().includes(String(search).toLowerCase())) return e;
+          // else if(String(e.key).toLowerCase().includes(String(search).toLowerCase())) {
+            
+          // };
         }));
         return () => {
           return 0;
